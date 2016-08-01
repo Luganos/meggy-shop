@@ -64,7 +64,9 @@
                         <div class="checkout_button_text_coupon">
                         <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
                         <!--<input type="reset" value="Очистить">-->
+                         <a href="#">
                          <span>Я забыл пароль</span>
+                         </a>
                         </div>
                         <div class="enter_for_user">
                             <p>Войти как пользователь</p>
@@ -122,7 +124,7 @@
             </div>
             <div class="order">
             <hr>
-              <div class="checkout_button_text_coupon ">
+              <div class="checkout_button_text_coupon checkout_button_text_coupon_right">
                 <input type="submit" value="подтвердить заказ" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
               </div>
             </div>

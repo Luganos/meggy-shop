@@ -6320,7 +6320,7 @@ a.idTop:hover {
 }
 
 .nstreet_input_w{
-	width: 320px;
+	width: 380px;
 }
 
 .streen_inline{
@@ -6351,6 +6351,11 @@ a.idTop:hover {
 	width: 100px;
 }
 
+.checkout_button_text_coupon_right{
+	float: right;
+	font-size: 14px;
+}
+
 @media screen and (max-width: 855px) {
 	.checkout{
 		width: 100% !important;;
@@ -6365,13 +6370,49 @@ a.idTop:hover {
 }
 
 
-}
+
 
 @media screen and (max-width: 535px) {
+	.breadcrumb{
+	margin: 0 auto 0 auto;
+	width: 90% !important;
+}
+
+.pickup{
+	margin-left: 10px !important;
+	margin-right: 100px !important;
+}
+.cash{
+	margin-left: 10px !important;
+}
+
+.street{
+	margin-left: 10px !important;
+}
+.checkout_button_text_coupon_right{
+	margin-left: 10px;
+	float: left;
+}
 
 }
 
 @media (max-width: 470px) { /* от 422 до 320*/
+	#content{
+		margin-top: 10px !important;
+	}
+	.pickup{
+		width: 150px !important;
+	}
+	.courier{
+		margin-left: 10px;
+		margin-bottom: 20px;
+	}
+	.cash{
+		width: 150px !important;
+	}
+	.nstreet_input_w{
+	width: 280px;
+	}
 
 }
 
