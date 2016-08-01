@@ -1,5 +1,5 @@
 <?php echo $header; ?><?php if( ! empty( $mfilter_json ) ) { echo '<div id="mfilter-json" style="display:none">' . base64_encode( $mfilter_json ) . '</div>'; } ?>
-<div class="container">
+<div class="container container_category">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -10,7 +10,7 @@
       <p><?php echo $heading_title; ?></p>
     </div>
   </div>
-  <div class="row"><?php echo $column_left; ?>
+  <div class="row row_filter"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
     <?php $class = 'col-sm-6'; ?>
     <?php } elseif ($column_left || $column_right) { ?>
@@ -59,9 +59,9 @@
       <?php } ?>
       <?php if ($products) { ?>
      <!-- <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>-->
-      <div class="row">
+      <div class="row row_categori_sort">
         <div class="col-md-4 category_cort">
-          <div class="btn-group hidden-xs">
+          <div class="btn-group">
             <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
             <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
           </div>
@@ -69,7 +69,7 @@
         <div class="col-md-2 text-right cort_category">
           <label class="control-label" for="input-sort"><?php echo $text_sort; ?></label>
         </div>
-        <div class="col-md-3 text-right">
+        <div class="col-md-3 text-right text-right_category ">
           <select id="input-sort" class="form-control" onchange="location = this.value;">
             <?php foreach ($sorts as $sorts) { ?>
             <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
@@ -97,12 +97,12 @@
       </div>
       <hr>
       <br />
-      <div class="row">
-        <?php $n = 1; ?>  
+      <div class="row row_category">
+        <?php $n = 1; ?>
         <?php foreach ($products as $product)  { ?>
-           <div class="sl_slide_<?php echo $n; ?>">
-               <div class="sl_img_<?php echo $n; ?>">
-                   <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new">
+           <div class="sl_slide_<?php echo $n; ?> sl_slider_category ">
+               <div class="sl_img_<?php echo $n; ?> sl_img_1_category ">
+                   <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new sl_img_new_category">
                    <img src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                </div>
                <span class="sl_text">
