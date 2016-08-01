@@ -196,6 +196,65 @@ $('.sl_slide_5').on("mouseout", function(){$(".sl_kor_5").css({"visibility": "hi
 $('.sl_img_5').on("mouseover", function(){$(".sl_img_5").css({"background-size": "180%"});});
 $('.sl_img_5').on("mouseout", function(){$(".sl_img_5").css({"background-size": "90%"});});
 
+$('.sl_slide_6').on("mouseover", function(){$(".sl_kor_6").css({"visibility": "visible"});});
+$('.sl_slide_6').on("mouseout", function(){$(".sl_kor_6").css({"visibility": "hidden"});});
+
+$('.sl_slide_7').on("mouseover", function(){$(".sl_kor_7").css({"visibility": "visible"});});
+$('.sl_slide_7').on("mouseout", function(){$(".sl_kor_7").css({"visibility": "hidden"});});
+
+$('.sl_slide_8').on("mouseover", function(){$(".sl_kor_8").css({"visibility": "visible"});});
+$('.sl_slide_8').on("mouseout", function(){$(".sl_kor_8").css({"visibility": "hidden"});});
+
+$('.sl_slide_9').on("mouseover", function(){$(".sl_kor_9").css({"visibility": "visible"});});
+$('.sl_slide_9').on("mouseout", function(){$(".sl_kor_9").css({"visibility": "hidden"});});
+
+$('.sl_slide_10').on("mouseover", function(){$(".sl_kor_10").css({"visibility": "visible"});});
+$('.sl_slide_10').on("mouseout", function(){$(".sl_kor_10").css({"visibility": "hidden"});});
+
+$('.sl_slide_11').on("mouseover", function(){$(".sl_kor_11").css({"visibility": "visible"});});
+$('.sl_slide_11').on("mouseout", function(){$(".sl_kor_11").css({"visibility": "hidden"});});
+
+$('.sl_slide_12').on("mouseover", function(){$(".sl_kor_12").css({"visibility": "visible"});});
+$('.sl_slide_12').on("mouseout", function(){$(".sl_kor_12").css({"visibility": "hidden"});});
+
+$('.sl_slide_13').on("mouseover", function(){$(".sl_kor_13").css({"visibility": "visible"});});
+$('.sl_slide_13').on("mouseout", function(){$(".sl_kor_13").css({"visibility": "hidden"});});
+
+$('.sl_slide_14').on("mouseover", function(){$(".sl_kor_14").css({"visibility": "visible"});});
+$('.sl_slide_14').on("mouseout", function(){$(".sl_kor_14").css({"visibility": "hidden"});});
+
+$('.sl_slide_15').on("mouseover", function(){$(".sl_kor_15").css({"visibility": "visible"});});
+$('.sl_slide_15').on("mouseout", function(){$(".sl_kor_15").css({"visibility": "hidden"});});
+
+$('.sl_slide_16').on("mouseover", function(){$(".sl_kor_16").css({"visibility": "visible"});});
+$('.sl_slide_16').on("mouseout", function(){$(".sl_kor_16").css({"visibility": "hidden"});});
+
+$('.sl_slide_17').on("mouseover", function(){$(".sl_kor_17").css({"visibility": "visible"});});
+$('.sl_slide_17').on("mouseout", function(){$(".sl_kor_17").css({"visibility": "hidden"});});
+
+$('.sl_slide_18').on("mouseover", function(){$(".sl_kor_18").css({"visibility": "visible"});});
+$('.sl_slide_18').on("mouseout", function(){$(".sl_kor_18").css({"visibility": "hidden"});});
+
+$('.sl_slide_19').on("mouseover", function(){$(".sl_kor_19").css({"visibility": "visible"});});
+$('.sl_slide_19').on("mouseout", function(){$(".sl_kor_19").css({"visibility": "hidden"});});
+
+$('.sl_slide_20').on("mouseover", function(){$(".sl_kor_20").css({"visibility": "visible"});});
+$('.sl_slide_20').on("mouseout", function(){$(".sl_kor_20").css({"visibility": "hidden"});});
+
+$('.sl_slide_21').on("mouseover", function(){$(".sl_kor_21").css({"visibility": "visible"});});
+$('.sl_slide_21').on("mouseout", function(){$(".sl_kor_21").css({"visibility": "hidden"});});
+
+$('.sl_slide_22').on("mouseover", function(){$(".sl_kor_22").css({"visibility": "visible"});});
+$('.sl_slide_22').on("mouseout", function(){$(".sl_kor_22").css({"visibility": "hidden"});});
+
+$('.sl_slide_23').on("mouseover", function(){$(".sl_kor_23").css({"visibility": "visible"});});
+$('.sl_slide_23').on("mouseout", function(){$(".sl_kor_23").css({"visibility": "hidden"});});
+
+$('.sl_slide_24').on("mouseover", function(){$(".sl_kor_24").css({"visibility": "visible"});});
+$('.sl_slide_24').on("mouseout", function(){$(".sl_kor_24").css({"visibility": "hidden"});});
+
+$('.sl_slide_25').on("mouseover", function(){$(".sl_kor_25").css({"visibility": "visible"});});
+$('.sl_slide_25').on("mouseout", function(){$(".sl_kor_25").css({"visibility": "hidden"});});
 
 /*-----Big_slider_fo_page_product*/
 $('.sli_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});

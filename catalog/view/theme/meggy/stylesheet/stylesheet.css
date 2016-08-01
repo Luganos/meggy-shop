@@ -2298,7 +2298,9 @@ position: relative;
 }
 
 .sl_kor_1,.sl_kor_2,.sl_kor_3,.sl_kor_4,.sl_kor_5,.sl_kor_6,.sl_kor_7,
-.sl_kor_8,.sl_kor_9,.sl_kor_10{
+.sl_kor_8,.sl_kor_9,.sl_kor_10,.sl_kor_11,.sl_kor_12,.sl_kor_13,.sl_kor_14
+,.sl_kor_15,.sl_kor_16,.sl_kor_17,.sl_kor_18,.sl_kor_19,.sl_kor_20,.sl_kor_21
+,.sl_kor_21,.sl_kor_22,.sl_kor_23,.sl_kor_24,.sl_kor_25{
 	width: 100%;
 	height: 40px;
 	margin-top: 30px;
@@ -2309,7 +2311,10 @@ position: relative;
 }
 
 .sl_kor_1 span,.sl_kor_2 span,.sl_kor_3 span,.sl_kor_4 span,.sl_kor_5 span
-,.sl_kor_6 span,.sl_kor_7 span,.sl_kor_8 span,.sl_kor_9 span,.sl_kor_10 span{
+,.sl_kor_6 span,.sl_kor_7 span,.sl_kor_8 span,.sl_kor_9 span,.sl_kor_10 span
+,.sl_kor_11 span,.sl_kor_12 span,.sl_kor_13 span,.sl_kor_14 span,.sl_kor_15 span
+,.sl_kor_16 span,.sl_kor_17 span,.sl_kor_18 span,.sl_kor_19 span,.sl_kor_20 span
+,.sl_kor_21 span,.sl_kor_22 span,.sl_kor_23 span,.sl_kor_24 span,.sl_kor_25 span{
 	vertical-align:middle;
 	display:table-cell;
 	text-align:center;
@@ -6228,12 +6233,19 @@ a.idTop:hover {
 }
 
 	.sl_slider_category{
-	width: 300px;
+	width: 270px;
 	float: left;
 }
 
 	.sl_img_1_category{
-	width: 300px;
+	width: 270px;
+}
+
+.category_new_large{
+	display: block;
+}
+.category_discont_large{
+	display: block;
 }
 
 .checkout{
@@ -6569,4 +6581,75 @@ a.idTop:hover {
 
 /*----END_checkout----*/
 
+
+/*----account----*/
+
+.container_account{
+	width: 960px;
+}
+
+.hr_top_account{
+	margin-top: 0px;
+}
+
+.content_account{
+	width: 960px;
+}
+
+h1{
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	margin-bottom: 50px;
+	margin-left: 16px;
+}
+
+h2{
+	font-family: 'Open Sans Semibold';
+	font-size: 18px;
+	color:black;
+	margin-bottom: 0px;
+}
+
+.list-unstyled li{
+	margin: 20px 0 20px 0;
+	text-decoration: underline;
+
+	font-size: 16px;
+}
+
+.list-unstyled a{
+	color: rgb(50,60,208);
+}
+
+
+.list-unstyled{
+
+}
+
+@media screen and (max-width: 855px) {
+	hr{
+		width: 300px;
+	}
+	.account_left_panel {
+		width: 41%;
+	}
+	.account_right_panel {
+		width: 41%;
+	}
+	.account_podpiska_panel {
+		width: 35%;
+	}
+
+}
+
+@media screen and (max-width: 535px) {
+	h2{
+		margin-top: 50px;
+	}
+}
+
+
+
+/*----END_account----*/
 
