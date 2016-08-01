@@ -100,11 +100,27 @@
       <div class="row row_category">
         <?php $n = 1; ?>
         <?php foreach ($products as $product)  { ?>
+<<<<<<< HEAD
            <div class="sl_slide_<?php echo $n; ?> sl_slider_category ">
                <div class="sl_img_<?php echo $n; ?> sl_img_1_category ">
                    <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new sl_img_new_category">
                    <img src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                </div>
+=======
+           <div class="sl_slide_<?php echo $n; ?>">
+           <div class="sli_img_<?php echo $n; ?>">
+                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
+                   <?php if ($new_goods_flag) { ?>
+                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
+                   <?php } ?>
+                   <?php if ($discount_goods_flag) { ?>
+                   <img id="product_discont_large" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
+                   <?php } ?>
+                   <?php if ($action_goods_flag) { ?>
+                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt="">
+                   <?php } ?>
+               </div> 
+>>>>>>> 7e4e259150a27c80d074ec89837d4a5f16053977
                <span class="sl_text">
                     <p class="sl_id"><?php echo $product['name']; ?>
                      <?php if ($product['sku']) { ?>
