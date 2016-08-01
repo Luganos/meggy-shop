@@ -1,6 +1,7 @@
 <?php echo $header; ?>
 <div class="container">
   <ul class="breadcrumb">
+  <p>344234324</p>
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>

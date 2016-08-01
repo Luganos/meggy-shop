@@ -6082,12 +6082,12 @@ a.idTop:hover {
 }
 
 .sl_slider_category{
-	width: 300px;
+	width: 280px;
 	float: left;
 }
 
 .sl_img_1_category{
-	width: 300px;
+	width: 280px;
 }
 
 @media screen and (max-width: 855px) {
@@ -6226,11 +6226,15 @@ a.idTop:hover {
 	font-size: 14px;
 	text-transform: uppercase;
 }
-/*
-#breadcrumb:first-child{
-	color: red !important;
-	font-size: 14px;
-}*/
+
+	.sl_slider_category{
+	width: 300px;
+	float: left;
+}
+
+	.sl_img_1_category{
+	width: 300px;
+}
 
 .checkout{
 	margin: 0 auto 0 auto;
