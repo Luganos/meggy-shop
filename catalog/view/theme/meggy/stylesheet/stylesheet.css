@@ -6081,6 +6081,15 @@ a.idTop:hover {
 	color: rgb(107,116,124);
 }
 
+.sl_slider_category{
+	width: 300px;
+	float: left;
+}
+
+.sl_img_1_category{
+	margin: 0 auto 0 auto;
+}
+
 @media screen and (max-width: 855px) {
 	#column-left{
 	width: 100% !important;
@@ -6419,6 +6428,3 @@ a.idTop:hover {
 /*----END_checkout----*/
 
 
-.m{
-	clear: both;
-}
