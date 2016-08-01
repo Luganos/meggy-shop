@@ -2859,6 +2859,9 @@ input::-webkit-input-placeholder {
 	background-color: rgb(147,190,202);
 
 }
+.button_text_coupon:hover{
+	background-color: rgb(242,130,129);
+}
 
 .button_text_coupon2{
 	width: 95%;
@@ -3196,6 +3199,7 @@ input::-webkit-input-placeholder {
 	margin-left: 70px;
 
 }
+
 
 .button_text_coupon2{
 	width: 95%;
@@ -6649,7 +6653,12 @@ h2{
 	}
 }
 
-
-
 /*----END_account----*/
 
+/*------edit.tpl------*/
+
+.button_text_coupon_edit{
+	width: 200px;
+}
+
+/*------END_edit.tpl------/*
