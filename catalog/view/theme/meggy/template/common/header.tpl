@@ -43,7 +43,7 @@
         <div class="header_top">
           <nav>
           <div class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
-          <div class="header_menu">
+          <div class="header_menu hidden-sm hidden-xs">
             <ul class="menu">
               <li class="menu_item dropdown">
                 <a href="index.php?route=product/product" class="menu_link dropdown-toggle" data-toggle="dropdown">
@@ -79,18 +79,40 @@
           </div>
           </div>
           </nav>
-          <div class="col-xs-12 col-lg-3 col-lg-push-3">
+          <div id="header_in" class="col-xs-12 col-lg-3 col-lg-push-3">
           <div class="header_in">
                 <ul class="header_men_in">
                   <!--search begin-->
+                  <li id="search" class="in_item dropdown hidden-lg">
+                    <a href="#" class="dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown">
+                    <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог
+                    <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Каталог1</a></li>
+                          <li><a href="#">Каталог2</a></li>
+                          <li><a href="#">Каталог3</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Партнерам</a></li>
+                      <li><a href="#">Доставка и Оплата</a></li>
+                      <li><a href="#">Контакты</a></li>
+                    </ul>
+
+                  </li>
                   <li class="in_item">
+                    <span id="search_smoll" class="glyphicon glyphicon-search hidden-sm hidden-xs"></span>
+                  </li>
+                  <li id="search_big" class="in_item">
                   <?php echo $search; ?>
                   </li>
                   <!--search end-->
                   <div>
                   <?php echo $currency; ?>
                   </div>
-                  <li class="in_item">
+                  <li id="login" class="in_item">
                      <?php if ($logged) { ?>
                       <a href="<?php echo $text_logout; ?>" class="in_in">
                       <span class="glyphicon glyphicon-user"></span>
@@ -128,6 +150,9 @@
           <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
           <?php } ?>
           </div>
+          </div>
+          <div class="search_bottom col-xs-12 hidden-lg hidden-md">
+            <span>Поиск</span>
           </div>
         </div>
         </div>

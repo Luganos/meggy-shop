@@ -74,7 +74,7 @@ header{
 }
 
 .header_menu{
-	width: 100% !important;
+	width: 90% !important;
 	margin-top: 10px;
 }
 
@@ -97,9 +97,27 @@ header{
 }
 
 .header_in{
-	width: 100% !important;
+	width: 110% !important;
 	margin-top: 10px;
 	margin-bottom: 0px;
+}
+
+#header_in{
+	padding: 0px;
+}
+
+#search_smoll{
+	visibility: visible;
+}
+
+
+#search_smoll:hover{
+	cursor: pointer;
+}
+
+#search_big{
+	display: none;
+	//visibility: hidden;
 }
 
 .in_item span{
@@ -150,9 +168,55 @@ header{
 	display: inline;
 }
 
-.in_item{
+.glyphicon glyphicon-user{
 	display: inline;
 }
+
+.in_link_text{
+	display: inline;
+}
+
+.in_item{
+	display: inline;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#login{
+	width: 65px;
+}
+
+@media screen and (max-width: 769px) {
+	#content{
+	margin-top: 230px !important;
+	}
+	.in_item{
+		margin-left: 50px;
+
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+	#content{
+	margin-top: 230px !important;
+	}
+	.in_item{
+		margin-left: 10px;
+
+	}
+
+}
+
+search_bottom span{
+	display: block;
+}
+
+/*#content{
+	margin-top: 200px !important;
+	}*/
+
 
 /*-------main--------*/
 
