@@ -16,7 +16,8 @@
           <div class="footer_top">
             <div class="footer_top_logo">
               <div class="footer_top_logo_img">
-              <img src="logo.png" alt="">
+             <!-- <img src="www\catalog\view\theme\meggy\image\logo.png" alt="">-->
+              <img src="catalog/view/theme/meggy/image/logo.png" alt="">
               </div>
               <div class="footer_top_logo_text">
               <span>
@@ -101,19 +102,19 @@
               <span class="footer_med_four">
                 Следите за нами
               <a href="#">
-              <img src="img/Twitter.png" alt="">
+              <img src="catalog/view/theme/meggy/image/Twitter.png" alt="">
               </a>
               <a href="#">
-              <img src="img/fb.png" alt="">
+              <img src="catalog/view/theme/meggy/image/fb.png" alt="">
               </a>
               <a href="#">
-              <img src="img/vk.png" alt="">
+              <img src="catalog/view/theme/meggy/image/vk.png" alt="">
               </a>
               <a href="#">
-              <img src="img/Odnoklasniki.png" alt="">
+              <img src="catalog/view/theme/meggy/image/Odnoklasniki.png" alt="">
               </a>
               <a href="#">
-              <img src="img/g.png" alt="">
+              <img src="catalog/view/theme/meggy/image/g.png" alt="">
               </a>
               </span>
             </div>
@@ -124,7 +125,7 @@
               </span>
               <span id="geeker">&copy Developer by «MEGGI»
               <a href="#">
-                <img src="../img/logo_little.png" alt="">
+                <img src="catalog/view/theme/meggy/image/logo_little.png" alt="">
               </a>
               </span>
             </div>
