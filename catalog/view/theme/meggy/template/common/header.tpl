@@ -41,28 +41,19 @@
   <header class="header">
       <div class="container col-xs-12">
         <div class="header_top">
-          <div class="header_logo ">
-          <?php if ($logo) { ?>
-          <a href="<?php echo $home; ?>" class="logo">
-            <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic">
-          </a>
-          <?php } else { ?>
-          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-          <?php } ?>
-          </div>
-        </div>
-        <nav>
-          <div class="header_menu hidden-xs">
+          <nav>
+          <div class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
+          <div class="header_menu">
             <ul class="menu">
               <li class="menu_item dropdown">
                 <a href="index.php?route=product/product" class="menu_link dropdown-toggle" data-toggle="dropdown">
                   <span class="menu_link_text">КАТАЛОГ</span>
                   <b class="caret"></b>
                 </a>
-                <?php if ($categories) { ?>  
+                <?php if ($categories) { ?>
                 <ul class="dropdown-menu">
                   <li>
-                    <?php foreach ($categories as $category) { ?>  
+                    <?php foreach ($categories as $category) { ?>
                     <a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
                     <?php } ?>
                   </li>
@@ -86,43 +77,59 @@
               </li>
             </ul>
           </div>
+          </div>
           </nav>
-          <div class="header_tel hidden-xs">
-            <a href="<?php echo $contact; ?>">  
+          <div class="col-xs-12 col-lg-3 col-lg-push-3">
+          <div class="header_in">
+                <ul class="header_men_in">
+                  <!--search begin-->
+                  <li class="in_item">
+                  <?php echo $search; ?>
+                  </li>
+                  <!--search end-->
+                  <div>
+                  <?php echo $currency; ?>
+                  </div>
+                  <li class="in_item">
+                     <?php if ($logged) { ?>
+                      <a href="<?php echo $text_logout; ?>" class="in_in">
+                      <span class="glyphicon glyphicon-user"></span>
+                      <span class="in_link_text"><?php echo $text_logout; ?></span>
+                      </a>
+                     <?php } else { ?>
+                      <a href="<?php echo $login; ?>" class="in_in">
+                      <span class="glyphicon glyphicon-user"></span>
+                      <span class="in_link_text"><?php echo $text_login; ?></span>
+                      </a>
+                     <?php } ?>
+                  </li>
+                  <!--Cart begin-->
+                  <li class="in_item">
+                 <?php echo $cart; ?>
+                  </li>
+                  <!--cart end-->
+                </ul>
+              </div>
+              </div>
+          <div class="col-xs-12 col-lg-2 col-lg-pull-2">
+          <div class="header_tel col-xs-12 col-lg-2">
+            <a href="<?php echo $contact; ?>">
             <p><?php echo $telephone; ?></p></a>
             <span id="time">Пн-Пт с 09:00 до 18:00. Сб-Вc выходной</span>
           </div>
-          <div class="header_in hidden-xs">
-            <ul class="header_men_in">
-              <!--search begin-->
-              <li class="in_item">
-              <?php echo $search; ?>
-              </li>
-              <!--search end-->
-              <div>
-              <?php echo $currency; ?>    
-              </div>
-              <li class="in_item">
-                 <?php if ($logged) { ?>
-                  <a href="<?php echo $text_logout; ?>" class="in_in">
-                  <span class="glyphicon glyphicon-user"></span>
-                  <span class="in_link_text"><?php echo $text_logout; ?></span>
-                  </a>
-                 <?php } else { ?>
-                  <a href="<?php echo $login; ?>" class="in_in">
-                  <span class="glyphicon glyphicon-user"></span>
-                  <span class="in_link_text"><?php echo $text_login; ?></span>
-                  </a>
-                 <?php } ?>
-            
-              </li>
-              <!--Cart begin-->
-              <li class="in_item">
-             <?php echo $cart; ?>
-              </li>
-              <!--cart end-->
-            </ul>
           </div>
+          <div class="col-xs-12 col-lg-2 col-lg-pull-10">
+          <div class="header_logo col-lg-2">
+          <?php if ($logo) { ?>
+          <a href="<?php echo $home; ?>" class="logo">
+            <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic">
+          </a>
+          <?php } else { ?>
+          <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
+          <?php } ?>
+          </div>
+          </div>
+        </div>
         </div>
       </div>
     </header>
