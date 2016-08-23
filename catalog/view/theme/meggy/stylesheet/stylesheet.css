@@ -220,8 +220,11 @@ search_bottom span{
 	background-color: white;
 	display: block;
 	border: 0px;
+	margin-left: 5px;
+}
 
-	//color: red;
+.currency-select:hover{
+	color: rgb(243, 129, 129);
 }
 
 /*#content{

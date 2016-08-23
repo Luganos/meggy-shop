@@ -1,5 +1,5 @@
 <footer>
-  <div class="container col-xs-12">
+  <div id="footer" class="container col-xs-12">
       <div class="row">
         <div class="news">
           <div class="news_text">
@@ -7,7 +7,7 @@
             <div class="input">
               <form action="">
               <input type="text" name="email"  class="input_text" placeholder="     ВВЕДИТЕ E-MAIL" >
-              <input type="submit" value="" class="submit_email">
+              <input id="submit" type="submit" value="" class="submit_email">
             </form>
             </div>
           </div>
