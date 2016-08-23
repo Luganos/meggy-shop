@@ -56,3 +56,5 @@
 2016-08-17 11:14:09 - PHP Notice:  Undefined variable: footer in C:\Apache\meggy-shop.com\www\catalog\view\theme\default\template\common\baner.tpl on line 25
 2016-08-17 11:14:09 - PHP Notice:  Error: Could not load template C:/Apache/meggy-shop.com/www/catalog/view/theme/default/template/common/baner_1.tpl! in C:\Apache\meggy-shop.com\www\system\engine\loader.php on line 86
 2016-08-19 12:06:05 - PHP Notice:  Undefined variable: currency in C:\Apache\meggy-shop.com\www\catalog\view\theme\meggy\template\common\currency.tpl on line 6
+2016-08-23 13:51:38 - PHP Notice:  Undefined variable: modules in C:\Apache\meggy-shop.com\www\catalog\view\theme\meggy\template\common\footer.tpl on line 4
+2016-08-23 14:13:43 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Apache\meggy-shop.com\www\system\library\mail.php on line 164

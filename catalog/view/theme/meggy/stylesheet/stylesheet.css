@@ -848,9 +848,14 @@ footer {
 }
 
 input::-webkit-input-placeholder {
-	font-size: 0.7em;
-	color: black;
+	font-size: 2.7em;
+	color: black !important;
 }
+
+.input_text{
+	color:black;
+}
+
 
 .submit_email{
 	background-color: rgb(255, 221, 221);
