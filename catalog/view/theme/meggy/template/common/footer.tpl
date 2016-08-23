@@ -80,7 +80,7 @@
                 ОПТОВЫЙ ОТДЕЛ
               </span>
               <span class="footer_med_two">
-                +38 (050) 307-78-64
+                <?php echo $telephone; ?>
               </span>
               <span class="footer_med_three">
                 Пн-Пт с 09:00 до 18:00. Сб-Вc выходной
