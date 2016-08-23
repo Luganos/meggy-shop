@@ -32,17 +32,15 @@
               <div class="line">
               </div>
               <div class="footer_top_ul">
+              <?php if ($categories) { ?>
                 <ul>
-                  <li><a href="#">блузки и рубашки</a></li>
-                  <li><a href="#">гольфы</a></li>
-                  <li><a href="#">жакеты</a></li>
-                  <li><a href="#">куртки</a></li>
-                  <li><a href="#">свитера, свитшоты</a></li>
-                  <li><a href="#">шорты</a></li>
-                  <li><a href="#">футболки, майки</a></li>
-                  <li><a href="#">платья</a></li>
-                  <li><a href="#">юбки</a></li>
+                  <li>
+                    <?php foreach ($categories as $category) { ?>
+                    <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                    <?php } ?>
+                  </li>
                 </ul>
+                <?php } ?> 
               </div>
             </div>
             <div class="footer_top_work">
@@ -104,16 +102,16 @@
               <a href="https://twitter.com/">
               <img src="catalog/view/theme/meggy/image/Twitter.png" alt="">
               </a>
-              <a href="#">
+              <a href="https://www.facebook.com/?ref=logo">
               <img src="catalog/view/theme/meggy/image/fb.png" alt="">
               </a>
-              <a href="#">
+              <a href="https://vk.com/">
               <img src="catalog/view/theme/meggy/image/vk.png" alt="">
               </a>
-              <a href="#">
+              <a href="https://m.ok.ru/">
               <img src="catalog/view/theme/meggy/image/Odnoklasniki.png" alt="">
               </a>
-              <a href="#">
+              <a href="https://accounts.google.com">
               <img src="catalog/view/theme/meggy/image/g.png" alt="">
               </a>
               </span>
