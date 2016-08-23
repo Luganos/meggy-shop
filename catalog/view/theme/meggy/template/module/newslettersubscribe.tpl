@@ -21,7 +21,7 @@
 
 <div class="news">
    <div class="news_text">
-          <p><?php echo $entry_button; ?></p> 
+         <p><?php echo $entry_button; ?></p> 
          <div class="input">
               <form name="subscribe<?= $module ?>">
               <input type="email" name="subscribe_email"  class="input_text" placeholder="ВВЕДИТЕ E-MAIL" >
