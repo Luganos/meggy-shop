@@ -84,26 +84,25 @@
                 <ul class="header_men_in">
                   <!--search begin-->
                   <li id="search" class="in_item dropdown hidden-lg">
-                    <a href="#" class="dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown">
-                    <!--<b class="caret"></b>--></a>
-                    <ul class="dropdown-menu">
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог
-                        <b class="caret"></b>
-                        </a>
-                        <?php if ($categories) { ?>
-                         <ul class="dropdown-menu">
-                         <?php foreach ($categories as $category) { ?>
-                         <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-                         <?php } ?>
-                         </ul>
-                         <?php } ?>
-                      </li>
-                      <li><a href="index.php?route=information/contact">Партнерам</a></li>
-                      <li><a href="index.php?route=information/contact">Доставка и Оплата</a></li>
-                      <li><a href="index.php?route=information/contact">Контакты</a></li>
-                    </ul>
-
+                   <div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown"></button>
+                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
+                         <li class="dropdown-submenu">
+                          <a tabindex="-1" href="#">Каталог
+                          </a>
+                          <?php if ($categories) { ?>
+                           <ul class="dropdown-menu">
+                           <?php foreach ($categories as $category) { ?>
+                           <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                           <?php } ?>
+                           </ul>
+                           <?php } ?>
+                        </li>
+                        <li><a href="index.php?route=information/contact">Партнерам</a></li>
+                        <li><a href="index.php?route=information/contact">Доставка и Оплата</a></li>
+                        <li><a href="index.php?route=information/contact">Контакты</a></li>
+                      </ul>
+                    </div>
                   </li>
                   <li class="in_item">
                     <span id="search_smoll" class="glyphicon glyphicon-search hidden-sm hidden-xs"></span>
@@ -154,13 +153,12 @@
           <?php } ?>
           </div>
           </div>
+          <a href="#">
           <div class="search_bottom col-xs-12 hidden-lg hidden-md">
             <p>Поиск</p>
-            <a href="#">
               <span class="glyphicon glyphicon-search"></span>
-            </a>
-
           </div>
+          </a>
         </div>
         </div>
       </div>
