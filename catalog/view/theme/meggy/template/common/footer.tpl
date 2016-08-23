@@ -28,7 +28,7 @@
                     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
                     <?php } ?>
                 </ul>
-                <?php } ?> 
+                <?php } ?>
               </div>
             </div>
             <div class="footer_top_work">
