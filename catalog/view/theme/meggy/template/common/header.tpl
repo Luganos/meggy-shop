@@ -97,7 +97,7 @@
                          <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
                          <?php } ?>
                          </ul>
-                         <?php } ?>  
+                         <?php } ?>
                       </li>
                       <li><a href="index.php?route=information/contact">Партнерам</a></li>
                       <li><a href="index.php?route=information/contact">Доставка и Оплата</a></li>
@@ -155,7 +155,11 @@
           </div>
           </div>
           <div class="search_bottom col-xs-12 hidden-lg hidden-md">
-            <span>Поиск</span>
+            <p>Поиск</p>
+            <a href="#">
+              <span class="glyphicon glyphicon-search"></span>
+            </a>
+
           </div>
         </div>
         </div>
