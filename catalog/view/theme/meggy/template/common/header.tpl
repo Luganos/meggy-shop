@@ -89,16 +89,19 @@
                     <ul class="dropdown-menu">
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог
-                    <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Каталог1</a></li>
-                          <li><a href="#">Каталог2</a></li>
-                          <li><a href="#">Каталог3</a></li>
-                        </ul>
+                        <b class="caret"></b>
+                        </a>
+                        <?php if ($categories) { ?>
+                         <ul class="dropdown-menu">
+                         <?php foreach ($categories as $category) { ?>
+                         <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
+                         <?php } ?>
+                         </ul>
+                         <?php } ?>  
                       </li>
-                      <li><a href="#">Партнерам</a></li>
-                      <li><a href="#">Доставка и Оплата</a></li>
-                      <li><a href="#">Контакты</a></li>
+                      <li><a href="index.php?route=information/contact">Партнерам</a></li>
+                      <li><a href="index.php?route=information/contact">Доставка и Оплата</a></li>
+                      <li><a href="index.php?route=information/contact">Контакты</a></li>
                     </ul>
 
                   </li>
