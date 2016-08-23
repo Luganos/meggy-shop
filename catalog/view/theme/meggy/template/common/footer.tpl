@@ -34,11 +34,9 @@
               <div class="footer_top_ul">
               <?php if ($categories) { ?>
                 <ul>
-                  <li>
                     <?php foreach ($categories as $category) { ?>
                     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
                     <?php } ?>
-                  </li>
                 </ul>
                 <?php } ?> 
               </div>
