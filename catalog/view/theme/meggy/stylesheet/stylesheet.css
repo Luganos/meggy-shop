@@ -856,7 +856,6 @@ input::-webkit-input-placeholder {
 	color:black;
 }
 
-
 .submit_email{
 	background-color: rgb(255, 221, 221);
 	background-image: url('../img/tr.png');
@@ -2114,6 +2113,10 @@ div.required .control-label:before {
 	line-height: 18px;
 	padding: 10px 35px;
 	text-shadow: 0 1px 0 #FFF;
+}
+
+#tr{
+	color:red;
 }
 /* cart */
 #cart {
