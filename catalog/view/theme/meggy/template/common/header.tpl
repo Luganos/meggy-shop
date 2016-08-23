@@ -42,7 +42,7 @@
       <div class="container col-xs-12">
         <div class="header_top">
           <nav>
-          <div class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
+          <div id="header_menu" class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
           <div class="header_menu hidden-sm hidden-xs">
             <ul class="menu">
               <li class="menu_item dropdown">
@@ -85,7 +85,7 @@
                   <!--search begin-->
                   <li id="search" class="in_item dropdown hidden-lg">
                    <div class="btn-group">
-                      <button type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown"></button>
+                      <button id="button_catalog" type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown"></button>
                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
                          <li class="dropdown-submenu">
                           <a tabindex="-1" href="#">Каталог
@@ -117,7 +117,7 @@
                   <li id="login" class="in_item">
                      <?php if ($logged) { ?>
                       <a href="<?php echo $text_logout; ?>" class="in_in">
-                      <span class="glyphicon glyphicon-user"></span>
+                      <span id="login" class="glyphicon glyphicon-user"></span>
                       <span class="in_link_text"><?php echo $text_logout; ?></span>
                       </a>
                      <?php } else { ?>
@@ -128,7 +128,7 @@
                      <?php } ?>
                   </li>
                   <!--Cart begin-->
-                  <li class="in_item">
+                  <li id="cart" class="in_item">
                  <?php echo $cart; ?>
                   </li>
                   <!--cart end-->
