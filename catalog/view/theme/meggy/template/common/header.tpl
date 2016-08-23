@@ -85,7 +85,7 @@
                   <!--search begin-->
                   <li id="search" class="in_item dropdown hidden-lg">
                     <a href="#" class="dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown">
-                    <b class="caret"></b></a>
+                    <!--<b class="caret"></b>--></a>
                     <ul class="dropdown-menu">
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Каталог
@@ -133,14 +133,14 @@
                 </ul>
               </div>
               </div>
-          <div class="col-xs-12 col-lg-2 col-lg-pull-2">
+          <div id="tel" class="col-xs-12 col-lg-2 col-lg-pull-2">
           <div class="header_tel col-xs-12 col-lg-2">
             <a href="<?php echo $contact; ?>">
             <p><?php echo $telephone; ?></p></a>
             <span id="time">Пн-Пт с 09:00 до 18:00. Сб-Вc выходной</span>
           </div>
           </div>
-          <div class="col-xs-12 col-lg-2 col-lg-pull-10">
+          <div id="logo" class="col-xs-12 col-lg-2 col-lg-pull-10">
           <div class="header_logo col-lg-2">
           <?php if ($logo) { ?>
           <a href="<?php echo $home; ?>" class="logo">

@@ -40,8 +40,13 @@ header{
 	margin-top: 26px;
 }
 
+@media screen and (min-width: 770px) {
+	.header_top{
+		width: 90% !important;
+	}
+}
+
 .header_top{
-	width: 85% !important;
 	margin: 0 auto;
 	&:after, &:before{
 		display: table;
@@ -97,7 +102,7 @@ header{
 }
 
 .header_in{
-	width: 110% !important;
+	width: 120% !important;
 	margin-top: 10px;
 	margin-bottom: 0px;
 }
@@ -188,12 +193,58 @@ header{
 }
 
 @media screen and (max-width: 769px) {
+	.header_top{
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+
 	#content{
 	margin-top: 230px !important;
 	}
-	.in_item{
-		margin-left: 50px;
+	.container{
+		padding: 0px;
+	}
 
+	.header_top{
+		width: 100% !important;
+	}
+
+	.in_item{
+		margin-left: 12%;
+	}
+	.header_logo img{
+		margin-left: 335%;
+	}
+	.header_tel{
+		border-bottom: 1px solid rgb(196, 199, 203);
+		width: 100%;
+	}
+	.header_tel p{
+		text-align: center;
+	}
+
+	#time{
+		margin-left: 40%;
+	}
+
+	#tel{
+		width: 120%;
+		padding-left: 0px;
+	}
+
+	#logo{
+		width: 120%;
+		padding-left: 0px;
+		border-bottom: 1px solid rgb(196, 199, 203);
+	}
+
+	.header_in{
+		border-bottom: 1px solid rgb(196, 199, 203);
+		width: 100%;
+	}
+
+	.header_logo{
+		margin-left: 0px;
 	}
 
 }
@@ -204,8 +255,8 @@ header{
 	}
 	.in_item{
 		margin-left: 10px;
-
 	}
+
 
 }
 
