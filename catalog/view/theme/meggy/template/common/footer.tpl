@@ -1,17 +1,7 @@
 <footer>
   <div id="footer" class="container col-xs-12">
       <div class="row">
-        <div class="news">
-          <div class="news_text">
-            <p>ПОДПИШИСЬ НА НОВОСТИ</p>
-            <div class="input">
-              <form action="">
-              <input type="text" name="email"  class="input_text" placeholder="     ВВЕДИТЕ E-MAIL" >
-              <input id="submit" type="submit" value="" class="submit_email">
-            </form>
-            </div>
-          </div>
-        </div>
+       <?php echo $modules['newslettersubscribe']; ?>
         <div class="footer_text">
           <div class="footer_top">
             <div class="footer_top_logo">

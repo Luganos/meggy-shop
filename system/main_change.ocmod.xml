@@ -177,6 +177,48 @@ public function __construct($route, $args = array()) {
          </add>  
       </operation>
   </file>
-  
-              
-</modification>
+   <file path="catalog/model/design/layout.php">
+      <operation>
+	 <search regex ="true" quote = "true">
+             
+    <![CDATA[~public function getLayoutModules($layout_id, $position) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout_module WHERE layout_id = '" . (int)$layout_id . "' AND position = '" . $this->db->escape($position) . "' ORDER BY sort_order");
+		
+		return $query->rows;
+	}~]]>
+         </search>
+         <add position ="replace">
+        <![CDATA[
+        
+             public function getLayoutModules($layout_id, $position) {
+		   $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout_module WHERE layout_id = '" . (int)$layout_id . "' AND position = '" . $this->db->escape($position) . "' ORDER BY sort_order");
+		
+		   return $query->rows;
+	     }
+
+
+             public function getLayoutForAllPages(){
+                        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "layout WHERE name like '%all pages%' LIMIT 1");
+
+                         if ($query->num_rows) {
+                             return $query->row['layout_id'];
+                         } else {
+                              return 0;
+                         }
+                 }]]>
+         </add>  
+      </operation>
+  </file>
+   <file path="catalog/controller/common/footer.php">
+      <operation>
+	 <search>
+         <![CDATA[$this->load->model('catalog/product');]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$data['modules'] = array();
+                
+                   $data['modules']['newslettersubscribe'] = $this->load->controller('module/newslettersubscribe');]]>
+         </add>  
+      </operation>
+  </file>
+  </modification>
