@@ -49,9 +49,9 @@
               </div>
               <div class="footer_top_ul">
                 <ul>
-                  <li><a href="#">оплата и доставка</a></li>
-                  <li><a href="#">партнерам</a></li>
-                  <li><a href="#">дилерам</a></li>
+                  <li><a href="index.php?route=information/information&information_id=6">оплата и доставка</a></li>
+                  <li><a href="index.php?route=information/information&information_id=11">партнерам</a></li>
+                  <li><a href="index.php?route=information/information&information_id=12">дилерам</a></li>
                 </ul>
               </div>
             </div>
@@ -63,12 +63,12 @@
               </div>
               <div class="footer_top_ul">
                 <ul>
-                  <li><a href="#">о нас</a></li>
-                  <li><a href="#">статьи</a></li>
-                  <li><a href="#">акции</a></li>
-                  <li><a href="#">новости</a></li>
-                  <li><a href="#">контакты</a></li>
-                  <li><a href="#">задать вопрос</a></li>
+                  <li><a href="index.php?route=information/information&information_id=4">о нас</a></li>
+                  <li><a href="index.php?route=information/information&information_id=7">статьи</a></li>
+                  <li><a href="index.php?route=information/information&information_id=8">акции</a></li>
+                  <li><a href="index.php?route=information/information&information_id=9">новости</a></li>
+                  <li><a href="index.php?route=information/contact">контакты</a></li>
+                  <li><a href="index.php?route=information/information&information_id=10">задать вопрос</a></li>
                 </ul>
               </div>
             </div>
