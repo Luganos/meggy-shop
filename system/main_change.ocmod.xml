@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+  <name>Main modification for shop</name>
+  <code>default</code>
+  <version>1.0</version>
+  <author>Lugano</author>
+  <link></link>
+  <file path="system/engine/action.php">
+      <operation>
+	 <search regex ="true" quote = "true">
+  <![CDATA[~public function __construct($route, $args = array()) {
+		$parts = explode('/', str_replace('../', '', (string)$route));
+
+		// Break apart the route
+		while ($parts) {
+			$file = DIR_APPLICATION . 'controller/' . implode('/', $parts) . '.php';
+
+			if (is_file($file)) {
+				$this->file = $file;
+
+				$this->class = 'Controller' . preg_replace('/[^a-zA-Z0-9]/', '', implode('/', $parts));
+				break;
+			} else {
+				$this->method = array_pop($parts);
+			}
+		}
+
+		if (!$this->method) {
+			$this->method = 'index';
+		}
+
+		$this->args = $args;
+	}~]]>	
+     </search>
+     <add position ="replace"><![CDATA[
+public function __construct($route, $args = array()) {
+                    
+                static $recursion = TRUE;
+              
+		$parts = explode('/', str_replace('../', '', (string)$route));
+
+		// Break apart the route
+		while ($parts) {
+                    
+                        if ($recursion) {
+                    
+                             $file = DIR_APPLICATION . 'controller/' . implode('/', $parts) . '.php';
+                        } else {
+                            
+                             $file = $_SERVER['DOCUMENT_ROOT'] . '/admin/controller/' . implode('/', $parts) . '.php';
+                        }
+			
+
+			if (is_file($file)) {
+				$this->file = $file;
+
+				$this->class = 'Controller' . preg_replace('/[^a-zA-Z0-9]/', '', implode('/', $parts));
+				break;
+			} else {
+				$this->method = array_pop($parts);
+			}
+		}
+
+		if (!$this->method) {
+			$this->method = 'index';
+		}
+                
+                if (empty($this->file) || empty($this->class) || empty($this->method)) {
+                    
+                    if ($recursion) {
+                       $recursion = FALSE;
+                       Action::__construct($route, $args);  
+                    }
+                   
+                   
+                }
+
+		$this->args = $args;
+	}]]>
+
+                               
+       </add>
+    </operation>
+  </file>
+  <file path="catalog/controller/account/newsletter.php">
+      <operation>
+	 <search regex ="true" quote = "true">
+         <![CDATA[~if (!$this->customer->isLogged()) {
+			$this->session->data['redirect'] = $this->url->link('account/newsletter', '', 'SSL');
+
+			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
+		}~]]>   
+         </search> 
+         <add position ="replace">
+         <![CDATA[ $this->session->data['redirect'] = $this->url->link('account/newsletter', '', 'SSL');]]> 
+         </add>
+    </operation>
+  </file>
+  <file path="catalog/controller/common/footer.php">
+      <operation>
+	 <search regex ="true" quote = "true">
+         <![CDATA[~foreach ($this->model_catalog_information->getInformations() as $result) {
+			if ($result['bottom']) {
+				$data['informations'][] = array(
+					'title' => $result['title'],
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				);
+			}
+		}~]]>
+         </search> 
+         <add position ="replace">
+         <![CDATA[foreach ($this->model_catalog_information->getInformations() as $result) {
+			if ($result['bottom']) {
+				$data['informations'][$result['title']] = array(
+					'title' => $result['title'],
+					'href'  => $this->url->link('information/information', 'information_id=' . $result['information_id'])
+				);
+			}
+		}]]>
+       </add>
+    </operation>
+  </file>
+  <file path="catalog/controller/module/filter.php">
+      <operation>
+	 <search>
+             <![CDATA[$data['action'] = str_replace('&amp;', '&', $this->url->link('product/category', 'path=' . $this->request->get['path'] . $url));]]>
+         </search>
+         <add position ="after">
+             <![CDATA[$this->document->addScript('catalog/view/javascript/customer-filter.js');]]>
+         </add>  
+      </operation>
+  </file>      
+</modification>

@@ -193,7 +193,7 @@ class ControllerExtensionModification extends Controller {
 									// If file contents is not already in the modification array we need to load it.
 									if (!isset($modification[$key])) {
 										$content = file_get_contents($file);
-
+                                                                                
 										$modification[$key] = preg_replace('~\r?\n~', "\n", $content);
 										$original[$key] = preg_replace('~\r?\n~', "\n", $content);
 
@@ -324,12 +324,19 @@ class ControllerExtensionModification extends Controller {
 										} else {
 											$search = trim($operation->getElementsByTagName('search')->item(0)->textContent);
 											$limit = $operation->getElementsByTagName('search')->item(0)->getAttribute('limit');
+											$quote = $operation->getElementsByTagName('search')->item(0)->getAttribute('quote');
 											$replace = trim($operation->getElementsByTagName('add')->item(0)->textContent);
 
 											// Limit
 											if (!$limit) {
 												$limit = -1;
 											}
+											
+											
+                                            // Quote
+                                            if ($quote=='true') {
+                                                $search = preg_quote($search);
+                                            }
 
 											// Log
 											$match = array();
@@ -352,7 +359,15 @@ class ControllerExtensionModification extends Controller {
 											}
 
 											// Make the modification
-											$modification[$key] = preg_replace($search, $replace, $modification[$key], $limit);
+                                                                                        $test = preg_replace($search, $replace, $modification[$key], $limit);
+                                                                                        
+                                                                                        if ($test == NULL) {
+                                                                                            die('It is trouble');
+                                                                                        }
+                                                                                        
+											$modification[$key] = $test;
+                                                                                        
+                                                                                       
 										}
 
 										if (!$status) {
