@@ -28,6 +28,8 @@ class ControllerModuleNewslettersubscribe extends Controller {
     $data['option_fields6'] = $this->config->get('newslettersubscribe_option_field6');
 
     $data['text_subscribe'] = $this->language->get('text_subscribe');
+    
+    $data['logged'] = $this->customer->isLogged(); 
 
     $data['module'] = $module++;
 
