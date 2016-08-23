@@ -136,8 +136,8 @@ public function __construct($route, $args = array()) {
              <![CDATA[$data['text_newsletter'] = $this->language->get('text_newsletter');]]>
          </search>
          <add position ="after">
-             
-       <![CDATA[// Menu
+         <![CDATA[$data['telephone'] = $this->config->get('config_telephone');
+                // Menu
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');
