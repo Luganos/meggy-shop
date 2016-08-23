@@ -23,6 +23,7 @@
    <div class="news_text">
          <?php if ($option_unsubscribe && $logged) { ?>
           <p><?php echo $entry_unbutton; ?></p>
+          <p><?php echo $entry_button; ?></p>
          <?php } else { ?>
          <p><?php echo $entry_button; ?></p>
          <?php } ?>  
@@ -30,7 +31,8 @@
               <form name="subscribe<?= $module ?>">
               <input type="email" name="subscribe_email"  class="input_text" placeholder="ВВЕДИТЕ E-MAIL" >
               <?php if ($option_unsubscribe && $logged) { ?>
-              <input id="submit"  onclick="email_unsubscribe<?= $module ?>()" value="" class="submit_email">    
+              <input id="submit"  onclick="email_unsubscribe<?= $module ?>()" value="" class="submit_email"> 
+              <input id="submit"  onclick="email_subscribe<?= $module ?>()" value="" class="submit_email">
               <?php } else { ?>
               <input id="submit"  onclick="email_subscribe<?= $module ?>()" value="" class="submit_email">
               <?php } ?> 
