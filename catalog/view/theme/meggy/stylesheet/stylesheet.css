@@ -33,7 +33,7 @@ body{
 header{
 	background: rgb(255,255,255);
 	width: 100%;
-	height: 104px;
+	//height: 104px;
 }
 
 .container{
@@ -311,7 +311,6 @@ header{
 		margin-left: 10px;
 	}
 
-
 }
 
 search_bottom span{
@@ -339,16 +338,11 @@ search_bottom span{
 }
 
 /*-------Большой слайдер--------*/
-@media screen and (max-width: 1200px) {
-	.carusel_big{
-	margin-top: 135px !important;
-	}
-
-}
 
 .carusel_big{
 	width: 100%;
-	height: 694px;
+	height: 100% !important;
+	margin-bottom: 2%;
 
 }
 
@@ -371,13 +365,74 @@ search_bottom span{
 	margin-right: 80%;
 }
 
+
+@media screen and (max-width: 1900px) {
+	.carusel_big{
+	margin-top: 80px !important;
+	height: 60% !important;
+	}
+
+}
+
+@media screen and (max-width: 1400px) {
+	.carusel_big{
+	margin-top: 100px !important;
+	height: 55% !important;
+	}
+	.hot_price{
+		margin-top: 0px !important;
+	}
+
+}
+
+@media screen and (max-width: 1200px) {
+	.carusel_big{
+	margin-top: 214px !important;
+	height: 55% !important;
+	}
+	.hot_price{
+		margin-top: 0px !important;
+	}
+
+}
+
+@media screen and (max-width: 1000px) {
+	.carusel_big{
+		height: 45% !important;
+	}
+}
+
+@media screen and (max-width: 880px) {
+	.carusel_big{
+		height: 45% !important;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.carusel_big{
+		height: 40% !important;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.carusel_big{
+		height: 15% !important;
+		margin-top: 232px !important;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.carusel_big{
+		height: 5% !important;
+	}
+}
 /*------end--------*/
 
-.content{
+/*.content{
 	width: 50%;
 	height: 100%;
 	margin-left: 25%;
-}
+}*/
 
 
 /*-------Сезонные предложения--------*/
@@ -429,7 +484,7 @@ search_bottom span{
 	height: 360px;
 	margin-top: -180px;
 	margin-left: -42%;
-	background-image: url('../img/Layer_15.png');
+	background-image: url('../image/Layer_15.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	display: table;
@@ -470,7 +525,7 @@ position: relative;
 	height: 360px;
 	margin-top: -180px;
 	margin-left: -42%;
-	background-image: url('../img/Layer_22.png');
+	background-image: url('../image/Layer_22.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	display: table;
@@ -516,7 +571,7 @@ position: relative;
 	height: 360px;
 	margin-top: -180px;
 	margin-left: -42%;
-	background-image: url('../img/Layer_24.png');
+	background-image: url('../image/Layer_24.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	display: table;
@@ -881,7 +936,7 @@ input::-webkit-input-placeholder {
 	width: 100%;
 	height: 691px;
 	background-color: rgb(28, 30, 42);
-	background-image: url(../image/logo2.png);
+	background-image: url('../image/logo2.png');
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -1141,7 +1196,7 @@ input::-webkit-input-placeholder {
 	width: 100%;
 	height: 691px;
 	background-color: rgb(28, 30, 42);
-	background-image: url(../image/logo2.png);
+	background-image: url('../image/logo2.png');
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -1406,7 +1461,7 @@ input::-webkit-input-placeholder {
 	width: 100%;
 	height: 691px;
 	background-color: rgb(28, 30, 42);
-	background-image: url(../image/logo2.png);
+	background-image: url('../image/logo2.png');
 	background-repeat: no-repeat;
 	background-position: center;
 
@@ -1601,7 +1656,6 @@ input::-webkit-input-placeholder {
 
 }
 
-
 /*------default-----*/
 
 * {
@@ -1639,7 +1693,7 @@ body{
 header{
 	background: rgb(255,255,255);
 	width: 100%;
-	height: 104px;
+	height: 1px;
 }
 
 .container{
@@ -1850,7 +1904,7 @@ header{
 	height: 360px;
 	margin-top: -180px;
 	margin-left: -42%;
-	background-image: url('../img/Layer_15.png');
+	background-image: url('../image/Layer_15.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	display: table;
@@ -1891,7 +1945,7 @@ position: relative;
 	height: 360px;
 	margin-top: -180px;
 	margin-left: -42%;
-	background-image: url('../img/Layer_22.png');
+	background-image: url('../image/Layer_22.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	display: table;
@@ -1937,7 +1991,7 @@ position: relative;
 	height: 360px;
 	margin-top: -180px;
 	margin-left: -42%;
-	background-image: url('../img/Layer_24.png');
+	background-image: url('../image/Layer_24.png');
 	background-position: center;
 	background-repeat: no-repeat;
 	display: table;
