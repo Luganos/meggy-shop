@@ -4,7 +4,7 @@
        <?php echo $modules['newslettersubscribe']; ?>
         <div class="footer_text">
           <div class="footer_top">
-            <div class="footer_top_logo">
+            <div class="footer_top_logo hidden-md hidden-sm hidden-xs">
             <?php if ($logo) { ?>
             <div class="footer_top_logo_img">
             <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic">

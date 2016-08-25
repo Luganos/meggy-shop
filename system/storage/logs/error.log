@@ -58,3 +58,10 @@
 2016-08-19 12:06:05 - PHP Notice:  Undefined variable: currency in C:\Apache\meggy-shop.com\www\catalog\view\theme\meggy\template\common\currency.tpl on line 6
 2016-08-23 13:51:38 - PHP Notice:  Undefined variable: modules in C:\Apache\meggy-shop.com\www\catalog\view\theme\meggy\template\common\footer.tpl on line 4
 2016-08-23 14:13:43 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\Apache\meggy-shop.com\www\system\library\mail.php on line 164
+2016-08-25 7:05:32 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
+2016-08-25 7:09:04 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
+2016-08-25 7:09:11 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
+2016-08-25 7:10:01 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
+2016-08-25 7:11:30 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
+2016-08-25 7:15:13 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
+2016-08-25 7:20:03 - PHP Notice:  Undefined variable: server in C:\Apache\meggy-shop.com\www\system\storage\modification\catalog\controller\common\footer.php on line 10
