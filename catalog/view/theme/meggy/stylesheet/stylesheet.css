@@ -826,6 +826,12 @@ position: relative;
 	font-weight: bold;
 }
 
+@media screen and (max-width: 855px) {
+	.inet_shop{
+	margin-left: 5%;
+	}
+}
+
 .inet_shop_text_left{
 	width: 50%;
 	margin-top: 1%;
@@ -835,12 +841,30 @@ position: relative;
 	float: left;
 }
 
+
+
+@media screen and (max-width: 855px) {
+	.inet_shop_text_left{
+	width: 95% !important;
+	margin-left: 5%;
+	}
+}
+
 .inet_shop_text_right{
 	width: 45%;
 	margin-top: 1%;
 	font-size: 0.875em;
-	float: left;
+
 }
+
+@media screen and (max-width: 855px) {
+	.inet_shop_text_right{
+	clear: both;
+	width: 95% !important;
+	margin-left: 5%;
+	}
+}
+
 
 .inet_shop_text_right_li{
 	margin-left: 15%;
@@ -861,6 +885,14 @@ position: relative;
 	font-size: 1.25em;
 	color: black;
 	text-decoration: underline;
+}
+
+@media screen and (max-width: 855px) {
+	.inet_shop_text-center{
+	width: 95% !important;
+	margin-left: 5% !important;
+
+	}
 }
 
 
@@ -2266,22 +2298,7 @@ position: relative;
 	margin-left: 15%;
 }
 
-.inet_shop_text-center{
-	clear: both;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-}
 
-.inet_shop_text-center{
-	font-size: 0.875em;
-}
-
-.inet_shop_text-center span{
-	font-size: 1.25em;
-	color: black;
-	text-decoration: underline;
-}
 
 
 /*-------footer--------*/
@@ -2341,6 +2358,7 @@ input::-webkit-input-placeholder {
 
 #submit{
 	margin-top: 0px;
+	cursor:pointer;
 }
 
 .submit_email{
