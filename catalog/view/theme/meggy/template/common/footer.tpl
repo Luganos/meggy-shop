@@ -10,17 +10,17 @@
             <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic">
             <div class="footer_top_logo_text">
               <span>
-              <a href="<?php echo $home; ?>"><?php echo $name; ?></a>  
+              <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
               </span>
             </div>
             </div>
             <?php } else { ?>
             <div class="footer_top_logo_text">
               <span>
-                  <a href="<?php echo $home; ?>"><?php echo $name; ?></a> 
+                  <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
               </span>
             </div>
-            <?php } ?>  
+            <?php } ?>
             </div>
             <div class="footer_top_katalog">
               <div class="footer_top_one">
