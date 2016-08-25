@@ -873,8 +873,11 @@ position: relative;
 .inet_shop_text-center{
 	clear: both;
 	width: 80%;
+	height: 50px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: 125px;
+	//overflow: hidden;
 }
 
 .inet_shop_text-center{

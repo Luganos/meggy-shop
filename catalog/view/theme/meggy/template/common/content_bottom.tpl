@@ -23,9 +23,9 @@
                         </ul>
                     </div>
                     <div class="inet_shop_text-center">
-                        <p>Всю женскую одежду, представленную на нашем сайте, мы шьем сами. Практически весь ассортимент - это эксклюзивные модели, дизайн которых разрабатывается на фабрике &laquoMEGGI&raquo </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores ad facilis similique quae quaerat iste obcaecati expedita ipsam suscipit, accusantium ex laborum sunt minus rerum? Optio, dicta, dolorem. Ex, officia?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam eius ut asperiores impedit nostrum, dolorum optio delectus minima debitis amet! Ipsam nostrum iusto quasi officiis nulla voluptates, minima quaerat nemo?Всю женскую одежду, представленную на нашем сайте, мы шьем сами. Практически весь ассортимент - это эксклюзивные модели, дизайн которых разрабатывается на фабрике &laquoMEGGI&raquo </p>
                         <a href="#">
-                        <span>Читать далее &gt&gt</span>
+                        <span id="read_more">Читать далее &gt&gt</span>
                         </a>
 
                     </div>

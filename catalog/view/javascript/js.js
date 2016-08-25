@@ -5,6 +5,9 @@ $(function() {
 $('#search_smoll').on("mouseover", function(){console.log("tr")});
 $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
 
+$('#read_more').on("click", function(){$(".inet_shop_text-center").css({"height": "200px"});});
+
+
 
 });
 
