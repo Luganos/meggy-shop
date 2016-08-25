@@ -29,7 +29,7 @@
               <div class="line">
               </div>
               <div class="footer_top_ul">
-              <?php echo "132"; if ($categories) { ?>
+              <?php if ($categories) { ?>
                 <ul>
                     <?php foreach ($categories as $category) { ?>
                     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
@@ -93,7 +93,7 @@
             </div>
             <div class="footer_med_net">
               <span class="footer_med_four">
-                Следите за нами
+                Следите за нами!
               <a href="https://twitter.com/">
               <img src="catalog/view/theme/meggy/image/Twitter.png" alt="">
               </a>
