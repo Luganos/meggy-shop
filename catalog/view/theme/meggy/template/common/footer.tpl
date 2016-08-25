@@ -93,7 +93,7 @@
             </div>
             <div class="footer_med_net">
               <span class="footer_med_four">
-                Следите за нами
+                Следите за нами!
               <a href="https://twitter.com/">
               <img src="catalog/view/theme/meggy/image/Twitter.png" alt="">
               </a>

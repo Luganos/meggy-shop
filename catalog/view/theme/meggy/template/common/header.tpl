@@ -43,7 +43,7 @@
         <div class="header_top">
           <nav>
           <div id="header_menu" class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
-          <div class="header_menu hidden-sm hidden-xs">
+          <div class="header_menu hidden-md hidden-sm hidden-xs">
             <ul class="menu">
               <li class="menu_item dropdown">
                 <a href="index.php?route=product/product" class="menu_link dropdown-toggle" data-toggle="dropdown">
