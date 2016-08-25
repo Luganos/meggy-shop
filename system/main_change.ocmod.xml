@@ -221,4 +221,21 @@ public function __construct($route, $args = array()) {
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/common/footer.php">
+      <operation>
+	 <search>
+         <![CDATA[$data['text_information'] = $this->language->get('text_information');]]>
+         </search>
+         <add position ="after">
+         <![CDATA[if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
+			$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
+		} else {
+			$data['logo'] = '';
+		}
+                
+                $data['home'] = $this->url->link('common/home');
+                $data['name'] = $this->config->get('config_name');]]>
+         </add>  
+      </operation>
+  </file>
   </modification>

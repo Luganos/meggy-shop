@@ -5,15 +5,22 @@
         <div class="footer_text">
           <div class="footer_top">
             <div class="footer_top_logo">
-              <div class="footer_top_logo_img">
-             <!-- <img src="www\catalog\view\theme\meggy\image\logo.png" alt="">-->
-              <img src="catalog/view/theme/meggy/image/logo.png" alt="">
-              </div>
-              <div class="footer_top_logo_text">
+            <?php if ($logo) { ?>
+            <div class="footer_top_logo_img">
+            <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic">
+            <div class="footer_top_logo_text">
               <span>
-                Интернет-магазин «MEGGI» - специализированный онлайн магазин по оптовой продаже женской одежды собственного производства.
+              <a href="<?php echo $home; ?>"><?php echo $name; ?></a>  
               </span>
-              </div>
+            </div>
+            </div>
+            <?php } else { ?>
+            <div class="footer_top_logo_text">
+              <span>
+                  <a href="<?php echo $home; ?>"><?php echo $name; ?></a> 
+              </span>
+            </div>
+            <?php } ?>  
             </div>
             <div class="footer_top_katalog">
               <div class="footer_top_one">
