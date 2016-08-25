@@ -29,7 +29,7 @@
               <div class="line">
               </div>
               <div class="footer_top_ul">
-              <?php if ($categories) { ?>
+              <?php echo "22"; if ($categories) { ?>
                 <ul>
                     <?php foreach ($categories as $category) { ?>
                     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
