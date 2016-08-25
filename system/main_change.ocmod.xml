@@ -244,4 +244,78 @@ public function __construct($route, $args = array()) {
          </add>  
       </operation>
   </file>
+    <file path="catalog/controller/common/home.php">
+      <operation>
+	 <search>
+         <![CDATA[$data['header'] = $this->load->controller('common/header');]]>
+         </search>
+         <add position ="after">
+         <![CDATA[$this->load->model('extension/module');
+                
+                $this->load->model('design/layout');
+                
+                $layout_id = 1;
+                
+		$modules = $this->model_design_layout->getLayoutModules($layout_id, 'content_top');
+
+		foreach ($modules as $module) {
+			$part = explode('.', $module['code']);
+
+			
+			if (isset($part[0]) && $this->config->get($part[0] . '_status') && preg_match('/^meggy_slideshow/', $part[0])){
+                            
+                           $data['meggy_slideshow'] = $this->load->controller('module/' . $part[0]); 
+                        }
+
+			if (isset($part[1])) {
+				$setting_info = $this->model_extension_module->getModule($part[1]);
+
+			
+				if ($setting_info && $setting_info['status'] && preg_match('/^meggy_slideshow/', $part[0])) {
+                                    
+                                    $data['meggy_slideshow'] = $this->load->controller('module/' . $part[0], $setting_info); 
+                                }
+			}
+		}]]>
+         </add>  
+      </operation>
+  </file>
+  <file path="catalog/controller/common/content_top.php">
+      <operation>
+	 <search regex ="true" quote = "true">
+	 <![CDATA[~foreach ($modules as $module) {
+			$part = explode('.', $module['code']);
+
+			if (isset($part[0]) && $this->config->get($part[0] . '_status')) {
+				$data['modules'][] = $this->load->controller('module/' . $part[0]);
+			} 
+                            
+			if (isset($part[1])) {
+				$setting_info = $this->model_extension_module->getModule($part[1]);
+
+				if ($setting_info && $setting_info['status']) {
+					$data['modules'][] = $this->load->controller('module/' . $part[0], $setting_info);
+				} 
+			}
+		}~]]>
+         </search>
+         <add position ="replace">
+         <![CDATA[foreach ($modules as $module) {
+			$part = explode('.', $module['code']);
+
+			if (isset($part[0]) && $this->config->get($part[0] . '_status') && !preg_match('/^meggy_slideshow/', $part[0])) {
+				$data['modules'][] = $this->load->controller('module/' . $part[0]);
+			} 
+                            
+			if (isset($part[1])) {
+				$setting_info = $this->model_extension_module->getModule($part[1]);
+
+				if ($setting_info && $setting_info['status'] && !preg_match('/^meggy_slideshow/', $part[0])) {
+					$data['modules'][] = $this->load->controller('module/' . $part[0], $setting_info);
+				} 
+			}
+		}]]>
+         </add>  
+      </operation>
+  </file> 
   </modification>
