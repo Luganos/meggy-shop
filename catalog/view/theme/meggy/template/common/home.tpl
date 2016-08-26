@@ -13,6 +13,144 @@
     <?php echo $column_right; ?></div>
 </div>
 <div class="main_bottom_text">
+<div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+                    <div class="sl_slide_1">
+                            <div class="sl_img_1">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 3096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">523 UAH</p>
+                                <p class="sl_price_right">457 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_1">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_2">
+                            <div class="sl_img_2">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 4096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">437 UAH</p>
+                                <p class="sl_price_right">364 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_2">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_3">
+                            <div class="sl_img_3">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 5096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">968 UAH</p>
+                                <p class="sl_price_right">721 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_3">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_4">
+                            <div class="sl_img_4">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 6096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">499 UAH</p>
+                                <p class="sl_price_right">364 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_4">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_1">
+                            <div class="sl_img_1">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 3096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">523 UAH</p>
+                                <p class="sl_price_right">457 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_1">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_2">
+                            <div class="sl_img_2">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 3096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">523 UAH</p>
+                                <p class="sl_price_right">457 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_2">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_3">
+                            <div class="sl_img_3">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 3096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">523 UAH</p>
+                                <p class="sl_price_right">457 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_3">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                    <div class="sl_slide_4">
+                            <div class="sl_img_4">
+                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                            </div>
+                            <span class="sl_text">
+                                <p class="sl_id">Платьу - 3096-1</p>
+                            </span>
+                            <span class="sl_text">
+                                <p class="sl_price_left">523 UAH</p>
+                                <p class="sl_price_right">457 UAH</p>
+                            </span>
+                            <a href="#">
+                                <div class="sl_kor_4">
+                                    <span class="sl_kor_text">в корзину</span>
+                                </div>
+                            </a>
+                    </div>
+                </div>
     <div class="main_big_text_top">
                     <div class="inet_shop">
                         <span>Интернет-магазин &laquoMEGGI&raquo</span>

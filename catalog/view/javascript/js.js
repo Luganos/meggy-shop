@@ -14,6 +14,7 @@ $('#read_more').on("click", function(){$(".inet_shop_text-center p")
 $('#read_more').on("click", function(){$(".inet_shop_text-center")
     .animate({"height": "+=150px"});});
 
+
 });
 
 $('.sl').slick();
@@ -23,7 +24,7 @@ $('.sl_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "v
 $('.sl_slide_1').on("mouseout", function(){$(".sl_kor_1").css({"visibility": "hidden"});});
 
 $('.sl_img_1').on("mouseover", function(){$(".sl_img_1").css({"background-size": "180%"});});
-$('.sl_img_1').on("mouseout", function(){$(".sl_img_1").css({"background-size": "90%"});});
+$('.sl_img_1').on("mouseout", function(){$(".sl_img_1").css({"background-size": "70%"});});
 
 
 $('.sl_slide_2').on("mouseover", function(){$(".sl_kor_2").css({"visibility": "visible"});});
