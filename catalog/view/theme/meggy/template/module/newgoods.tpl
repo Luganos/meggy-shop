@@ -21,7 +21,7 @@
              </li>
           </ul>
      </div>   
-      <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+      <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">
@@ -29,7 +29,11 @@
                    <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new">
                </div>
                <span class="sl_text">
-                    <p class="sl_id"><?php echo $product['name']; ?></p>
+                    <p class="sl_id"><?php echo $product['name']; ?> 
+                     <?php if ($product['sku']) { ?>   
+                     - <?php echo $product['sku']; ?>
+                     <?php } ?> 
+                     </p>
                </span>
                <?php if ($product['price']) { ?>
                <span class="sl_text">

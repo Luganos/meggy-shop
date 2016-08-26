@@ -80,6 +80,7 @@ class ControllerModuleNewgoods extends Controller {
 				'rating'       => $rating,
 				'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+                                'sku'          => $result['sku'],
 			);
                         $count++;
 		}
