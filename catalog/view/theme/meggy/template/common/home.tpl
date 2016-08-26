@@ -13,6 +13,7 @@
     <?php echo $column_right; ?></div>
 </div>
 <div class="main_bottom_text">
+<!--Begin slider-->
 <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
                     <div class="sl_slide_1">
                             <div class="sl_img_1">
@@ -151,6 +152,7 @@
                             </a>
                     </div>
                 </div>
+         <!--End slider-->           
     <div class="main_big_text_top">
                     <div class="inet_shop">
                         <span>Интернет-магазин &laquoMEGGI&raquo</span>
