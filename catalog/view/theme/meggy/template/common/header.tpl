@@ -85,7 +85,7 @@
                   <!--search begin-->
                   <li id="search" class="in_item dropdown hidden-lg">
                    <div class="btn-group">
-                      <button id="button_catalog" type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-align-justify" data-toggle="dropdown"></button>
+                      <button id="button_catalog" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="catalog/view/theme/meggy/image/menu_smoll.png" alt=""></button>
                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
                          <li class="dropdown-submenu">
                           <a tabindex="-1" href="#">Каталог

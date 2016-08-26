@@ -820,6 +820,12 @@ position: relative;
 	margin-top: 6.25%;
 }
 
+@media screen and (max-width: 855px) {
+	.main_bottom_text{
+	width: 100% !important;
+	}
+}
+
 .inet_shop span{
 	color: black;
 	font-size: 1.375em;
@@ -878,6 +884,11 @@ position: relative;
 	margin-right: auto;
 	margin-bottom: 125px;
 	//overflow: hidden;
+}
+
+.inet_shop_text-center p{
+	height: 50px;
+	overflow: hidden;
 }
 
 .inet_shop_text-center{
@@ -3349,7 +3360,10 @@ h2.price {
 #button_catalog{
 	border: 0px;
 	padding:0px;
-	font-size: 1.5em;
+	font-size: 0.1em;
+	background-color: red !important;
+	color:white !important;
+	background-image: linear-gradient(#ffffff, #ffffff);
 }
 
  .dropdown-submenu {
