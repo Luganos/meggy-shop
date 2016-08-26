@@ -154,7 +154,7 @@
                     </div>
                     <div class="sl_slide_4">
                             <div class="sl_img_4">
-                                <img src="catalog/view/theme/meggy/image/new.png" alt="" class="sl_img_new">
+                                <img src="img/new.png" alt="" class="sl_img_new">
                             </div>
                             <span class="sl_text">
                                 <p class="sl_id">Платьу - 3096-1</p>
