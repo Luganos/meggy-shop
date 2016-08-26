@@ -13,6 +13,25 @@
     <?php echo $column_right; ?></div>
 </div>
 <div class="main_bottom_text">
+<div class="menu_main">
+                    <ul class="ww">
+                        <li class="menu_main_text">
+                            <a href="#">
+                                <span>новинки</span>
+                            </a>
+                        </li>
+                        <li class="menu_main_text">
+                            <a href="#">
+                                <span>акции</span>
+                            </a>
+                        </li>
+                        <li class="menu_main_text">
+                            <a href="#">
+                                <span>со скидкой -10%</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
                     <div class="sl_slide_1">
                             <div class="sl_img_1">
