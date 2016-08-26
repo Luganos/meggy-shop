@@ -1881,6 +1881,10 @@ header{
 	margin-right: 80%;
 }
 
+.glyphicon {
+	display: none;
+}
+
 /*--------------*/
 
 .content{

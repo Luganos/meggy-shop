@@ -24,7 +24,7 @@
                      <?php } ?>
                      </div>
                      <?php if (count($banners) > 1) { ?>
-                        <?php for ($l = 1; $l <= count($banners) - 1; $l++) { ?> 
+                        <?php for ($l = 1; $l <= count($banners) - 1; $l++) { ?>
                             <div class="item">
                             <?php if ($banners[$l]['link']) { ?>
                             <a href="<?php echo $banners[$l]['link']; ?>">
@@ -41,7 +41,7 @@
                    </div>
                    <!--Стрелки переключения слайда-->
                     <a href="#carousel" class="left carousel-control" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
+                   <!-- <span class="glyphicon glyphicon-chevron-left"></span>-->
                         <img src="catalog/view/theme/meggy/image/tr_carusel_big_left.png" alt="" class="tr_carusel_big_left">
                     </a>
                     <a href="#carousel" class="right carousel-control"data-slide="next">
