@@ -40,11 +40,16 @@
                      <?php } ?>
                    </div>
                    <!--Стрелки переключения слайда-->
+<<<<<<< HEAD
                     <a href="#carousel" class="left carousel-control" data-slide="prev">
                    <!-- <span class="glyphicon glyphicon-chevron-left"></span>-->
+=======
+                   <a href="#carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+>>>>>>> 51f514aaf4b60cf7e813d1e1d76c6d899c4adc3f
                         <img src="catalog/view/theme/meggy/image/tr_carusel_big_left.png" alt="" class="tr_carusel_big_left">
-                    </a>
-                    <a href="#carousel" class="right carousel-control"data-slide="next">
+                    <!--</a>-->
+                    <a href="#carousel" data-slide="next">
                         <img src="catalog/view/theme/meggy/image/tr_carusel_big_right.png" alt="" class="tr_carusel_big_right">
                     </a>
                 </div>
