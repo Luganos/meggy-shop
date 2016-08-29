@@ -2508,13 +2508,34 @@ input::-webkit-input-placeholder {
 #border_table td{
 	border: 0px;
 	border-bottom: 1px solid rgb(192,195,198);
-//	float: left;
+
+}
+
+#border_table_height tr{
+	height: 200px;
+}
+
+#border_table_height td{
+	vertical-align: middle;
 }
 
 .text-center{
 	text-align: left;
 }
 
+.text-left a{
+	color:black;
+}
+
+.text-right{
+	color:rgb(243,129,129);
+	font-size:1.5em;
+	text-align: left;
+}
+
+.del{
+	margin-left: 30px;
+}
 
 
 
