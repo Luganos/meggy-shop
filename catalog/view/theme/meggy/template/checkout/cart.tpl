@@ -45,9 +45,9 @@
       </h1>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
-          <table class="table table-bordered">
+          <table id="border_table" class="table table-bordered">
             <thead>
-              <tr>
+              <tr class="tr">
                 <td class="text-center"><?php echo $column_image; ?></td>
                 <td class="text-left"><?php echo $column_name; ?></td>
                 <td class="text-left"><?php echo $column_model; ?></td>
@@ -56,7 +56,7 @@
                 <td class="text-right"><?php echo $column_total; ?></td>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="border_table">
               <?php foreach ($products as $product) { ?>
               <tr>
                 <td class="text-center"><?php if ($product['thumb']) { ?>

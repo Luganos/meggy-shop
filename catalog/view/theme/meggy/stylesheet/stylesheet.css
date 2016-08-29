@@ -2486,6 +2486,38 @@ input::-webkit-input-placeholder {
 	color: black;
 }
 
+.tr{
+	background-color: rgb(248,248,248);
+	color:rgb(107,116,124);
+}
+
+.tr td{
+	color:rgb(107,116,124);
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	border: 0px solid red;
+
+}
+
+#border_table{
+	border: 0px;
+}
+
+#border_table td{
+	border: 0px;
+	border-bottom: 1px solid rgb(192,195,198);
+//	float: left;
+}
+
+.text-center{
+	text-align: left;
+}
+
+
+
+
 
 /*------default-----*/
 
