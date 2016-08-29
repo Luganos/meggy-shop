@@ -132,7 +132,6 @@ header{
 	//visibility: hidden;
 }
 
-
 .in_item span{
 	margin-left: 2%;
 }
@@ -1935,6 +1934,13 @@ position: relative;
 	width: 100%;
 	height: 100%;
 }
+
+/*-------Меню main--------*/
+#banner0{
+	margin-top: 150px;
+}
+
+/*------END-Меню main--------*/
 
 /*-------Меню main--------*/
 
