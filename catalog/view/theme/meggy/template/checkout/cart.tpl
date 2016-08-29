@@ -1,10 +1,19 @@
 <?php echo $header; ?>
+<!--<div class="cart_main">
+
+</div>-->
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
+  <div class="contetn_main">
+    <div class="text_top">
+      <p>Корзина покупателя</p>
+    </div>
+  </div>
+
   <?php if ($attention) { ?>
   <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $attention; ?>
     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -122,4 +131,5 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+
 <?php echo $footer; ?>
