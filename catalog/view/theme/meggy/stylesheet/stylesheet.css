@@ -2548,6 +2548,29 @@ input::-webkit-input-placeholder {
 	border: 0px solid red;
 }
 
+.container_button_text{
+	width: 220px;
+	height: 40px;
+	padding: 4px;
+	background-color:rgb(106, 175, 186);
+	border: 5px solid rgb(180,210,218);
+	display: table-cell;
+}
+
+.button_text{
+		padding-left: 35px;
+		padding-right: 22px;
+		padding-top: 9px;
+		color:white;
+		//border: 1px solid rgb(180,210,218);
+	}
+.button_text span{
+		color:white;
+		text-transform: uppercase;
+		font-weight: bold;
+
+	}
+
 }
 
 @media (max-width: 855px) {
@@ -2608,6 +2631,8 @@ input::-webkit-input-placeholder {
 	margin-left: 30px;
 	}
 }
+
+.button_text{}
 
 
 
