@@ -6,12 +6,12 @@
           <ul class="ww">
              <li class="menu_main_text">
                 <a href="index.php?route=common/home" >
-                  <span class="news_bottom">новинки</span>
+                  <span>новинки</span>
                 </a>
              </li>
              <li class="menu_main_text">
                 <a href="index.php?route=common/home&actions_goods=1">
-                   <span>акции</span>
+                   <span class="news_bottom">акции</span>
                 </a>
              </li>
              <li class="menu_main_text">

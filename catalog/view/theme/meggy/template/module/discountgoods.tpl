@@ -6,7 +6,7 @@
           <ul class="ww">
              <li class="menu_main_text">
                 <a href="index.php?route=common/home" >
-                  <span class="news_bottom">новинки</span>
+                  <span>новинки</span>
                 </a>
              </li>
              <li class="menu_main_text">
@@ -16,7 +16,7 @@
              </li>
              <li class="menu_main_text">
                 <a href="index.php?route=common/home&actions_goods=2">
-                  <span>со скидкой -10%</span>
+                  <span class="news_bottom">со скидкой -10%</span>
                 </a>
              </li>
           </ul>

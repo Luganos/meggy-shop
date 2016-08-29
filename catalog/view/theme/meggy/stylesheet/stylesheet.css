@@ -644,6 +644,12 @@ position: relative;
 	display: inline;
 }
 
+.news_bottom{
+	color: rgb(107, 116, 124);
+	border-bottom: 4px solid rgb(147, 190, 202);
+	padding-bottom: 1.3%;
+}
+
 .menu_main_text span{
 	font-size: 1.25em;
 	text-transform: uppercase;
@@ -652,11 +658,12 @@ position: relative;
 	margin-right: 5.2%;
 }
 
+/*
 .menu_main_text:hover span{
 	color: rgb(107, 116, 124);
 	border-bottom: 4px solid rgb(147, 190, 202);
 	padding-bottom: 1.3%;
-}
+}*/
 
 
 /*-------slaider small--------*/
@@ -1974,12 +1981,13 @@ position: relative;
 
 .sl_img_1{
 	//background-image: url('../image/Layer_16.png');
-	background-size: 90%;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
+	//background-size: 90%;
+	//background-repeat: no-repeat;
+	//background-position: center;
+	width: 222px;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_2{
@@ -1990,6 +1998,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_3{
@@ -2000,6 +2009,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_4{
@@ -2010,6 +2020,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_5{
@@ -2020,6 +2031,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_6{
@@ -2030,6 +2042,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_7{
@@ -2040,6 +2053,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_8{
@@ -2050,6 +2064,7 @@ position: relative;
 	width: 100%;
 	height: 337px; !important;
 	margin-bottom: 15%;
+	overflow:hidden;
 }
 
 .sl_img_1:hover,.sl_img_2:hover,.sl_img_3:hover,.sl_img_4:hover,
@@ -2064,21 +2079,19 @@ position: relative;
 
 
 .sl_img_new{
-	max-width: 220px;
-	max-height: 332px;
+	//max-width: 220px;
+	//max-height: 332px;
 	width: 100%;
 	height: 100%;
 }
 
 .sl_img_new:hover{
-	width: 120%;
-	height: 120%;
+	width: 140%;
+	height: 140%;
 }
 
 .sl_img{
 	width: 90%;
-	max-width: 220px;
-	max-height: 332px;
 }
 
 .sl_id{
@@ -2093,6 +2106,14 @@ position: relative;
 }
 
 .sl_price_left{
+	display: inline;
+	text-align: center;
+	color: rgb(180, 180, 180);
+	font-size: 0.875em;
+	text-decoration: none;
+}
+
+.sl_price_center{
 	display: inline;
 	text-align: center;
 	color: rgb(180, 180, 180);

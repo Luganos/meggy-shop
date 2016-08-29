@@ -28,9 +28,8 @@ $('.sl').slick({
 $('.sl_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});
 $('.sl_slide_1').on("mouseout", function(){$(".sl_kor_1").css({"visibility": "hidden"});});
 
-$('.sl_img_1').on("mouseover", function(){$(".sl_img_new").css({"width": "120%"});});
-$('.sl_img_1').on("mouseout", function(){$(".sl_img_new").css({"width": "80%"});});
-
+$('.sl_img_1').on("mouseover", function(){$(".sl_img_1").css({"background-size": "180%"});});
+$('.sl_img_1').on("mouseout", function(){$(".sl_img_1").css({"background-size": "90%"});});
 
 $('.sl_slide_2').on("mouseover", function(){$(".sl_kor_2").css({"visibility": "visible"});});
 $('.sl_slide_2').on("mouseout", function(){$(".sl_kor_2").css({"visibility": "hidden"});});
