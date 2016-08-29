@@ -17,14 +17,19 @@ $('#read_more').on("click", function(){$(".inet_shop_text-center")
 
 });
 
-$('.sl').slick();
+$('.sl').slick({
+    /*vertical:true,
+    verticalSwiping:true,
+    autoplaySpeed:3000,
+    autoplay:true*/
+});
 
 
 $('.sl_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});
 $('.sl_slide_1').on("mouseout", function(){$(".sl_kor_1").css({"visibility": "hidden"});});
 
 $('.sl_img_1').on("mouseover", function(){$(".sl_img_1").css({"background-size": "180%"});});
-$('.sl_img_1').on("mouseout", function(){$(".sl_img_1").css({"background-size": "70%"});});
+$('.sl_img_1').on("mouseout", function(){$(".sl_img_1").css({"background-size": "90%"});});
 
 
 $('.sl_slide_2').on("mouseover", function(){$(".sl_kor_2").css({"visibility": "visible"});});
