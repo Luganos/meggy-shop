@@ -664,6 +664,9 @@ position: relative;
 
 
 .main_big_text_top{
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 6.25%;
 }
 
@@ -2061,14 +2064,21 @@ position: relative;
 
 
 .sl_img_new{
-	//position: relative;
-	//top: 2%;
+	max-width: 220px;
+	max-height: 332px;
 	width: 100%;
 	height: 100%;
 }
 
+.sl_img_new:hover{
+	width: 120%;
+	height: 120%;
+}
+
 .sl_img{
 	width: 90%;
+	max-width: 220px;
+	max-height: 332px;
 }
 
 .sl_id{
@@ -2099,7 +2109,8 @@ position: relative;
 
 }
 
-.sl_kor_1,.sl_kor_2,.sl_kor_3,.sl_kor_4{
+.sl_kor_1,.sl_kor_2,.sl_kor_3,.sl_kor_4,.sl_kor_5,.sl_kor_6,.sl_kor_7,
+.sl_kor_8,.sl_kor_9,.sl_kor_10{
 	width: 100%;
 	height: 40px;
 	margin-top: 30px;
@@ -2109,7 +2120,8 @@ position: relative;
 	visibility: hidden;
 }
 
-.sl_kor_1 span,.sl_kor_2 span,.sl_kor_3 span,.sl_kor_4 span{
+.sl_kor_1 span,.sl_kor_2 span,.sl_kor_3 span,.sl_kor_4 span,.sl_kor_5 span
+,.sl_kor_6 span,.sl_kor_7 span,.sl_kor_8 span,.sl_kor_9 span,.sl_kor_10 span{
 	vertical-align:middle;
 	display:table-cell;
 	text-align:center;
@@ -2126,6 +2138,7 @@ position: relative;
 }
 
 .main_big_text_top{
+	width: 50%;
 	margin-top: 6.25%;
 }
 
@@ -2588,6 +2601,7 @@ div.required .control-label:before {
 }
 
 #tr{
+	padding-left:0px;
 	color:red;
 }
 /* cart */
