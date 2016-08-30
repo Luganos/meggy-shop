@@ -1,12 +1,14 @@
-console.log("OK2")
+console.log("OK2");
+
+function scrollDown(){
+    scrollBy(0,1850);
+};
 
 $(function() {
 
+
 $('#search_smoll').on("mouseover", function(){console.log("tr")});
 $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
-
-/*$('#read_more').on("click", function(){$(".inet_shop_text-center")
-    .css({"height": "200px"});});*/
 
 $('#read_more').on("click", function(){$(".inet_shop_text-center p")
     .animate({"height": "+=150px"});});

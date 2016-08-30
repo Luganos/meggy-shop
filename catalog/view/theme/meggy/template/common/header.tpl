@@ -40,6 +40,7 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
+
   <header class="header">
       <div class="container col-xs-12">
         <div class="header_top">
@@ -166,3 +167,8 @@
       </div>
     </header>
 	<div></div>
+    <script>
+    //window.onload = scrollDown();
+//scrollDown();
+//window.onload = scrollDown;
+    </script>

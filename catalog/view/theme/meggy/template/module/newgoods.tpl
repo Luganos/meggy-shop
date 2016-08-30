@@ -55,4 +55,11 @@
         </div>
          <!--End slider-->
    </div>
+   <script>
+$(function() {
+    scrollDown(){
+        scrollBy();
+    };
+}
+   </script>
    <?php } ?>
