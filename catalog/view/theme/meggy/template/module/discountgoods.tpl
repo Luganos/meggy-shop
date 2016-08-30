@@ -56,3 +56,6 @@
          <!--End slider-->
    </div>
    <?php } ?>
+   <script type ="text/javascript">
+       var discountgoods = true;
+   </script> 

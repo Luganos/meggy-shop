@@ -63,3 +63,6 @@ $(function() {
 }
    </script>
    <?php } ?>
+   <script type ="text/javascript">
+       var newgoods = true;
+   </script>    

@@ -38,11 +38,11 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?>
+      <!--<h1><?php /*echo $heading_title;*/ ?>
         <?php if ($weight) { ?>
-        &nbsp;(<?php echo $weight; ?>)
+        &nbsp;(<?php /*echo $weight;*/ ?>)
         <?php } ?>
-      </h1>
+      </h1>-->
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
         <div class="table-responsive">
           <table id="border_table" class="table table-bordered">
@@ -110,12 +110,16 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
           <table class="table table-bordered">
-            <?php foreach ($totals as $total) { ?>
+            
+            <!--<tr>
+              <td class="text-right"><strong><?php echo $totals[1]['title']; ?>:</strong></td>
+              <td class="text-right"><?php echo $totals[1]['text']; ?></td>
+            </tr>-->
             <tr>
-              <td id="q" class="text-right"><strong><?php echo $total['title']; ?>:</strong></td>
-              <td id="q" class="text-right"><?php echo $total['text']; ?></td>
+              <td class="text-right"><strong><?php echo $totals[4]['title']; ?>:</strong></td>
+              <td class="text-right"><?php echo $totals[4]['text']; ?></td>
             </tr>
-            <?php } ?>
+     
           </table>
         </div>
       </div>
