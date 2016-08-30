@@ -2635,6 +2635,35 @@ input::-webkit-input-placeholder {
 .button_text{}
 
 /*-------small_cart_main-------*/
+
+.button_smaoll_cart{
+	width: 140px;
+	background: white;
+	border:0px;
+}
+
+.button_smaoll_cart i{
+	color: rgb(168,184,188);
+}
+
+.text-right{
+		font-size: 1em;
+	}
+
+.text-right strong{
+		font-size: 1em;
+	}
+
+@media (max-width: 850px) {
+	.text-right strong{
+		font-size: 1em;
+	}
+	.text-right{
+		font-size: 1em;
+	}
+}
+
+
 /*
 .text-right strong{
 	color:blue;
