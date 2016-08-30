@@ -1,8 +1,17 @@
 console.log("OK2");
 
+function scrollDown2() {
+    var scrollHeight = document.documentElement.scrollHeight;
+    var clientHeight = document.documentElement.clientHeight;
+    scrollHeight = Math.max(scrollHeight, clientHeight);
+    window.scrollTo(0, scrollHeight - document.documentElement.clientHeight)
+}
+
 function scrollDown(){
-    scrollBy(0,1850);
+    scrollBy(0,1800);
 };
+
+window.onload = scrollDown;
 
 $(function() {
 

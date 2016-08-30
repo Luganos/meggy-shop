@@ -2116,7 +2116,7 @@ position: relative;
 	text-align: center;
 	color: rgb(180, 180, 180);
 	font-size: 0.875em;
-	text-decoration: none;
+	text-decoration: line-through;
 }
 
 .sl_price_center{
@@ -2124,7 +2124,7 @@ position: relative;
 	text-align: center;
 	color: rgb(180, 180, 180);
 	font-size: 0.875em;
-	text-decoration: line-through;
+	//text-decoration: line-through;
 }
 
 .sl_price_right{

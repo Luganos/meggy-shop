@@ -167,8 +167,3 @@
       </div>
     </header>
 	<div></div>
-    <script>
-    //window.onload = scrollDown();
-//scrollDown();
-//window.onload = scrollDown;
-    </script>

@@ -57,12 +57,7 @@
    </div>
    <script>
 $(function() {
-    scrollDown(){
-        scrollBy();
-    };
+scrollDown();
 }
    </script>
    <?php } ?>
-   <script type ="text/javascript">
-       var newgoods = true;
-   </script>    
