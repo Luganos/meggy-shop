@@ -173,9 +173,9 @@
       </div>
     </header>
 	<div></div>
-     <script>
+ <script type =text/javascript>
 $(function() {
-test2();
+//test2();
 
-};
+})
    </script>
