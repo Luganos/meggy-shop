@@ -218,9 +218,11 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$data['totals'] = array();
+                        
+                        $i = 1;
 
 			foreach ($total_data as $total) {
-				$data['totals'][] = array(
+				$data['totals'][$i++] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'])
 				);
