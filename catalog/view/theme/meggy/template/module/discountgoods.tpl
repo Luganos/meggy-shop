@@ -61,6 +61,3 @@ scrollDown();
 }
    </script>
    <?php } ?>
-   <script type ="text/javascript">
-       var discountgoods = true;
-   </script>
