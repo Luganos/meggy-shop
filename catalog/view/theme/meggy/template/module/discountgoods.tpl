@@ -55,7 +55,12 @@
         </div>
          <!--End slider-->
    </div>
+      <script>
+$(function() {
+scrollDown();
+}
+   </script>
    <?php } ?>
    <script type ="text/javascript">
        var discountgoods = true;
-   </script> 
+   </script>
