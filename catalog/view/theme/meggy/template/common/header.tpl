@@ -123,12 +123,12 @@
                       <span id="login" class="glyphicon glyphicon-user">
                         <img src="catalog/view/theme/meggy/image/face.png" alt="">
                       </span>
-                      <span class="in_link_text"><?php echo $text_logout; ?></span>
+                      <span class="in_link_text hidden-xs "><?php echo $text_logout; ?></span>
                       </a>
                      <?php } else { ?>
                       <a href="<?php echo $login; ?>" class="in_in">
                       <span><img src="catalog/view/theme/meggy/image/face.png" alt=""></span>
-                      <span class="in_link_text"><?php echo $text_login; ?>
+                      <span class="in_link_text hidden-xs hidden-sm"><?php echo $text_login; ?>
                       </span>
                       </a>
                      <?php } ?>
