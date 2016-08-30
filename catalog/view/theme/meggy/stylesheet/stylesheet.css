@@ -2478,6 +2478,7 @@ input::-webkit-input-placeholder {
 
 /*-------cart_main-------*/
 
+@media (min-width: 855px) {
 .text_top{
 	margin-top:85px;
 	margin-bottom: 50px;
@@ -2535,8 +2536,103 @@ input::-webkit-input-placeholder {
 
 .del{
 	margin-left: 30px;
+	}
+.table-bordered {
+	border: 0px solid red;
+}
+.table-bordered tr {
+	border: 0px solid red;
 }
 
+#q{
+	border: 0px solid red;
+}
+
+.container_button_text{
+	width: 220px;
+	height: 40px;
+	padding: 4px;
+	background-color:rgb(106, 175, 186);
+	border: 5px solid rgb(180,210,218);
+	display: table-cell;
+}
+
+.button_text{
+		padding-left: 35px;
+		padding-right: 22px;
+		padding-top: 9px;
+		color:white;
+		//border: 1px solid rgb(180,210,218);
+	}
+.button_text span{
+		color:white;
+		text-transform: uppercase;
+		font-weight: bold;
+
+	}
+
+}
+
+@media (max-width: 855px) {
+	.text_top{
+	font-size: 1.5em;
+	font-weight: bold;
+	color: black;
+}
+
+.tr{
+	background-color: rgb(248,248,248);
+	color:rgb(107,116,124);
+}
+
+.tr td{
+	color:rgb(107,116,124);
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: left;
+	border: 0px solid red;
+
+}
+
+#border_table{
+	border: 0px;
+}
+
+#border_table td{
+	border: 0px;
+	border-bottom: 1px solid rgb(192,195,198);
+
+}
+
+#border_table_height tr{
+	height: 200px;
+}
+
+#border_table_height td{
+	vertical-align: middle;
+}
+
+.text-center{
+	text-align: left;
+}
+
+.text-left a{
+	color:black;
+}
+
+.text-right{
+	color:rgb(243,129,129);
+	font-size:1.5em;
+	text-align: left;
+}
+
+.del{
+	margin-left: 30px;
+	}
+}
+
+.button_text{}
 
 
 
