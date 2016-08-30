@@ -55,9 +55,9 @@
         </div>
          <!--End slider-->
    </div>
-      <script>
+<script type =text/javascript>
 $(function() {
 scrollDown();
-}
+})
    </script>
    <?php } ?>

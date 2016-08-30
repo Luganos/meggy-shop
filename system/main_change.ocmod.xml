@@ -324,10 +324,23 @@ public function __construct($route, $args = array()) {
          <![CDATA[$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));]]>
          </search>
          <add position ="replace">
-          <![CDATA[$data['text_items'] = sprintf($this->currency->format($total));]]>
+          <![CDATA[$data['text_items'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));]]>
          </add>  
       </operation>
   </file>
- 
- 
+  <file path="catalog/controller/checkout/cart.php">
+      <operation>
+	 <search>
+         <![CDATA[$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
+  
+  
+  
+  
+ 
