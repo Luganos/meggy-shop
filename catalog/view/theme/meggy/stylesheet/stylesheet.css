@@ -460,8 +460,9 @@ search_bottom span{
  	width: 33%;
 	height: 400px;
 	float: left;
-
 }
+
+
 
 .kant:hover{
 	border: 3px solid rgb(247, 167, 167);
@@ -1764,8 +1765,18 @@ header{
  	width: 33%;
 	height: 400px;
 	float: left;
-
 }
+
+@media (max-width: 855px) {
+	.kant{
+	margin-left:34%;
+	//margin-right: 25%;
+	clear: both !important;
+	}
+}
+
+
+
 
 .kant:hover{
 	border: 3px solid rgb(247, 167, 167);
