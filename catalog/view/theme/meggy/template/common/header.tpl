@@ -120,13 +120,16 @@
                   <li id="login" class="in_item">
                      <?php if ($logged) { ?>
                       <a href="<?php echo $text_logout; ?>" class="in_in">
-                      <span id="login" class="glyphicon glyphicon-user"></span>
+                      <span id="login" class="glyphicon glyphicon-user">
+                        <img src="catalog/view/theme/meggy/image/face.png" alt="">
+                      </span>
                       <span class="in_link_text"><?php echo $text_logout; ?></span>
                       </a>
                      <?php } else { ?>
                       <a href="<?php echo $login; ?>" class="in_in">
-                      <span class="glyphicon glyphicon-user"></span>
-                      <span class="in_link_text"><?php echo $text_login; ?></span>
+                      <span><img src="catalog/view/theme/meggy/image/face.png" alt=""></span>
+                      <span class="in_link_text"><?php echo $text_login; ?>
+                      </span>
                       </a>
                      <?php } ?>
                   </li>
