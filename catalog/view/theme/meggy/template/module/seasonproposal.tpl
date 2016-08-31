@@ -1,3 +1,4 @@
+
 <!--<div class="hot_price">
                     <span>сезонные предложения</span>
                 </div>
@@ -40,11 +41,12 @@
                 </div>
                 <div class="line_bottom">
                 </div>-->
-
+<!--
 <?php if (count($banners) > 0) { ?>
+
 <div class="carusel_big">
                 <div id="carousel" class="carousel slide">
-                   <!--Индикаторы слайдов-->
+
                    <ol class="carousel-indicators">
                      <?php if (count($banners) > 1) { ?>
                      <li class="active" data-target="#carousel" data-slide-to="0"></li>
@@ -81,7 +83,7 @@
                          <?php } ?>
                      <?php } ?>
                    </div>
-                   <!--Стрелки переключения слайда-->
+
                    <a href="#carousel" class="left carousel-control" data-slide="prev">
                         <img src="catalog/view/theme/meggy/image/tr_carusel_big_left.png" alt="" class="tr_carusel_big_left">
                     </a>
@@ -90,6 +92,6 @@
                     </a>
                 </div>
             </div>
-       <?php } ?>
+       <?php } ?>-->
 
 
