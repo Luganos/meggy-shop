@@ -1,6 +1,6 @@
 <div class="baner_all">
     <div class="baner_one">
-        <img src="catalog/view/theme/meggy/image/Layer_15.png" alt="">
+        <img src="catalog/view/theme/meggy/image/Layer_16.png" alt="">
     </div>
     <div class="baner_two">
         <img src="catalog/view/theme/meggy/image/Layer_16.png" alt="">
