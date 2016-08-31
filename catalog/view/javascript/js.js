@@ -1,17 +1,30 @@
 console.log("OK2");
+var width = document.documentElement.clientWidth;
+console.log(width);
+var teg = [];
+teg = document.getElementById('srcoll');
+var r = teg.hasAttribute('data-slick');
+console.log(teg);
+console.log(r);
+
+if(width < 769){
+    console.log("small");
+}
+else{
+    console.log("big");
+}
 
 function scrollDown2() {
     var scrollHeight = document.documentElement.scrollHeight;
     var clientHeight = document.documentElement.clientHeight;
     scrollHeight = Math.max(scrollHeight, clientHeight);
     window.scrollTo(0, scrollHeight - document.documentElement.clientHeight)
-}
-
+};
+/*
 function scrollDown(){
     scrollBy(0,0);
-};
+};*/
 
-window.onload = scrollDown;
 
 $(function() {
 

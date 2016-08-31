@@ -1,4 +1,4 @@
-
+<?php $a = 3?>
    <?php $size = count($products); ?>
    <?php if ($size > 0) { ?>
    <div class="main_bottom_text">
@@ -21,7 +21,7 @@
              </li>
           </ul>
      </div>
-      <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+      <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">
@@ -57,7 +57,7 @@
    </div>
 <script type =text/javascript>
 $(function() {
-scrollDown();
+scrollDown_home();
 })
    </script>
    <?php } ?>
