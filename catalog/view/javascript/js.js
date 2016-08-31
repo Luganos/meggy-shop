@@ -1,18 +1,34 @@
 console.log("OK2");
 var width = document.documentElement.clientWidth;
 console.log(width);
-var teg = [];
+/*var teg = [];
 teg = document.getElementById('srcoll');
 var r = teg.hasAttribute('data-slick');
+var e = teg.getAttribute('data-slick');
+teg.setAttribute('data-slick','{"slidesToShow": 4, "slidesToScroll": 1}')
 console.log(teg);
 console.log(r);
-
-if(width < 769){
+console.log(e);*/
+/*------adoptiv slaider-----*/
+if(width < 371){
     console.log("small");
+    teg = document.getElementById('srcoll');
+    teg.setAttribute('data-slick','{"slidesToShow": 1, "slidesToScroll": 1}')
+}
+else if(width < 517){
+     teg = document.getElementById('srcoll');
+     teg.setAttribute('data-slick','{"slidesToShow": 2, "slidesToScroll": 1}')
+}
+else if(width < 837){
+     teg = document.getElementById('srcoll');
+     teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 1}')
 }
 else{
     console.log("big");
-}
+     teg = document.getElementById('srcoll');
+     teg.setAttribute('data-slick','{"slidesToShow": 4, "slidesToScroll": 1}')
+};
+
 
 function scrollDown2() {
     var scrollHeight = document.documentElement.scrollHeight;
