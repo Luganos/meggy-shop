@@ -5,6 +5,7 @@ class ControllerModuleNewgoods extends Controller {
                 static $module = 0;
                 
 		$this->load->language('module/newgoods');
+                $this->document->addScript('catalog/view/javascript/home_scroll.js');
 		
 		$data['heading_title'] = $this->language->get('heading_title');
 		

@@ -40,10 +40,6 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<script>
-  console.log("r");
-
-</script>
   <header class="header">
       <div class="container col-xs-12">
         <div class="header_top">
@@ -174,8 +170,5 @@
     </header>
 	<div></div>
  <script type =text/javascript>
-$(function() {
-//test2();
+ </script>
 
-})
-   </script>

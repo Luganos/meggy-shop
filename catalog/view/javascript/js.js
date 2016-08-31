@@ -8,7 +8,7 @@ function scrollDown2() {
 }
 
 function scrollDown(){
-    scrollBy(0,1800);
+    scrollBy(0,0);
 };
 
 window.onload = scrollDown;
