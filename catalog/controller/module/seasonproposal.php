@@ -26,10 +26,10 @@ class ControllerModuleSeasonProposal extends Controller {
 
 		$data['module'] = $module++;
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/meggy_slideshow.tpl')) {
-			return $this->load->view($this->config->get('config_template') . '/template/module/meggy_slideshow.tpl', $data);
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/seasonproposal.tpl')) {
+			return $this->load->view($this->config->get('config_template') . '/template/module/seasonproposal.tpl', $data);
 		} else {
-			return $this->load->view('default/template/module/meggy_slideshow.tpl', $data);
+			return $this->load->view('default/template/module/seasonproposal.tpl', $data);
 		}
 	}
 }
