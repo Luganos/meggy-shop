@@ -21,7 +21,7 @@
              </li>
           </ul>
      </div>
-      <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+      <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">

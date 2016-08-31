@@ -2340,7 +2340,7 @@ input::-webkit-input-placeholder {
 	width: 15%;
 	padding-top: 20px;
 	//padding-left: 20%;
-	margin-left: 40px;
+	margin-left: 50px;
 	border-bottom:2px solid rgb(198, 200, 214);
 }
 
@@ -2646,6 +2646,23 @@ input::-webkit-input-placeholder {
 .button_text{}
 
 /*-------small_cart_main-------*/
+
+.number_of_purchases{
+	display: inline;
+	min-width: 18px !important;
+	min-height: 18px !important;
+	background-color:rgb(243,129,129);
+	position: relative;
+	left: -10px;
+	color:white;
+	border-radius: 100%;
+	font-size: 1.125em;
+}
+
+.number_of_purchases span{
+	margin-left: 3%;
+	margin-right: 3%;
+}
 
 .button_smaoll_cart{
 	width: 140px;
