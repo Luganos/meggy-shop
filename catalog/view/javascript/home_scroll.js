@@ -1,3 +1,4 @@
-function scrollDown_home(){
-    scrollBy(0,900);
+function scrollHomeDown(){
+    scrollBy(0,1700);
+
 };
