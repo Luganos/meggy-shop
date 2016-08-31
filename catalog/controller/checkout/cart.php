@@ -35,7 +35,7 @@ class ControllerCheckoutCart extends Controller {
 			$data['button_remove'] = $this->language->get('button_remove');
 			$data['button_shopping'] = $this->language->get('button_shopping');
 			$data['button_checkout'] = $this->language->get('button_checkout');
-
+                        
 			if (!$this->cart->hasStock() && (!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning'))) {
 				$data['error_warning'] = $this->language->get('error_stock');
 			} elseif (isset($this->session->data['error'])) {
@@ -218,11 +218,10 @@ class ControllerCheckoutCart extends Controller {
 			}
 
 			$data['totals'] = array();
-                        
-                        $i = 1;
+                       
 
 			foreach ($total_data as $total) {
-				$data['totals'][$i++] = array(
+				$data['totals'][] = array(
 					'title' => $total['title'],
 					'text'  => $this->currency->format($total['value'])
 				);

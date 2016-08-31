@@ -116,8 +116,8 @@
               <td class="text-right"><?php echo $totals[1]['text']; ?></td>
             </tr>-->
             <tr>
-              <td class="text-right"><strong><?php echo $totals[4]['title']; ?>:</strong></td>
-              <td class="text-right"><?php echo $totals[4]['text']; ?></td>
+              <td class="text-right"><strong>Итого:</strong></td>
+              <td class="text-right"><?php echo $text_items; ?></td>
             </tr>
      
           </table>

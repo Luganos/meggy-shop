@@ -40,8 +40,8 @@
       <div>
         <table class="table table-bordered">
           <tr>
-            <td class="text-right"><strong><?php echo $totals[3]['title']; ?>:</strong></td>
-            <td class="text-right"><?php echo $totals[3]['text']; ?></td>
+            <td class="text-right"><strong>Итого:</strong></td>
+            <td class="text-right"><?php echo $text_items; ?></td>
           </tr>
         </table>
         <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
