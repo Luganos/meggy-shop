@@ -435,202 +435,7 @@ search_bottom span{
 
 
 /*-------Сезонные предложения--------*/
-
-.hot_price{
-	margin-top: 120px;
-	margin-bottom: 30px;
-	text-align: center;
-	color: rgb(107, 116, 124);
-	font-size: 1.375em;
-	text-transform: uppercase;
-	letter-spacing: 6px;
-}
-
-.line_top{
-	width: 66%;
-	height: 45px;
-	margin-left: auto;
-	margin-right: auto;
-	border-left: 1px solid rgb(217, 220, 223);
-	border-top: 1px solid rgb(217, 220, 223);
-	border-right: 1px solid rgb(217, 220, 223);
-}
-
-.kant{
- 	width: 33%;
-	height: 400px;
-	float: left;
-}
-
-
-
-.kant:hover{
-	border: 3px solid rgb(247, 167, 167);
-}
-
-.kant:hover span{
-	border: 1px solid rgb(247, 167, 167);
-}
-
-.kant:hover .katalog_med_text{
-	background-color:rgb(243, 129, 129);
-}
-
-.katalog_med_one{
-	position: relative;
-	top: 50%;
-	left: 50%;
-	width: 84%;
-	height: 360px;
-	margin-top: -180px;
-	margin-left: -42%;
-	background-image: url('../image/Layer_15.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	display: table;
-	margin-right: 12%;
-}
-
-.katalog_med_center{
-	vertical-align:middle;
-	display:table-cell;
-	text-align:center;
-}
-
-.katalog_med_text{
-	width: 60%;
-	height: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 4px;
-	background-color:rgb(106, 175, 186);
-	display: table;
-}
-
-.katalog_med_one span{
-	vertical-align:middle;
-	display:table-cell;
-	text-align:center;
-	border: 1px solid rgb(151, 199, 207);
-	color: rgb(235, 244, 246);
-	font-size: 0.875em;
-	text-transform: uppercase;
-}
-
-.katalog_med_two{
-position: relative;
-	top: 50%;
-	left: 50%;
-	width: 84%;
-	height: 360px;
-	margin-top: -180px;
-	margin-left: -42%;
-	background-image: url('../image/Layer_22.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	display: table;
-	float: left;
-	margin-right: 12%;
-}
-
-.katalog_med_center{
-	vertical-align:middle;
-	display:table-cell;
-	text-align:center;
-}
-
-.katalog_med_text{
-	width: 60%;
-	height: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 4px;
-	background-color:rgb(106, 175, 186);
-	display: table;
-}
-
-.katalog_med_two span{
-	vertical-align:middle;
-	display:table-cell;
-	text-align:center;
-	border: 1px solid rgb(151, 199, 207);
-	color: rgb(235, 244, 246);
-	font-size: 0.875em;
-	text-transform: uppercase;
-}
-
-.katalog_med_two:hover span{
-	border: 1px solid rgb(247, 167, 167);
-}
-
-.katalog_med_three{
-position: relative;
-	top: 50%;
-	left: 50%;
-	width: 84%;
-	height: 360px;
-	margin-top: -180px;
-	margin-left: -42%;
-	background-image: url('../image/Layer_24.png');
-	background-position: center;
-	background-repeat: no-repeat;
-	display: table;
-	float: left;
-}
-
-.katalog_med_center{
-	vertical-align:middle;
-	display:table-cell;
-	text-align:center;
-}
-
-.katalog_med_text{
-	width: 60%;
-	height: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 4px;
-	background-color:rgb(106, 175, 186);
-	display: table;
-
-}
-
-.katalog_med_three span{
-	vertical-align:middle;
-	display:table-cell;
-	text-align:center;
-	border: 1px solid rgb(151, 199, 207);
-	color: rgb(235, 244, 246);
-	font-size: 0.875em;
-	text-transform: uppercase;
-}
-
-.katalog_med_three:hover span{
-	border: 1px solid rgb(247, 167, 167);
-}
-
-.line_bottom{
-	clear: both;
-	width: 66%;
-	height: 45px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 100px;
-	border-left: 4px solid rgb(201, 230, 238);
-	border-bottom: 4px solid rgb(201, 230, 238);
-	border-right: 4px solid rgb(201, 230, 238);
-}
-
-.baner{
-	width: 100%;
-	height: 12.5%;
-	margin-bottom: 6.25%;
-}
-
-.baner img{
-	width: 100%;
-	height: 100%;
-}
+/*------END-Сезонные предложения--------*/
 
 /*-------Меню main--------*/
 
@@ -1741,6 +1546,24 @@ header{
 
 /*-------Сезонные предложения--------*/
 
+.baner_one{
+	width: 33% !important;
+	//display: inline;
+	float: left;
+}
+
+.baner_two{
+	width: 33% !important;
+	//display: inline;
+	float: left;
+}
+
+.baner_three{
+	width: 33% !important;
+	//display: inline;
+	float: left;
+}
+/*
 .hot_price{
 	margin-top: 120px;
 	margin-bottom: 30px;
@@ -1945,7 +1768,7 @@ position: relative;
 	width: 100%;
 	height: 100%;
 }
-
+*/
 /*-------Меню main--------*/
 #banner0{
 	margin-top: 150px;

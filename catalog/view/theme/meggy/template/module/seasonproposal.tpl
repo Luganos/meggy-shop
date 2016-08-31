@@ -1,4 +1,14 @@
-
+<div class="baner_all">
+    <div class="baner_one">
+        <img src="catalog/view/theme/meggy/image/Layer_15.png" alt="">
+    </div>
+    <div class="baner_two">
+        <img src="catalog/view/theme/meggy/image/Layer_16.png" alt="">
+    </div>
+    <div class="baner_three">
+        <img src="catalog/view/theme/meggy/image/Layer_17.png" alt="">
+    </div>
+</div>
 <!--<div class="hot_price">
                     <span>сезонные предложения</span>
                 </div>
@@ -43,10 +53,16 @@
                 </div>-->
 <!--
 <?php if (count($banners) > 0) { ?>
+<<<<<<< HEAD
 
 <div class="carusel_big">
                 <div id="carousel" class="carousel slide">
 
+=======
+<!--<div class="carusel_big">
+                <div id="carousel" class="carousel slide">
+
+>>>>>>> 28dbb9638f77e2c429d01c2e3a878edfafb629d8
                    <ol class="carousel-indicators">
                      <?php if (count($banners) > 1) { ?>
                      <li class="active" data-target="#carousel" data-slide-to="0"></li>
@@ -83,7 +99,11 @@
                          <?php } ?>
                      <?php } ?>
                    </div>
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 28dbb9638f77e2c429d01c2e3a878edfafb629d8
                    <a href="#carousel" class="left carousel-control" data-slide="prev">
                         <img src="catalog/view/theme/meggy/image/tr_carusel_big_left.png" alt="" class="tr_carusel_big_left">
                     </a>
