@@ -341,7 +341,46 @@
          <![CDATA[$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));]]>
          </search>
          <add position ="replace">
-          <![CDATA[$json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));]]>
+          <![CDATA[$json['quantity'] = $this->calculateProduct();
+                   $json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));]]>
+         </add>  
+      </operation>
+  </file>
+  <file path="catalog/controller/checkout/cart.php">
+      <operation>
+	 <search>
+         <![CDATA[unset($this->session->data['reward']);]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$json['quantity'] = $this->calculateProduct();]]>
+         </add>  
+      </operation>
+  </file>
+   <file path="catalog/controller/checkout/cart.php">
+      <operation>
+	 <search>
+         <![CDATA[public function index() {]]>
+         </search>
+         <add position ="before">
+          <![CDATA[public function calculateProduct() {
+            
+                       $products = $this->cart->getProducts();
+            
+            
+                       foreach ($products as $product) {
+		              $product_total = 0;
+
+		             foreach ($products as $product_2) {
+			          if ($product_2['product_id'] == $product['product_id']) {
+				      $product_total += $product_2['quantity'];
+			          }
+		             }
+
+			
+		      }
+            
+                      return intval($product_total);
+                  }]]>
          </add>  
       </operation>
   </file>
@@ -392,7 +431,7 @@
       </operation>
   </file>
   </modification>
-  
+
   
   
  
