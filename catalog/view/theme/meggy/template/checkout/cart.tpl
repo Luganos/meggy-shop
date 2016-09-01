@@ -110,7 +110,7 @@
       <div class="row">
         <div class="col-sm-4 col-sm-offset-8">
           <table class="table table-bordered">
-            
+
             <!--<tr>
               <td class="text-right"><strong><?php echo $totals[1]['title']; ?>:</strong></td>
               <td class="text-right"><?php echo $totals[1]['text']; ?></td>
@@ -119,7 +119,7 @@
               <td class="text-right"><strong>Итого:</strong></td>
               <td class="text-right"><?php echo $text_items; ?></td>
             </tr>
-     
+
           </table>
         </div>
       </div>
@@ -131,9 +131,7 @@
       <?php } ?>
       <br />
       <div class="buttons">
-        <div class="container_button_text">
         <div class="button_text pull-left"><a href="<?php echo $continue; ?>"><span><?php echo $button_shopping; ?></span></a></div>
-        </div>
         <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
       </div>
       <?php echo $content_bottom; ?></div>

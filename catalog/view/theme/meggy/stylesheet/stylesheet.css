@@ -15,7 +15,7 @@ body{
  	min-height:100%;
  	position:relative;
 	font-family: Open Sans, Arial;
-	font-size: 1em;
+	font-size: 1.5em;
 }
 
 @font-face {
@@ -61,8 +61,8 @@ header{
 }
 
 .menu_link_text{
-	color: rgb(196, 199, 203);
-	font-size: 0.875;
+	color: rgb(107, 116, 124);
+	font-size: 1em;
 	margin-left: 4%;
 }
 
@@ -148,7 +148,7 @@ header{
 
 .in_link_big{
 	font-size: 1.25em;
-	color: rgb(196, 199, 203);
+	color: rgb(146, 153, 159);
 
 }
 
@@ -680,7 +680,7 @@ input::-webkit-input-placeholder {
 .footer_top_logo_text{
 	width: 100%;
 	padding-top: 35px;
-	color: rgb(198, 200, 214);
+	color: red;
 	font-size: 0.875em;
 }
 
@@ -942,7 +942,7 @@ input::-webkit-input-placeholder {
 .footer_top_logo_text{
 	width: 100%;
 	padding-top: 35px;
-	color: rgb(198, 200, 214);
+	color: red;
 	font-size: 0.875em;
 }
 
@@ -1207,7 +1207,7 @@ input::-webkit-input-placeholder {
 .footer_top_logo_text{
 	width: 100%;
 	padding-top: 35px;
-	color: rgb(198, 200, 214);
+	color: red;
 	font-size: 0.875em;
 }
 
@@ -1407,8 +1407,9 @@ header{
 }
 
 .menu_link_text{
-	color: rgb(196, 199, 203);
+	color: rgb(107, 116, 124);
 	font-size: 0.875em;
+	font-weight: bold;
 	margin-left: 4%;
 }
 
@@ -1445,7 +1446,7 @@ header{
 }
 
 .header_tel span{
-	color: rgb(196, 199, 203);
+	color: rgb(146, 153, 159);
 	font-size: 0.675em;
 }
 
@@ -1466,7 +1467,7 @@ header{
 
 .in_link_big{
 	font-size: 1.25em;
-	color: rgb(196, 199, 203);
+	color: rgb(146, 153, 159);
 
 }
 
@@ -1489,7 +1490,7 @@ header{
 }
 
 .in_link_text{
-	color: rgb(196, 199, 203);
+	color: rgb(146,153,159);
 	font-size: 0.875em;
 }
 
@@ -2200,8 +2201,12 @@ input::-webkit-input-placeholder {
 .footer_top_logo_text{
 	width: 100%;
 	padding-top: 35px;
-	color: rgb(198, 200, 214);
+	color: red;
 	font-size: 0.875em;
+}
+
+.footer_top_logo_text a{
+	color: rgb(198,200,214);
 }
 
 .footer_top_katalog{
@@ -2432,29 +2437,27 @@ input::-webkit-input-placeholder {
 #q{
 	border: 0px solid red;
 }
-
-.container_button_text{
-	width: 220px;
-	height: 40px;
-	padding: 4px;
-	background-color:rgb(106, 175, 186);
-	border: 5px solid rgb(180,210,218);
+.button_text{
 	display: table-cell;
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
 }
 
-.button_text{
-		padding-left: 35px;
-		padding-right: 22px;
-		padding-top: 9px;
-		color:white;
-		//border: 1px solid rgb(180,210,218);
-	}
 .button_text span{
-		color:white;
-		text-transform: uppercase;
-		font-weight: bold;
+	width: 90% !impotant;
+	height: 90%;
+	border: 1px solid rgb(180,210,218);
+	padding: 2px 40px 2px 47px;
+	font-weight: bold;
+	font-size: 1.25em;
+	color: white;
+}
 
-	}
+
 
 }
 
