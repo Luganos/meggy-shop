@@ -44,6 +44,7 @@ function scrollDown(){
 
 $(function() {
 
+$('#button-cart').on("click", function(){location.reload()});
 
 $('#search_smoll').on("mouseover", function(){console.log("tr")});
 $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
