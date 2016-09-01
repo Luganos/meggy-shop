@@ -419,7 +419,7 @@ function clearTimer(){
 clearTimer();
 */
 
-$('#button-cart').on("click", function(){location.reload();});
+//$('#button-cart').on("click", function(){location.reload();});
 
 
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
@@ -482,7 +482,11 @@ $('#button-cart').on('click', function() {
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i> ' + json['total']);
+        $('#cart > button').html('<i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span >' + json['quantity'] + '</span></div>'+ json['total']);
+
+				//$('#cart > button').html('<i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i>' + json['total']);
+
+//<div class="number_of_purchases"><span ><?php echo $cart_value; ?></span></div>
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
