@@ -81,7 +81,7 @@
                   <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
                   <?php } ?></td>
                 <td class="text-left"><?php echo $product['model']; ?></td>
-                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;"><div class="oo">-</div>
                     <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
                     <span class="input-group-btn">
                     <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="btn btn-primary"><i class="fa fa-refresh"></i></button>
@@ -125,14 +125,14 @@
       </div>
 
       <?php if ($coupon || $voucher || $reward || $shipping) { ?>
-      <h2><?php echo $text_next; ?></h2>
-      <p><?php echo $text_next_choice; ?></p>
+      <!--<h2><?php echo $text_next; ?></h2>-->
+     <!-- <p><?php echo $text_next_choice; ?></p>-->
       <div class="panel-group" id="accordion"><?php echo $coupon; ?><?php echo $voucher; ?><?php echo $reward; ?><?php echo $shipping; ?></div>
       <?php } ?>
       <br />
       <div class="buttons">
         <div class="button_text pull-left"><a href="<?php echo $continue; ?>"><span><?php echo $button_shopping; ?></span></a></div>
-        <div class="pull-right"><a href="<?php echo $checkout; ?>" class="btn btn-primary"><?php echo $button_checkout; ?></a></div>
+        <div class="button_text_right pull-right"><a href="<?php echo $checkout; ?>"><span><?php echo $button_checkout; ?></span></a></div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>

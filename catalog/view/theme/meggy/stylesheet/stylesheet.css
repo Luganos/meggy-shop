@@ -2368,6 +2368,17 @@ input::-webkit-input-placeholder {
 
 /*-------cart_main-------*/
 
+.oo{
+	display: inline;
+	background-color: grey;
+	width: 30px !important;
+	height: 40px !important;
+}
+
+.oo:before{
+	content: " ";
+}
+
 @media (min-width: 855px) {
 .text_top{
 	margin-top:85px;
@@ -2414,6 +2425,8 @@ input::-webkit-input-placeholder {
 	text-align: left;
 }
 
+
+
 .text-left a{
 	color:black;
 }
@@ -2447,6 +2460,10 @@ input::-webkit-input-placeholder {
 	padding-top: 10px;
 }
 
+.button_text:hover{
+	background-color: rgb(243,129,129);
+}
+
 .button_text span{
 	width: 90% !impotant;
 	height: 90%;
@@ -2457,6 +2474,29 @@ input::-webkit-input-placeholder {
 	color: white;
 }
 
+.button_text_right{
+	display: table-cell;
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+
+.button_text_right:hover{
+	background-color: rgb(243,129,129);
+}
+
+.button_text_right span{
+	width: 90% !impotant;
+	height: 90%;
+	border: 1px solid rgb(180,210,218);
+	padding: 2px 53px 2px 47px;
+	font-weight: bold;
+	font-size: 1.25em;
+	color: white;
+}
 
 
 }
@@ -2629,6 +2669,8 @@ label {
 select.form-control, textarea.form-control, input[type="text"].form-control, input[type="password"].form-control, input[type="datetime"].form-control, input[type="datetime-local"].form-control, input[type="date"].form-control, input[type="month"].form-control, input[type="time"].form-control, input[type="week"].form-control, input[type="number"].form-control, input[type="email"].form-control, input[type="url"].form-control, input[type="search"].form-control, input[type="tel"].form-control, input[type="color"].form-control {
 	font-size: 12px;
 }
+
+
 .input-group input, .input-group select, .input-group .dropdown-menu, .input-group .popover {
 	font-size: 12px;
 }
