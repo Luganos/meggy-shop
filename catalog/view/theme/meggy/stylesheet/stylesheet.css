@@ -2540,12 +2540,9 @@ input::-webkit-input-placeholder {
 	}
 }
 
-
-/*
-.text-right strong{
-	color:blue;
+.text-center{
+	text-align: center;
 }
-*/
 
 /*-------END_small_cart_main-------*/
 
