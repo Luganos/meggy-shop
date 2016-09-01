@@ -419,7 +419,7 @@ function clearTimer(){
 clearTimer();
 */
 
-$('#button-cart').on("click", function(){location.reload();});
+//$('#button-cart').on("click", function(){location.reload();});
 
 
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
