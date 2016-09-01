@@ -374,7 +374,7 @@
               <?php } ?>
             </div>
             <div class="button-group">
-              <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i class="fa fa-shopping-cart"></i></button>
+              <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
@@ -466,7 +466,7 @@ $('#button-cart').on('click', function() {
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
-				$('#cart > button').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
+				$('#cart > button').html('<i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i> ' + json['total']);
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
