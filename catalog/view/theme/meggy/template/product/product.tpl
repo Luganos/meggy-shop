@@ -374,7 +374,7 @@
               <?php } ?>
             </div>
             <div class="button-group">
-              <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i></button>
+              <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span> <i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span >5<?php echo $cart_value; ?></span></div></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
@@ -406,6 +406,22 @@
     <?php echo $column_right; ?></div>
 </div>
 <script type="text/javascript"><!--
+/*
+var timerId = setTimeout(function() {
+ location.reload();
+}, 5000);
+
+setTimeout(clearTimer(),6000);
+
+function clearTimer(){
+  clearTimeout(timerId);
+};
+clearTimer();
+*/
+
+$('#button-cart').on("click", function(){location.reload();});
+
+
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
 		url: 'index.php?route=product/product/getRecurringDescription',
