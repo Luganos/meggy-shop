@@ -44,7 +44,7 @@
             <td class="text-right"><?php echo $text_items; ?></td>
           </tr>
         </table>
-        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
+        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
       </div>
     </li>
     <?php } else { ?>
