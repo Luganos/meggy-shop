@@ -1547,14 +1547,16 @@ header{
 /*-------Сезонные предложения--------*/
 .baner_all{
 	margin-top: 100px;
+	width: 100%;
 	height: 360px;
 }
 
 .baner_one{
-	text-align: center;
-	width: 33% !important;
+	//text-align: center;
+	//width: 33% !important;
+	height: 100%;
 	//display: inline;
-	float: left;
+	//float: left;
 }
 
 .baner_one img{
@@ -1563,22 +1565,24 @@ header{
 }
 
 .baner_two{
-	text-align: center;
-	width: 33% !important;
+	//text-align: center;
+	//width: 33% !important;
 	//display: inline;
-	float: left;
+	height: 100%;
+	//float: left;
 }
 
 .baner_two img{
-	width: 100%;
-	height: 100%;
+	width: 100% !important;
+	height: 100% !important;
 }
 
 .baner_three{
-	text-align: center;
-	width: 33% !important;
+	//text-align: center;
+	//width: 33% !important;
+	height: 100%;
 	//display: inline;
-	float: left;
+	//float: left;
 }
 
 .baner_three img{
