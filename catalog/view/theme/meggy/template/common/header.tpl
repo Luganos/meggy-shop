@@ -141,10 +141,12 @@
               </div>
               </div>
           <div id="tel" class="col-xs-12 col-lg-2 col-lg-pull-2">
+            <div class="container-fluid">
           <div class="header_tel col-xs-12 col-lg-2">
             <a href="<?php echo $contact; ?>">
             <p><?php echo $telephone; ?></p></a>
             <span id="time">Пн-Пт с 09:00 до 18:00. Сб-Вc выходной</span>
+          </div>
           </div>
           </div>
           <div id="logo" class="col-xs-12 col-lg-2 col-lg-pull-10">

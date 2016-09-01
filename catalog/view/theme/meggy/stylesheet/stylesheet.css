@@ -40,10 +40,11 @@ header{
 	//margin-top: 26px;
 }
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1200px) {
 	.header_top{
 		width: 90% !important;
 		margin-top: 10px !important;
+		padding-left: 58px;
 	}
 }
 
@@ -90,7 +91,7 @@ header{
 
 .header_tel{
 	width: 100% !important;
-	padding-left: 40px;
+	padding-left: 0px;
 
 }
 
@@ -252,9 +253,10 @@ header{
 	}
 
 	#tel{
-		padding: 0px !important;
+		//padding: 0px !important;
 		width: 120%;
 		padding-left: 0px;
+		padding-right: 0px !important;
 	}
 
 	#logo{
@@ -334,6 +336,7 @@ search_bottom span{
 
 .container-fluid{
 	padding: 0px !important;
+	//width: 90%;
 }
 
 /*-------Большой слайдер--------*/
@@ -604,7 +607,7 @@ footer {
 .news_text p{
 	color: white;
 	font-size: 1.25em;
-	margin-right: 4.2%;
+	margin-right: 6.2%;
 }
 
 .input{
@@ -617,6 +620,7 @@ footer {
 	background: rgb(255, 221, 221);
 	border: 0px;
 	outline: none;
+	width: 25%;
 
 }
 
@@ -751,7 +755,7 @@ input::-webkit-input-placeholder {
 .footer_med_seil{
 	vertical-align:middle;
 	display:table-cell;
-	width: 33%;
+	width: 28%;
 }
 
 .footer_med_seil span{
@@ -772,14 +776,16 @@ input::-webkit-input-placeholder {
 
 .footer_med_net{
 	vertical-align:middle;
+	text-align: right;
 	display:table-cell;
 	width: 36%;
+	//float: right;
 }
 
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 5px 0 5px;
+	margin: 0 3% 0 3%;
 }
 
 
@@ -864,7 +870,7 @@ input::-webkit-input-placeholder {
 .news_text p{
 	color: white;
 	font-size: 1.25em;
-	margin-right: 4.2%;
+	margin-right: 6.2%;
 }
 
 .input{
@@ -1012,7 +1018,7 @@ input::-webkit-input-placeholder {
 .footer_med_seil{
 	vertical-align:middle;
 	display:table-cell;
-	width: 33%;
+	width: 28%;
 }
 
 .footer_med_seil span{
@@ -1040,7 +1046,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 5px 0 5px;
+	margin: 0 3% 0 3%;
 }
 
 
@@ -1306,7 +1312,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 5px 0 5px;
+	margin: 0 3% 0 3%;
 }
 
 
@@ -1382,12 +1388,14 @@ header{
 }
 
 .container{
+	//width: 50%;
 	//margin-top: 26px;
 }
 
 .header_top{
 	width: 90% !important;
 	margin: 0 auto;
+	//padding-left: 58px;
 	&:after, &:before{
 		display: table;
 		content: "";
@@ -1546,8 +1554,9 @@ header{
 
 /*-------Сезонные предложения--------*/
 .baner_all{
+	margin-left: 60px;
 	margin-top: 100px;
-	width: 100%;
+	width: 75%;
 	height: 360px;
 }
 
@@ -1560,8 +1569,10 @@ header{
 }
 
 .baner_one img{
-	width: 100%;
-	height: 100%;
+	margin-left: 35%;
+	margin-right: 25%;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .baner_two{
@@ -1573,8 +1584,10 @@ header{
 }
 
 .baner_two img{
-	width: 100% !important;
-	height: 100% !important;
+	margin-left: 35%;
+	margin-right: 25%;
+	max-width: 100% ;
+	max-height: 100%;
 }
 
 .baner_three{
@@ -1586,8 +1599,10 @@ header{
 }
 
 .baner_three img{
-	width: 100%;
-	height: 100%;
+	margin-left: 35%;
+	margin-right: 25%;
+	max-width: 100%;
+	max-height: 100%;
 }
 /*
 .hot_price{
@@ -1798,6 +1813,9 @@ position: relative;
 /*-------Меню main--------*/
 #banner0{
 	margin-top: 150px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*------END-Меню main--------*/
@@ -1977,6 +1995,7 @@ position: relative;
 	color: rgb(180, 180, 180);
 	font-size: 0.875em;
 	text-decoration: line-through;
+	margin-left:13%;
 }
 
 .sl_price_center{
@@ -1992,7 +2011,7 @@ position: relative;
 	text-align: center;
 	color: rgb(246, 163, 163);
 	font-size: 1.25em;
-	margin-left: 15%;
+	margin-left: 8%;
 
 }
 
@@ -2019,7 +2038,7 @@ position: relative;
 }
 
 .main_bottom_text{
-	width: 100%;
+	width: 85%;
 	margin-top: 120px;
 	margin-left: auto;
 	margin-right: auto;
@@ -2100,7 +2119,7 @@ footer {
 .news_text p{
 	color: white;
 	font-size: 1.25em;
-	margin-right: 4.2%;
+	margin-right: 8.2%;
 }
 
 .input{
@@ -2251,7 +2270,7 @@ input::-webkit-input-placeholder {
 .footer_med_seil{
 	vertical-align:middle;
 	display:table-cell;
-	width: 33%;
+	width: 28%;
 }
 
 .footer_med_seil span{
@@ -2279,7 +2298,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 5px 0 5px;
+	margin: 0 3% 0 3%;
 }
 
 
@@ -2554,7 +2573,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: #666;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 20px;
 	width: 100%;
 }
@@ -3400,3 +3419,4 @@ h2.price {
  -moz-border-radius: 6px 0 6px 6px;
  border-radius: 6px 0 6px 6px;
  }
+
