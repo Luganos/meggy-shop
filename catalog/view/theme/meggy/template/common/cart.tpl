@@ -1,5 +1,5 @@
 <div id="cart" class="">
-  <button id="tr" type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="button_smaoll_cart dropdown-toggle"><i ><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span ><?php echo $cart_value; ?></span></div> <span id="cart-total"><?php echo $text_items; ?></span></button>
+  <button id="tr" type="button" data-toggle="dropdown" data-loading-text="<?php echo $text_loading; ?>" class="button_smaoll_cart dropdown-toggle"><i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span ><?php echo $cart_value; ?></span></div> <span id="cart-total"><?php echo $text_items; ?></span></button>
   <ul class="dropdown-menu pull-right">
     <?php if ($products || $vouchers) { ?>
     <li>
