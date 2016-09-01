@@ -32,8 +32,8 @@
 		$this->args = $args;
 	}~]]>	
      </search>
-     <add position ="replace"><![CDATA[
-public function __construct($route, $args = array()) {
+     <add position ="replace">
+<![CDATA[public function __construct($route, $args = array()) {
                     
                 static $recursion = TRUE;
               
@@ -47,7 +47,13 @@ public function __construct($route, $args = array()) {
                              $file = DIR_APPLICATION . 'controller/' . implode('/', $parts) . '.php';
                         } else {
                             
-                             $file = $_SERVER['DOCUMENT_ROOT'] . '/admin/controller/' . implode('/', $parts) . '.php';
+                             if ($route == 'error/not_found') {
+                                 
+                                 $file = $_SERVER['DOCUMENT_ROOT'] . '/catalog/controller/' . implode('/', $parts) . '.php';
+                             } else {
+                             
+                                 $file = $_SERVER['DOCUMENT_ROOT'] . '/admin/controller/' . implode('/', $parts) . '.php';
+                             }
                         }
 			
 
@@ -344,7 +350,7 @@ public function __construct($route, $args = array()) {
 	 <search>
          <![CDATA[$data['button_checkout'] = $this->language->get('button_checkout');]]>
          </search>
-         <add position ="replace">
+         <add position ="after">
        <![CDATA[// Totals
 		$this->load->model('extension/extension');
 
