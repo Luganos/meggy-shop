@@ -27,6 +27,10 @@ body{
 	font-weight:normal;font-style:normal;
 }
 
+.row{
+	margin:0px;
+}
+
 
 /*-----Header -------*/
 
@@ -90,7 +94,7 @@ header{
 }
 
 .header_tel{
-	width: 100% !important;
+	width: 105% !important;
 	padding-left: 0px;
 
 }
@@ -110,7 +114,7 @@ header{
 }
 
 .header_in{
-	width: 120% !important;
+	width: 112% !important;
 	margin-top: 10px;
 	margin-bottom: 0px;
 }
@@ -238,7 +242,7 @@ header{
 	.header_tel{
 		padding: 0px !important;
 		border-bottom: 1px solid rgb(196, 199, 203);
-		width: 100%;
+		width: 93%;
 	}
 	.header_tel p{
 		text-align: center;
@@ -254,15 +258,16 @@ header{
 
 	#tel{
 		//padding: 0px !important;
-		width: 120%;
+		width: 112%;
 		padding-left: 0px;
 		padding-right: 0px !important;
 	}
 
 	#logo{
-		width: 120%;
+		width: 112%;
 		height: 80px;
 		padding-left: 0px;
+		padding-right: 0px;
 		//border-bottom: 1px solid rgb(196, 199, 203);
 	}
 
@@ -277,7 +282,7 @@ header{
 	.search_bottom {
 		background-color: rgb(238, 246, 248);
 		padding: 0px;
-		width: 118%;
+		width: 111%;
 	}
 	.search_bottom p {
 		display: inline;
@@ -336,7 +341,8 @@ search_bottom span{
 
 .container-fluid{
 	padding: 0px !important;
-	//width: 90%;
+	width: 95%;
+	margin: 0px;
 }
 
 /*-------Большой слайдер--------*/
@@ -922,7 +928,7 @@ input::-webkit-input-placeholder {
 }
 
 .footer_top{
-	width: 92% !important;/*--------------------------------------------*/
+	width: 89% !important;/*--------------------------------------------*/
 	height: 480px;
 	margin-left: 60px !important;
 	border-bottom: 1px solid rgb(40, 43, 58);
@@ -1187,7 +1193,7 @@ input::-webkit-input-placeholder {
 }
 
 .footer_top{
-	width: 92% !important;/*--------------------------------------------*/
+	width: 89% !important;/*--------------------------------------------*/
 	height: 480px;
 	margin-left: 60px !important;
 	border-bottom: 1px solid rgb(40, 43, 58);
@@ -1512,6 +1518,7 @@ header{
 
 .container-fluid{
 	padding: 0px !important;
+	width: 95%;
 }
 
 /*-------Большой слайдер--------*/
@@ -2143,7 +2150,7 @@ footer {
 }
 
 input::-webkit-input-placeholder {
-	font-size: 0.7em;
+	font-size: 1em;
 	color: black;
 }
 
@@ -2439,6 +2446,53 @@ input::-webkit-input-placeholder {
 #q{
 	border: 0px solid red;
 }
+
+/*------coupon-------*/
+.panel-body{
+	padding-left: 0px !impotant;
+}
+
+.panel{
+	background-color: white;
+}
+
+.panel a{
+	font-size: 1.5em;
+	color: black;
+	font-weight: Semibold;
+}
+
+#input-coupon{
+	width: 220px;
+	height: 40px;
+}
+
+.input-group-btn{
+	float: left;
+	margin-left: 25px;
+
+}
+
+.button_text_coupon{
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+
+}
+
+.button_text_coupon2{
+	width: 95%;
+	height: 31px;
+	background-color: rgb(147,190,202);
+	border: 1px solid rgb(180,210,218);
+	margin: 4px 0px 0px 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: ;
+	color: white;
+
+}
+
 .button_text{
 	display: table-cell;
 	width: 300px;
@@ -2459,8 +2513,10 @@ input::-webkit-input-placeholder {
 	border: 1px solid rgb(180,210,218);
 	padding: 2px 40px 2px 47px;
 	font-weight: bold;
-	font-size: 1.25em;
+	font-size: 1.125em;
 	color: white;
+	text-transform: uppercase;
+	z-index: 10;
 }
 
 .button_text_right{
@@ -2483,14 +2539,69 @@ input::-webkit-input-placeholder {
 	border: 1px solid rgb(180,210,218);
 	padding: 2px 53px 2px 47px;
 	font-weight: bold;
-	font-size: 1.25em;
+	font-size: 1.125em;
 	color: white;
+	text-transform: uppercase;
+}
+.coupon_text{
+	margin-top: 5px;
+	font-style: italic;
 }
 
 
 }
 
 @media (max-width: 855px) {
+/*------coupon-------*/
+.panel-body{
+	padding-left: 0px !impotant;
+}
+
+.panel{
+	background-color: white;
+}
+
+.panel a{
+	font-size: 1.5em;
+	color: black;
+	font-weight: Semibold;
+}
+
+#input-coupon{
+	width: 220px;
+	height: 40px;
+}
+
+.input-group-btn{
+	float: left;
+	margin-left: 25px;
+
+}
+
+.button_text_coupon{
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+
+}
+
+.button_text_coupon2{
+	width: 95%;
+	height: 31px;
+	background-color: rgb(147,190,202);
+	border: 1px solid rgb(180,210,218);
+	margin: 4px 0px 0px 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: ;
+	color: white;
+
+}
+
+.panel-body{
+	padding-left: 0px !impotant;
+}
+
 	.text_top{
 	font-size: 1.5em;
 	font-weight: bold;
@@ -2603,14 +2714,79 @@ input::-webkit-input-placeholder {
 
 @media (max-width: 535px) {
 
+.z{
+	width: 100% !impotant;
+	height: 40px;
+	display: block !impotant;
+	margin: 0 auto 0 auto;
+	margin-left: 95px;
+}
+
+.panel-body{
+	padding-left: 0px !impotant;
+}
+
+.panel{
+	background-color: white;
+}
+
+.panel a{
+	font-size: 0.875em;
+	color: black;
+	font-weight: Semibold;
+	margin-left: 145px;
+}
+
+#input-coupon{
+	width: 300px;
+	height: 40px;
+	display: block !impotant;
+	margin: 0 auto 0 auto;
+}
+
+.input-group-btn{
+	float: left;
+	margin-left: 25px;
+
+}
+
+.button_text_coupon{
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	margin-top: 20px;
+	margin-left: 70px;
+
+}
+
+.button_text_coupon2{
+	width: 95%;
+	height: 31px;
+	background-color: rgb(147,190,202);
+	border: 1px solid rgb(180,210,218);
+	margin: 4px 0px 0px 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: ;
+	color: white;
+
+}
+
 .button_text{
-	//width: 300px;
 	margin-left:20%;
 	margin-bottom:20px;
 }
 
 .button_text_right{
-	margin-right:21.7%;
+	margin-right:18.2%;
+}
+
+.coupon_text{
+	margin:0 auto;
+	text-align: center;
+	width:50%;
+	margin-top: 5px;
+	font-style: italic;
 }
 
 
@@ -2618,14 +2794,120 @@ input::-webkit-input-placeholder {
 
 @media (max-width: 389px) {
 
+.z{
+	width: 100% !impotant;
+	height: 40px;
+	display: block !impotant;
+	margin: 0 auto 0 auto;
+	margin-left: 45px;
+}
+
+.panel-body{
+	padding-left: 0px !impotant;
+}
+
+.panel{
+	background-color: white;
+}
+
+.panel a{
+	font-size: 0.875em;
+	color: black;
+	font-weight: Semibold;
+	margin-left: 80px;
+}
+
+#input-coupon{
+	width: 220px;
+	height: 40px;
+	display: block !impotant;
+	margin: 0 auto 0 auto;
+}
+
+.input-group-btn{
+	float: left;
+	margin-left: 25px;
+
+}
+
+.button_text_coupon{
+	width: 220px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	margin-top: 20px;
+	margin-left: 20px;
+
+}
+
+.button_text_coupon2{
+	width: 95%;
+	height: 31px;
+	background-color: rgb(147,190,202);
+	border: 1px solid rgb(180,210,218);
+	margin: 4px 0px 0px 7px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: ;
+	color: white;
+
+}
+
 .button_text{
-	//width: 300px;
-	margin-left:10%;
+	margin-left:20%;
 	margin-bottom:20px;
 }
 
 .button_text_right{
-	margin-right:9.1%;
+	margin-right:18.2%;
+}
+
+.coupon_text{
+	margin:0 auto;
+	text-align: center;
+	width:50%;
+	margin-top: 5px;
+	font-style: italic;
+}
+
+.button_text{
+	display: table-cell;
+	width: 220px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+
+.button_text span{
+	width: 90% !impotant;
+	height: 90%;
+	border: 1px solid rgb(180,210,218);
+	padding: 5px 31px 5px 20px;
+	font-weight: bold;
+	font-size: 1em;
+	color: white;
+}
+
+.button_text_right{
+	display: table-cell;
+	width: 220px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+	margin-right: 52px;
+}
+
+.button_text_right span{
+	width: 90% !impotant;
+	height: 90%;
+	border: 1px solid rgb(180,210,218);
+	padding: 5px 31px 5px 20px;
+	font-weight: bold;
+	font-size: 1em;
+	color: white;
 }
 }
 
@@ -2633,12 +2915,12 @@ input::-webkit-input-placeholder {
 
 .button_text{
 	//width: 300px;
-	margin-left:5%;
+	margin-left:15%;
 	margin-bottom:20px;
 }
 
 .button_text_right{
-	margin-right:5.8%;
+	margin-right:13%;
 }
 
 
@@ -2649,12 +2931,12 @@ input::-webkit-input-placeholder {
 
 /*------add_tovar------*/
 .cart_m{
-	padding:9px 6px 10px 6px;
+	padding:12px 8px 7px 8px;
 	margin-top: 1px;
 }
 
 .cart_p{
-	padding:9px 6px 10px 6px;
+	padding:12px 6px 7px 6px;
 	margin-top: 1px;
 }
 
@@ -2783,7 +3065,7 @@ select.form-control, textarea.form-control, input[type="text"].form-control, inp
 
 
 .input-group input, .input-group select, .input-group .dropdown-menu, .input-group .popover {
-	font-size: 12px;
+	font-size: 16px;
 }
 .input-group .input-group-addon {
 	font-size: 12px;
