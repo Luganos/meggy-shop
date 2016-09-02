@@ -1,4 +1,5 @@
 console.log("OK2");
+
 var width = document.documentElement.clientWidth;
 console.log(width);
 /*var teg = [];
@@ -9,6 +10,27 @@ teg.setAttribute('data-slick','{"slidesToShow": 4, "slidesToScroll": 1}')
 console.log(teg);
 console.log(r);
 console.log(e);*/
+
+
+/*---add_tovar--*/
+var col_tovar = +$(".input_col").val();
+
+function cart_m(){
+    $(".input_col").val(col_tovar-1);
+};
+
+function cart_p(){
+    $(".input_col").val(col_tovar+1);
+};
+
+$('.cart_m').on("click", cart_m);
+$('.cart_p').on("click", cart_p);
+
+//console.log(col_tovar);
+
+
+/*---End add_tocar----*/
+
 /*------adoptiv slaider-----*/
 if(width < 371){
     console.log("small");
@@ -28,7 +50,6 @@ else{
      teg = document.getElementById('srcoll');
      teg.setAttribute('data-slick','{"slidesToShow": 4, "slidesToScroll": 1}')
 };
-
 
 
 function scrollDown2() {

@@ -2560,7 +2560,35 @@ input::-webkit-input-placeholder {
 	}
 }
 
-.button_text{}
+
+
+
+/*------add_tovar------*/
+.cart_m{
+	padding:9px 6px 10px 6px;
+	margin-top: 1px;
+
+}
+
+.cart_p{
+	padding:9px 6px 10px 6px;
+	margin-top: 1px;
+}
+
+.input_col{
+	width:50px;
+	height: 40px;
+	//border-right: 0px;
+	//border-left: 0px;
+	//border-bottom: 1px;
+}
+
+#inner-editor{
+	text-align: center !important;
+}
+
+
+/*-----END_card_main__________/*
 
 /*-------small_cart_main-------*/
 
