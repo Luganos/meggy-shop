@@ -2434,6 +2434,7 @@ input::-webkit-input-placeholder {
 	text-align: left;
 }
 
+
 .del{
 	margin-left: 30px;
 	}
@@ -2650,10 +2651,16 @@ input::-webkit-input-placeholder {
 	color:black;
 }
 
+.table-bordered{
+	width: 300px;
+	float: right;
+}
+
 .text-right{
 	color:rgb(243,129,129);
 	font-size:1.5em;
-	text-align: left;
+	text-align: right;
+
 }
 
 .del{

@@ -38,7 +38,7 @@
     </li>
     <li>
       <div>
-        <table class="table table-bordered">
+        <table class="table_sum table table-bordered">
           <tr>
             <td class="text-right"><strong>Итого:</strong></td>
             <td class="text-right"><?php echo $text_items; ?></td>
