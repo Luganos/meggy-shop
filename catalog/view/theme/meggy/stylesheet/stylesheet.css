@@ -1114,7 +1114,7 @@ input::-webkit-input-placeholder {
 
 @media screen and (max-width: 535px) {
 footer {
-	height: 1200px !important;
+	height: 1300px !important;
 	background-color: rgb(28,30,42) !important;
 }
 
@@ -2108,6 +2108,7 @@ footer {
 
 #footer{
 	margin-top: 0px;
+	padding: 0px;
 }
 
 
@@ -3863,4 +3864,17 @@ h2.price {
  -moz-border-radius: 6px 0 6px 6px;
  border-radius: 6px 0 6px 6px;
  }
+/*-----END_header Выподающее меню-------*/
+
+/*------Error_404-------*/
+
+.error img{
+	max-width: 100%;
+	height: auto;
+
+}
+
+
+/*----END_Error_404-------*/
+
 
