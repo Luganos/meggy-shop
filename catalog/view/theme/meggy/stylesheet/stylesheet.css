@@ -2368,17 +2368,6 @@ input::-webkit-input-placeholder {
 
 /*-------cart_main-------*/
 
-.oo{
-	display: inline;
-	background-color: grey;
-	width: 30px !important;
-	height: 40px !important;
-}
-
-.oo:before{
-	content: " ";
-}
-
 @media (min-width: 855px) {
 .text_top{
 	margin-top:85px;
@@ -2558,6 +2547,101 @@ input::-webkit-input-placeholder {
 .del{
 	margin-left: 30px;
 	}
+
+.button_text{
+	display: table-cell;
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+
+.button_text:hover{
+	background-color: rgb(243,129,129);
+}
+
+.button_text span{
+	width: 90% !impotant;
+	height: 90%;
+	border: 1px solid rgb(180,210,218);
+	padding: 2px 40px 2px 47px;
+	font-weight: bold;
+	font-size: 1.25em;
+	color: white;
+}
+
+.button_text_right{
+	display: table-cell;
+	width: 300px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 10px;
+}
+
+.button_text_right:hover{
+	background-color: rgb(243,129,129);
+}
+
+.button_text_right span{
+	width: 90% !impotant;
+	height: 90%;
+	border: 1px solid rgb(180,210,218);
+	padding: 2px 53px 2px 47px;
+	font-weight: bold;
+	font-size: 1.25em;
+	color: white;
+}
+
+.button_text_right{
+	margin:0 auto;
+}
+}
+
+@media (max-width: 535px) {
+
+.button_text{
+	//width: 300px;
+	margin-left:20%;
+	margin-bottom:20px;
+}
+
+.button_text_right{
+	margin-right:21.7%;
+}
+
+
+}
+
+@media (max-width: 389px) {
+
+.button_text{
+	//width: 300px;
+	margin-left:10%;
+	margin-bottom:20px;
+}
+
+.button_text_right{
+	margin-right:9.1%;
+}
+}
+
+@media (max-width: 371px) {
+
+.button_text{
+	//width: 300px;
+	margin-left:5%;
+	margin-bottom:20px;
+}
+
+.button_text_right{
+	margin-right:5.8%;
+}
+
+
 }
 
 
