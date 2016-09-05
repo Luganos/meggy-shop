@@ -25,9 +25,9 @@
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
           <?php if ($thumb) { ?>
-          <?php if ($images) { ?> 
+          <?php if ($images) { ?>
           <li class="slaider_vert">
-          <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
+          <div id="srcoll" class="sl" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($images as $image)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">

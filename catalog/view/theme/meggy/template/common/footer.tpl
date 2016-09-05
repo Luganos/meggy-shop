@@ -92,8 +92,10 @@
               </span>
             </div>
             <div class="footer_med_net">
-              <span class="footer_med_four">
+              <span id="footer_med_four_text" class="footer_med_four">
                 Следите за нами!
+              </span>
+              <span class="footer_med_four">
               <a href="https://twitter.com/">
               <img src="catalog/view/theme/meggy/image/Twitter.png" alt="">
               </a>
