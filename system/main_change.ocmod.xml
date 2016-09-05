@@ -430,7 +430,30 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/checkout/cart.php">
+      <operation>
+	 <search regex ="true" quote = "true">
+              <![CDATA[~if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
+				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
+			} else {
+				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
+			}~]]>
+         </search>
+         <add position ="replace">
+               <![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart_empty.tpl')) {
+				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/cart_empty.tpl', $data));
+			} else {
+				$this->response->setOutput($this->load->view('default/template/checkout/cart_empty.tpl', $data));
+			}]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
+  
+  
+  
+  
+			
 
   
   
