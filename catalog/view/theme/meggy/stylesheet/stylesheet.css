@@ -142,6 +142,7 @@ header{
 }
 
 #cart{
+	margin-top: 0px;
 	margin-left:10%px;
 }
 
@@ -202,6 +203,7 @@ header{
 	float: left;
 	margin-left: 10px;
 	margin-right: 10px;
+	margin-top: 5px;
 }
 
 #login{
@@ -1439,12 +1441,14 @@ header{
 }
 
 .header_tel{
+	margin-top: 10px;
 	width: 17%;
 }
 
 .header_tel p{
 	color: rgb(127, 135, 141);
-	font-family: OpenSans CondenseBold;
+	//font-family: OpenSans CondenseBold;
+	font-family: 'Open Sans Condensed Bold';
 	font-size: 1.25em;
 	font-weight: bold;
 	margin-bottom: 0px;
@@ -1511,7 +1515,12 @@ header{
 }
 
 .in_item{
+	margin-top: 5px;
 	display: inline;
+}
+
+#login{
+	margin-top: 0px;
 }
 
 /*-------main--------*/
@@ -2375,6 +2384,10 @@ input::-webkit-input-placeholder {
 }
 
 /*-------cart_main-------*/
+.table-responsive{
+	//width: 650px;
+	overflow: visible;
+}
 
 @media (min-width: 855px) {
 .text_top{
@@ -2432,6 +2445,7 @@ input::-webkit-input-placeholder {
 	color:rgb(243,129,129);
 	font-size:1.5em;
 	text-align: left;
+	//display: block;
 }
 
 
@@ -2555,6 +2569,18 @@ input::-webkit-input-placeholder {
 
 @media (max-width: 855px) {
 /*------coupon-------*/
+
+.table-responsive{
+	width: 750px;
+	overflow: visible;
+	//margin-left: 60px;
+}
+
+#border_table{
+	width: 100%;
+}
+
+
 .panel-body{
 	padding-left: 0px !impotant;
 }

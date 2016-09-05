@@ -18,7 +18,7 @@
         </div>
         </div>
         <div class="coupon_text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <p>Если у вас есть скидочный купон, введите его номер здесь.</p>
         </div>
       <script type="text/javascript"><!--
 $('#button-coupon').on('click', function() {
