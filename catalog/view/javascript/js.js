@@ -87,6 +87,14 @@ $('.sl').slick({
     autoplay:true*/
 });
 
+$('.sl_vert').slick({
+    /*vertical:true,
+    verticalSwiping:true,
+    autoplaySpeed:3000,
+    autoplay:true*/
+});
+
+
 
 $('.sl_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});
 $('.sl_slide_1').on("mouseout", function(){$(".sl_kor_1").css({"visibility": "hidden"});});
