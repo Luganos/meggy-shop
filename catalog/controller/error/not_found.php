@@ -13,6 +13,8 @@ class ControllerErrorNotFound extends Controller {
 			'text' => $this->language->get('text_home'),
 			'href' => $this->url->link('common/home')
 		);
+                
+                $this->document->addScript('catalog/view/javascript/picturefill.js');
 
 		if (isset($this->request->get['route'])) {
 			$url_data = $this->request->get;
