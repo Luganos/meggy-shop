@@ -2236,9 +2236,23 @@ input::-webkit-input-placeholder {
 	width: 15%;
 	padding-top: 20px;
 	//padding-left: 20%;
-	margin-left: 50px;
+	//margin-left:50px;
+	margin-left:20%;
 	border-bottom:2px solid rgb(198, 200, 214);
 }
+
+@media (max-width: 855px) {
+	.line{
+	margin-left: 40px !important;
+	}
+}
+
+@media (max-width: 555px) {
+	.line{
+	margin-left: 25px !important;
+	}
+}
+
 
 .line:before{
 	content: "";
