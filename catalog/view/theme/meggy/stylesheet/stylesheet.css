@@ -354,6 +354,19 @@ search_bottom span{
 	color: rgb(243, 129, 129);
 }
 
+.dropdown-menu >li > a{
+	color: rgb(196, 199, 203) !important;
+}
+
+.dropdown-menu >li > a:hover{
+	color: rgb(243, 129, 129) !important;
+	background-color: rgba(196, 199, 203,0) !important;
+	background-image: none !important;
+
+}
+
+
+
 /*-------main--------*/
 
 .container-fluid{
