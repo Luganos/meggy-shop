@@ -321,6 +321,7 @@ header{
 @media screen and (max-width: 769px) {
 	#content{
 	margin-top: 200px !important;
+	margin-left: 15px !important;
 	}
 }
 
@@ -2558,7 +2559,11 @@ input::-webkit-input-placeholder {
 	overflow: visible;
 }
 
-@media (min-width: 855px) {
+@media (min-width: 854px) {
+#content {
+	margin-left: 15px !important;
+	}
+
 .text_top{
 	margin-top:85px;
 	margin-bottom: 50px;
@@ -2916,6 +2921,9 @@ input::-webkit-input-placeholder {
 }
 
 @media (max-width: 535px) {
+#content {
+	margin-left: 0px !important;
+	}
 
 .z{
 	width: 100% !impotant;
@@ -2996,6 +3004,21 @@ input::-webkit-input-placeholder {
 }
 
 @media (max-width: 389px) {
+#time{
+	margin-left: 24% !important;
+}
+
+.baner_all{
+	margin-left: 0px !important;
+}
+
+#banner0{
+	width: 390px !important;
+}
+
+.sl_img_new{
+	margin-left: 60px !important;
+}
 
 .z{
 	width: 100% !impotant;
@@ -3526,6 +3549,7 @@ div.required .control-label:before {
 		border-radius: 0;
 		color: #fff;
 	}
+
 }
 /* content */
 #content {
@@ -4099,6 +4123,20 @@ h2.price {
 	height: 400px !important;
 
 }
+
+/*------return_top------*/
+
+a.idTop {
+ position: fixed; /*позиционирование кнопки фиксированное*/
+ z-index: 9999; /*отображаем поверх всех элементов*/
+ bottom: 2%; /*положение снизу*/
+ right: 2%; /*положение справа*/
+}
+a.idTop:hover {
+ opacity: 1;
+}
+
+/*------END_return_top------*/
 
 
 /*----END_slaider_vert-------*/
