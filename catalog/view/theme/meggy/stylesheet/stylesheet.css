@@ -17,6 +17,7 @@ body{
 	font-family: Open Sans, Arial;
 	font-size: 1.5em;
 	overflow-x: hidden;
+
 }
 
 @font-face {
@@ -1577,12 +1578,37 @@ header{
 	margin-top: 0px;
 }
 
+.carousel-control.left{
+	opacity: 0.5;
+	//background-image:none;
+	background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+	background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+	background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+}
+
+.carousel-control.right{
+	opacity: 0.5;
+	//background-image:none;
+	background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+	background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+	background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+}
+
+
 .carousel-control{
 	opacity: 0.2;
+	//background-image:none;
+	background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+	background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+	background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
 }
 
 .carousel-control:hover{
 	opacity: 0.2;
+	background-image: -webkit-linear-gradient(left,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+	background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,0)),to(rgba(0,0,0,0)));
+	background-image: linear-gradient(to right,rgba(0,0,0,0) 0,rgba(0,0,0,0) 100%);
+	//background-image:none;
 	//background: none;
 }
 
