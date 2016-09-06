@@ -42,7 +42,7 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
-<a href="#" id="toTop"></a>
+<div><a id='top'></a></div>
 <div>
   <a href="#top" class="idTop"><img src='catalog/view/theme/meggy/image/button_up.png'/></a>
 </div>
