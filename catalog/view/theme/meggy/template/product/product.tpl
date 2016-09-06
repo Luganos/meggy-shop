@@ -344,39 +344,42 @@
           </div>
         </div>
       </div>
-      <div class="menu_main">
+      <div class="menu_main_product">
           <ul class="ww">
-             <li class="menu_main_text">
+             <li class="menu_main_text_product">
                 <a href="index.php?route=common/home" >
                   <span class="news_bottom">характеристики</span>
                 </a>
              </li>
-             <li class="menu_main_text">
+             <li class="menu_main_text_product">
                 <a href="index.php?route=common/home&actions_goods=1">
                    <span>доставка и оплата</span>
                 </a>
              </li>
-             <li class="menu_main_text">
+             <li class="menu_main_text_product">
                 <a href="index.php?route=common/home&actions_goods=2">
                   <span>коментарии(0)</span>
                 </a>
              </li>
           </ul>
      </div>
-     <div class="col_price">
-            <div class="col_price_header">
-                <p>количество (шт)</p>
-                <span>цена</span>
+     <div class="description">
+            <div class="description_header">
+                <p>код товара</p>
+                <span>2104-3</span>
             </div>
-             <div class="col_price_tr">
-                <p>1 - 4</p>
-                <span>457 uah</span>
+             <div class="description_tr">
+                <p>состав изделия</p>
+                <span>Изделия 50% полиэстер, 35% вискоза, 10% шерсти, 5% эластан</span>
             </div>
-             <div class="col_price_tr">
-                <p>5+</p>
-                <span>398 uah</span>
+             <div class="description_tr">
+                <p>коллекция</p>
+                <span>зима/осеень</span>
             </div>
-          </div>
+        </div>
+        <div class="product_text">
+            <p>вам может понравиться</p>
+        </div>
       <?php if ($products) { ?>
       <h3><?php echo $text_related; ?></h3>
       <div class="row">

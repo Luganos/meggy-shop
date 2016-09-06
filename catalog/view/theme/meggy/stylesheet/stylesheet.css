@@ -1509,7 +1509,9 @@ header{
 		margin-right: 40px;
 	}
 	#cart{
+		width: 70px !important;
 		margin-right: 0px;
+		margin-left: 0px !important;
 	}
 	.main_bottom_text{
 		margin-top: 30px !important;
@@ -3426,12 +3428,30 @@ div.required .control-label:before {
 #tr{
 	padding-left:0px;
 	color:red;
+	width: 70px;
 }
 /* cart */
 #cart {
 	margin-bottom: 10px;
-	width: 140px;
+	width: 70px;
+	margin-left: 0px !important;
 }
+
+@media (max-width: 855px) {
+	#cart {
+	width: 140px !important;
+	margin-left: 30px !important;
+	}
+}
+
+@media (max-width: 650px) {
+	#cart {
+	width: 70px !important;
+	margin-left: 0px !important;
+	}
+}
+
+
 #cart > .btn {
 	font-size: 12px;
 	line-height: 18px;
@@ -4275,6 +4295,77 @@ a.idTop:hover {
 .button-cart-border span{
 	position: relative;
 	top: 3px;
+}
+
+/*-------Меню main--------*/
+
+.menu_main_product{
+	width: 100%;
+	//text-align: center;
+	margin-bottom: 5%;
+	margin-top: 100px;
+}
+
+.menu_main_text_product{
+	display: inline;
+}
+
+#menu_main_product{
+
+}
+
+.menu_main_text_product span{
+	font-size: 1.25em;
+	text-transform: uppercase;
+	color: rgb(178, 191, 201);
+	//margin-left: 5.2%;
+	margin-right: 160px;
+}
+
+/*-------END_Меню main--------*/
+
+.description{
+	width:95%;
+}
+
+.description_header{
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.description_header p{
+	display: inline;
+}
+
+.description_header span{
+	float: right;
+	margin-right: 500px;
+}
+
+.description_tr{
+	border-top: 1px dashed black;
+	color: rgb(146,153,159);
+	font-size: 14px;
+	padding: 15px 0 15px 0;
+}
+
+.description_tr p{
+	display: inline;
+}
+
+.description_tr span{
+	float: right;
+	margin-right: 500px;
+}
+
+.product_text{
+	text-align: center;
+	font-size: 22px;
+	color:rgb(107,116,124);
+	font-family: "Open Sans";
+	text-transform: uppercase;
 }
 
 @media screen and (max-width: 855px) {
