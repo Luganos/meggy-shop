@@ -16,6 +16,7 @@ body{
  	position:relative;
 	font-family: Open Sans, Arial;
 	font-size: 1.5em;
+	overflow-x: hidden;
 }
 
 @font-face {
@@ -4248,4 +4249,115 @@ a.idTop:hover {
 .button-cart-border span{
 	position: relative;
 	top: 3px;
+}
+
+@media screen and (max-width: 855px) {
+	#container_product{
+			width: 769px !important;
+	}
+	.product_price_discont{
+	font-size: 24px;
+	color: rgb(153,153,153);
+	text-decoration: line-through;
+}
+
+.product_price{
+	font-size: 40px;
+	color: rgb(243,129,129);
+	margin-left: 20px;
+}
+
+.col_price{
+	width:112% !important;
+}
+
+.col_price_header{
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.col_price_header p{
+	display: inline;
+}
+
+.col_price_header span{
+	float: right;
+	margin-right: 20px;
+}
+
+.col_price_tr{
+	border-top: 1px dashed black;
+	color: rgb(146,153,159);
+	font-size: 14px;
+	padding: 15px 0 15px 0;
+}
+
+.col_price_tr p{
+	display: inline;
+}
+
+.col_price_tr span{
+	float: right;
+	margin-right: 20px;
+}
+
+#input-option227{
+	width: 370px;
+}
+
+.img-thumbnail{
+	//width: 70% !important;
+	//height: auto;
+}
+
+.control-label{
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+}
+
+.control-label:before{
+	content: none !important;
+}
+
+.radio{
+	display: inline;
+}
+
+.radio label{
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+#input-quantity{
+	width: 125px;
+}
+
+#button-cart{
+	width:220px;
+	height: 40px;
+	background: rgb(243,129,129);
+	//border: 1px solid blue;
+}
+
+.button-cart-border{
+	width: 95%;
+	height: 80%;
+	margin-left: 5px;
+	border: 1px solid rgb(247,167,167);
+	color:white;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	//display: table-cell;
+}
+
+.button-cart-border span{
+	position: relative;
+	top: 3px;
+}
+
 }

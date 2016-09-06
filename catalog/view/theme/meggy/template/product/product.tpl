@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="container">
+<div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -150,7 +150,6 @@
               <?php } ?>
 
               <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
-            <hr>
           </div>
           <?php if ($price) { ?>
           <ul class="list-unstyled">
@@ -172,7 +171,7 @@
             <?php } ?>
             <?php if ($discounts) { ?>
             <li>
-              <hr>
+
             </li>
             <?php foreach ($discounts as $discount) { ?>
             <li><?php echo $discount['quantity']; ?><?php echo $text_discount; ?><?php echo $discount['price']; ?></li>
@@ -196,7 +195,7 @@
           </div>
           <div id="product">
             <?php if ($options) { ?>
-            <hr>
+
             <h3 hidden="true"><?php echo $text_option; ?></h3>
             <?php foreach ($options as $option) { ?>
             <?php if ($option['type'] == 'select') { ?>
@@ -320,7 +319,7 @@
             <?php } ?>
             <?php } ?>
             <?php if ($recurrings) { ?>
-            <hr>
+
             <h3><?php echo $text_payment_recurring ?></h3>
             <div class="form-group required">
               <select name="recurring_id" class="form-control">
@@ -345,6 +344,39 @@
           </div>
         </div>
       </div>
+      <div class="menu_main">
+          <ul class="ww">
+             <li class="menu_main_text">
+                <a href="index.php?route=common/home" >
+                  <span class="news_bottom">характеристики</span>
+                </a>
+             </li>
+             <li class="menu_main_text">
+                <a href="index.php?route=common/home&actions_goods=1">
+                   <span>доставка и оплата</span>
+                </a>
+             </li>
+             <li class="menu_main_text">
+                <a href="index.php?route=common/home&actions_goods=2">
+                  <span>коментарии(0)</span>
+                </a>
+             </li>
+          </ul>
+     </div>
+     <div class="col_price">
+            <div class="col_price_header">
+                <p>количество (шт)</p>
+                <span>цена</span>
+            </div>
+             <div class="col_price_tr">
+                <p>1 - 4</p>
+                <span>457 uah</span>
+            </div>
+             <div class="col_price_tr">
+                <p>5+</p>
+                <span>398 uah</span>
+            </div>
+          </div>
       <?php if ($products) { ?>
       <h3><?php echo $text_related; ?></h3>
       <div class="row">
@@ -392,6 +424,7 @@
               <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
               <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
             </div>
+            <div class="m">Lorem ipsum dolor sit amet.</div>
           </div>
         </div>
         <?php if (($column_left && $column_right) && ($i % 2 == 0)) { ?>
