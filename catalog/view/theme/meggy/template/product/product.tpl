@@ -26,7 +26,7 @@
           <ul class="thumbnails">
           <?php if ($thumb) { ?>
           <?php if ($images) { ?>
-          <li class="slaider_vert">
+          <!--<li class="slaider_vert">
           <div id="srcoll" class="sl" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($images as $image)  { ?>
@@ -40,7 +40,7 @@
           <?php $n++; ?>
           </div>
            <?php } ?>
-            </li>
+            </li>-->
             <li class="tovar_img><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
             <?php } ?>
             <?php if ($images) { ?>
@@ -136,21 +136,22 @@
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div class="<?php echo $class; ?>">
-          <div class="btn-group">
+         <!-- <div class="btn-group">
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
-          </div>
+          </div>-->
           <h1><?php echo $heading_title; ?></h1>
-          <ul class="list-unstyled">
-            <?php if ($manufacturer) { ?>
-            <li><?php echo $text_manufacturer; ?> <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></li>
-            <?php } ?>
-            <li><?php echo $text_model; ?> <?php echo $model; ?></li>
-            <?php if ($reward) { ?>
-            <li><?php echo $text_reward; ?> <?php echo $reward; ?></li>
-            <?php } ?>
-            <li><?php echo $text_stock; ?> <?php echo $stock; ?></li>
-          </ul>
+          <?php if ($review_status) { ?>
+          <div class="rating">
+            <p>
+
+              <?php } else { ?>
+              <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+              <?php } ?>
+
+              <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
+            <hr>
+          </div>
           <?php if ($price) { ?>
           <ul class="list-unstyled">
             <?php if (!$special) { ?>
@@ -158,16 +159,16 @@
               <h2><?php echo $price; ?></h2>
             </li>
             <?php } else { ?>
-            <li><span style="text-decoration: line-through;"><?php echo $price; ?></span></li>
+            <li><span class="product_price_discont"><?php echo $price; ?></span><span class="product_price"><?php echo $special; ?></span></li>
             <li>
-              <h2><?php echo $special; ?></h2>
+              <h2></h2>
             </li>
             <?php } ?>
             <?php if ($tax) { ?>
-            <li><?php echo $text_tax; ?> <?php echo $tax; ?></li>
+
             <?php } ?>
             <?php if ($points) { ?>
-            <li><?php echo $text_points; ?> <?php echo $points; ?></li>
+
             <?php } ?>
             <?php if ($discounts) { ?>
             <li>
@@ -179,6 +180,20 @@
             <?php } ?>
           </ul>
           <?php } ?>
+          <div class="col_price">
+            <div class="col_price_header">
+                <p>количество (шт)</p>
+                <span>цена</span>
+            </div>
+             <div class="col_price_tr">
+                <p>1 - 4</p>
+                <span>457 uah</span>
+            </div>
+             <div class="col_price_tr">
+                <p>5+</p>
+                <span>398 uah</span>
+            </div>
+          </div>
           <div id="product">
             <?php if ($options) { ?>
             <hr>
@@ -328,24 +343,6 @@
             <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>
             <?php } ?>
           </div>
-          <?php if ($review_status) { ?>
-          <div class="rating">
-            <p>
-              <?php for ($i = 1; $i <= 5; $i++) { ?>
-              <?php if ($rating < $i) { ?>
-              <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span>
-              <?php } else { ?>
-              <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
-              <?php } ?>
-              <?php } ?>
-              <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
-            <hr>
-            <!-- AddThis Button BEGIN -->
-            <div class="addthis_toolbox addthis_default_style"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a> <a class="addthis_button_tweet"></a> <a class="addthis_button_pinterest_pinit"></a> <a class="addthis_counter addthis_pill_style"></a></div>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515eeaf54693130e"></script>
-            <!-- AddThis Button END -->
-          </div>
-          <?php } ?>
         </div>
       </div>
       <?php if ($products) { ?>
