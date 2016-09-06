@@ -66,16 +66,20 @@ function scrollDown(){
 
 $(function() {
 
-$('#button-cart').on("click", function(){location.reload()});
+    $('#button-cart').on("click", function(){location.reload()});
 
-$('#search_smoll').on("mouseover", function(){console.log("tr")});
-$('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
+    $('#search_smoll').on("mouseover", function(){console.log("tr")});
+    $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
 
-$('#read_more').on("click", function(){$(".inet_shop_text-center p")
-    .animate({"height": "+=150px"});});
+    $('#read_more').on("click", function(){$(".inet_shop_text-center p")
+        .animate({"height": "+=150px"});});
 
-$('#read_more').on("click", function(){$(".inet_shop_text-center")
-    .animate({"height": "+=150px"});});
+    $('#read_more').on("click", function(){$(".inet_shop_text-center")
+        .animate({"height": "+=150px"});});
+
+    $('.idTop').click(function(){
+           $('html, body').animate({scrollTop:0}, 'slow');
+    });
 
 
 });

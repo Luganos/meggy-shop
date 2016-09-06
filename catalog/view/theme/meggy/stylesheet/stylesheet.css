@@ -4201,3 +4201,51 @@ a.idTop:hover {
 	float: right;
 	margin-right: 20px;
 }
+
+.control-label{
+	font-size: 14px;
+	font-weight: bold;
+	color: black;
+	text-transform: uppercase;
+}
+
+.control-label:before{
+	content: none !important;
+}
+
+.radio{
+	display: inline;
+}
+
+.radio label{
+	padding-left: 0px;
+	padding-right: 10px;
+}
+
+#input-quantity{
+	width: 125px;
+}
+
+#button-cart{
+	width:220px;
+	height: 40px;
+	background: rgb(243,129,129);
+	//border: 1px solid blue;
+}
+
+.button-cart-border{
+	width: 95%;
+	height: 80%;
+	margin-left: 5px;
+	border: 1px solid rgb(247,167,167);
+	color:white;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	//display: table-cell;
+}
+
+.button-cart-border span{
+	position: relative;
+	top: 3px;
+}
