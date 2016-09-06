@@ -42,7 +42,7 @@
               <div class="footer_top_one">
                 <span>УСЛОВИЯ РАБОТЫ</span>
               </div>
-              <div class="line">
+              <div id="work" class="line">
               </div>
               <div class="footer_top_ul">
                 <ul>

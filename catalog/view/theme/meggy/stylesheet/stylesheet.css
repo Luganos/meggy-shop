@@ -2334,7 +2334,50 @@ input::-webkit-input-placeholder {
 	.owl-wrapper-outer{
 		width: 93% !important;
 	}
+	#work{
+		margin-left: 42px !important;
+	}
+	.footer_top_compani{
+		width: 33% !important;
+	}
+	#time{
+		margin-left: 32%;
+	}
+	.footer_top{
+		width: 88% !important;
+	}
+	#banner0{
+		width: 540px;
+	}
+	.slick-next{
+		right: 0px !important;
+	}
+
 }
+
+@media (max-width: 455px) {
+
+	.in_item{
+		margin-right: 5px !important;
+	}
+	.line{
+		margin-left: 45px !important;
+	}
+	#work{
+		margin-left: 40px !important;
+	}
+	.footer_top_katalog{
+		width: 60% !important;
+	}
+	.footer_top_work{
+		width: 60% !important;
+		clear: both;
+	}
+	.footer_top_compani{
+		width: 60% !important;
+	}
+}
+
 
 
 .line:before{
