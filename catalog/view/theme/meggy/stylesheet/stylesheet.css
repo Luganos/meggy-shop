@@ -4527,6 +4527,16 @@ a.idTop:hover {
 	border: 0px;
 }
 
+#table_small{
+	//visibility: collapse;
+	display: none;
+}
+
+#table_big{
+	//visibility: collapse;
+	display: table;
+}
+
 .table-bordered td{
 	border: 0px !important;
 	border-bottom: 1px dotted black !important;
