@@ -270,23 +270,23 @@
                </ul>
       </div>
       <div class="tab-content">
-            <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+            <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
-            <div class="tab-pane" id="tab-specification">
+            <div class="tab-pane active" id="tab-specification">
               <table class="table table-bordered">
                </thead>
-                <tbody> 
-                 <?php if ($sku) { ?>    
+                <tbody>
+                 <?php if ($sku) { ?>
                  <tr>
                     <td><?php echo $entry_sku; ?></td>
-                    <td><?php echo $sku; ?></td>
+                    <td id="table_text_smoll"><?php echo $sku; ?></td>
                  </tr>
-                <?php } ?> 
+                <?php } ?>
                 <?php foreach ($attribute_groups as $attribute_group) { ?>
                   <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
                   <tr>
                     <td><?php echo $attribute['name']; ?></td>
-                    <td><?php echo $attribute['text']; ?></td>
+                    <td id="table_text_smoll"><?php echo $attribute['text']; ?></td>
                   </tr>
                   <?php } ?>
                 <?php } ?>

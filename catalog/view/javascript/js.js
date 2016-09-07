@@ -1,5 +1,11 @@
 console.log("OK2");
 
+/*---product_window_up-----*/
+    //$('.table_size').on("click", function(){console.log("Hello")});
+    $('.table_size').on("click", function(){$(".open_table_size").css({"visibility": "visible"});});
+    $('.close_table_size').on("click", function(){$(".open_table_size").css({"visibility": "hidden"});});
+/*--END_product_window_up-----*/
+
 var width = document.documentElement.clientWidth;
 console.log(width);
 /*var teg = [];
@@ -80,14 +86,6 @@ $(function() {
     $('.idTop').click(function(){
            $('html, body').animate({scrollTop:0}, 'slow');
     });
-
-
-   // $('.table_size').on("click", function(){console.log("Hello")});
-    $('.table_size').on("click", function(){$(".open_table_size").css({"visibility": "visible"});});
-    $('.close_table_size').on("click", function(){$(".open_table_size").css({"visibility": "hidden"});});
-
-
-
 
 
 });

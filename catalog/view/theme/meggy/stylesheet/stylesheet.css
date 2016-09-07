@@ -4513,42 +4513,33 @@ a.idTop:hover {
 	border: 1px solid black;
 }
 
-/*
-.description{
-	width:95%;
+.img-thumbnail:hover{
+	border: 1px solid rgb(245,154,154);
 }
 
-.description_header{
+/*------description_table------*/
+.table-bordered{
+	border: 0px;
+}
+
+.table-bordered td{
+	border: 0px !important;
+	border-bottom: 1px dotted black !important;
+	width:400px;
 	color: black;
 	font-size: 14px;
 	font-weight: bold;
-	margin-bottom: 10px;
+	text-transform: uppercase;
 }
 
-.description_header p{
-	display: inline;
+#table_text_smoll{
+	font-weight: normal;
+	color: rgb(121,126,132);
+	text-transform: none;
 }
 
-.description_header span{
-	float: right;
-	margin-right: 500px;
-}
+/*------END_description_table------*/
 
-.description_tr{
-	border-top: 1px dashed black;
-	color: rgb(146,153,159);
-	font-size: 14px;
-	padding: 15px 0 15px 0;
-}
-
-.description_tr p{
-	display: inline;
-}
-
-.description_tr span{
-	float: right;
-	margin-right: 500px;
-}*/
 
 .product_text{
 	text-align: center;
@@ -4617,6 +4608,10 @@ a.idTop:hover {
 .img-thumbnail{
 	//width: 70% !important;
 	//height: auto;
+}
+
+.img-thumbnail:hover{
+	border: 1px solid red;
 }
 
 .control-label{
