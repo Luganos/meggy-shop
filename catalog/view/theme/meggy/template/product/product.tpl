@@ -163,6 +163,7 @@
             </div>
             <?php } ?>
             <?php if ($option['type'] == 'image') { ?>
+            <?php $unique_id = 0; ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
               <?php if (strtolower($option['name']) == strtolower("Размер")) { ?>
               <label class="control-label"><?php echo $option['name']; ?></label><span class="table_size"><img src="catalog/view/theme/meggy/image/table_size.png" alt="">таблица размеров</span>
@@ -172,12 +173,13 @@
                 <div class="radio">
                   <label>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
-                    <img src="<?php echo $option_value['image']; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <img src="<?php echo $option_value['image']; ?>" id = "image_for_choose-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
                     <?php } ?>
                   </label>
                 </div>
+                <?php $unique_id++; ?>
                 <?php } ?>
               </div>
             </div>
