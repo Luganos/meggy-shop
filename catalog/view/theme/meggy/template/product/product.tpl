@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<div class="test"><img src="catalog/view/theme/meggy/image/table_size.png" alt=""></div>
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -90,20 +91,20 @@
                 <?php if ($review_guest) { ?>
                 <div class="form-group required">
                   <div class="col-sm-12">
-                    <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
+                    <label class="control-label" for="input-name"><?php echo $entry_name; ?>11</label>
                     <input type="text" name="name" value="" id="input-name" class="form-control" />
                   </div>
                 </div>
                 <div class="form-group required">
                   <div class="col-sm-12">
-                    <label class="control-label" for="input-review"><?php echo $entry_review; ?></label>
+                    <label class="control-label" for="input-review"><?php echo $entry_review; ?>22</label>
                     <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
                     <div class="help-block"><?php echo $text_note; ?></div>
                   </div>
                 </div>
                 <div class="form-group required">
                   <div class="col-sm-12">
-                    <label class="control-label"><?php echo $entry_rating; ?></label>
+                    <label class="control-label"><?php echo $entry_rating; ?>44</label><span class="table_size">таблица размеров</span>
                     &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
                     <input type="radio" name="rating" value="1" />
                     &nbsp;
@@ -200,7 +201,7 @@
             <?php foreach ($options as $option) { ?>
             <?php if ($option['type'] == 'select') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>44</label>
               <select name="option[<?php echo $option['product_option_id']; ?>]" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control">
                 <option value=""><?php echo $text_select; ?></option>
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
@@ -215,7 +216,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'radio') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+              <label class="control-label"><?php echo $option['name']; ?>55</label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -233,7 +234,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'checkbox') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+              <label class="control-label"><?php echo $option['name']; ?>66</label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="checkbox">
@@ -251,7 +252,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'image') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+              <label class="control-label"><?php echo $option['name']; ?></label><span class="table_size"><img src="catalog/view/theme/meggy/image/table_size.png" alt="">таблица размеров</span>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -269,13 +270,13 @@
             <?php } ?>
             <?php if ($option['type'] == 'text') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>88</label>
               <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
             </div>
             <?php } ?>
             <?php if ($option['type'] == 'textarea') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>99</label>
               <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5" placeholder="<?php echo $option['name']; ?>" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"><?php echo $option['value']; ?></textarea>
             </div>
             <?php } ?>
@@ -364,6 +365,22 @@
           </ul>
      </div>
      <div class="description">
+       <table class="description_table">
+         <tr>
+           <td>1.1</td>
+           <td>1.2</td>
+         </tr>
+         <tr>
+           <td>2.1</td>
+           <td>2.2</td>
+         </tr>
+         <tr>
+           <td>3.1</td>
+           <td>3.2</td>
+         </tr>
+       </table>
+     </div>
+    <!-- <div class="description">
             <div class="description_header">
                 <p>код товара</p>
                 <span>2104-3</span>
@@ -376,7 +393,7 @@
                 <p>коллекция</p>
                 <span>зима/осеень</span>
             </div>
-        </div>
+        </div>-->
         <div class="product_text">
             <p>вам может понравиться</p>
         </div>

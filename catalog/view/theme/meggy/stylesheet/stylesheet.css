@@ -99,7 +99,7 @@ header{
 }
 
 .header_tel{
-	width: 105% !important;
+	width: 106% !important;
 	padding-left: 0px;
 
 }
@@ -1483,6 +1483,11 @@ header{
 	width: 17%;
 }
 
+.header_tel {
+	margin-left: 10px;
+	padding-right: 0px;
+}
+
 .header_tel p{
 	color: rgb(127, 135, 141);
 	//font-family: OpenSans CondenseBold;
@@ -1664,7 +1669,7 @@ header{
 /*-------Сезонные предложения--------*/
 .baner_all{
 	margin-left: 60px;
-	margin-top: 100px;
+	margin-top: 50px;
 	width: 75%;
 	//height: 360px;
 }
@@ -1672,9 +1677,26 @@ header{
 .baner_one{
 	//text-align: center;
 	//width: 33% !important;
+	//margin-left: 20%;
 	height: 100%;
 	//display: inline;
 	//float: left;
+}
+
+@media (max-width: 855px) {
+	.baner_all{
+		margin-top: 0px;
+	}
+	.baner_one{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 535px) {
+	.baner_one{
+	margin-left: 0px;
+	padding-left: 0px;
+	}
 }
 
 .baner_one img{
@@ -1692,6 +1714,19 @@ header{
 	//float: left;
 }
 
+@media (max-width: 855px) {
+	.baner_two{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 535px) {
+	.baner_two{
+	margin-left: 0px;
+	padding-left: 0px;
+	}
+}
+
 .baner_two img{
 	margin-left: 35%;
 	margin-right: 25%;
@@ -1705,6 +1740,19 @@ header{
 	height: 100%;
 	//display: inline;
 	//float: left;
+}
+
+@media (max-width: 855px) {
+	.baner_three{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 535px) {
+	.baner_three{
+	margin-left: 0px;
+	padding-left: 0px;
+	}
 }
 
 .baner_three img{
@@ -2786,6 +2834,14 @@ input::-webkit-input-placeholder {
 @media (max-width: 855px) {
 /*------coupon-------*/
 
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
 .table-responsive{
 	width: 750px;
 	overflow: visible;
@@ -2960,9 +3016,23 @@ input::-webkit-input-placeholder {
 .button_text_right{
 	margin:0 auto;
 }
+
+.slick-prev{
+	left: 10px !important;
+}
+
 }
 
 @media (max-width: 535px) {
+
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
 #content {
 	margin-left: 0px !important;
 	}
@@ -3042,10 +3112,22 @@ input::-webkit-input-placeholder {
 	font-style: italic;
 }
 
+.slick-prev{
+	left: 10px !important;
+}
+
 
 }
 
 @media (max-width: 389px) {
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
 #time{
 	margin-left: 24% !important;
 }
@@ -3190,6 +3272,65 @@ input::-webkit-input-placeholder {
 .button_text_right{
 	margin-right:13%;
 }
+
+#footer{
+	height: 1450px !important;
+	background: rgb(28,30,42);
+}
+.header_tel p {
+	margin-left: 25px;
+}
+
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
+.header_logo {
+	margin-left: 15px;
+}
+
+.slick-prev{
+	left: 10px !important;
+}
+
+.sl_img_1 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_new{
+	width: 320px !important;
+	height: auto !important;
+}
+
+.sl_img_2 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_3 img{
+	margin-left: 0px !important;
+
+}
+.sl_img_4 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_5 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_6 img{
+	margin-left: 0px !important;
+
+}
+
 
 
 }
@@ -3428,7 +3569,7 @@ div.required .control-label:before {
 #tr{
 	padding-left:0px;
 	color:red;
-	width: 70px;
+	width: 130px;
 }
 /* cart */
 #cart {
@@ -3440,7 +3581,7 @@ div.required .control-label:before {
 @media (max-width: 855px) {
 	#cart {
 	width: 140px !important;
-	margin-left: 30px !important;
+	margin-left: 20px !important;
 	}
 }
 
@@ -4213,6 +4354,22 @@ a.idTop:hover {
 	margin-left: 20px;
 }
 
+.table_size{
+	float: right;
+	font-size: 12px;
+	color: black;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.table_size img{
+	margin-right: 10px;
+}
+
+.table_size span{
+	margin-right: 30px;
+}
+
 .col_price{
 	width:70%;
 }
@@ -4226,11 +4383,19 @@ a.idTop:hover {
 
 .col_price_header p{
 	display: inline;
+	color: black;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 .col_price_header span{
 	float: right;
 	margin-right: 20px;
+	color: black;
+	font-size: 17px;
+	font-weight: bold;
+	//font-family: 'Open Sans';
+
 }
 
 .col_price_tr{
@@ -4324,6 +4489,15 @@ a.idTop:hover {
 
 /*-------END_Меню main--------*/
 
+.description table{
+	border: 1px;
+}
+
+.description_table{
+	border: 1px solid black;
+}
+
+/*
 .description{
 	width:95%;
 }
@@ -4358,7 +4532,7 @@ a.idTop:hover {
 .description_tr span{
 	float: right;
 	margin-right: 500px;
-}
+}*/
 
 .product_text{
 	text-align: center;
@@ -4478,3 +4652,21 @@ a.idTop:hover {
 }
 
 }
+
+.test:before{
+	content: "";
+
+}
+
+.test{
+	width: 300px;
+	height: 300px;
+	background: red;
+	z-index: 999;
+	position: absolute;
+	top: 200px;
+	left: 500px;
+
+}
+
+

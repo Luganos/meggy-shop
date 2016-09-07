@@ -72,14 +72,18 @@ $(function() {
     $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
 
     $('#read_more').on("click", function(){$(".inet_shop_text-center p")
-        .animate({"height": "+=150px"});});
+        .animate({"height": "+300px"});});
 
     $('#read_more').on("click", function(){$(".inet_shop_text-center")
-        .animate({"height": "+=150px"});});
+        .animate({"height": "+300px"});});
 
     $('.idTop').click(function(){
            $('html, body').animate({scrollTop:0}, 'slow');
     });
+
+
+    $('.table_size').on("click", function(){console.log("Hello")});
+
 
 
 });
