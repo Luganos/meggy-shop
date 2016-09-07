@@ -10,20 +10,11 @@ console.log("OK2");
 
 var width = document.documentElement.clientWidth;
 console.log(width);
-/*
+
 if(width < 517){
-    console.log("eeeeeeeeeeee");
-    teg_big = document.getElementById('table_big');
-    teg_big.setAttribute('hidden','true');
-    var a = teg_big.getAttribute('hidden');
-    console.log(a);
-
-    teg_small = document.getElementById('table_small');
-
-    teg_small.setAttribute('hidden','false');
-    var b = teg_small.getAttribute('hidden');
-    console.log(b);
-};*/
+    $('#table_big').css({"display": "none"});
+    $('#table_small').css({"display": "table"});
+};
 /*var teg = [];
 teg = document.getElementById('srcoll');
 var r = teg.hasAttribute('data-slick');
