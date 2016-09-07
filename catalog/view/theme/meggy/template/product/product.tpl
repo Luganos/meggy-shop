@@ -46,7 +46,11 @@
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
           </div>-->
-          <h1><?php echo $heading_title; ?></h1>
+          <h1><?php echo $heading_title; ?>
+          <?php if($sku) { ?>
+          <?php echo "-" . " " . $sku; ?>
+          <?php } ?>
+          </h1>
           <?php if ($review_status) { ?>
           <div class="rating">
             <p>
@@ -55,7 +59,7 @@
               <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
               <?php } ?>
 
-              <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> / <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
+              <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> | <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
           </div>
           <?php if ($price) { ?>
           <ul class="list-unstyled">
