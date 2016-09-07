@@ -1,4 +1,5 @@
 <?php echo $header; ?>
+<div class="open_table_size"><img class="close_table_size" src="catalog/view/theme/meggy/image/table_size.png" alt=""></div>
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -105,7 +106,7 @@
             <?php foreach ($options as $option) { ?>
             <?php if ($option['type'] == 'select') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>44</label>
               <select name="option[<?php echo $option['product_option_id']; ?>]" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control">
                 <option value=""><?php echo $text_select; ?></option>
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
@@ -120,7 +121,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'radio') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+              <label class="control-label"><?php echo $option['name']; ?>55</label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -138,7 +139,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'checkbox') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+              <label class="control-label"><?php echo $option['name']; ?>66</label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="checkbox">
@@ -156,7 +157,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'image') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?></label>
+              <label class="control-label"><?php echo $option['name']; ?></label><span class="table_size"><img src="catalog/view/theme/meggy/image/table_size.png" alt="">таблица размеров</span>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -174,13 +175,13 @@
             <?php } ?>
             <?php if ($option['type'] == 'text') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>88</label>
               <input type="text" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option['value']; ?>" placeholder="<?php echo $option['name']; ?>" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control" />
             </div>
             <?php } ?>
             <?php if ($option['type'] == 'textarea') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?></label>
+              <label class="control-label" for="input-option<?php echo $option['product_option_id']; ?>"><?php echo $option['name']; ?>99</label>
               <textarea name="option[<?php echo $option['product_option_id']; ?>]" rows="5" placeholder="<?php echo $option['name']; ?>" id="input-option<?php echo $option['product_option_id']; ?>" class="form-control"><?php echo $option['value']; ?></textarea>
             </div>
             <?php } ?>
@@ -338,39 +339,6 @@
             </div>
             <?php } ?>
       </div>  
-      <!--<div class="menu_main">
-          <ul class="ww">
-             <li class="menu_main_text">
-                <a href="index.php?route=common/home" >
-                  <span class="news_bottom">характеристики</span>
-                </a>
-             </li>
-             <li class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=1">
-                   <span>доставка и оплата</span>
-                </a>
-             </li>
-             <li class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=2">
-                  <span>коментарии(0)</span>
-                </a>
-             </li>
-          </ul>
-     </div>-->
-     <!--<div class="col_price">
-            <div class="col_price_header">
-                <p>количество (шт)</p>
-                <span>цена</span>
-            </div>
-             <div class="col_price_tr">
-                <p>1 - 4</p>
-                <span>457 uah</span>
-            </div>
-             <div class="col_price_tr">
-                <p>5+</p>
-                <span>398 uah</span>
-            </div>
-          </div>-->
       <?php if ($products) { ?>
       <h3><?php echo $text_related; ?></h3>
       <div class="row">

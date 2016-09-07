@@ -99,7 +99,7 @@ header{
 }
 
 .header_tel{
-	width: 105% !important;
+	width: 106% !important;
 	padding-left: 0px;
 
 }
@@ -1483,6 +1483,11 @@ header{
 	width: 17%;
 }
 
+.header_tel {
+	margin-left: 10px;
+	padding-right: 0px;
+}
+
 .header_tel p{
 	color: rgb(127, 135, 141);
 	//font-family: OpenSans CondenseBold;
@@ -1509,7 +1514,9 @@ header{
 		margin-right: 40px;
 	}
 	#cart{
+		width: 70px !important;
 		margin-right: 0px;
+		margin-left: 0px !important;
 	}
 	.main_bottom_text{
 		margin-top: 30px !important;
@@ -1662,7 +1669,7 @@ header{
 /*-------Сезонные предложения--------*/
 .baner_all{
 	margin-left: 60px;
-	margin-top: 100px;
+	margin-top: 50px;
 	width: 75%;
 	//height: 360px;
 }
@@ -1670,9 +1677,26 @@ header{
 .baner_one{
 	//text-align: center;
 	//width: 33% !important;
+	//margin-left: 20%;
 	height: 100%;
 	//display: inline;
 	//float: left;
+}
+
+@media (max-width: 855px) {
+	.baner_all{
+		margin-top: 0px;
+	}
+	.baner_one{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 535px) {
+	.baner_one{
+	margin-left: 0px;
+	padding-left: 0px;
+	}
 }
 
 .baner_one img{
@@ -1690,6 +1714,19 @@ header{
 	//float: left;
 }
 
+@media (max-width: 855px) {
+	.baner_two{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 535px) {
+	.baner_two{
+	margin-left: 0px;
+	padding-left: 0px;
+	}
+}
+
 .baner_two img{
 	margin-left: 35%;
 	margin-right: 25%;
@@ -1703,6 +1740,19 @@ header{
 	height: 100%;
 	//display: inline;
 	//float: left;
+}
+
+@media (max-width: 855px) {
+	.baner_three{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 535px) {
+	.baner_three{
+	margin-left: 0px;
+	padding-left: 0px;
+	}
 }
 
 .baner_three img{
@@ -2784,6 +2834,14 @@ input::-webkit-input-placeholder {
 @media (max-width: 855px) {
 /*------coupon-------*/
 
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
 .table-responsive{
 	width: 750px;
 	overflow: visible;
@@ -2958,9 +3016,23 @@ input::-webkit-input-placeholder {
 .button_text_right{
 	margin:0 auto;
 }
+
+.slick-prev{
+	left: 10px !important;
+}
+
 }
 
 @media (max-width: 535px) {
+
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
 #content {
 	margin-left: 0px !important;
 	}
@@ -3040,10 +3112,22 @@ input::-webkit-input-placeholder {
 	font-style: italic;
 }
 
+.slick-prev{
+	left: 10px !important;
+}
+
 
 }
 
 @media (max-width: 389px) {
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
 #time{
 	margin-left: 24% !important;
 }
@@ -3188,6 +3272,65 @@ input::-webkit-input-placeholder {
 .button_text_right{
 	margin-right:13%;
 }
+
+#footer{
+	height: 1450px !important;
+	background: rgb(28,30,42);
+}
+.header_tel p {
+	margin-left: 25px;
+}
+
+.tr_carusel_big_left{
+	display: none;
+}
+
+.tr_carusel_big_right{
+	display: none;
+}
+
+.header_logo {
+	margin-left: 15px;
+}
+
+.slick-prev{
+	left: 10px !important;
+}
+
+.sl_img_1 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_new{
+	width: 320px !important;
+	height: auto !important;
+}
+
+.sl_img_2 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_3 img{
+	margin-left: 0px !important;
+
+}
+.sl_img_4 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_5 img{
+	margin-left: 0px !important;
+
+}
+
+.sl_img_6 img{
+	margin-left: 0px !important;
+
+}
+
 
 
 }
@@ -3426,12 +3569,30 @@ div.required .control-label:before {
 #tr{
 	padding-left:0px;
 	color:red;
+	width: 130px;
 }
 /* cart */
 #cart {
 	margin-bottom: 10px;
-	width: 140px;
+	width: 70px;
+	margin-left: 0px !important;
 }
+
+@media (max-width: 855px) {
+	#cart {
+	width: 140px !important;
+	margin-left: 20px !important;
+	}
+}
+
+@media (max-width: 650px) {
+	#cart {
+	width: 70px !important;
+	margin-left: 0px !important;
+	}
+}
+
+
 #cart > .btn {
 	font-size: 12px;
 	line-height: 18px;
@@ -4193,6 +4354,22 @@ a.idTop:hover {
 	margin-left: 20px;
 }
 
+.table_size{
+	float: right;
+	font-size: 12px;
+	color: black;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.table_size img{
+	margin-right: 10px;
+}
+
+.table_size span{
+	margin-right: 30px;
+}
+
 .col_price{
 	width:70%;
 }
@@ -4206,11 +4383,19 @@ a.idTop:hover {
 
 .col_price_header p{
 	display: inline;
+	color: black;
+	font-size: 17px;
+	font-weight: bold;
 }
 
 .col_price_header span{
 	float: right;
 	margin-right: 20px;
+	color: black;
+	font-size: 17px;
+	font-weight: bold;
+	//font-family: 'Open Sans';
+
 }
 
 .col_price_tr{
@@ -4275,6 +4460,86 @@ a.idTop:hover {
 .button-cart-border span{
 	position: relative;
 	top: 3px;
+}
+
+/*-------Меню main--------*/
+
+.menu_main_product{
+	width: 100%;
+	//text-align: center;
+	margin-bottom: 5%;
+	margin-top: 100px;
+}
+
+.menu_main_text_product{
+	display: inline;
+}
+
+#menu_main_product{
+
+}
+
+.menu_main_text_product span{
+	font-size: 1.25em;
+	text-transform: uppercase;
+	color: rgb(178, 191, 201);
+	//margin-left: 5.2%;
+	margin-right: 160px;
+}
+
+/*-------END_Меню main--------*/
+
+.description table{
+	border: 1px;
+}
+
+.description_table{
+	border: 1px solid black;
+}
+
+/*
+.description{
+	width:95%;
+}
+
+.description_header{
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.description_header p{
+	display: inline;
+}
+
+.description_header span{
+	float: right;
+	margin-right: 500px;
+}
+
+.description_tr{
+	border-top: 1px dashed black;
+	color: rgb(146,153,159);
+	font-size: 14px;
+	padding: 15px 0 15px 0;
+}
+
+.description_tr p{
+	display: inline;
+}
+
+.description_tr span{
+	float: right;
+	margin-right: 500px;
+}*/
+
+.product_text{
+	text-align: center;
+	font-size: 22px;
+	color:rgb(107,116,124);
+	font-family: "Open Sans";
+	text-transform: uppercase;
 }
 
 @media screen and (max-width: 855px) {
@@ -4387,3 +4652,26 @@ a.idTop:hover {
 }
 
 }
+
+.test:before{
+	content: "";
+
+}
+
+.open_table_size{
+	visibility:hidden;
+	background: red;
+	z-index: 999;
+	top: 50%; /* Отступ в процентах от верхнего края окна */
+	left: 50%; /* Отступ в процентах от левого края окна */
+	width: 450px; /* Ширина блока */
+	height: 450px; /* Высота блока */
+	position: absolute; /* Абсолютное позиционирование блока */
+	margin-top: -225px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+	margin-left: -225px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+}
+
+.close_table_size{
+	cursor: pointer;
+}
+
