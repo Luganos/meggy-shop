@@ -271,7 +271,7 @@
       </div>
       <div class="tab-content">
             <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
-            <?php if ($attribute_groups) { ?>
+            <?php if ($attribute_groups || $sku) { ?>
             <div class="tab-pane" id="tab-specification">
               <table class="table table-bordered">
                </thead>
@@ -289,8 +289,8 @@
                     <td><?php echo $attribute['text']; ?></td>
                   </tr>
                   <?php } ?>
-                </tbody>
                 <?php } ?>
+                 </tbody>
               </table>
             </div>
             <?php } ?>
