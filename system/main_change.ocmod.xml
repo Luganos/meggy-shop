@@ -468,6 +468,26 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/language/russian/product/product.php">
+      <operation>
+	 <search>
+         <![CDATA[$_['text_write']                              = 'Написать отзыв';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_write']                              = 'будь первым, кто оставил отзыв об этом товаре';]]>
+         </add>  
+      </operation>
+  </file>
+  <file path="catalog/language/russian/product/product.php">
+      <operation>
+	 <search>
+         <![CDATA[$_['text_reviews']                            = '%s отзывов';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_reviews']                            = '(%s) Отзывов';]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
   
   
