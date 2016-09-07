@@ -1,5 +1,5 @@
 <?php echo $header; ?>
-<div class="test"><img src="catalog/view/theme/meggy/image/table_size.png" alt=""></div>
+<div class="open_table_size"><img class="close_table_size" src="catalog/view/theme/meggy/image/table_size.png" alt=""></div>
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>

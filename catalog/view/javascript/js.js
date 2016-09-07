@@ -82,7 +82,11 @@ $(function() {
     });
 
 
-    $('.table_size').on("click", function(){console.log("Hello")});
+   // $('.table_size').on("click", function(){console.log("Hello")});
+    $('.table_size').on("click", function(){$(".open_table_size").css({"visibility": "visible"});});
+    $('.close_table_size').on("click", function(){$(".open_table_size").css({"visibility": "hidden"});});
+
+
 
 
 
