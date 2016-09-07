@@ -46,7 +46,7 @@
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
           </div>-->
-          <h1><?php echo $heading_title; ?>
+          <h1 class="cart_tovar_procuct"><?php echo $heading_title; ?>
           <?php if($sku) { ?>
           <?php echo "-" . " " . $sku; ?>
           <?php } ?>
@@ -282,7 +282,7 @@
             <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
             <div class="tab-pane active" id="tab-specification">
-              <table id="table_small" class="table table-bordered" hidden="true">
+              <table id="table_small" class="table table-bordered">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>
@@ -301,7 +301,7 @@
                 <?php } ?>
                  </tbody>
              </table>
-             <table id="table_big" class="table table-bordered hidden="false" ">
+             <table id="table_big" class="table table-bordered">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>

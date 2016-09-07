@@ -10,6 +10,20 @@ console.log("OK2");
 
 var width = document.documentElement.clientWidth;
 console.log(width);
+/*
+if(width < 517){
+    console.log("eeeeeeeeeeee");
+    teg_big = document.getElementById('table_big');
+    teg_big.setAttribute('hidden','true');
+    var a = teg_big.getAttribute('hidden');
+    console.log(a);
+
+    teg_small = document.getElementById('table_small');
+
+    teg_small.setAttribute('hidden','false');
+    var b = teg_small.getAttribute('hidden');
+    console.log(b);
+};*/
 /*var teg = [];
 teg = document.getElementById('srcoll');
 var r = teg.hasAttribute('data-slick');
@@ -18,7 +32,6 @@ teg.setAttribute('data-slick','{"slidesToShow": 4, "slidesToScroll": 1}')
 console.log(teg);
 console.log(r);
 console.log(e);*/
-
 
 /*---add_tovar--*/
 var col_tovar = +$(".input_col").val();
@@ -55,9 +68,20 @@ else if(width < 837){
 }
 else{
     console.log("big");
-     teg = document.getElementById('srcoll');
-     teg.setAttribute('data-slick','{"slidesToShow": 4, "slidesToScroll": 1}')
+    $('.sl_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});
 };
+
+/*------END_adoptiv slaider-----*/
+
+/*------product_table_big/small-----*/
+
+if(width < 535){
+    console.log("eeeeeeeeeeee");
+   /* teg = document.getElementById('srcoll');
+    teg.setAttribute('data-slick','{"slidesToShow": 1, "slidesToScroll": 1}')*/
+};
+
+/*------END_product_table_big/small-----*/
 
 
 function scrollDown2() {
