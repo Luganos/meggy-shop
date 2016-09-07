@@ -4555,6 +4555,10 @@ a.idTop:hover {
 
 }
 
+#container_product{
+			width: 970px !important;
+	}
+
 @media screen and (max-width: 855px) {
 	#container_product{
 			width: 769px !important;
