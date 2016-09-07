@@ -274,13 +274,15 @@
             <?php if ($attribute_groups) { ?>
             <div class="tab-pane" id="tab-specification">
               <table class="table table-bordered">
+               </thead>
+                <tbody> 
+                 <?php if ($sku) { ?>    
+                 <tr>
+                    <td><?php echo $entry_sku; ?></td>
+                    <td><?php echo $sku; ?></td>
+                 </tr>
+                <?php } ?> 
                 <?php foreach ($attribute_groups as $attribute_group) { ?>
-                <thead>
-                  <tr>
-                    <td colspan="2"><strong><?php echo $attribute_group['name']; ?></strong></td>
-                  </tr>
-                </thead>
-                <tbody>
                   <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
                   <tr>
                     <td><?php echo $attribute['name']; ?></td>
