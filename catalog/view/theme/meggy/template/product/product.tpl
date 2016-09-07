@@ -34,7 +34,7 @@
             <?php } ?>
             <?php } ?>
           </ul>
-          <?php } ?> 
+          <?php } ?>
         </div>
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-6'; ?>
@@ -250,25 +250,25 @@
           </div>
         </div>
       </div>
-      <div class="menu_main">
+      <div class="menu_main_product">
                <ul class="ww">
                   <?php if ($attribute_groups) { ?>
-                  <li class="menu_main_text">
+                  <li class="menu_main_text_product">
                       <span><a href="#tab-specification" data-toggle="tab"><?php echo $tab_attribute; ?></a></span>
-                  </li>     
-                  <?php } ?>      
+                  </li>
+                  <?php } ?>
                   <?php if ($tab_description) { ?>
-                  <li class="menu_main_text">
+                  <li class="menu_main_text_product">
                       <span><a href="#tab-description" data-toggle="tab">доставка и оплата</a></span>
-                  </li>  
+                  </li>
                   <?php } ?>
                   <?php if ($review_status) { ?>
-                  <li class="menu_main_text">
+                  <li class="menu_main_text_product">
                       <span><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></span>
-                  </li>  
+                  </li>
                   <?php } ?>
                </ul>
-      </div> 
+      </div>
       <div class="tab-content">
             <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups) { ?>
@@ -338,7 +338,7 @@
               </form>
             </div>
             <?php } ?>
-      </div>  
+      </div>
       <?php if ($products) { ?>
       <h3><?php echo $text_related; ?></h3>
       <div class="row">
