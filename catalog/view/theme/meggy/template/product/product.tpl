@@ -96,11 +96,28 @@
             </div>
              <div class="col_price_tr">
                 <p>1 - 4</p>
-                <span>457 uah</span>
+                <?php if (!$special) { ?>
+                <span><?php echo $price; ?></span>
+                <?php } else { ?>
+                <span><?php echo $special; ?><span>
+                <?php } ?>       
             </div>
              <div class="col_price_tr">
                 <p>5+</p>
-                <span>398 uah</span>
+                <?php if(is_array($discounts)) { ?>
+                <?php foreach ($discounts as $discount) { ?>
+                <?php if(intval($discount['quantity']) == 5) { ?>
+                <span><?php echo $discount['price']; ?><span>
+                <?php break; ?>        
+                <?php } ?> 
+                <?php } ?> 
+                <?php } else { ?> 
+                <?php if (!$special) { ?>
+                <span><?php echo $price; ?></span>
+                <?php } else { ?>
+                <span><?php echo $special; ?><span>
+                <?php } ?> 
+                <?php } ?> 
             </div>
           </div>
           <div id="product">
