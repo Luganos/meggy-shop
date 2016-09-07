@@ -100,7 +100,7 @@
                 <span><?php echo $price; ?></span>
                 <?php } else { ?>
                 <span><?php echo $special; ?><span>
-                <?php } ?>       
+                <?php } ?>
             </div>
              <div class="col_price_tr">
                 <p>5+</p>
@@ -108,16 +108,16 @@
                 <?php foreach ($discounts as $discount) { ?>
                 <?php if(intval($discount['quantity']) == 5) { ?>
                 <span><?php echo $discount['price']; ?><span>
-                <?php break; ?>        
-                <?php } ?> 
-                <?php } ?> 
-                <?php } else { ?> 
+                <?php break; ?>
+                <?php } ?>
+                <?php } ?>
+                <?php } else { ?>
                 <?php if (!$special) { ?>
                 <span><?php echo $price; ?></span>
                 <?php } else { ?>
                 <span><?php echo $special; ?><span>
-                <?php } ?> 
-                <?php } ?> 
+                <?php } ?>
+                <?php } ?>
             </div>
           </div>
           <div id="product">
@@ -294,7 +294,7 @@
             <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
             <div class="tab-pane active" id="tab-specification">
-              <table class="table table-bordered" hidden="true">
+              <table id="table_small" class="table table-bordered" hidden="true">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>
@@ -313,7 +313,7 @@
                 <?php } ?>
                  </tbody>
              </table>
-             <table class="table table-bordered hidden="false" ">
+             <table id="table_big" class="table table-bordered hidden="false" ">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>
