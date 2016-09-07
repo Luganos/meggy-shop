@@ -157,7 +157,9 @@
             <?php } ?>
             <?php if ($option['type'] == 'image') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
+              <?php if (strtolower($option['name']) == strtolower("Размер")) { ?>
               <label class="control-label"><?php echo $option['name']; ?></label><span class="table_size"><img src="catalog/view/theme/meggy/image/table_size.png" alt="">таблица размеров</span>
+              <?php } ?>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -270,9 +272,9 @@
                </ul>
       </div>
       <div class="tab-content">
-            <div class="tab-pane active" id="tab-description"><?php echo $description; ?></div>
+            <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
-            <div class="tab-pane" id="tab-specification">
+            <div class="tab-pane active" id="tab-specification">
               <table class="table table-bordered">
                </thead>
                 <tbody> 

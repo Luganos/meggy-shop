@@ -448,6 +448,26 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/product/product.php">
+      <operation>
+	 <search>
+         <![CDATA[$data['text_loading'] = $this->language->get('text_loading');]]>
+         </search>
+         <add position ="after">
+          <![CDATA[ $data['entry_sku'] = $this->language->get('entry_sku');]]>
+         </add>  
+      </operation>
+  </file>
+   <file path="catalog/controller/product/product.php">
+      <operation>
+	 <search>
+         <![CDATA[$data['points'] = $product_info['points'];]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$data['sku'] = $product_info['sku'];]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
   
   
