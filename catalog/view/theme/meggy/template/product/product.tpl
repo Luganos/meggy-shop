@@ -50,7 +50,7 @@
           <?php if ($review_status) { ?>
           <div class="rating">
             <p>
-
+              <span><img src="catalog/view/theme/meggy/image/text_ot.png" alt=""></span>
               <?php } else { ?>
               <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
               <?php } ?>
@@ -157,9 +157,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'image') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <?php if (strtolower($option['name']) == strtolower("Размер")) { ?>
               <label class="control-label"><?php echo $option['name']; ?></label><span class="table_size"><img src="catalog/view/theme/meggy/image/table_size.png" alt="">таблица размеров</span>
-              <?php } ?>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">

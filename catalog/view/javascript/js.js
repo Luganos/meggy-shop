@@ -6,6 +6,8 @@ console.log("OK2");
     $('.close_table_size').on("click", function(){$(".open_table_size").css({"visibility": "hidden"});});
 /*--END_product_window_up-----*/
 
+//$('.img-thumbnail').on("click", function(){$(".img-thumbnail").css({"border": "1px solid rgb(245,154,154)"});});
+
 var width = document.documentElement.clientWidth;
 console.log(width);
 /*var teg = [];

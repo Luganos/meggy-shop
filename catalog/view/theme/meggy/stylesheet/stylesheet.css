@@ -4514,7 +4514,7 @@ a.idTop:hover {
 }
 
 .img-thumbnail:hover{
-	border: 1px solid rgb(245,154,154);
+	border: 2px solid rgb(245,154,154);
 }
 
 /*------description_table------*/
@@ -4547,6 +4547,12 @@ a.idTop:hover {
 	color:rgb(107,116,124);
 	font-family: "Open Sans";
 	text-transform: uppercase;
+}
+
+.rating a{
+	color: black;
+	font-size: 14px;
+
 }
 
 @media screen and (max-width: 855px) {
