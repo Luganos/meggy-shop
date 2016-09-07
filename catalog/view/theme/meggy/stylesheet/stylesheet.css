@@ -4505,6 +4505,11 @@ a.idTop:hover {
 
 /*-------END_Меню main--------*/
 
+.cart_tovar_procuct{
+	font-weight: bold;
+	color: black;
+}
+
 .description table{
 	border: 1px;
 }
