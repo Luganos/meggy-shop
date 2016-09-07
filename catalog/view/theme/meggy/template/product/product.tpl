@@ -267,8 +267,8 @@
                   </li>
                   <?php } ?>
                   <?php if ($review_status) { ?>
-                  <li class="menu_main_text_product">
-                      <span><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></span>
+                  <li  class="menu_main_text_product">
+                      <span id="menu_main_text_product_last"><a href="#tab-review" data-toggle="tab"><?php echo $tab_review; ?></a></span>
                   </li>
                   <?php } ?>
                </ul>
@@ -277,7 +277,26 @@
             <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
             <div class="tab-pane active" id="tab-specification">
-              <table class="table table-bordered">
+              <table class="table table-bordered" hidden="true">
+               </thead>
+                <tbody>
+                 <?php if ($sku) { ?>
+                 <tr>
+                    <td><span id="d_block"><?php echo $entry_sku; ?></span><span id="table_text_smoll"><?php echo $sku; ?></span></td>
+
+                 </tr>
+                <?php } ?>
+                <?php foreach ($attribute_groups as $attribute_group) { ?>
+                  <?php foreach ($attribute_group['attribute'] as $attribute) { ?>
+                  <tr>
+                    <td><span id="d_block"><?php echo $attribute['name']; ?></span><span id="table_text_smoll"><?php echo $attribute['text']; ?></span></td>
+
+                  </tr>
+                  <?php } ?>
+                <?php } ?>
+                 </tbody>
+             </table>
+             <table class="table table-bordered hidden="false" ">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>
