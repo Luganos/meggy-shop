@@ -488,6 +488,22 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/product/product.php">
+      <operation>
+	 <search>
+         <![CDATA[$this->load->model('catalog/category');]]>
+         </search>
+         <add position ="after">
+          <![CDATA[
+                $data['new_goods'] = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 AND ORDER BY date_added ASC");
+
+		$data['action_goods'] = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC"); 
+                
+                $data['discount_goods'] = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC"); 
+         ]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
   
   
