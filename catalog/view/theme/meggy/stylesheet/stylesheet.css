@@ -4507,7 +4507,7 @@ a.idTop:hover {
 	text-transform: uppercase;
 	color: rgb(178, 191, 201);
 	//margin-left: 5.2%;
-	margin-right: 160px;
+	margin-right: 150px;
 	font-size: 18px;
 	font-family: 'Open Sans Semibold';
 }
@@ -4528,6 +4528,7 @@ a.idTop:hover {
 	color: rgb(107,116,123);
 
 }
+
 
 /*-------END_Меню main--------*/
 
@@ -4617,6 +4618,50 @@ a.idTop:hover {
 }
 #image_for_choose-6{
 	border: 0px solid red;
+}
+
+#produc_new{
+	position: relative;
+	bottom: 380px;
+	right: 150px;
+}
+
+#produc_discont{
+	position: relative;
+	bottom: 370px;
+	right: 150px;
+}
+
+#produc_action{
+	position: relative;
+	bottom: 360px;
+	right: 146px;
+}
+
+.thumbnails{
+	height: 600px;
+	overflow: hidden !important;
+
+}
+
+.tovar_img{
+	width: 350px !important;
+	position: relative;
+	bottom: 295px;
+	float: right;
+
+}
+
+.tovar_img a{
+	text-decoration: none !important;
+	border: 0px;
+
+}
+
+.image-additional{
+	float: none !important;
+
+
 }
 
 @media screen and (max-width: 855px) {

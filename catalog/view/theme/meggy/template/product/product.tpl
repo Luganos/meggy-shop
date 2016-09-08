@@ -25,14 +25,18 @@
 
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
-          <?php if ($thumb) { ?>
-		  <li class="tovar_img><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
           <?php } ?>
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
             <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
             <?php } ?>
             <?php } ?>
+          <?php if ($thumb) { ?>
+		  <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+      <img id="produc_new" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
+      <img id="produc_discont" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
+      <img id="produc_action" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt=""></a></li>
+
           </ul>
           <?php } ?>
         </div>
