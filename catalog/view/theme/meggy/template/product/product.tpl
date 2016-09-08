@@ -21,7 +21,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
-        <div class="<?php echo $class; ?>">
+        <div id="xs_product" class="<?php echo $class; ?>">
 
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails">
@@ -51,7 +51,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
-        <div class="<?php echo $class; ?>">
+        <div id="xs_product" class="<?php echo $class; ?>">
          <!-- <div class="btn-group">
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
             <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
