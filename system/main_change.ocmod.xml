@@ -514,6 +514,16 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/language/russian/product/product.php">
+      <operation>
+	 <search>
+         <![CDATA[$_['text_related']                            = 'Рекомендуемые товары';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_related']                            = 'Вам может понравиться';]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
   
   
