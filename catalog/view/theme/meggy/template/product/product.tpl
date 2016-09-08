@@ -389,9 +389,9 @@
       <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>
-           <div class="sl_slide_<?php echo $n; ?>">
-               <div class="sl_img_<?php echo $n; ?>">
-                   <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new">
+           <div class="sli_slide_<?php echo $n; ?>">
+               <div class="sli_img_<?php echo $n; ?>">
+                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
                    <?php if ($new_goods_flag) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                    <?php } ?>

@@ -181,3 +181,31 @@ $('.sl_slide_5').on("mouseout", function(){$(".sl_kor_5").css({"visibility": "hi
 
 $('.sl_img_5').on("mouseover", function(){$(".sl_img_5").css({"background-size": "180%"});});
 $('.sl_img_5').on("mouseout", function(){$(".sl_img_5").css({"background-size": "90%"});});
+
+
+/*-----Big_slider_fo_page_product*/
+$('.sli_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});
+$('.sli_slide_1').on("mouseout", function(){$(".sl_kor_1").css({"visibility": "hidden"});});
+
+$('.sli_slide_2').on("mouseover", function(){$(".sl_kor_2").css({"visibility": "visible"});});
+$('.sli_slide_2').on("mouseout", function(){$(".sl_kor_2").css({"visibility": "hidden"});});
+
+$('.sli_slide_3').on("mouseover", function(){$(".sl_kor_3").css({"visibility": "visible"});});
+$('.sli_slide_3').on("mouseout", function(){$(".sl_kor_3").css({"visibility": "hidden"});});
+
+$('.sli_slide_4').on("mouseover", function(){$(".sl_kor_4").css({"visibility": "visible"});});
+$('.sli_slide_4').on("mouseout", function(){$(".sl_kor_4").css({"visibility": "hidden"});});
+
+$('.sli_slide_5').on("mouseover", function(){$(".sl_kor_5").css({"visibility": "visible"});});
+$('.sli_slide_5').on("mouseout", function(){$(".sl_kor_5").css({"visibility": "hidden"});});
+
+$('.sli_slide_6').on("mouseover", function(){$(".sl_kor_6").css({"visibility": "visible"});});
+$('.sli_slide_6').on("mouseout", function(){$(".sl_kor_6").css({"visibility": "hidden"});});
+
+$('.sli_slide_7').on("mouseover", function(){$(".sl_kor_7").css({"visibility": "visible"});});
+$('.sli_slide_7').on("mouseout", function(){$(".sl_kor_7").css({"visibility": "hidden"});});
+
+$('.sli_slide_8').on("mouseover", function(){$(".sl_kor_8").css({"visibility": "visible"});});
+$('.sli_slide_8').on("mouseout", function(){$(".sl_kor_8").css({"visibility": "hidden"});});
+
+/*----END_Big_slider_fo_page_product*/
