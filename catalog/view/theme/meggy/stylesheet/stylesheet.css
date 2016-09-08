@@ -6300,15 +6300,56 @@ a.idTop:hover {
 
 .client_address{
 	clear: both;
+	margin-bottom: 150px;
 }
 
 .street{
-	width: 30%;
+	width: 100%;
 	float: left;
 	margin-left: 22%;
 	margin-bottom: 30px;
+	display: inline;
 }
-.streen_inline
+
+.street span{
+	font-family: 'Open Sans Semibold' !important;
+	color: rgb(146,153,159);
+	font-size: 14px;
+	//margin-bottom:5px;
+	text-transform: uppercase;
+}
+
+.nstreet_input_w{
+	width: 320px;
+}
+
+.streen_inline{
+	float: left;
+	display: inline !important;
+	margin-right: 20px;
+}
+
+.street_input{
+	width:30%;
+	display: inline;
+	margin-right: 20px;
+}
+
+.house_input_w{
+	width: 100px;
+}
+
+.house_input{
+	width: 100%;
+}
+
+.k_input{
+	width: 100%;
+}
+
+.r_input_w{
+	width: 100px;
+}
 
 @media screen and (max-width: 855px) {
 	.checkout{
