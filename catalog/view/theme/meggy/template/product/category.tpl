@@ -7,7 +7,7 @@
   </ul>
   <div class="category_big_text">
     <div class="category_big_text_mid">
-      <p>блузки и рубашки</p>
+      <p><?php echo $heading_title; ?></p>
     </div>
   </div>
   <div class="row"><?php echo $column_left; ?>
@@ -98,6 +98,7 @@
       <hr>
       <br />
       <div class="row">
+        <?php $n = 1; ?>  
         <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">
                <div class="sl_img_<?php echo $n; ?>">
