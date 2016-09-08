@@ -2834,6 +2834,10 @@ input::-webkit-input-placeholder {
 @media (max-width: 855px) {
 /*------coupon-------*/
 
+#login{
+	margin-left: 12% !important;
+}
+
 .tr_carusel_big_left{
 	display: none;
 }
@@ -3021,6 +3025,10 @@ input::-webkit-input-placeholder {
 	left: 10px !important;
 }
 
+#about_compani{
+	margin-left: 35px !important;
+}
+
 }
 
 @media (max-width: 535px) {
@@ -3114,6 +3122,18 @@ input::-webkit-input-placeholder {
 
 .slick-prev{
 	left: 10px !important;
+}
+
+.header_logo {
+	padding-left:8px !important;
+}
+
+#about_compani{
+	margin-left: 30px !important;
+}
+
+#login{
+	margin-right: 15px;
 }
 
 
@@ -3331,7 +3351,13 @@ input::-webkit-input-placeholder {
 
 }
 
+#footer_catalog{
+	margin-left: 38px !important;
+}
 
+#about_compani{
+	margin-left: 38px !important;
+}
 
 }
 

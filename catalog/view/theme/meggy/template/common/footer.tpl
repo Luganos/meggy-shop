@@ -26,7 +26,7 @@
               <div class="footer_top_one">
                 <span>КАТАЛОГ</span>
               </div>
-              <div class="line">
+              <div id="footer_catalog" class="line">
               </div>
               <div class="footer_top_ul">
               <?php if ($categories) { ?>
@@ -56,7 +56,7 @@
               <div class="footer_top_one">
                 <span>О КОМПАНИИ</span>
               </div>
-              <div class="line">
+              <div id="about_compani" class="line">
               </div>
               <div class="footer_top_ul">
                 <ul>
