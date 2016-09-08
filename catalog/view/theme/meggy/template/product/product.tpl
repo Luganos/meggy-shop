@@ -14,7 +14,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="<?php echo $class; ?> content_product "><?php echo $content_top; ?>
       <div class="row">
         <?php if ($column_left || $column_right) { ?>
         <?php $class = 'col-sm-8'; ?>
