@@ -32,7 +32,6 @@
             <?php } ?>
             <?php } ?>
           <?php if ($thumb) { ?>
-<<<<<<< HEAD
           <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
           <?php if ($new_goods_flag) { ?>
           <img id="produc_new" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
@@ -382,7 +381,8 @@
             <?php } ?>
       </div>
       <?php if ($products) { ?>
-      <h3><?php echo $text_related; ?></h3>
+      <h3 id="you_can_help"><?php echo $text_related; ?></h3>
+      <div class="you_can_help_line"></div>
       <div class="row">
         <?php $i = 0; ?>
         <?php foreach ($products as $product) { ?>
