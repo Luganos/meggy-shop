@@ -2182,7 +2182,7 @@ position: relative;
 	color: rgb(180, 180, 180);
 	font-size: 0.875em;
 	text-decoration: line-through;
-	margin-left:13%;
+	margin-left:8%;
 }
 
 .sl_price_center{
@@ -4629,14 +4629,14 @@ a.idTop:hover {
 
 #produc_new{
 	position: relative;
-	bottom: 350px;
-	right: 150px;
+	bottom: 365px;
+	left: 50px;
 }
 
 #produc_discont{
 	position: relative;
 	bottom: 340px;
-	right: 150px;
+	right: 0px;
 }
 
 #produc_action{
@@ -4730,14 +4730,14 @@ a.idTop:hover {
 
 #produc_new{
 	position: relative;
-	bottom: 350px;
-	right: 120px;
+	bottom: 365px;
+	left: 50px;
 }
 
 #produc_discont{
 	position: relative;
 	bottom: 340px;
-	right: 120px;
+	right: 0px;
 }
 
 #produc_action{
@@ -4900,6 +4900,28 @@ a.idTop:hover {
 	width: 100%;
 }
 
+#you_can_help{
+	margin-top: 120px;
+	text-align: center;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: rgb(107,116,124);
+	letter-spacing:5px;
+}
+
+.you_can_help_line:before{
+	content: "";
+}
+
+.you_can_help_line{
+	margin: 20px auto 20px auto;
+	width: 75%;
+	height: 40px;
+	border: 1px solid rgb(217,220,223);
+	border-bottom: 0px;
+
+}
+
 }
 
 @media screen and (max-width: 535px) {
@@ -4962,14 +4984,14 @@ a.idTop:hover {
 
 #produc_new{
 	position: relative;
-	bottom: 350px;
-	right: 120px;
+	bottom: 365px;
+	left: 51px;
 }
 
 #produc_discont{
 	position: relative;
 	bottom: 340px;
-	right: 120px;
+	right: 0px;
 }
 
 #produc_action{
@@ -5146,6 +5168,28 @@ a.idTop:hover {
 	width: 380px !important;
 }
 
+#you_can_help{
+	width: 540px !important;
+	margin-top: 120px;
+	text-align: center;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: rgb(107,116,124);
+	letter-spacing:5px;
+}
+
+.you_can_help_line:before{
+	content: "";
+}
+
+.you_can_help_line{
+	margin: 20px 0px 20px 14% !important;
+	width: 40%;
+	height: 40px;
+	border: 1px solid rgb(217,220,223);
+	border-bottom: 0px;
+}
+
 }
 
 @media (max-width: 470px) { /* от 422 до 320*/
@@ -5158,6 +5202,13 @@ a.idTop:hover {
 	text-decoration: line-through;
 }
 
+.menu_main_product{
+	margin-top: 0px !important;
+}
+
+#xs_product{
+	bottom: 140px !important;
+}
 
 #table_small{
 	width: 300px !important;
@@ -5217,14 +5268,14 @@ a.idTop:hover {
 
 #produc_new{
 	position: relative;
-	bottom: 350px;
-	right: 120px;
+	bottom: 365px;
+	left: 51px;
 }
 
 #produc_discont{
 	position: relative;
 	bottom: 340px;
-	right: 120px;
+	right: 0px;
 }
 
 #produc_action{
@@ -5404,6 +5455,30 @@ a.idTop:hover {
 .col_price{
 	width: 380px !important;
 }
+
+#you_can_help{
+	width: 320px !important;
+	margin-top: 120px;
+	margin-left: 10px;
+	text-align: center;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: rgb(107,116,124);
+	letter-spacing:5px;
+}
+
+.you_can_help_line:before{
+	content: "";
+}
+
+.you_can_help_line{
+	margin: 20px 0px 20px 7% !important;
+	width: 30%;
+	height: 40px;
+	border: 1px solid rgb(217,220,223);
+	border-bottom: 0px;
+}
+
 }
 
 .test:before{
