@@ -32,7 +32,7 @@
             <?php } ?>
             <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
           <?php if ($new_goods_flag) { ?>
           <img id="produc_new" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
           <?php } ?>
@@ -40,8 +40,9 @@
           <img id="produc_discont" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
           <?php } ?>
           <?php if ($action_goods_flag) { ?>
-          <img id="produc_action" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt=""></a></li>
+          <img id="produc_action" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt="">
           <?php } ?>
+          </li>
           </ul>
           <?php } ?>
         </div>
