@@ -504,6 +504,16 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/language/russian/russian.php">
+      <operation>
+	 <search>
+         <![CDATA[$_['text_home']             = '<i class="fa fa-home"></i>';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['text_home']             = 'Главная';]]>
+         </add>  
+      </operation>
+  </file>
   </modification>
   
   
