@@ -1669,7 +1669,7 @@ header{
 /*-------Сезонные предложения--------*/
 .baner_all{
 	margin-left: 60px;
-	margin-top: 50px;
+	margin-top: 100px;
 	width: 75%;
 	//height: 360px;
 }
@@ -3146,6 +3146,11 @@ input::-webkit-input-placeholder {
 
 .tr_carusel_big_right{
 	display: none;
+}
+
+.header_logo{
+	margin-left: 0px !important;
+	//padding-left: 0px !important;
 }
 
 #time{
@@ -4674,13 +4679,16 @@ a.idTop:hover {
 }
 
 .you_can_help_line:before{
-	content: " ";
-	border: 1px solid red;
+	content: "";
 }
 
 .you_can_help_line{
+	margin: 20px auto 20px auto;
+	width: 75%;
 	height: 40px;
-	border: 1px solid red;
+	border: 1px solid rgb(217,220,223);
+	border-bottom: 0px;
+
 }
 
 
@@ -4904,8 +4912,13 @@ a.idTop:hover {
 	text-decoration: line-through;
 }
 
+.baner_all{
+	padding-top: 160px;
+}
+
 #content{
 	bottom: 200px;
+	top: -200px !important;
 }
 
 #product_img_big{
@@ -5145,12 +5158,17 @@ a.idTop:hover {
 	text-decoration: line-through;
 }
 
+
 #table_small{
 	width: 300px !important;
 }
 
+.baner_all{
+	padding-top: 0px;
+}
 
 #content{
+	top: 0px !important;
 	bottom: 200px;
 }
 

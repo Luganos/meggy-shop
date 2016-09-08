@@ -1,11 +1,5 @@
 console.log("OK2");
 
-$('.sl').slick({
-    /*vertical:true,
-    verticalSwiping:true,
-    autoplaySpeed:3000,
-    autoplay:true*/
-});
 
 /*---product_window_up-----*/
     //$('.table_size').on("click", function(){console.log("Hello")});
@@ -106,6 +100,13 @@ else{
 };
 
 /*------END_adoptiv slaider-----*/
+
+$('.sl').slick({
+    /*vertical:true,
+    verticalSwiping:true,
+    autoplaySpeed:3000,
+    autoplay:true*/
+});
 
 /*------product_table_big/small-----*/
 
