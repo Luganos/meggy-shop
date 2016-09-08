@@ -32,6 +32,7 @@ function Click(){
     }
 };
 
+
 $('#image_for_choose-0').on("click", Click);
 $('#image_for_choose-1').on("click", Click);
 $('#image_for_choose-2').on("click", Click);

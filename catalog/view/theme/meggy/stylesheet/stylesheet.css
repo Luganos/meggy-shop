@@ -4368,6 +4368,8 @@ a.idTop:hover {
 
 /*----END_slaider_vert-------*/
 
+
+/*--------product---------*/
 .product_price_discont{
 	font-size: 24px;
 	color: rgb(153,153,153);
@@ -4661,6 +4663,28 @@ a.idTop:hover {
 .image-additional{
 	float: none !important;
 }
+
+#you_can_help{
+	margin-top: 120px;
+	text-align: center;
+	font-size: 22px;
+	text-transform: uppercase;
+	color: rgb(107,116,124);
+	letter-spacing:5px;
+}
+
+.you_can_help_line:before{
+	content: " ";
+	border: 1px solid red;
+}
+
+.you_can_help_line{
+	height: 40px;
+	border: 1px solid red;
+}
+
+
+/*---------END_product(1900px)--------*/
 
 @media screen and (max-width: 855px) {
 	#container_product{
