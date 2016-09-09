@@ -4650,7 +4650,7 @@ a.idTop:hover {
 
 
 /*------description_table------*/
-.table-bordered{
+.table-bordered_product{
 	border: 0px;
 }
 
@@ -4664,7 +4664,7 @@ a.idTop:hover {
 	display: table;
 }
 
-.table-bordered td{
+.table-bordered_product td{
 	border: 0px !important;
 	border-bottom: 1px dotted black !important;
 	width:400px;
@@ -5845,6 +5845,18 @@ a.idTop:hover {
 	border-radius: 0px;
 }
 
+#button-coupon:hover{
+	background: rgb(243,129,129);
+	border: 1px solid rgb(246,168,167);
+}
+#button_text_login:hover{
+	background: rgb(243,129,129);
+}
+/*
+.button_text_login input:hover{
+	background: black;
+}*/
+
 .button_text_login span:hover{
 	border: 1px solid rgb(246,168,167);
 }
@@ -5854,7 +5866,7 @@ a.idTop:hover {
 	//font-weight: bold;
 	text-shadow: 0 0px 0 rgba(0, 0, 0, 0);
 	font-size: 14px;
-	color: rgb(253,238,238);
+	color: white;
 	text-transform: uppercase !important;
 	border: 1px solid rgb(152,199,208);
 	padding: 3px 38px 3px 44px;
