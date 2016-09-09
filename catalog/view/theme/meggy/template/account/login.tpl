@@ -26,7 +26,8 @@
             <h2><?php echo $text_new_customer; ?></h2>
             <p><strong><?php echo $text_register; ?></strong></p>
             <p><?php echo $text_register_account; ?></p>
-            <a href="<?php echo $register; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+            <div class="button_text_login">
+            <a href="<?php echo $register; ?>" class="btn btn-primary"><span><?php echo $button_continue; ?></span></a></div></div>
         </div>
         <div class="col-sm-6">
           <div class="well">
@@ -41,7 +42,9 @@
                 <label class="control-label" for="input-password"><?php echo $entry_password; ?></label>
                 <input type="password" name="password" value="<?php echo $password; ?>" placeholder="<?php echo $entry_password; ?>" id="input-password" class="form-control" />
                 <a href="<?php echo $forgotten; ?>"><?php echo $text_forgotten; ?></a></div>
-              <input type="submit" value="<?php echo $button_login; ?>" class="btn btn-primary" />
+              <div id="button_text_login" class="button_text_coupon">
+              <input type="submit" value="<?php echo $button_login; ?>" id="button-coupon" class="button_text_coupon2" />
+              </div>
               <?php if ($redirect) { ?>
               <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
               <?php } ?>

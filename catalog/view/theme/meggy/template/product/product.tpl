@@ -290,6 +290,25 @@
                   <?php } ?>
                </ul>
       </div>
+      <div class="main_bottom_text_slider ">
+        <ul class="bxslider">
+          <li id="menu_main_text_slider" class="menu_main_text">
+                <a href="index.php?route=common/home" >
+                  <span id="news_bottom_slider" class="news_bottom">новинки</span>
+                </a>
+             </li>
+             <li id="menu_main_text_slider" class="menu_main_text">
+                <a href="index.php?route=common/home&actions_goods=1">
+                   <span id="news_bottom_slider">акции</span>
+                </a>
+             </li>
+             <li id="menu_main_text_slider" class="menu_main_text">
+                <a href="index.php?route=common/home&actions_goods=2">
+                  <span id="news_bottom_slider_discont">со скидкой -10%</span>
+                </a>
+             </li>
+        </ul>
+     </div>
       <div class="tab-content">
             <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
@@ -337,9 +356,20 @@
             <?php if ($review_status) { ?>
             <div class="tab-pane" id="tab-review">
               <form class="form-horizontal" id="form-review">
-                <div id="review"></div>
+                <?php if ($review_status) { ?>
+          <div class="rating">
+            <p>
+              <span><img src="catalog/view/theme/meggy/image/text_ot.png" alt=""></span>
+              <?php } else { ?>
+              <span class="fa fa-stack"><i class="fa fa-star fa-stack-1x"></i><i class="fa fa-star-o fa-stack-1x"></i></span>
+              <?php } ?>
+
+              <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> | <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
+          </div>
+          <p id="send_ot">Оставьте отзыв</p>
+               <!-- <div id="review"></div>
                 <h2><?php echo $text_write; ?></h2>
-                <?php if ($review_guest) { ?>
+                <?php if ($review_guest) { ?>-->
                 <div class="form-group required">
                   <div class="col-sm-12">
                     <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
@@ -350,11 +380,11 @@
                   <div class="col-sm-12">
                     <label class="control-label" for="input-review"><?php echo $entry_review; ?></label>
                     <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                    <div class="help-block"><?php echo $text_note; ?></div>
+                    <!--<div class="help-block"><?php echo $text_note; ?></div>-->
                   </div>
                 </div>
                 <div class="form-group required">
-                  <div class="col-sm-12">
+                 <!-- <div class="col-sm-12">
                     <label class="control-label"><?php echo $entry_rating; ?></label>
                     &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
                     <input type="radio" name="rating" value="1" />
@@ -366,12 +396,12 @@
                     <input type="radio" name="rating" value="4" />
                     &nbsp;
                     <input type="radio" name="rating" value="5" />
-                    &nbsp;<?php echo $entry_good; ?></div>
+                    &nbsp;<?php echo $entry_good; ?></div>-->
                 </div>
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
                   <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary"><?php echo $button_continue; ?></button>
+                    <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border"><span ><?php echo $button_continue; ?></span></div></button>
                   </div>
                 </div>
                 <?php } else { ?>

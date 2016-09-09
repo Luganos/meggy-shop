@@ -515,7 +515,9 @@
             <input type="checkbox" name="agree" value="1" />
             <?php } ?>
             &nbsp;
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+            <div id="button_text_register" class="button_text_coupon">
+            <input type="submit" value="<?php echo $button_continue; ?>"id="button-coupon" class="button_text_coupon2" />
+            </div>
           </div>
         </div>
         <?php } else { ?>

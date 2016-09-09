@@ -209,3 +209,6 @@ $('.sli_slide_8').on("mouseover", function(){$(".sl_kor_8").css({"visibility": "
 $('.sli_slide_8').on("mouseout", function(){$(".sl_kor_8").css({"visibility": "hidden"});});
 
 /*----END_Big_slider_fo_page_product*/
+$(document).ready(function(){
+  $('.bxslider').bxSlider();
+});
