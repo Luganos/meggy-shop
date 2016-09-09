@@ -77,6 +77,22 @@ header{
 	margin-right: 0px !important;
 }
 
+@media (max-width: 535px) {
+	#menu_main_text_slider{
+		width: 400px !important;
+	}
+#news_bottom_slider{
+	margin-left: 60% !important;
+	margin-right: 0px !important;
+}
+
+#news_bottom_slider_discont{
+	margin-left: 50% !important;
+	margin-right: 0px !important;
+}
+
+}
+
 @media (max-width: 371px) {
 	.bx-prev{
 	left: 20px !important;
@@ -85,8 +101,12 @@ header{
 .bx-next{
 	right: 15px !important;
 }
+#news_bottom_slider{
+	margin-left: 33% !important;
+	margin-right: 0px !important;
+}
 #news_bottom_slider_discont{
-	margin-left: 80px !important;
+	margin-left: 95px !important;
 	margin-right: 0px !important;
 }
 
@@ -275,6 +295,12 @@ header{
 .caret:hover{
 		color:rgb(255,184,188);
 	}*/
+
+@media screen and (min-width: 1200px) {
+	.header_tel {
+		margin-left: 35px !important;
+	}
+}
 
 @media screen and (max-width: 1200px) {
 	.header_top{
@@ -4767,6 +4793,25 @@ a.idTop:hover {
 	min-width: 200px !important;
 }
 
+/*-----Отзывы-------*/
+.pull-right{
+	float: left !important;
+}
+
+#menu_main_text_product_last{
+	margin-right:140px !important;
+}
+
+#send_ot{
+	font-size: 22px;
+	color: black;
+	font-weight: bold;
+	font-family: 'Open Sans Semibold';
+
+}
+
+/*-----END_Отзывы-------*/
+
 
 /*---------END_product(1900px)--------*/
 
@@ -4938,10 +4983,10 @@ a.idTop:hover {
 	padding-left: 0px;
 	padding-right: 10px;
 }
-
+/*
 #image_for_choose-0:hover{
 	border: 1px solid red;
-}
+}*/
 
 #input-quantity{
 	width: 125px;
@@ -5001,6 +5046,25 @@ a.idTop:hover {
 #sliii{
 	min-width: 200px !important;
 }
+
+/*-----Отзывы-------*/
+.pull-right{
+	float: left !important;
+}
+
+#menu_main_text_product_last{
+	margin-right:140px !important;
+}
+
+#send_ot{
+	font-size: 22px;
+	color: black;
+	font-weight: bold;
+	font-family: 'Open Sans Semibold';
+
+}
+
+/*-----END_Отзывы-------*/
 
 }
 
@@ -5333,6 +5397,26 @@ a.idTop:hover {
 	max-height: 337px !important;
 
 }
+/*-----Отзывы-------*/
+.pull-right{
+	float: left !important;
+}
+
+#menu_main_text_product_last{
+	margin-right:140px !important;
+}
+
+#send_ot{
+	font-size: 22px;
+	color: black;
+	font-weight: bold;
+	font-family: 'Open Sans Semibold';
+}
+#tab-review{
+	width: 450px !important;
+}
+
+/*-----END_Отзывы-------*/
 
 }
 
@@ -5679,6 +5763,27 @@ a.idTop:hover {
 	max-height: 337px !important;
 
 }
+
+/*-----Отзывы-------*/
+.pull-right{
+	float: left !important;
+}
+
+#menu_main_text_product_last{
+	margin-right:140px !important;
+}
+
+#send_ot{
+	font-size: 22px;
+	color: black;
+	font-weight: bold;
+	font-family: 'Open Sans Semibold';
+}
+#tab-review{
+	width: 300px !important;
+}
+
+/*-----END_Отзывы-------*/
 
 }
 
