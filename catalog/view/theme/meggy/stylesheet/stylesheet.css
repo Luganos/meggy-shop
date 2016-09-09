@@ -212,6 +212,10 @@ header{
 
 #search_big{
 	display: none;
+	position: absolute;
+	right: 60px;
+	top: 50px;
+	width: 300px;
 	//visibility: hidden;
 }
 
@@ -5822,7 +5826,7 @@ a.idTop:hover {
 	color: black;
 }
 
-.button_text_login{
+#button_text_login{
 	width: 200px;
 }
 
@@ -5912,3 +5916,14 @@ a.idTop:hover {
 	cursor: pointer;
 }
 
+
+.sl_slide_1:hover {
+	border: 1px solid white !important;
+	text-decoration: none !important;
+	z-index: 2;
+}
+
+.sl_slide_1 a:hover {
+	border: 0px !important;
+	text-decoration: none !important;
+}

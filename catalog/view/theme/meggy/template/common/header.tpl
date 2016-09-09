@@ -118,7 +118,7 @@
                   <li class="in_item">
                     <span id="search_smoll" class="glyphicon glyphicon-search hidden-sm hidden-xs"></span>
                   </li>
-                  <li id="search_big" class="in_item">
+                  <li id="search_big" class=""><!--was_class_in_item-->
                   <?php echo $search; ?>
                   </li>
                   <!--search end-->
