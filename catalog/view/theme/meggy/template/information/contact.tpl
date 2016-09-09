@@ -134,7 +134,9 @@
         </fieldset>
         <div class="buttons">
           <div class="pull-right">
-            <input class="btn btn-primary" type="submit" value="<?php echo $button_submit; ?>" />
+            <div id="button_text_login" class="button_text_coupon">
+            <input type="submit" value="<?php echo $button_submit; ?>" id="button-coupon" class="button_text_coupon2" />
+            </div>
           </div>
         </div>
       </form>

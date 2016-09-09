@@ -20,7 +20,7 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
       <h1><?php echo $heading_title; ?></h1>
-      <div class="panel-group" id="accordion">
+      <div class="panel-grop" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title"><?php echo $text_checkout_option; ?></h4>
@@ -32,7 +32,7 @@
         <?php if (!$logged && $account != 'guest') { ?>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4 class="panel-title"><?php echo $text_checkout_account; ?></h4>
+            <h4 class="panel-title">55<?php echo $text_checkout_account; ?></h4>
           </div>
           <div class="panel-collapse collapse" id="collapse-payment-address">
             <div class="panel-body"></div>
@@ -717,7 +717,7 @@ $(document).delegate('#button-shipping-method', 'click', function() {
                 location = json['redirect'];
             } else if (json['error']) {
                 $('#button-shipping-method').button('reset');
-                
+
                 if (json['error']['warning']) {
                     $('#collapse-shipping-method .panel-body').prepend('<div class="alert alert-warning">' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                 }
