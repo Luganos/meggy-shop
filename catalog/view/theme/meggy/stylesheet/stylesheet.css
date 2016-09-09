@@ -91,6 +91,11 @@ header{
 	margin-right: 0px !important;
 }
 
+.bx-next{
+	left: 430px;
+}
+
+
 }
 
 @media (max-width: 371px) {
@@ -100,6 +105,7 @@ header{
 
 .bx-next{
 	right: 15px !important;
+	left: 270px;
 }
 #news_bottom_slider{
 	margin-left: 33% !important;
@@ -2877,6 +2883,7 @@ input::-webkit-input-placeholder {
 }
 
 .button_text_right{
+	float: right !important;
 	display: table-cell;
 	width: 300px;
 	height: 40px;
@@ -2884,6 +2891,10 @@ input::-webkit-input-placeholder {
 	text-align: center;
 	vertical-align: middle;
 	padding-top: 10px;
+}
+
+#button_text_right{
+	float: right !important;
 }
 
 .button_text_right:hover{
@@ -3071,6 +3082,7 @@ input::-webkit-input-placeholder {
 }
 
 .button_text_right{
+	float: right !important;
 	display: table-cell;
 	width: 300px;
 	height: 40px;
@@ -3348,6 +3360,7 @@ input::-webkit-input-placeholder {
 }
 
 .button_text_right{
+	float: right !important;
 	display: table-cell;
 	width: 220px;
 	height: 40px;
@@ -5786,6 +5799,84 @@ a.idTop:hover {
 /*-----END_Отзывы-------*/
 
 }
+/*----END_product-----*/
+
+/*-----login.tpl------*/
+.well{
+	background: white !important;
+	border: 0px;
+
+}
+
+.well h2{
+	color: black;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.well strong{
+	color: black;
+	font-family: 'Open Sans Semibold';
+}
+.well p{
+	color: black;
+}
+
+.button_text_login{
+	width: 200px;
+}
+
+.button_text_login a{
+	width: 200px;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: 0px;
+	background: rgb(147,190,202);
+	border-radius: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
+	color: white;
+}
+
+.button_text_login a:hover{
+	text-transform: uppercase;
+	border: 0px;
+	background: rgb(243,129,129);
+	border-radius: 0px;
+}
+
+.button_text_login span:hover{
+	border: 1px solid rgb(246,168,167);
+}
+
+
+.button_text_login span{
+	//font-weight: bold;
+	text-shadow: 0 0px 0 rgba(0, 0, 0, 0);
+	font-size: 14px;
+	color: rgb(253,238,238);
+	text-transform: uppercase !important;
+	border: 1px solid rgb(152,199,208);
+	padding: 3px 38px 3px 44px;
+}
+/*
+#button_text_login{
+	width: 218px !important;
+}*/
+
+#button-coupon{
+	margin-top: 5px !important;
+}
+
+/*-----END_login.tpl------*/
+
+/*-----register.tpl------*/
+#button_text_register{
+	width: 218px;
+	margin-top: 10px;
+}
+
+/*-----END_registr.tpl------*/
 
 .test:before{
 	content: "";

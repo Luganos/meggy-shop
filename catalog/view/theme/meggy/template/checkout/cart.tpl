@@ -131,7 +131,7 @@
       <br />
       <div class="buttons">
         <div class="button_text pull-left "><a href="<?php echo $continue; ?>"><span><?php echo $button_shopping; ?></span></a></div>
-        <div class="button_text_right pull-right  "><a href="<?php echo $checkout; ?>"><span><?php echo $button_checkout; ?></span></a></div>
+        <div id="button_text_right" class="button_text_right pull-right  "><a href="<?php echo $checkout; ?>"><span><?php echo $button_checkout; ?></span></a></div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
