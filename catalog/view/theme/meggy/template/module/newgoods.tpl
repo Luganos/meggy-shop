@@ -2,7 +2,7 @@
    <?php $size = count($products); ?>
    <?php if ($size > 0) { ?>
    <div class="main_bottom_text">
-      <div class="menu_main">
+      <div class="menu_main hidden-xs">
           <ul class="ww">
              <li class="menu_main_text">
                 <a href="index.php?route=common/home" >
@@ -20,6 +20,29 @@
                 </a>
              </li>
           </ul>
+     </div>
+     <div class="main_bottom_text_slider hidden-lg hidden-md hidden-sm ">
+        <ul class="bxslider">
+          <li id="menu_main_text_slider" class="menu_main_text">
+                <a href="index.php?route=common/home" >
+                  <span id="news_bottom_slider" class="news_bottom">новинки</span>
+                </a>
+             </li>
+             <li id="menu_main_text_slider" class="menu_main_text">
+                <a href="index.php?route=common/home&actions_goods=1">
+                   <span id="news_bottom_slider">акции</span>
+                </a>
+             </li>
+             <li id="menu_main_text_slider" class="menu_main_text">
+                <a href="index.php?route=common/home&actions_goods=2">
+                  <span id="news_bottom_slider_discont">со скидкой -10%</span>
+                </a>
+             </li>
+         <!-- <li><img src="catalog/view/theme/meggy/image/new.png" /></li>
+          <li><img src="catalog/view/theme/meggy/image/new.png" /></li>
+          <li><img src="catalog/view/theme/meggy/image/new.png" /></li>
+          <li><img src="catalog/view/theme/meggy/image/new.png" /></li>-->
+        </ul>
      </div>
       <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
