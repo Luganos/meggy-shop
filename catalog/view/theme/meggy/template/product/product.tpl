@@ -313,7 +313,7 @@
             <div class="tab-pane" id="tab-description"><?php echo $description; ?></div>
             <?php if ($attribute_groups || $sku) { ?>
             <div class="tab-pane active" id="tab-specification">
-              <table id="table_small" class="table table-bordered">
+              <table id="table_small" class="table table-bordered_product">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>
@@ -332,7 +332,7 @@
                 <?php } ?>
                  </tbody>
              </table>
-             <table id="table_big" class="table table-bordered">
+             <table id="table_big" class="table table-bordered_product">
                </thead>
                 <tbody>
                  <?php if ($sku) { ?>
