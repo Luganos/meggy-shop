@@ -6018,6 +6018,10 @@ a.idTop:hover {
 
 
 /*----checkout----*/
+.content_checkout{
+
+}
+
 #breadcrumb{
 	margin: 0 auto 0 auto;
 	width: 77%;
@@ -6077,8 +6081,8 @@ a.idTop:hover {
 }
 
 .new_client input{
-	//width:80%;
-	width:300px;
+	width:80%;
+	//width:300px;
 }
 
 .checkout_button_text_coupon{
@@ -6136,6 +6140,15 @@ a.idTop:hover {
 
 
 @media screen and (max-width: 855px) {
+	.checkout{
+		width: 100% !important;;
+	}
+	.checkout-input{
+		margin-right: 10px;
+	}
+	.new_client input{
+		width: 100%;
+	}
 
 }
 
