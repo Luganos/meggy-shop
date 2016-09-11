@@ -27,6 +27,48 @@
             <p>Контактные данные</p>
         </div>
         <hr>
+        <div class="checkout_client">
+            <div class="new_client col-sm-6 col-sx-12">
+                <p>Я новый покупатель</p>
+                <div class="checkout-input">
+                    <form name="new_client" method="post" action="">
+                        <p><b>имя и фамилия</b><br>
+                        <input type="text" size="30" class="form-control">
+                        </p>
+                        <p><b>город</b><br>
+                        <input type="text" size="30" class="form-control">
+                        </p>
+                        <p><b>мобильный телефон</b><br>
+                        <input type="text" size="30" class="form-control">
+                        </p>
+                        <p><b>e-mail</b><br>
+                        <input type="text" size="30" class="form-control">
+                        </p>
+                        <div class="checkout_button_text_coupon">
+                        <input type="submit" value="далее" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
+                        <!--<input type="reset" value="Очистить">-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="new_client col-sm-6 col-sx-12">
+                <p>Я постоянный клиент</p>
+                <div class="checkout-input">
+                    <form name="new_client" method="post" action="">
+                        <p><b>e-mail</b><br>
+                        <input type="text" size="30" class="form-control">
+                        </p>
+                        <p><b>пароль</b><br>
+                        <input type="text" size="30" class="form-control">
+                        </p>
+                        <div class="checkout_button_text_coupon">
+                        <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
+                        <!--<input type="reset" value="Очистить">-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
 

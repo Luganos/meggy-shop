@@ -6023,6 +6023,17 @@ a.idTop:hover {
 	width: 77%;
 }
 
+#breadcrumb a{
+	color: rgb(146,153,159);
+	font-size: 14px;
+	text-transform: uppercase;
+}
+/*
+#breadcrumb:first-child{
+	color: red !important;
+	font-size: 14px;
+}*/
+
 .checkout{
 	margin: 0 auto 0 auto;
 	width: 78%;
@@ -6043,6 +6054,65 @@ a.idTop:hover {
 	font-size: 18px;
 }
 
+.new_client {
+	padding:0px;
+	margin: 40px 0 40px 0;
+}
+
+.new_client p{
+	font-family: 'Open Sans Semibold' !important;
+	color: black;
+	//font-weight: bold;
+	font-size: 18px;
+	margin-bottom:40px;
+}
+
+.new_client b{
+	font-family: 'Open Sans Semibold' !important;
+	color: rgb(146,153,159);
+	//font-weight: bold;
+	font-size: 14px;
+	margin-bottom:5px;
+	text-transform: uppercase;
+}
+
+.new_client input{
+	width:80%;
+}
+
+.checkout_button_text_coupon{
+	width: 220px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+}
+
+.checkout_button_text_coupon:hover{
+	background-color: rgb(243,129,129);
+}
+
+.checkout_button_text_coupon2{
+	width: 100%;
+	height: 31px;
+	background-color: rgb(147,190,202);
+	border: 1px solid rgb(180,210,218);
+	margin: 5px 0px 0px 6px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: ;
+	color: white;
+
+}
+
+
+.checkout_button_text_coupon2:hover{
+	background-color: rgb(243,129,129);
+	border: 1px solid rgb(247,167,167);
+
+}
+
+#checkout_button-coupon{
+	width: 95% !important;
+}
 
 
 @media screen and (max-width: 855px) {
