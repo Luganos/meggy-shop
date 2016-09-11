@@ -79,17 +79,27 @@
         </div>
         <div class="contakt_data">
             <p>Выбор способа доставки и оплаты</p>
+            <form name="new_client" method="post" action="">
             <div class="deliveri">
                 <p>Доставка</p>
                 <div class="pickup">
-
                 </div>
                 <div class="courier">
-
                 </div>
             </div>
-
-        </div>
+            <div class="payment">
+                <p>Оплата</p>
+                <div class="cash">
+                </div>
+            </div>
+            <div class="client_address">
+                <p>Оплата</p>
+                <div class="street">
+                </div>
+            </div>
+            </form>
+         </div>
+      </div>
     </div>
 
       <?php echo $content_bottom; ?></div>
