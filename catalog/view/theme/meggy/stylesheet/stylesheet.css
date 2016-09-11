@@ -2143,7 +2143,7 @@ position: relative;
 	//background-repeat: no-repeat;
 	//background-position: center;
 	width: 222px;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2154,7 +2154,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2165,7 +2165,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2176,7 +2176,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2187,7 +2187,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2198,7 +2198,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2209,7 +2209,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -2220,7 +2220,7 @@ position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-	height: 337px; !important;
+	height: 300px; !important;
 	margin-bottom: 15%;
 	overflow:hidden;
 }
@@ -4544,7 +4544,7 @@ a.idTop:hover {
 
 .col_price_tr span{
 	float: right;
-	margin-right: 20px;
+	margin-right: 0px;
 }
 
 .control-label{
@@ -4945,7 +4945,7 @@ a.idTop:hover {
 
 .col_price_tr span{
 	float: right;
-	margin-right: 20px;
+	margin-right: 0px;
 }
 
 #input-option227{
@@ -5229,7 +5229,7 @@ a.idTop:hover {
 
 .col_price_tr span{
 	float: right;
-	margin-right: 20px;
+	margin-right: 0px;
 }
 
 #input-option227{
@@ -5608,7 +5608,7 @@ a.idTop:hover {
 
 .col_price_tr span{
 	float: right;
-	margin-right: 20px;
+	margin-right: 0px;
 }
 
 #input-option227{
@@ -5965,3 +5965,99 @@ a.idTop:hover {
 	text-decoration: none !important;
 }
 
+/*----Mega_filter_tpl----*/
+
+#column-left{
+	width: 23%;
+}
+
+.filter_img{
+	margin-left:20px;
+}
+
+.mfilter-content{
+	border: 0px !important;
+}
+
+.mfilter-heading-text{
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
+}
+
+.mfilter-tb-as-td{
+	font-size: 14px;
+	color: rgb(107,116,124);
+}
+
+.mfilter-heading-content{
+	background: white;
+
+}
+
+@media screen and (max-width: 855px) {
+	#column-left{
+	width: 100% !important;
+}
+
+
+}
+
+@media screen and (max-width: 535px) {
+
+
+
+}
+
+@media (max-width: 470px) { /* от 422 до 320*/
+
+
+}
+
+/*----END_Mega_filter_tpl----*/
+
+
+/*----checkout----*/
+#breadcrumb{
+	margin: 0 auto 0 auto;
+	width: 77%;
+}
+
+.checkout{
+	margin: 0 auto 0 auto;
+	width: 78%;
+}
+
+.header_title h1{
+	color: black;
+	font-size: 24px;
+	font-weight: bold;
+	//font-family: 'Open Sans Semibold';
+}
+
+.contakt_data{
+	margin-top:50px;
+	font-family: 'Open Sans Semibold' !important;
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+
+@media screen and (max-width: 855px) {
+
+}
+
+
+}
+
+@media screen and (max-width: 535px) {
+
+}
+
+@media (max-width: 470px) { /* от 422 до 320*/
+
+}
+
+/*----END_checkout----*/

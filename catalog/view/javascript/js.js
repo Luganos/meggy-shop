@@ -56,6 +56,12 @@ $('#image_for_choose-6').on("click", function(){$("#image_for_choose-6").css({"b
 */
 var width = document.documentElement.clientWidth;
 console.log(width);
+/*----filter_size----*/
+if(width < 855){
+           var filter_sie = document.getElementById('column-left');
+            filter_sie.setAttribute('class','col-sx-12');
+};
+/*----filter_size----*/
 
 if(width < 517){
     $('#table_big').css({"display": "none"});
@@ -86,7 +92,6 @@ $('.cart_p').on("click", cart_p);
 
 //console.log(col_tovar);
 
-
 /*---End add_tocar----*/
 
 /*------adoptiv slaider-----*/
@@ -101,7 +106,7 @@ else if(width < 517){
 }
 else if(width < 837){
      teg = document.getElementById('srcoll');
-     teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 1}')
+     teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 1}');
 }
 else{
     console.log("big");
