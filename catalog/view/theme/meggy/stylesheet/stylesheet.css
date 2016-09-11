@@ -6134,6 +6134,7 @@ a.idTop:hover {
 	color: black;
 	font-weight: bold;
 	font-size: 18px;
+	clear: both;
 }
 
 .new_client {
@@ -6242,3 +6243,8 @@ a.idTop:hover {
 }
 
 /*----END_checkout----*/
+
+
+.m{
+	clear: both;
+}

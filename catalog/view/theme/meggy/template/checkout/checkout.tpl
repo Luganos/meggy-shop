@@ -53,7 +53,7 @@
             </div>
             <div class="new_client col-sm-6 col-sx-12">
                 <p>Я постоянный клиент</p>
-                <div class="checkout-input  ">
+                <div class="checkout-input">
                     <form name="new_client" method="post" action="">
                         <p><b>e-mail</b><br>
                         <input type="text" size="30" class="form-control">
@@ -74,22 +74,27 @@
                             <img src="catalog/view/theme/meggy/image/vk_checkout.png" alt=""></a>
                         </div>
                     </form>
-                    <p>Контактные данные5</p>
                 </div>
             </div>
         </div>
+        <div class="contakt_data">
+            <p>Выбор способа доставки и оплаты</p>
+            <div class="deliveri">
+                <p>Доставка</p>
+                <div class="pickup">
 
-            <p>Контактные данные1</p>
+                </div>
+                <div class="courier">
 
+                </div>
+            </div>
+
+        </div>
     </div>
-    <p>Контактные данные2</p>
-
-
 
       <?php echo $content_bottom; ?></div>
 
     <?php echo $column_right; ?></div>
-    <p>Контактные данные3</p>
 </div>
 <script type="text/javascript">
 $(document).on('change', 'input[name=\'account\']', function() {
