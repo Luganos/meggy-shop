@@ -366,16 +366,17 @@
             
                        $products = $this->cart->getProducts();
                        $product_total = 0;
-            
-                       foreach ($products as $product) {
+                        
+                       if (is_array($products)) {
+                           foreach ($products as $product) {
 		              
 
-		             foreach ($products as $product_2) {
-			          if ($product_2['product_id'] == $product['product_id']) {
-				      $product_total += $product_2['quantity'];
-			          }
-		             }
-
+		                foreach ($products as $product_2) {
+			             if ($product_2['product_id'] == $product['product_id']) {
+				        $product_total += $product_2['quantity'];
+			             }
+		           }
+                        }
 			
 		      }
             
@@ -531,7 +532,7 @@
          </search>
          <add position ="after">
           <![CDATA[  $data['new_goods_flag'] = FALSE;
-                        
+                   if (is_array($data['new_goods'])) {     
                      foreach ($data['new_goods'] as $new_goods) {
                             
                             foreach((array)$new_goods as $new_good) {
@@ -543,10 +544,11 @@
                             }  
                             
                         }
-                        
+                    }    
                         
                        $data['action_goods_flag'] = FALSE;
                        
+                     if (is_array($data['action_goods'])) {   
                        foreach ($data['action_goods'] as $action_goods) {
                             
                             foreach((array)$action_goods as $action_good) {
@@ -558,9 +560,10 @@
                             }  
                             
                         }
-                        
+                     } 
+                     
                       $data['discount_goods_flag'] = FALSE; 
-                      
+                    if (is_array($data['discount_goods'])) {
                       foreach ($data['discount_goods'] as $discount_goods) {
                             
                             foreach((array)$discount_goods as $discount_good) {
@@ -571,7 +574,9 @@
                                  }
                             }  
                             
-                        }]]>
+                        }
+                     }   
+                        ]]>
          </add>  
       </operation>
   </file>
