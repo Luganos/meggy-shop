@@ -63,9 +63,17 @@
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
-                        <span>Я звбыл пароль</span>
                         <!--<input type="reset" value="Очистить">-->
+                         <span>Я забыл пароль</span>
                         </div>
+                        <div class="enter_for_user">
+                            <p>Войти как пользователь</p>
+                            <a href="">
+                            <img src="catalog/view/theme/meggy/image/fb_checkout.png" alt=""></a>
+                            <a href="">
+                            <img src="catalog/view/theme/meggy/image/vk_checkout.png" alt=""></a>
+                        </div>
+
                     </form>
                 </div>
             </div>
