@@ -6018,6 +6018,10 @@ a.idTop:hover {
 
 
 /*----checkout----*/
+.content_checkout{
+
+}
+
 #breadcrumb{
 	margin: 0 auto 0 auto;
 	width: 77%;
@@ -6078,6 +6082,7 @@ a.idTop:hover {
 
 .new_client input{
 	width:80%;
+	//width:300px;
 }
 
 .checkout_button_text_coupon{
@@ -6102,9 +6107,7 @@ a.idTop:hover {
 	font-size: ;
 	color: white;
 
-
 }
-
 
 .checkout_button_text_coupon2:hover{
 	background-color: rgb(243,129,129);
@@ -6116,8 +6119,36 @@ a.idTop:hover {
 	width: 95% !important;
 }
 
+.checkout_button_text_coupon span{
+	position: relative;
+	left: 245px;
+	bottom: 20px;
+	text-decoration: underline;
+}
+
+.enter_for_user{
+	margin-top: 60px;
+}
+
+.enter_for_user p{
+	font-family: 'Open Sans Semibold' !important;
+	font-size: 18px;
+	color: black;
+	margin-bottom: 20px;
+
+}
+
 
 @media screen and (max-width: 855px) {
+	.checkout{
+		width: 100% !important;;
+	}
+	.checkout-input{
+		margin-right: 10px;
+	}
+	.new_client input{
+		width: 100%;
+	}
 
 }
 
