@@ -182,8 +182,16 @@
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
                   <label>
+                    <?php if (strtolower($option['name']) == strtolower("Размер")) { ?>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
-                    <img src="<?php echo $option_value['image']; ?>" id = "image_for_choose-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <img src="<?php echo $option_value['image']; ?>" id = "size-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <?php } else if (strtolower($option['name']) == strtolower("Цвет")) { ?>
+                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
+                    <img src="<?php echo $option_value['image']; ?>" id = "color-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <?php } else { ?>
+                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
+                    <img src="<?php echo $option_value['image']; ?>" id = "other-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <?php } ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
                     <?php } ?>
