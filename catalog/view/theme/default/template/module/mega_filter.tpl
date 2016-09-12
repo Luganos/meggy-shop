@@ -1,7 +1,6 @@
 <?php if( ! empty( $settings['javascript'] ) ) { ?>
 	<script type="text/javascript">
 		<?php echo htmlspecialchars_decode( $settings['javascript'] ); ?>
-	</script>
 <?php } ?>
 
 <?php
@@ -9,32 +8,32 @@
 	$button_template = '<div class="mfilter-button mfilter-button-%s">%s</div>';
 	$button_temp = '<a href="#" class="%s">%s</a>';
 	$buttons = array( 'top' => array(), 'bottom' => array() );
-	
+
 	if( ! empty( $settings['show_reset_button'] ) ) {
 		$buttons['bottom'][] = sprintf( $button_temp, 'mfilter-button-reset', '<i class="mfilter-reset-icon"></i>' . $text_reset_all );
 	}
-	
+
 	if( ! empty( $settings['show_top_reset_button'] ) ) {
 		$buttons['top'][] = sprintf( $button_temp, 'mfilter-button-reset', '<i class="mfilter-reset-icon"></i>' . $text_reset_all );
 	}
 
 	if( ! empty( $settings['refresh_results'] ) && $settings['refresh_results'] == 'using_button' && ! empty( $settings['place_button'] ) ) {
 		$place_button = explode( '_', $settings['place_button'] );
-	
+
 		if( in_array( 'top', $place_button ) ) {
 			$buttons['top'][] = sprintf( $button_temp, 'btn btn-primary btn-xs', $text_button_apply );
 		}
-		
+
 		if( in_array( 'bottom', $place_button ) ) {
 			$buttons['bottom'][] = sprintf( $button_temp, 'btn btn-primary btn-xs', $text_button_apply );
 		}
 	}
-	
-	foreach( $buttons as $bKey => $bVal ) {	
+
+	foreach( $buttons as $bKey => $bVal ) {
 		$buttons[$bKey] = $bVal ? sprintf( $button_template, $bKey, implode( '', $bVal ) ) : '';
 	}
 
-	
+
 ?>
 
 <?php if( ! empty( $hide_container ) ) { ?>
@@ -43,17 +42,17 @@
 
 <div class="box mfilter-box mfilter-<?php echo $_position; ?><?php echo ! empty( $hide_container ) ? ' mfilter-hide-container' : '' ?><?php echo ! empty( $_displayOptionsAs ) && $_displayOptionsAs == 'modern_horizontal' ? ' mfilter-hide' : ''; ?>" id="mfilter-box-<?php echo (int) $_idx; ?>">
 	<?php if( $heading_title ) { ?>
-		<h3 class="box-heading"><?php echo $heading_title; ?></h3>
+		<h3 class="box-heading"><?php echo $heading_title; ?> <img class="filter_img" src="catalog/view/theme/meggy/image/filter_img.png" alt=""></h3>
 	<?php } ?>
 	<div class="box-content mfilter-content<?php echo empty( $settings['calculate_number_of_products'] ) || empty( $settings['show_number_of_products'] ) ? ' mfilter-hide-counter' : ''; ?>">
 		<?php echo $buttons['top']; ?>
 		<ul>
 			<?php foreach( $filters as $kfilter => $filter ) { ?>
 				<?php
-				
+
 					$base_type = empty( $filter['base_type'] ) ? $filter['type'] : $filter['base_type'];
 					$base_id = empty( $filter['id'] ) ? '' : $filter['id'];
-				
+
 				?>
 				<li
 					data-type="<?php echo $filter['type']; ?>"
@@ -64,13 +63,13 @@
 					<?php if( isset( $filter['auto_levels'] ) ) { ?>
 						data-auto-levels="<?php echo $filter['auto_levels']; ?>"
 					<?php } ?>
-					data-display-live-filter="<?php 
+					data-display-live-filter="<?php
 						$display_live_filter = ! empty( $settings['display_live_filter']['enabled'] ) ? '1' : '-1';
-					
+
 						if( ! empty( $filter['display_live_filter'] ) ) {
 							$display_live_filter = $filter['display_live_filter'];
-						} 
-						
+						}
+
 						if( $display_live_filter == '1' && ! empty( $settings['display_live_filter']['items'] ) ) {
 							echo $settings['display_live_filter']['items'];
 						} else {
@@ -80,10 +79,10 @@
 					data-display-list-of-items="<?php echo empty( $filter['display_list_of_items'] ) ? '' : $filter['display_list_of_items']; ?>"
 					class="mfilter-filter-item mfilter-<?php echo $filter['type']; ?> mfilter-<?php echo $base_type; ?><?php echo $base_type == 'attribute' ? ' mfilter-attributes' : ( $base_type == 'option' ? ' mfilter-options' : ( $base_type == 'filter' ? ' mfilter-filters' : '' ) ); ?>"
 					>
-					
+
 					<?php if( $filter['collapsed'] != 'hide_header' && ! empty( $filter['name'] ) ) { ?>
-						<div class="mfilter-heading<?php 
-						
+						<div class="mfilter-heading<?php
+
 							if( $filter['collapsed'] ) {
 								if( $filter['collapsed'] == '1' || ( $is_mobile && $filter['collapsed'] == 'mobile' ) || ( ! $is_mobile && $filter['collapsed'] == 'pc' ) ) {
 									if( empty( $params[$filter['seo_name']] ) ) {
@@ -91,7 +90,7 @@
 									}
 								}
 							}
-						
+
 						?>">
 							<div class="mfilter-heading-content">
 								<div class="mfilter-heading-text"><span><?php echo $filter['name']; ?></span></div>
@@ -99,15 +98,15 @@
 							</div>
 						</div>
 					<?php } ?>
-					
-					<div class="mfilter-content-opts"<?php 
-					
+
+					<div class="mfilter-content-opts"<?php
+
 							if( ( $filter['collapsed'] == '1' || ( $is_mobile && $filter['collapsed'] == 'mobile' ) || ( ! $is_mobile && $filter['collapsed'] == 'pc' ) ) && $filter['collapsed'] != 'hide_header' && $_position != 'content_top' ) {
 								if( empty( $params[$filter['seo_name']] ) ) {
 									echo ' style="display:none"';
 								}
 							}
-						
+
 						?>>
 						<div class="mfilter-opts-container">
 							<div class="mfilter-content-wrapper">
@@ -145,20 +144,20 @@
 											<?php } else if( $filter['type'] == 'cat_checkbox' ) { ?>
 												<div class="mfilter-tb">
 													<?php
-														
+
 														$tmpCatShown = 0;
 														$tmpCatIdx = 0;
-													
+
 													?>
 													<?php foreach( $filter['categories'] as $category ) { ?>
 														<?php
-														
+
 															if( $category['cnt'] ) {
 																$tmpCatShown++;
 															}
-															
+
 															$tmpCatIdx++;
-														
+
 														?>
 														<div class="mfilter-option mfilter-tb-as-tr<?php echo $category['cnt'] ? '' : ' mfilter-hide'; ?><?php echo $tmpCatShown == 1 && $tmpCatIdx > $tmpCatShown ? ' mfilter-first-child' : ''; ?>">
 															<div class="mfilter-tb-as-td mfilter-col-input">
@@ -176,7 +175,7 @@
 													<?php } ?>
 												</div>
 											<?php } ?>
-											
+
 											<?php if( ! empty( $filter['show_button'] ) ) { ?>
 												<div class="mfilter-button">
 													<a href="#" class="button"><?php echo $text_button_apply; ?></a>
@@ -279,13 +278,13 @@
 										</div>
 									<?php } else if( in_array( $filter['type'], array( 'stock_status', 'manufacturers', 'checkbox', 'radio', 'image_list_radio', 'image_list_checkbox' ) ) ) { ?>
 										<?php
-										
+
 											$_tmp_type = $filter['type'];
-											
+
 											if( in_array( $filter['type'], array( 'stock_status', 'manufacturers' ) ) ) {
 												$_tmp_type = 'checkbox';
 											}
-										
+
 										?>
 										<div class="mfilter-options-container">
 											<div class="mfilter-tb">
@@ -294,8 +293,8 @@
 												<?php echo $_position == 'content_top' ? '<div class="mfilter-tb">' : ''; ?>
 												<div class="mfilter-option mfilter-tb-as-tr">
 													<div class="mfilter-tb-as-td mfilter-col-input">
-														<input 
-															id="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>" 
+														<input
+															id="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>"
 															name="<?php echo $filter['seo_name']; ?>"
 															type="<?php echo $_tmp_type == 'image_list_checkbox' ? 'checkbox' : ( $_tmp_type == 'image_list_radio' ? 'radio' : $_tmp_type ); ?>"
 															<?php echo ! empty( $params[$filter['seo_name']] ) && in_array( $option['value'], $params[$filter['seo_name']] ) ? ' checked="checked"' : ''; ?>
@@ -320,7 +319,7 @@
 												<select>
 													<option value="">---</option>
 													<?php foreach( $filter['options'] as $option_id => $option ) { ?>
-														<option 
+														<option
 															id="mfilter-opts-select-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>"
 															value="<?php echo str_replace( '"', '&quot;', $option['value'] ); ?>"
 															data-name="<?php echo $option['name']; ?>"
@@ -336,9 +335,9 @@
 												<?php foreach( $filter['options'] as $option_id => $option ) { ?>
 													<li class="mfilter-option mfilter-image">
 														<input
-															id="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>" 
+															id="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>"
 															name="<?php echo $filter['seo_name']; ?>"
-															type="checkbox" 
+															type="checkbox"
 															style="display:none"
 															<?php echo ! empty( $params[$filter['seo_name']] ) && in_array( $option['value'], $params[$filter['seo_name']] ) ? ' checked="checked"' : ''; ?>
 															value="<?php echo str_replace( '"', '&quot;', $option['value'] ); ?>" />
@@ -368,22 +367,22 @@
 	MegaFilterLang.text_list	= '<?php echo $text_list; ?>';
 	MegaFilterLang.text_grid	= '<?php echo $text_grid; ?>';
 	MegaFilterLang.text_select	= '<?php echo $text_select; ?>';
-	
+
 	jQuery().ready(function(){
 		jQuery('#mfilter-box-<?php echo (int) $_idx; ?>').each(function(){
 			var _t = jQuery(this).addClass('init'),
 				_p = { };
-			
+
 			for( var i = 0; i < MegaFilterINSTANCES.length; i++ ) {
 				if( _t.attr('id') == MegaFilterINSTANCES[i]._box.attr('id') ) {
 					return;
 				}
 			}
-			
+
 			<?php foreach( $requestGet as $k => $v ) { if( is_array( $v ) || ! in_array( $k, array( 'mfp_org_path', 'path', 'category_id', 'manufacturer_id', 'filter', 'search', 'sub_category', 'description', 'filter_tag' ) ) ) continue; ?>
 				_p['<?php echo $k; ?>'] = '<?php echo addslashes( $v ); ?>';
 			<?php } ?>
-			
+
 			MegaFilterINSTANCES.push((new MegaFilter()).init( _t, {
 				'idx'					: '<?php echo (int) $_idx; ?>',
 				'route'					: '<?php echo $_route; ?>',
