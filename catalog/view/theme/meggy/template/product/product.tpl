@@ -301,18 +301,18 @@
       <div class="main_bottom_text_slider ">
         <ul class="bxslider">
           <li id="menu_main_text_slider" class="menu_main_text">
-                <a href="index.php?route=common/home" >
-                  <span id="news_bottom_slider" class="news_bottom">новинки</span>
+                <a href="#tab-specification" data-toggle="tab">
+                  <span id="news_bottom_slider" class="news_bottom"><?php echo $tab_attribute; ?></span>
                 </a>
              </li>
              <li id="menu_main_text_slider" class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=1">
-                   <span id="news_bottom_slider">акции</span>
+                <a href="#tab-description" data-toggle="tab">
+                   <span id="news_bottom_slider">доставка и оплата</span>
                 </a>
              </li>
              <li id="menu_main_text_slider" class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=2">
-                  <span id="news_bottom_slider_discont">со скидкой -10%</span>
+                <a href="#tab-review" data-toggle="tab">
+                  <span id="news_bottom_slider_discont"><?php echo $tab_review; ?></span>
                 </a>
              </li>
         </ul>
