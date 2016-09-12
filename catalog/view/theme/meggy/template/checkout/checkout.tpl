@@ -63,6 +63,7 @@
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
+                        <span>Я звбыл пароль</span>
                         <!--<input type="reset" value="Очистить">-->
                         </div>
                     </form>

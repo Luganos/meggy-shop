@@ -5968,7 +5968,7 @@ a.idTop:hover {
 /*----Mega_filter_tpl----*/
 
 #column-left{
-	width: 23%;
+	width: 22%;
 }
 
 .filter_img{
@@ -6084,6 +6084,7 @@ a.idTop:hover {
 	width: 220px;
 	height: 40px;
 	background-color: rgb(147,190,202);
+
 }
 
 .checkout_button_text_coupon:hover{
@@ -6100,6 +6101,7 @@ a.idTop:hover {
 	text-transform: uppercase;
 	font-size: ;
 	color: white;
+
 
 }
 
