@@ -73,10 +73,12 @@
                             <a href="">
                             <img src="catalog/view/theme/meggy/image/vk_checkout.png" alt=""></a>
                         </div>
-
                     </form>
                 </div>
             </div>
+        </div>
+        <div class="contakt_data">
+            <p>Контактные данные</p>
         </div>
     </div>
 
