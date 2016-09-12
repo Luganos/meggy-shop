@@ -27,13 +27,22 @@ function Click(){
 };
 
 
-$('#image_for_choose-0').on("click", Click);
-$('#image_for_choose-1').on("click", Click);
-$('#image_for_choose-2').on("click", Click);
-$('#image_for_choose-3').on("click", Click);
-$('#image_for_choose-4').on("click", Click);
-$('#image_for_choose-5').on("click", Click);
-$('#image_for_choose-6').on("click", Click);
+$('#size-image-0').on("click", Click);
+$('#size-image-1').on("click", Click);
+$('#size-image-2').on("click", Click);
+$('#size-image-3').on("click", Click);
+$('#size-image-4').on("click", Click);
+$('#size-image-5').on("click", Click);
+$('#size-image-6').on("click", Click);
+
+
+$('#color-image-0').on("click", Click);
+$('#color-image-1').on("click", Click);
+$('#color-image-2').on("click", Click);
+$('#color-image-3').on("click", Click);
+$('#color-image-4').on("click", Click);
+$('#color-image-5').on("click", Click);
+$('#color-image-6').on("click", Click);
 
 
 /*

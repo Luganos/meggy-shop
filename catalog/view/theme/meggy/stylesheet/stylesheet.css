@@ -4705,25 +4705,47 @@ a.idTop:hover {
 			width: 970px !important;
 	}
 
-#image_for_choose-0{
+#size-image-0{
 	border: 0px solid red;
 }
-#image_for_choose-1{
+#size-image-1{
 	border: 0px solid red;
 }
-#image_for_choose-2{
+#size-image-2{
 	border: 0px solid red;
 }
-#image_for_choose-3{
+#size-image-3{
 	border: 0px solid red;
 }
-#image_for_choose-4{
+#size-image-4{
 	border: 0px solid red;
 }
-#image_for_choose-5{
+#size-image-5{
 	border: 0px solid red;
 }
-#image_for_choose-6{
+#size-image-6{
+	border: 0px solid red;
+}
+
+#color-image-0{
+	border: 0px solid red;
+}
+#color-image-1{
+	border: 0px solid red;
+}
+#color-image-2{
+	border: 0px solid red;
+}
+#color-image-3{
+	border: 0px solid red;
+}
+#color-image-4{
+	border: 0px solid red;
+}
+#color-image-5{
+	border: 0px solid red;
+}
+#color-image-6{
 	border: 0px solid red;
 }
 
@@ -5257,6 +5279,15 @@ a.idTop:hover {
 
 }
 
+#menu_main_text_slider_procuct span{
+	margin-left: 27% !important;
+	}
+
+#menu_main_text_slider_procuct_discont span{
+	margin-left: 32% !important;
+}
+
+
 /*-------END_Меню main--------*/
 
 .img-thumbnail{
@@ -5634,7 +5665,6 @@ a.idTop:hover {
 	//height: auto;
 }
 
-
 .control-label{
 	font-size: 14px;
 	font-weight: bold;
@@ -5654,7 +5684,6 @@ a.idTop:hover {
 .radio label{
 	padding-left: 0px;
 	padding-right: 0px;
-
 }
 
 #input-quantity{
@@ -5741,7 +5770,6 @@ a.idTop:hover {
 	margin-left: 33px !important;
 	max-width: 250px !important;
 	max-height: 337px !important;
-
 }
 
 .sli_img_3 img{
@@ -5768,11 +5796,11 @@ a.idTop:hover {
 	max-height: 337px !important;
 
 }
+
 .sli_img_7 img{
 	margin-left: 33px !important;
 	max-width: 250px !important;
 	max-height: 337px !important;
-
 }
 .sli_img_8 img{
 	margin-left: 33px !important;
@@ -5800,9 +5828,24 @@ a.idTop:hover {
 	width: 300px !important;
 }
 
-/*-----END_Отзывы-------*/
+.menu_main_text_product a:hover{
+	text-decoration:none;
+	color: rgb(107,116,123);
 
 }
+
+#menu_main_text_slider_procuct span{
+	margin-left: 11% !important;
+	}
+
+#menu_main_text_slider_procuct_discont span{
+	margin-left: 16% !important;
+}
+}
+
+/*-----END_Отзывы-------*/
+
+
 /*----END_product-----*/
 
 /*-----login.tpl------*/
@@ -5856,10 +5899,6 @@ a.idTop:hover {
 #button_text_login:hover{
 	background: rgb(243,129,129);
 }
-/*
-.button_text_login input:hover{
-	background: black;
-}*/
 
 .button_text_login span:hover{
 	border: 1px solid rgb(246,168,167);
@@ -5875,15 +5914,12 @@ a.idTop:hover {
 	border: 1px solid rgb(152,199,208);
 	padding: 3px 38px 3px 44px;
 }
-/*
-#button_text_login{
-	width: 218px !important;
-}*/
 
 #button-coupon{
 	margin-top: 5px !important;
 	margin-left: 6px !important;
 }
+
 
 /*-----END_login.tpl------*/
 

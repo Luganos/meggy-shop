@@ -279,7 +279,7 @@
           </div>
         </div>
       </div>
-      <div class="menu_main_product">
+      <div class="menu_main_product hidden-md hidden-sm hidden-xs ">
                <ul class="ww">
                   <?php if ($attribute_groups) { ?>
                   <li class="menu_main_text_product">
@@ -298,19 +298,19 @@
                   <?php } ?>
                </ul>
       </div>
-      <div class="main_bottom_text_slider ">
+      <div class="main_bottom_text_slider hidden-lg ">
         <ul class="bxslider">
-          <li id="menu_main_text_slider" class="menu_main_text">
+          <li id="menu_main_text_slider_procuct" class="menu_main_text">
                 <a href="#tab-specification" data-toggle="tab">
                   <span id="news_bottom_slider" class="news_bottom"><?php echo $tab_attribute; ?></span>
                 </a>
              </li>
-             <li id="menu_main_text_slider" class="menu_main_text">
+             <li id="menu_main_text_slider_procuct" class="menu_main_text">
                 <a href="#tab-description" data-toggle="tab">
                    <span id="news_bottom_slider">доставка и оплата</span>
                 </a>
              </li>
-             <li id="menu_main_text_slider" class="menu_main_text">
+             <li id="menu_main_text_slider_procuct_discont" class="menu_main_text">
                 <a href="#tab-review" data-toggle="tab">
                   <span id="news_bottom_slider_discont"><?php echo $tab_review; ?></span>
                 </a>
