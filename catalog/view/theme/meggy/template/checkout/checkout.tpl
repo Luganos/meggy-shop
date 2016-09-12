@@ -79,10 +79,14 @@
         </div>
         <div class="contakt_data">
             <p>Выбор способа доставки и оплаты</p>
-            <form name="new_client" method="post" action="">
+            <hr>
+            <form name="delivery" method="post" action="">
             <div class="deliveri">
                 <p>Доставка</p>
                 <div class="pickup">
+                    <p>самовывоз</p>
+                    <input type="radio" name="pickup" value="new_post">из Новой Почты<br>
+                    <input type="radio" name="pickup" value="point">из точки выдачи<br>
                 </div>
                 <div class="courier">
                 </div>
