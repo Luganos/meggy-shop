@@ -6233,7 +6233,34 @@ a.idTop:hover {
 	margin-bottom:40px;
 }
 
+.pickup{
+	width: 30%;
+	float: left;
+	margin-left: 22%;
+	margin-bottom: 30px;
+
+}
+
 .pickup p{
+	width: 30%;
+	font-family: 'Open Sans Semibold' !important;
+	color: rgb(146,153,159);
+	font-size: 14px;
+	margin-bottom:5px;
+	text-transform: uppercase;
+}
+.pickup span{
+	font-family: 'Open Sans Semibold' !important;
+	color: rgb(146,153,159);
+	font-size: 14px;
+}
+
+.courier{
+	width: 30%;
+	float: left;
+}
+
+.courier p{
 	font-family: 'Open Sans Semibold' !important;
 	color: rgb(146,153,159);
 	font-size: 14px;
@@ -6241,6 +6268,47 @@ a.idTop:hover {
 	text-transform: uppercase;
 }
 
+.courier span{
+	font-family: 'Open Sans Semibold' !important;
+	color: rgb(146,153,159);
+	font-size: 14px;
+}
+
+.payment{
+	clear: both;
+}
+.payment p {
+	font-family: 'Open Sans Semibold' !important;
+	color: black;
+	//font-weight: bold;
+	font-size: 18px;
+	margin-bottom:40px;
+}
+
+.cash{
+	width: 30%;
+	float: left;
+	margin-left: 22%;
+	margin-bottom: 30px;
+}
+
+.cash span{
+	font-family: 'Open Sans Semibold' !important;
+	color: rgb(146,153,159);
+	font-size: 14px;
+}
+
+.client_address{
+	clear: both;
+}
+
+.street{
+	width: 30%;
+	float: left;
+	margin-left: 22%;
+	margin-bottom: 30px;
+}
+.streen_inline
 
 @media screen and (max-width: 855px) {
 	.checkout{

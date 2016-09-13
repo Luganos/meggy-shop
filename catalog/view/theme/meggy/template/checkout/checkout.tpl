@@ -85,20 +85,39 @@
                 <p>Доставка</p>
                 <div class="pickup">
                     <p>самовывоз</p>
-                    <input type="radio" name="pickup" value="new_post">из Новой Почты<br>
-                    <input type="radio" name="pickup" value="point">из точки выдачи<br>
+                    <input class="new_post_input" type="radio" name="pickup" value="new_post"><span>из Новой Почты</span><br>
+                    <input class="pickup_input" type="radio" name="pickup" value="point"><span>из точки выдачи</span>
                 </div>
                 <div class="courier">
+                    <p>курьер</p>
+                    <input class="Mist_e" type="radio" name="courier" value="Mist_e"><span>Мист Экспресс</span><br>
                 </div>
             </div>
             <div class="payment">
+            <hr>
                 <p>Оплата</p>
                 <div class="cash">
+                    <input class="new_post_input" type="radio" name="pay" value="cash"><span>Наличными</span><br>
+                    <input class="pickup_input" type="radio" name="pay" value="no-cash"><span>Безналичными</span><br>
+                    <input class="pickup_input" type="radio" name="pay" value="card"><span>Visa/MasterCard</span>
                 </div>
             </div>
             <div class="client_address">
-                <p>Оплата</p>
+            <hr>
+                <p>Адрес получателя</p>
                 <div class="street">
+                    <div class="streen_inline">
+                    <span>Наличными</span>
+                    <input class="form-control new_post_input" type="text" name="street" value="">
+                    </div>
+                    <div class="streen_inline">
+                    <span>Безналичными</span>
+                    <input class="form-control pickup_input" type="text" name="street" value="number_house">
+                    </div>
+                    <div class="streen_inline">
+                    <span>Безналичными</span>
+                     <input class="form-control pickup_input" type="text" name="street" value="number_k">
+                     </div>
                 </div>
             </div>
             </form>
