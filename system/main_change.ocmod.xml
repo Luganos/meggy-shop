@@ -614,6 +614,15 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/product/category.php">
+       <operation>
+	    <search><![CDATA['rating'      => $result['rating'],]]></search>
+	    <add position="after"><![CDATA[ 'sku'         => $result['sku'],
+                                            'new_goods_flag' => '1',
+                                            'discount_goods_flag' => '1',
+                                            'action_goods_flag' => '1',]]></add>
+      </operation>
+  </file>
   </modification>
   
   
