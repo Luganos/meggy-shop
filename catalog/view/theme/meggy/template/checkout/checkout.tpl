@@ -64,7 +64,9 @@
                         <div class="checkout_button_text_coupon">
                         <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
                         <!--<input type="reset" value="Очистить">-->
+                         <a href="#">
                          <span>Я забыл пароль</span>
+                         </a>
                         </div>
                         <div class="enter_for_user">
                             <p>Войти как пользователь</p>
@@ -106,19 +108,25 @@
             <hr>
                 <p>Адрес получателя</p>
                 <div class="street">
-                    <div class="streen_inline">
-                    <span>Наличными</span>
-                    <input class="form-control new_post_input" type="text" name="street" value="">
+                    <div class="streen_inline nstreet_input_w">
+                    <span>улица</span>
+                    <input class="form-control nstreet_input" type="text" name="street" value="">
                     </div>
-                    <div class="streen_inline">
-                    <span>Безналичными</span>
-                    <input class="form-control pickup_input" type="text" name="street" value="number_house">
+                    <div class="streen_inline house_input_w">
+                    <span>дом</span>
+                    <input class="form-control house_input" type="text" name="street" value="">
                     </div>
-                    <div class="streen_inline">
-                    <span>Безналичными</span>
-                     <input class="form-control pickup_input" type="text" name="street" value="number_k">
+                    <div class="streen_inline r_input_w">
+                    <span>квартира</span>
+                     <input class="form-control k_input" type="text" name="street" value="">
                      </div>
                 </div>
+            </div>
+            <div class="order">
+            <hr>
+              <div class="checkout_button_text_coupon checkout_button_text_coupon_right">
+                <input type="submit" value="подтвердить заказ" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
+              </div>
             </div>
             </form>
          </div>
