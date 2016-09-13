@@ -71,17 +71,6 @@
 			</add>
         </operation>
 	</file>
-
-	<!-- Header -->
-	<file path="catalog/view/theme/*/template/common/{header}*.tpl">
-		<operation>
-			<search position="before"><![CDATA[catalog/view/javascript/bootstrap/js/bootstrap.min.js]]></search>
-			<add position="before"><![CDATA[
-				<script src="catalog/view/javascript/mf/jquery-ui.min.js" type="text/javascript"></script>
-			]]></add>
-		</operation>
-	</file>
-
 	<file path="catalog/controller/{common, module}/{header, category}*.php">
 		<operation>
 			<search><![CDATA['filter_sub_category' => true]]></search>
