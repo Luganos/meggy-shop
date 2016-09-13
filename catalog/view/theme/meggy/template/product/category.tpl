@@ -98,6 +98,7 @@
       <hr>
       <br />
       <div class="row">
+        <?php $n = 1; ?>  
         <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">
                <div class="sl_img_<?php echo $n; ?>">
