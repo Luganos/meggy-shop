@@ -101,10 +101,18 @@
         <?php $n = 1; ?>  
         <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">
-               <div class="sl_img_<?php echo $n; ?>">
-                   <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new">
-                   <img src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
-               </div>
+           <div class="sli_img_<?php echo $n; ?>">
+                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
+                   <?php if ($new_goods_flag) { ?>
+                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
+                   <?php } ?>
+                   <?php if ($discount_goods_flag) { ?>
+                   <img id="product_discont_large" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
+                   <?php } ?>
+                   <?php if ($action_goods_flag) { ?>
+                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt="">
+                   <?php } ?>
+               </div> 
                <span class="sl_text">
                     <p class="sl_id"><?php echo $product['name']; ?>
                      <?php if ($product['sku']) { ?>
