@@ -614,6 +614,123 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/product/category.php">
+       <operation>
+	    <search><![CDATA['rating'      => $result['rating'],]]></search>
+	    <add position="after"><![CDATA[ 'sku'                 => $result['sku'],
+                                            'new_goods_flag'      => (in_array($result['product_id'], $this->new_goods))? 1: 0,
+                                            'discount_goods_flag' => (in_array($result['product_id'], $this->discount_goods))? 1: 0,
+                                            'action_goods_flag'   => (in_array($result['product_id'], $this->action_goods))? 1: 0,]]></add>
+      </operation>
+      <operation>
+	    <search><![CDATA[$results = $this->model_catalog_product->getProducts($filter_data);]]></search>
+	    <add position="after"><![CDATA[ $this->markForSpecialGoods();]]></add>
+      </operation>
+      <operation>
+	    <search><![CDATA[public function index() {]]></search>
+	    <add position="before">
+<![CDATA[
+       private $new_goods = array();
+       private $action_goods = array();
+       private $discount_goods = array();
+       
+    
+    
+        private function markForSpecialGoods() {
+            
+                $new_goods = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT 50");
+
+		$action_goods = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC"); 
+                
+                $discount_goods = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC");  
+            
+                $new_goods = (!empty($new_goods))? (array)$new_goods : NULL;
+                
+                $action_goods = (!empty($action_goods))? (array)$action_goods : NULL;
+                
+                $discount_goods = (!empty($discount_goods))? (array)$discount_goods : NULL;
+                
+                if (is_array($new_goods)) {
+                    
+                    foreach ($new_goods as $new_good) {
+                        
+                        if (is_array($new_good)) {
+                           foreach ($new_good as $good => $index) {
+                            
+                               if ($good !== 'product_id') {
+                                 $this->new_goods[$good] = $index['product_id'];   
+                               }
+                                
+                           }
+                        }
+                        
+                    }
+                }
+                
+                if (is_array($action_goods)) {
+                    
+                    foreach ($action_goods as $action_good) {
+                        
+                        if (is_array($action_good)) {
+                           foreach ($action_good as $action => $mark) {
+                            
+                               if ($action !== 'product_id') {
+                                 $this->action_goods[$action] = $mark['product_id'];   
+                               }
+                                
+                           }
+                        }
+                        
+                    }
+                }
+                
+                if (is_array($discount_goods)) {
+                    
+                    foreach ($discount_goods as $discount_good) {
+                        
+                        if (is_array($discount_good)) {
+                           foreach ($discount_good as $discount => $sign) {
+                            
+                               if ($discount !== 'product_id') {
+                                 $this->action_goods[$discount] = $sign['product_id'];   
+                               }
+                                
+                           }
+                        }
+                        
+                    }
+                }
+                
+                
+        }]]>
+    </add>
+   </operation>
+   <operation>
+	    <search><![CDATA[$this->load->model('tool/image');]]></search>
+	    <add position="after"><![CDATA[ $this->document->addScript('catalog/view/javascript/picturefill.js');]]></add>
+   </operation>
+   <operation>
+     <search regex ="true" quote = "true">
+     <![CDATA[~$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/home')
+		);~]]>
+     </search>
+     <add position="replace">
+       <![CDATA[
+       
+                $data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/home')
+		);
+
+                $data['breadcrumbs'][] = array(
+			'text' => 'КАТАЛОГ',
+			'href' => $this->url->link('product/category')
+		);]]>
+    </add>
+   </operation>
+  </file>
   </modification>
   
   

@@ -60,8 +60,9 @@
       <p><?php echo $text_empty; ?></p>
       <?php } ?>
       <div class="buttons clearfix">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+        <div class="button_text pull-right button_addrees"><a href="<?php echo $continue; ?>"><span><?php echo $button_continue; ?></span></a></div>
       </div>
+
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
