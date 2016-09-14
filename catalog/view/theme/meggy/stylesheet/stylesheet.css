@@ -2859,6 +2859,9 @@ input::-webkit-input-placeholder {
 	background-color: rgb(147,190,202);
 
 }
+.button_text_coupon:hover{
+	background-color: rgb(242,130,129);
+}
 
 .button_text_coupon2{
 	width: 95%;
@@ -3196,6 +3199,7 @@ input::-webkit-input-placeholder {
 	margin-left: 70px;
 
 }
+
 
 .button_text_coupon2{
 	width: 95%;
@@ -6091,6 +6095,10 @@ a.idTop:hover {
 	float: left;
 }
 
+.category_text{
+	margin-top: 100px;
+}
+
 .sl_img_1_category{
 	width: 280px;
 }
@@ -6649,7 +6657,12 @@ h2{
 	}
 }
 
-
-
 /*----END_account----*/
 
+/*------edit.tpl------*/
+
+.button_text_coupon_edit{
+	width: 200px;
+}
+
+/*------END_edit.tpl------/*
