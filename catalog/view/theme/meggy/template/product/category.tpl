@@ -97,6 +97,7 @@
       <div class="row row_category">
         <?php $n = 1; ?>
         <?php foreach ($products as $product)  { ?>
+          <div class="product-layout product-list col-xs-12"><!--metod show in page-->
            <div class="sl_slide_<?php echo $n; ?> sl_slider_category">
            <div class="sli_img_<?php echo $n; ?>">
                    <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
@@ -131,6 +132,9 @@
                       <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
                </div>
             </div>
+
+          </div>
+
         <?php $n++; ?>
         <?php } ?>
       </div>
@@ -139,7 +143,9 @@
         <div class="col-sm-6 text-right"><?php echo $results; ?></div>
       </div>
       <?php if ($description) { ?>
-        <div class="col-sm-10 category_text"><?php echo $description; ?></div>
+        <div class="col-sm-10 category_text inet_shop_text-center"><?php echo $description; ?>
+        <span id="read_more">Читать далее &gt&gt</span>
+        </div>
         <?php } ?>
       <?php } ?>
       <?php if (!$categories && !$products) { ?>

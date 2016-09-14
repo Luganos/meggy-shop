@@ -6103,6 +6103,11 @@ a.idTop:hover {
 	width: 280px;
 }
 
+.category_text{
+	color: black;
+	font-size: 14px;
+}
+
 @media screen and (max-width: 855px) {
 	.container_category{
 		width: 836px;
@@ -6666,3 +6671,13 @@ h2{
 }
 
 /*------END_edit.tpl------/*
+
+
+/*------address_list.tpl------*/
+
+.button_addrees{
+	width: 220px;
+}
+
+/*------END_address_list.tpl------*/
+
