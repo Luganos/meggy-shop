@@ -19,14 +19,10 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><div id="mfilter-content-container">
-      <!--<h2><?php echo $heading_title; ?>555</h2>-->
-      <?php if ($thumb || $description) { ?>
+      <?php if ($thumb) { ?>
       <div class="row">
         <?php if ($thumb) { ?>
         <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
-        <?php } ?>
-        <?php if ($description) { ?>
-        <div class="col-sm-10"><?php echo $description; ?></div>
         <?php } ?>
       </div>
       <hr>
