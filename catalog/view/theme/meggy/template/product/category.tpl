@@ -99,7 +99,7 @@
           <div class="product-layout product-list col-xs-12"><!--metod show in page-->
            <div class="sl_slide_<?php echo $n; ?> sl_slider_category">
            <div class="sli_img_<?php echo $n; ?>">
-                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
+               <a href="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
                    <?php if ($product['new_goods_flag']) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new category_new_large" alt="">
                    <?php } ?>
