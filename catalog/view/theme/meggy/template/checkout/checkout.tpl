@@ -64,7 +64,7 @@
                         <div class="checkout_button_text_coupon">
                         <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
                         <!--<input type="reset" value="Очистить">-->
-                         <a href="#">
+                         <a href="<?php echo $forgotten; ?>">
                          <span>Я забыл пароль</span>
                          </a>
                         </div>
@@ -848,8 +848,7 @@ $(document).delegate('#button-payment-method', 'click', function() {
 
 <!-------OLD_Script----*/-->
 
-<!--<?php echo $header; ?>
-<div class="container">
+<!--<div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
@@ -1646,4 +1645,3 @@ $(document).delegate('#button-payment-method', 'click', function() {
     });
 });
 //--><!--</script>
-<?php echo $footer; ?>-->
