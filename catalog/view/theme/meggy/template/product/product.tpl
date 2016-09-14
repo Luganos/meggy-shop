@@ -24,7 +24,7 @@
         <div id="xs_product" class="<?php echo $class; ?>">
 
           <?php if ($thumb || $images) { ?>
-          <ul class="thumbnails">
+          <ul class="thumbnails thumbnails_product">
           <?php } ?>
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>

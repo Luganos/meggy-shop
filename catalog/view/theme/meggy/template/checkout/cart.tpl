@@ -2,14 +2,15 @@
 <!--<div class="cart_main">
 
 </div>-->
-<div class="container">
+<div class="container container_cart">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
+    <hr id="cart_hr_top" style="display: block;">
   </ul>
   <div class="contetn_main">
-    <div class="text_top">
+    <div class="text_top text_top_cart">
       <p>Корзина покупателя</p>
     </div>
   </div>
@@ -37,7 +38,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="<?php echo $class; ?> content_cart"><?php echo $content_top; ?>
       <!--<h1><?php /*echo $heading_title;*/ ?>
         <?php if ($weight) { ?>
         &nbsp;(<?php /*echo $weight;*/ ?>)
@@ -87,8 +88,8 @@
 
                     <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p"><i >+</i></button>
                     </div></td>
-                <td class="text-right"><?php echo $product['price']; ?></td>
-                <td class="text-right"><?php echo $product['total']; ?><button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class=" del btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button></td>
+                <td class="text-right cart_table_price"><?php echo $product['price']; ?></td>
+                <td class="text-right cart_table_total"><?php echo $product['total']; ?><button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class=" del btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button></td>
               </tr>
               <?php } ?>
               <?php foreach ($vouchers as $vouchers) { ?>
@@ -108,7 +109,7 @@
         </div>
       </form>
 
-      <div class="row">
+      <div class="row table-bordered_size">
         <div class="col-sm-4 col-sm-offset-8">
           <table class="table table-bordered">
 
@@ -117,24 +118,28 @@
               <td class="text-right"><?php echo $totals[1]['text']; ?></td>
             </tr>-->
             <tr>
-              <td class="text-right"><strong>Итого:</strong></td>
-              <td class="text-right"><?php echo $text_items; ?></td>
+              <td class="text-right table_cart_total"><strong>Итого:</strong></td>
+              <td class="text-right table_cart_number"><?php echo $text_items; ?></td>
             </tr>
-
           </table>
         </div>
       </div>
-
+      <hr class="zas">
       <?php if ($coupon) { ?>
       <div class="panel-group" id="accordion"><?php echo $coupon; ?></div>
       <?php } ?>
       <br />
       <div class="buttons">
-        <div class="button_text pull-left "><a href="<?php echo $continue; ?>"><span><?php echo $button_shopping; ?></span></a></div>
-        <div id="button_text_right" class="button_text_right pull-right  "><a href="<?php echo $checkout; ?>"><span><?php echo $button_checkout; ?></span></a></div>
+        <div class="button_text pull-left button_text_cart"><a href="<?php echo $continue; ?>"><span><?php echo $button_shopping; ?></span></a></div>
+        <div id="button_text_right" class="button_text_right pull-right button_text_right_cart "><a href="<?php echo $checkout; ?>"><span><?php echo $button_checkout; ?></span></a></div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
 
 <?php echo $footer; ?>
+<script>
+  if(width < 855){
+            $("#cart_hr_top").css({"display":"none"});
+};
+</script>

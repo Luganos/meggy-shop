@@ -285,5 +285,8 @@ $(document).ready(function(){
 if(width < 855){
            var filter_sie = document.getElementById('column-left');
             filter_sie.setAttribute('class','col-sx-12');
+            var cart_hr_top = document.getElementById('cart_hr_top');
+            cart_hr_top.setAttribute('display','none');
+            console.log("ccc")
 };
 /*----END_filter_size----*/
