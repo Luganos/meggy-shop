@@ -96,14 +96,15 @@
       <div class="row row_category">
         <?php $n = 1; ?>
         <?php foreach ($products as $product)  { ?>
-          <div class="product-layout product-list col-xs-12"><!--metod show in page-->
+          <div id="categori_show" class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-12"><!--metod show in page-->
            <div class="sl_slide_<?php echo $n; ?> sl_slider_category">
            <div class="sli_img_<?php echo $n; ?>">
-<<<<<<< HEAD
+               <a href="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
+<!--<<<<<<< HEAD
                    <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
 =======
                <a href="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
->>>>>>> 5b831aeddded76ebf6f9025d5cf409c1e15f626c
+>>>>>>> 5b831aeddded76ebf6f9025d5cf409c1e15f626c-->
                    <?php if ($product['new_goods_flag']) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new category_new_large" alt="">
                    <?php } ?>
@@ -159,5 +160,6 @@
       <?php } ?>
       </div><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
+    <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 </div>
 <?php echo $footer; ?>

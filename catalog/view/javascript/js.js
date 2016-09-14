@@ -277,10 +277,6 @@ $('.sli_slide_8').on("mouseout", function(){$(".sl_kor_8").css({"visibility": "h
 
 /*----END_Big_slider_fo_page_product*/
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 5b831aeddded76ebf6f9025d5cf409c1e15f626c
 $(document).ready(function(){
   $('.bxslider').bxSlider();
 });
@@ -290,4 +286,4 @@ if(width < 855){
            var filter_sie = document.getElementById('column-left');
             filter_sie.setAttribute('class','col-sx-12');
 };
-/*----filter_size----*/
+/*----END_filter_size----*/
