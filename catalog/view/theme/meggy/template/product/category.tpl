@@ -19,7 +19,6 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><div id="mfilter-content-container">
-      <!--<h2><?php echo $heading_title; ?>555</h2>-->
       <?php if ($thumb) { ?>
       <div class="row">
         <?php if ($thumb) { ?>
