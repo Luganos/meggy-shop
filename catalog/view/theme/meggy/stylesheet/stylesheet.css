@@ -479,7 +479,45 @@ search_bottom span{
 }
 
 .carousel-indicators{
+	top: 550px;
+	//position: relative;
+	//top: 630px;
 	margin-top: 50px;
+}
+
+#carousel{
+	bottom:12px !important;
+}
+@media screen and (max-width: 1505px) {
+	.carousel-indicators{
+	top: 450px;
+	//position: relative;
+	//top: 630px;
+	margin-top: 50px;
+}
+
+#carousel{
+	bottom:0px !important;
+
+}
+
+}
+@media screen and (max-width: 855px) {
+	#carousel{
+	bottom:0px !important;
+}
+	.carousel-indicators{
+	display: none;
+	top: 250px;
+	//position: relative;
+	//top: 630px;
+	margin-top: 50px;
+}
+
+}
+
+.carousel-indicators li{
+	background-color: rgb(243,129,129);
 }
 
 .tr_carusel_big_left{
@@ -1240,7 +1278,7 @@ input::-webkit-input-placeholder {
 
 @media screen and (max-width: 535px) {
 footer {
-	height: 1300px !important;
+	height: 1450px !important;
 	background-color: rgb(28,30,42) !important;
 }
 
@@ -1760,7 +1798,7 @@ header{
 /*-------Сезонные предложения--------*/
 .baner_all{
 	margin-left: 60px;
-	margin-top: 100px;
+	margin-top: 150px;
 	width: 75%;
 	//height: 360px;
 }
@@ -6998,6 +7036,28 @@ h2{
 
 .button_addrees{
 	width: 220px;
+}
+
+.button_addrees span:hover{
+	border: 1px solid rgb(246,168,167);
+}
+
+@media screen and (max-width: 855px) {
+	.button_addrees{
+	width: 250px !important;
+}
+}
+
+@media screen and (max-width: 535px) {
+	.button_addrees{
+	width: 235px;
+}
+}
+
+@media screen and (max-width: 390px) {
+	.button_addrees{
+	width: 165px !important;
+}
 }
 
 /*------END_address_list.tpl------*/
