@@ -1,4 +1,4 @@
-<?php echo $header; ?>
+?php echo $header; ?>
 <div class="container">
   <ul id="breadcrumb" class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -64,7 +64,7 @@
                         <div class="checkout_button_text_coupon">
                         <input type="submit" value="войти" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
                         <!--<input type="reset" value="Очистить">-->
-                         <a href="#">
+                         <a href="<?php echo $forgotten; ?>">
                          <span>Я забыл пароль</span>
                          </a>
                         </div>
