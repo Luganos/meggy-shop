@@ -98,7 +98,7 @@
         <?php foreach ($products as $product)  { ?>
           <div id="categori_show" class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-12"><!--metod show in page-->
            <div class="sl_slide_<?php echo $n; ?> sl_slider_category">
-           <div class="sli_img_<?php echo $n; ?>">
+           <div class="sli_img_<?php echo $n; ?> category_height_img">
                <a href="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
 <!--<<<<<<< HEAD
                    <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
@@ -161,5 +161,6 @@
       </div><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
     <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
+    <h id="cart_hr_top" style="display: block;">
 </div>
 <?php echo $footer; ?>

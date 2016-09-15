@@ -6395,6 +6395,15 @@ a.idTop:hover {
 }
 
 .sl_slider_category{
+	max-width: 220px;
+	max-height: 373px;
+}
+
+.category_height_img{
+	max-height: 248px;
+}
+
+.sl_slider_category{
 	width: 280px;
 	float: left;
 }
