@@ -276,11 +276,6 @@ $('.sli_slide_8').on("mouseover", function(){$(".sl_kor_8").css({"visibility": "
 $('.sli_slide_8').on("mouseout", function(){$(".sl_kor_8").css({"visibility": "hidden"});});
 
 /*----END_Big_slider_fo_page_product*/
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 5b831aeddded76ebf6f9025d5cf409c1e15f626c
 $(document).ready(function(){
   $('.bxslider').bxSlider();
 });
