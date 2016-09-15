@@ -77,7 +77,7 @@
                 ОПТОВЫЙ ОТДЕЛ
               </span>
               <span class="footer_med_two">
-                <?php echo $telephone; ?>
+                <a href=""><?php echo $telephone; ?></a>
               </span>
               <span class="footer_med_three">
                 Пн-Пт с 09:00 до 18:00. Сб-Вc выходной

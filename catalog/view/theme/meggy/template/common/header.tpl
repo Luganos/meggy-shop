@@ -51,7 +51,7 @@
   <a href="<?php echo $url; ?>" class="idTop"><img src='catalog/view/theme/meggy/image/button_up.png'/></a>
 </div>
   <header class="header">
-      <div class="container col-xs-12">
+      <div class="container col-xs-12 container_header">
         <div class="header_top">
           <nav>
           <div id="header_menu" class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
@@ -129,7 +129,7 @@
                   <li id="login" class="in_item">
                      <?php if ($logged) { ?>
                       <a href="<?php echo $logout; ?>" class="in_in">
-                      <span id="login" class="glyphicon glyphicon-user">
+                      <span id="login" >
                         <img src="catalog/view/theme/meggy/image/face.png" alt="">
                       </span>
                       <span class="in_link_text hidden-xs "><?php echo $text_logout; ?></span>
@@ -180,7 +180,6 @@
         </div>
       </div>
     </header>
-	<div></div>
  <script type =text/javascript>
  </script>
 
