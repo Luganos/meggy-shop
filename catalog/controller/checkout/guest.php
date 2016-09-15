@@ -68,6 +68,8 @@ class ControllerCheckoutGuest extends Controller {
 			unset($this->session->data['shipping_methods']);
 			unset($this->session->data['payment_method']);
 			unset($this->session->data['payment_methods']);
+                        
+                        $json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
