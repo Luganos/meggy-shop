@@ -1,4 +1,4 @@
-(function($) {
+/*(function($) {*/
 //jQuery.noConflict();
 function getURLVar(key) {
 	var value = [];
@@ -358,7 +358,7 @@ $(document).delegate('.agree', 'click', function(e) {
 		}
 	});
 });
-})(window.jQuery);
+/*})(window.jQuery);*/
 // Autocomplete */
 (function($) {
 	$.fn.autocomplete = function(option) {
