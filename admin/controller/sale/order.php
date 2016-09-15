@@ -1237,18 +1237,6 @@ class ControllerSaleOrder extends Controller {
 
 			$this->load->model('extension/extension');
 
-			$content = $this->load->controller('payment/' . $order_info['payment_code'] . '/order');
-
-			if ($content) {
-				$this->load->language('payment/' . $order_info['payment_code']);
-
-				$data['tabs'][] = array(
-					'code'    => $order_info['payment_code'],
-					'title'   => $this->language->get('heading_title'),
-					'content' => $content
-				);
-			}
-
 			$extensions = $this->model_extension_extension->getInstalled('fraud');
 
 			foreach ($extensions as $extension) {

@@ -67,7 +67,6 @@
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="button" value="войти" id="button-login" class="checkout_button_text_coupon2" />
-                        <!--<input type="reset" value="Очистить">-->
                          <a href="<?php echo $forgotten; ?>">
                          <span>Я забыл пароль</span>
                          </a>
@@ -87,31 +86,34 @@
         <div class="contakt_data">
             <p>Выбор способа доставки и оплаты</p>
             <hr>
-            <form name="delivery" method="post" action="">
             <div class="deliveri">
+                <div id="message-about-delivery"></div>   
                 <p>Доставка</p>
                 <div class="pickup">
                     <p>самовывоз</p>
-                    <input class="new_post_input" type="radio" name="pickup" value="new_post"><span>из Новой Почты</span><br>
-                    <input class="pickup_input" type="radio" name="pickup" value="point"><span>из точки выдачи</span>
+                    <input class="new_post_input" type="radio" checked ="checked" name="pickup" value="1"><span>из Новой Почты</span><br>
+                    <input class="pickup_input" type="radio" name="pickup" value="2"><span>из точки выдачи</span>
                 </div>
                 <div class="courier">
                     <p>курьер</p>
-                    <input class="Mist_e" type="radio" name="courier" value="Mist_e"><span>Мист Экспресс</span><br>
+                    <input class="Mist_e" type="radio" name="pickup" value="3"><span>Мист Экспресс</span><br>
                 </div>
             </div>
             <div class="payment">
             <hr>
                 <p>Оплата</p>
+                <div id="message-about-payment"></div>  
                 <div class="cash">
-                    <input class="new_post_input" type="radio" name="pay" value="cash"><span>Наличными</span><br>
-                    <input class="pickup_input" type="radio" name="pay" value="no-cash"><span>Безналичными</span><br>
-                    <input class="pickup_input" type="radio" name="pay" value="card"><span>Visa/MasterCard</span>
+                    <input class="new_post_input" type="radio" name="payment_method" checked ="checked" value="1"><span>Наличными</span><br>
+                    <input class="pickup_input" type="radio" name="payment_method" value="2"><span>Безналичными</span><br>
+                    <input class="pickup_input" type="radio" name="payment_method" value="3"><span>Visa/MasterCard</span>
+                    <input class="pickup_input" type="text" name="agree" value="1" style ="visibility: hidden;">
                 </div>
             </div>
             <div class="client_address">
             <hr>
                 <p>Адрес получателя</p>
+                <div id="message-about-buyer"></div> 
                 <div class="street">
                     <div class="streen_inline nstreet_input_w">
                     <span>улица</span>
@@ -119,21 +121,20 @@
                     </div>
                     <div class="streen_inline house_input_w">
                     <span>дом</span>
-                    <input class="form-control house_input" type="text" name="street" value="">
+                    <input class="form-control house_input" type="text" name="house" value="">
                     </div>
                     <div class="streen_inline r_input_w">
                     <span>квартира</span>
-                     <input class="form-control k_input" type="text" name="street" value="">
+                     <input class="form-control k_input" type="text" name="flat" value="">
                      </div>
                 </div>
             </div>
             <div class="order">
             <hr>
               <div class="checkout_button_text_coupon checkout_button_text_coupon_right">
-                <input type="submit" value="подтвердить заказ" id="checkout_button-coupon" class="checkout_button_text_coupon2" >
+                <input type="button" value="подтвердить заказ" id="confirm-buy" class="checkout_button_text_coupon2" >
               </div>
             </div>
-            </form>
          </div>
       </div>
     </div>
@@ -213,6 +214,68 @@ $('#button-guest').on('click', function() {
 });
 });
 
+// Shipping and payment
+<?php if ($logged || $account) { ?>
+$(document).ready(function() {
+$('#confirm-buy').on('click', function() {
+         
+    $.ajax({
+        url: 'index.php?route=checkout/shipping_address/save',
+        type: 'post',
+        data: $('.street :input'),
+        dataType: 'json',
+        success: function(json) {
+            $('#message-about-buyer').html('');
+
+            if (json['redirect']) {
+                location = json['redirect'];
+            } else if (json['error']) {
+                $('#message-about-buyer').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+           } else if (json['success']) {
+               
+             $.ajax({
+                 url: 'index.php?route=checkout/shipping_method/save',
+                type: 'post',
+                data: $('.deliveri :input[type="radio"]:checked'),
+                dataType: 'json',
+                success: function(json) {
+                $('#message-about-delivery').html('');
+
+                 if (json['redirect']) {
+                    location = json['redirect'];
+                 } else if (json['error']) {
+                       $('#message-about-delivery').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                 } else if (json['success']) {
+                     
+                         $.ajax({
+                              url: 'index.php?route=checkout/payment_method/save',
+                              type: 'post',
+                              data: $('.payment :input[type="radio"]:checked'),
+                              dataType: 'json',
+                              success: function(json) {
+                              $('#message-about-payment').html('');
+
+                                  if (json['redirect']) {
+                                        location = json['redirect'];
+                                  } else if (json['error']) {
+                                       $('#message-about-payment').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                                  } else if (json['success']) {
+                                      
+                                         window.location.href = 'index.php?route=checkout/confirm/index';
+                                  }
+                              }
+                         });
+                     }
+                }
+            });    
+          }
+       }
+    });    
+ });
+});
+ <?php } else { ?>
+ 
+ <?php } ?>
 </script>
 <?php echo $footer; ?>
 
