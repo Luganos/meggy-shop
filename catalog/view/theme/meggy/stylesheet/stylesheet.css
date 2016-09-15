@@ -955,7 +955,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 3% 0 3%;
+	margin: 0 2% 0 2%;
 }
 
 
@@ -1216,7 +1216,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 3% 0 3%;
+	margin: 0 2% 0 2%;
 }
 
 
@@ -1454,6 +1454,7 @@ input::-webkit-input-placeholder {
 	vertical-align:middle;
 	display:block !important;
 	width: 100% !important;
+	margin-bottom: 20px;
 }
 
 .footer_med_seil span{
@@ -1477,12 +1478,13 @@ input::-webkit-input-placeholder {
 	vertical-align:middle;
 	display:block !important;
 	width: 100% !important;
+	margin-bottom: 20px;
 }
 
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 3% 0 3%;
+	margin: 0 2% 0 2%;
 }
 
 
@@ -1522,6 +1524,8 @@ input::-webkit-input-placeholder {
 .footer_down_cop{
 	vertical-align:middle;
 	display:table-cell;
+	padding-top: 20px;
+	padding-left: 40px;
 
 }
 
@@ -2666,6 +2670,9 @@ input::-webkit-input-placeholder {
 	.footer_top_work{
 	width: 30%;
 	}
+	.footer_med{
+		margin-left: 12% !important;
+	}
 }
 
 @media (max-width: 535px) {
@@ -2703,10 +2710,12 @@ input::-webkit-input-placeholder {
 	vertical-align:middle;
 	display:table-cell;
 	width: 30%;
+	padding-bottom: 25px;
 }
 
 .footer_med_get span{
 	display: block;
+	font-size:14px;
 
 }
 
@@ -2719,7 +2728,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 3% 0 3%;
+	margin: 0 2% 0 2%;
 }
 
 
