@@ -1,5 +1,26 @@
 <?php
 class ControllerCheckoutGuest extends Controller {
+    
+    
+         /**
+     * Prerare data before use
+     * @mix $input - raw input data
+    */
+    public function validateDataFromForm($input)
+    {
+ 
+        if(is_array($input)){
+            
+           return array_map(__METHOD__, $input);
+        }
+
+        if(!empty($input) && is_string($input)){
+            return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $input);
+        }
+
+        return $input;
+ 
+    }
 
 	public function save() {
 		$this->load->language('checkout/checkout');
@@ -52,12 +73,15 @@ class ControllerCheckoutGuest extends Controller {
 			$this->session->data['account'] = 'guest';
 
 			$this->session->data['guest']['customer_group_id'] = $customer_group_id;
-			$this->session->data['guest']['firstname'] = $this->request->post['firstname'];
-			$this->session->data['guest']['email'] = $this->request->post['email'];
-			$this->session->data['guest']['telephone'] = $this->request->post['telephone'];
+			$this->session->data['guest']['firstname'] = $this->validateDataFromForm($this->request->post['firstname']);
+			$this->session->data['guest']['email'] = $this->validateDataFromForm($this->request->post['email']);
+			$this->session->data['guest']['telephone'] = $this->validateDataFromForm($this->request->post['telephone']);
+                        $this->session->data['guest']['fax'] = '';
+                        $this->session->data['guest']['lastname'] = '';
+                        $this->session->data['guest']['custom_field'] = '';
 
-			$this->session->data['payment_address']['firstname'] = $this->request->post['firstname'];
-			$this->session->data['payment_address']['city'] = $this->request->post['city'];
+			$this->session->data['payment_address']['firstname'] = $this->validateDataFromForm($this->request->post['firstname']);
+			$this->session->data['payment_address']['city'] = $this->validateDataFromForm($this->request->post['city']);
                         $this->session->data['shipping_address']['country_id'] = $this->config->get('config_country_id');
 			$this->session->data['shipping_address']['zone_id'] = $this->config->get('config_zone_id');
                         $this->session->data['payment_address']['country_id'] = $this->config->get('config_country_id');

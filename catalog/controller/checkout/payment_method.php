@@ -1,5 +1,25 @@
 <?php
 class ControllerCheckoutPaymentMethod extends Controller {
+    
+   /**
+     * Prerare data before use
+     * @mix $input - raw input data
+    */
+    public function validateDataFromForm($input)
+    {
+ 
+        if(is_array($input)){
+            
+           return array_map(__METHOD__, $input);
+        }
+
+        if(!empty($input) && is_string($input)){
+            return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $input);
+        }
+
+        return $input;
+ 
+    }
 
 	public function save() {
 		$this->load->language('checkout/checkout');
@@ -46,7 +66,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
                 }
 
 		if (!$json) {
-			$this->session->data['payment_method'] = $payment;
+			$this->session->data['payment_method'] = $this->validateDataFromForm($payment);
 
 			$this->session->data['comment'] = '';
                         

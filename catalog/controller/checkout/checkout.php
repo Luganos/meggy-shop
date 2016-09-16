@@ -5,6 +5,38 @@ class ControllerCheckoutCheckout extends Controller {
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$this->response->redirect($this->url->link('checkout/cart'));
 		}
+                
+                //Set address for current user
+                if ($this->customer->isLogged()) {
+                    
+                    $address_id = $this->customer->getAddressId();
+                    
+                    // Default Shipping Address
+		    $this->load->model('account/address');
+                    
+                    $address = $this->model_account_address->getAddress($address_id);
+                    
+                    if (!empty($address)) {
+                        
+                       $raw_address = explode(",", strval($address['address_1'])); 
+                       
+                       $data['street'] = $raw_address[0];
+                       $data['house'] = $raw_address[1];
+                       $data['flat'] = $raw_address[2];
+                    } else {
+                        
+                       $data['street'] = '';
+                       $data['house'] = '';
+                       $data['flat'] = '';
+                    }
+                    
+                } else {
+                    
+                      $data['street'] = '';
+                      $data['house'] = '';
+                      $data['flat'] = '';
+                    
+                }
 
 		// Validate minimum quantity requirements.
 		$products = $this->cart->getProducts();

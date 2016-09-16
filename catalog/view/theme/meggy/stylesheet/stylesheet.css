@@ -5402,6 +5402,10 @@ a.idTop:hover {
 
 }
 
+.menu_main_product{
+	margin-top: 10px;
+}
+
 .tovar_img{
 	width: 350px !important;
 	position: absolute;
@@ -7389,3 +7393,22 @@ h2{
 
 /*------END_address_list.tpl------*/
 
+/*-------pagination--------*/
+.pagination{
+	margin-top: 20px;
+
+}
+
+.pagination li a{
+	border: 0px solid #ddd;
+	color: rgb(107,116,124);
+	font-family: 'Open Sans Semibold';
+	font-size: 14px;
+
+}
+
+.pagination:nth-child(1) {
+	color: red;
+}
+
+/*------END_pagination--------*/

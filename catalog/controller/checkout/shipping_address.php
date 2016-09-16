@@ -1,5 +1,26 @@
 <?php
 class ControllerCheckoutShippingAddress extends Controller {
+    
+    
+    /**
+     * Prerare data before use
+     * @mix $input - raw input data
+    */
+    public function validateDataFromForm($input)
+    {
+ 
+        if(is_array($input)){
+            
+           return array_map(__METHOD__, $input);
+        }
+
+        if(!empty($input) && is_string($input)){
+            return str_replace(array('\\', "\0", "\n", "\r", "'", '"', "\x1a"), array('\\\\', '\\0', '\\n', '\\r', "\\'", '\\"', '\\Z'), $input);
+        }
+
+        return $input;
+ 
+    }
 
 	public function save() {
 		$this->load->language('checkout/checkout');
@@ -7,9 +28,9 @@ class ControllerCheckoutShippingAddress extends Controller {
 		$json = array();
                 
                 $post = array();
-
-		// Validate if customer is logged in.
-		if (!$this->customer->isLogged()) {
+                
+		// Validate if customer is logged in or he is guest.
+		if (!$this->customer->isLogged() && !isset($this->session->data['account'])) {
 			$json['redirect'] = $this->url->link('checkout/checkout', '', 'SSL');
 		}
 
@@ -75,6 +96,21 @@ class ControllerCheckoutShippingAddress extends Controller {
 					$json['error']['address_1'] = $this->language->get('error_address_1');
 				}
                                 
+                                if ($this->customer->isLogged()) {
+                                
+                                          $address_id = $this->customer->getAddressId();
+                    
+                                          // Default Shipping Address
+		                          $this->load->model('account/address');
+                    
+                                          $path = $this->model_account_address->getAddress($address_id);
+                                } else {
+                                    
+                                    $path['firstname'] = $this->session->data['payment_address']['firstname'];
+                                    $path['lastname'] = $this->session->data['payment_address']['firstname'];
+                                    $path['city'] = $this->session->data['payment_address']['city'];
+                                    $path['zone_id'] = $this->session->data['shipping_address']['zone_id'];
+                                }
 
                                 if (isset($this->session->data['shipping_address']['country_id'])) {
 			             $post['country_id'] = $this->session->data['shipping_address']['country_id'];
@@ -91,22 +127,28 @@ class ControllerCheckoutShippingAddress extends Controller {
                                 if (isset($this->session->data['shipping_address']['zone_id'])) {
 			               $post['zone_id'] = $this->session->data['shipping_address']['zone_id'];
 		                } else {
-			               $post['zone_id'] = '';
+			               $post['zone_id'] = $path['zone_id'];
 		                }
                                 
-                                $post['city'] = '';
+                                $post['city'] = $path['city'];
                                 
                                 $post['custom_field'] = '';
                                 
-                                $post['firstname'] = '';
+                                $post['firstname'] = $path['firstname'];
                                 
                                 $post['lastname'] = '';
                                 
                                 $post['company'] = '';
                                 
-                                $post['address_1'] = trim($this->request->post['street']) . ' ' . trim($this->request->post['house']) . ' ' . trim($this->request->post['flat']);
+                                $post['zone'] = '';
                                 
-                                $post['address_2'] = trim($this->request->post['street']) . ' ' . trim($this->request->post['house']) . ' ' . trim($this->request->post['flat']);
+                                $post['country'] = '';
+                                
+                                $post['address_format'] = '';
+                                
+                                $post['address_1'] = $this->validateDataFromForm(trim($this->request->post['street'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['house'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['flat']));
+                                
+                                $post['address_2'] = $this->validateDataFromForm(trim($this->request->post['street'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['house'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['flat']));
                                 
                                 //Get data for customer country
 				$this->load->model('localisation/country');
@@ -116,25 +158,41 @@ class ControllerCheckoutShippingAddress extends Controller {
 
 
 				if (!$json) {
-					// Default Shipping Address
-					$this->load->model('account/address');
+                                    
+                                      //Set address for current user
+                                      if ($this->customer->isLogged()) {
+                                          
+                                          if (!empty($path)) {
+                                              
+                                              $customer_path = explode(",", strval($path['address_1'])); 
+                                              
+                                              if ((trim($this->request->post['street']) !== trim($customer_path[0])) || (trim($this->request->post['house']) !== trim($customer_path[1])) || (trim($this->request->post['flat']) !== trim($customer_path[2]))){
+                                                  
+                                                  // Default Shipping Address
+					           $address_id = $this->model_account_address->addAddress($post);
 
-					$address_id = $this->model_account_address->addAddress($post);
+					           $this->session->data['shipping_address'] = $this->model_account_address->getAddress($address_id);
+                                                   
+                                                   $this->load->model('account/activity');
 
-					$this->session->data['shipping_address'] = $this->model_account_address->getAddress($address_id);
-
+					          $activity_data = array(
+						                      'customer_id' => $this->customer->getId(),
+						                      'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
+					          );
+                                             
+                                                   $this->model_account_activity->addActivity('address_add', $activity_data);
+                                              }
+                                          }
+                                          
+                                      } else {
+                                          
+                                          $this->session->data['shipping_address'] = $post;
+                                          
+                                      }
+                                        
 					unset($this->session->data['shipping_method']);
 					unset($this->session->data['shipping_methods']);
 
-					$this->load->model('account/activity');
-
-					$activity_data = array(
-						'customer_id' => $this->customer->getId(),
-						'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName()
-					);
-
-					$this->model_account_activity->addActivity('address_add', $activity_data);
-                                        
                                         $json['success'] = 1;
 				}
 			}
