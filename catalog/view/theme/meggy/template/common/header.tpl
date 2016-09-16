@@ -22,7 +22,10 @@
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-condensed-bold" rel="stylesheet" type="text/css" />
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-semibold" rel="stylesheet" type="text/css" />
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<<<<<<< HEAD
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.js"   integrity="sha256-lzf/CwLt49jbVoZoFcPZOc0LlMYPFBorVSwMsTs2zsA="   crossorigin="anonymous"></script>
+=======
+>>>>>>> bee19c4f953a5094fa7ea731ceee38f0f6b52c5c
 <!--<script src="catalog/view/javascript/mf/jquery-ui.min.js" type="text/javascript"></script>-->
 <script src="catalog/view/javascript/jquery.bxslider/jquery.bxslider.min.js"></script>
 <link href="catalog/view/javascript/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
