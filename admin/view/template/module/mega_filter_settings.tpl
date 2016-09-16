@@ -14,7 +14,7 @@
 <div class="tab-content">
 	<div class="tab-pane active" id="tab-base-attributes">
 		<br /><?php echo $entry_default_values; ?><br /><br />
-		<?php 
+		<?php
 
 			$_baseName		= $_name . '_settings[attribs]';
 			$_baseValues	= $settings['attribs'];
@@ -123,13 +123,13 @@
 					<td>
 						<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/display-live-filter.png" />
 					</td>
-					<td style="vertical-align: top">						
+					<td style="vertical-align: top">
 						<?php echo $text_enabled; ?>:
 						<input type="checkbox" name="<?php echo $_name; ?>_settings[display_live_filter][enabled]" value="button_more"<?php echo ! empty( $settings['display_live_filter']['enabled'] ) ? ' checked="checked"' : ''; ?> />
 						<br /><br />
-						
+
 						<?php echo $entry_limit_live_filter; ?><br />
-						
+
 						<input type="text" name="<?php echo $_name; ?>_settings[display_live_filter][items]" value="<?php echo empty( $settings['display_live_filter']['items'] ) ? '' : (int) $settings['display_live_filter']['items']; ?>" />
 					</td>
 				</tr>
@@ -143,13 +143,13 @@
 				<td style="width: 230px;"><?php echo $entry_color_counter_background; ?></td>
 				<td width="300">
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[background_color_counter]" value="<?php echo ! empty( $settings['background_color_counter'] ) ? $settings['background_color_counter'] : '#428bca'; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/couter-color.png" />
 				</td>
 				<td width="200"><?php echo $entry_color_counter_text; ?></td>
 				<td>
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[text_color_counter]" value="<?php echo ! empty( $settings['text_color_counter'] ) ? $settings['text_color_counter'] : '#ffffff'; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/couter-color.png" />
 				</td>
 			</tr>
@@ -157,13 +157,13 @@
 				<td><?php echo $entry_color_search_button_background; ?></td>
 				<td>
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[background_color_search_button]" value="<?php echo ! empty( $settings['background_color_search_button'] ) ? $settings['background_color_search_button'] : '#428bca'; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/search-button-color.png" />
 				</td>
 				<td><?php echo $entry_color_slider_background; ?></td>
 				<td>
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[background_color_slider]" value="<?php echo ! empty( $settings['background_color_slider'] ) ? $settings['background_color_slider'] : ''; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/slider-color.png" />
 				</td>
 			</tr>
@@ -171,13 +171,13 @@
 				<td><?php echo $entry_color_header_background; ?></td>
 				<td width="300">
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[background_color_header]" value="<?php echo ! empty( $settings['background_color_header'] ) ? $settings['background_color_header'] : ''; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/header-color.png" />
 				</td>
 				<td width="200"><?php echo $entry_color_header_text; ?></td>
 				<td>
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[text_color_header]" value="<?php echo ! empty( $settings['text_color_header'] ) ? $settings['text_color_header'] : ''; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/header-color.png" />
 				</td>
 			</tr>
@@ -185,14 +185,14 @@
 				<td style="width: 230px;"><?php echo $entry_color_header_border_bottom; ?></td>
 				<td width="300">
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[border_bottom_color_header]" value="<?php echo ! empty( $settings['border_bottom_color_header'] ) ? $settings['border_bottom_color_header'] : ''; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/header-border-bottom-color.png" />
 				</td>
 				<td width="200"><?php echo $entry_image_size; ?></td>
 				<td>
 					<input type="text" name="<?php echo $_name; ?>_settings[image_size_width]" size="5" value="<?php echo ! empty( $settings['image_size_width'] ) ? $settings['image_size_width'] : '20'; ?>" /> x
 					<input type="text" name="<?php echo $_name; ?>_settings[image_size_height]" size="5" value="<?php echo ! empty( $settings['image_size_height'] ) ? $settings['image_size_height'] : '20'; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/image-size.png" />
 				</td>
 			</tr>
@@ -200,7 +200,7 @@
 				<td><?php echo $entry_widget_button_background; ?></td>
 				<td colspan="3">
 					<input class="mf-colorPicker" type="text" name="<?php echo $_name; ?>_settings[background_color_widget_button]" value="<?php echo ! empty( $settings['background_color_widget_button'] ) ? $settings['background_color_widget_button'] : ''; ?>" />
-					
+
 					<img src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/images/widget-button-background.png" />
 				</td>
 			</tr>
@@ -219,8 +219,8 @@
 				<td width="200"><?php echo $entry_javascript; ?></td>
 				<td>
 <?php
-			
-$javascript_example_code = 
+
+$javascript_example_code =
 "MegaFilter.prototype.beforeRequest = function() {
 	var self = this;
 };
@@ -233,7 +233,6 @@ MegaFilter.prototype.afterRender = function( htmlResponse, htmlContent, json ) {
 	var self = this;
 };
 ";
-					
 					?>
 					<textarea name="<?php echo $_name; ?>_settings[javascript]" cols="150" rows="20"><?php echo empty( $settings['javascript'] ) ? $javascript_example_code : $settings['javascript']; ?></textarea>
 				</td>
@@ -359,7 +358,7 @@ MegaFilter.prototype.afterRender = function( htmlResponse, htmlContent, json ) {
 					</select>
 					<br />
 					<input type="checkbox" id="in_stock_default_selected" name="<?php echo $_name; ?>_settings[in_stock_default_selected]" style="vertical-align: middle; margin: 0;" value="1" <?php echo ! empty( $settings['in_stock_default_selected'] ) ? 'checked="checked"' : ''; ?> /> <label for="in_stock_default_selected"><?php echo $text_in_stock_default_selected; ?></label>
-										
+
 					<?php if( ! empty( $mfp_plus_version ) ) { ?>
 						<br />
 						<input type="checkbox" id="stock_for_options_plus" name="<?php echo $_name; ?>_settings[stock_for_options_plus]" style="vertical-align: middle; margin: 0;" value="1" <?php echo ! empty( $settings['stock_for_options_plus'] ) ? 'checked="checked"' : ''; ?> /> <label for="stock_for_options_plus"><?php echo $text_stock_for_options_plus; ?></label>
@@ -410,15 +409,15 @@ MegaFilter.prototype.afterRender = function( htmlResponse, htmlContent, json ) {
 
 <link type="text/css" href="<?php echo $HTTP_URL; ?>view/stylesheet/mf/css/colorpicker.css" rel="stylesheet" />
 <script type="text/javascript" src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/js/colorpicker.js"></script>
-<script type="text/javascript">	
+<script type="text/javascript">
 	(function($){
 		$('input[name="<?php echo $_name; ?>_settings[calculate_number_of_products]"]').change(function(){
 			var checked = $(this).is(':checked');
-			
+
 			$('input[name="<?php echo $_name; ?>_settings[show_number_of_products]"],input[name="<?php echo $_name; ?>_settings[hide_inactive_values]"]').parent().parent()[checked?'show':'hide']();
 		}).trigger('change');
 	})(jQuery);
-	
+
 	jQuery('input[name="<?php echo $_name; ?>_settings[refresh_results]"]').change(function(){
 		jQuery('input[name="<?php echo $_name; ?>_settings[refresh_results]"]').each(function(){
 			var $inputs = jQuery(this).parent().find('input:not([name="<?php echo $_name; ?>_settings[refresh_results]"])');
@@ -430,7 +429,7 @@ MegaFilter.prototype.afterRender = function( htmlResponse, htmlContent, json ) {
 			}
 		});
 	}).trigger('change');
-	
+
 	//Color Pickers
 		jQuery("input.mf-colorPicker").each(function(){
 			var tis = jQuery(this);

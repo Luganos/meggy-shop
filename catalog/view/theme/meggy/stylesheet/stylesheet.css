@@ -7426,3 +7426,40 @@ h2{
 	margin-left: 10px;
 }
 /*------END_pagination--------*/
+
+/*------search-----*/
+
+.button_text_sea{
+	width: 150px;
+	height: 40px;
+	background-color: rgb(147,190,202);
+
+}
+.button_text_sea:hover{
+	background-color: rgb(242,130,129);
+}
+
+
+.button_text_search{
+	width: 95%;
+	height: 31px;
+	background-color: rgb(147,190,202);
+	border: 1px solid rgb(180,210,218);
+	margin: 5px 0px 0px 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: ;
+	color: white;
+
+}
+
+
+.button_text_search:hover{
+
+	background-color: rgb(242,130,129);
+	border: 1px solid rgb(247,167,167);
+
+
+}
+
+/*------END_search-----*/

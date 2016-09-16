@@ -144,7 +144,12 @@ $(function() {
     $('#button-cart').on("click", function(){location.reload()});
 
     $('#search_smoll').on("mouseover", function(){console.log("tr")});
-    $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
+   // $('#search_smoll').on("click", function(){$("#search_big").css({"display": "inline"});});
+    $('#search_smoll').on("click", function(){$("#search_big").toggle()});
+
+    //$('.search_bottom').on("click", function(){$("#search_big").css({"display": "inline"});});
+    $('.search_bottom').on("click", function(){$("#search_big").toggle()});
+
 
     $('#read_more').on("click", function(){$(".inet_shop_text-center p")
         .animate({"height": "+300px"});});

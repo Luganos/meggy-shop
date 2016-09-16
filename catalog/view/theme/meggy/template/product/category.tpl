@@ -18,6 +18,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
+
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><div id="mfilter-content-container">
       <?php if ($thumb) { ?>
       <div class="row">

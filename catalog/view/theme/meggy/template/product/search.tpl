@@ -65,7 +65,9 @@
           <?php } ?>
           <?php echo $entry_description; ?></label>
       </p>
-      <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
+      <div class="button_text_sea">
+          <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="button_text_search" />
+      </div>
       <h2><?php echo $text_search; ?></h2>
       <?php if ($products) { ?>
       <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>
