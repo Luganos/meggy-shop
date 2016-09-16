@@ -2630,6 +2630,7 @@ position: relative;
 	display: table;
 	padding: 5px;
 	visibility: hidden;
+	cursor: pointer;
 }
 
 .sl_kor_1 span,.sl_kor_2 span,.sl_kor_3 span,.sl_kor_4 span,.sl_kor_5 span
