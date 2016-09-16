@@ -117,15 +117,15 @@
                 <div class="street">
                     <div class="streen_inline nstreet_input_w">
                     <span>улица</span>
-                    <input class="form-control nstreet_input" type="text" name="street" value="">
+                    <input class="form-control nstreet_input" type="text" name="street" value="<?php echo $street; ?>">
                     </div>
                     <div class="streen_inline house_input_w">
                     <span>дом</span>
-                    <input class="form-control house_input" type="text" name="house" value="">
+                    <input class="form-control house_input" type="text" name="house" value="<?php echo $house; ?>">
                     </div>
                     <div class="streen_inline r_input_w">
                     <span>квартира</span>
-                     <input class="form-control k_input" type="text" name="flat" value="">
+                     <input class="form-control k_input" type="text" name="flat" value="<?php echo $flat; ?>">
                      </div>
                 </div>
             </div>
