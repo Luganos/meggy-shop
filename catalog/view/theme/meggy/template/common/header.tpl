@@ -24,8 +24,6 @@
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
 <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.js"   integrity="sha256-xWbKoNW9eZkm1RodPMQHsVyql6jqeiD6IYvsGyKEW78="   crossorigin="anonymous"></script>
-<!--<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.js"   integrity="sha256-lzf/CwLt49jbVoZoFcPZOc0LlMYPFBorVSwMsTs2zsA="   crossorigin="anonymous"></script>
-<!--<script src="catalog/view/javascript/mf/jquery-ui.min.js" type="text/javascript"></script>-->
 <script src="catalog/view/javascript/jquery.bxslider/jquery.bxslider.min.js"></script>
 <link href="catalog/view/javascript/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
