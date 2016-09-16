@@ -406,7 +406,6 @@ MegaFilter.prototype.afterRender = function( htmlResponse, htmlContent, json ) {
 		</table>
 	</div>
 </div>
-
 <link type="text/css" href="<?php echo $HTTP_URL; ?>view/stylesheet/mf/css/colorpicker.css" rel="stylesheet" />
 <script type="text/javascript" src="<?php echo $HTTP_URL; ?>view/stylesheet/mf/js/colorpicker.js"></script>
 <script type="text/javascript">
