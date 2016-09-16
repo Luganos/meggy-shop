@@ -108,7 +108,7 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['telephone'] = $customer_info['telephone'];
 				$order_data['fax'] = $customer_info['fax'];
 				$order_data['custom_field'] = json_decode($customer_info['custom_field'], true);
-			} elseif (isset($this->session->data['guest'])) {
+			} elseif (isset($this->session->data['account'])) {
 				$order_data['customer_id'] = 0;
 				$order_data['customer_group_id'] = $this->session->data['guest']['customer_group_id'];
 				$order_data['firstname'] = $this->session->data['guest']['firstname'];
@@ -142,7 +142,7 @@ class ControllerCheckoutConfirm extends Controller {
 			if (isset($this->session->data['payment_method']['code'])) {
 				$order_data['payment_code'] = $this->session->data['payment_method']['code'];
 			} else {
-				$order_data['payment_code'] = '';
+				$order_data['payment_code'] = '1';
 			}
 
 			if ($this->cart->hasShipping()) {
@@ -451,6 +451,7 @@ class ControllerCheckoutConfirm extends Controller {
 			unset($this->session->data['voucher']);
 			unset($this->session->data['vouchers']);
 			unset($this->session->data['totals']);
+                        unset($this->session->data['account']);
 		}
 
 		$this->document->setTitle($this->language->get('heading_title'));

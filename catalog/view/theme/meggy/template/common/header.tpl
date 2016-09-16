@@ -22,6 +22,7 @@
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-condensed-bold" rel="stylesheet" type="text/css" />
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-semibold" rel="stylesheet" type="text/css" />
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <!--<script src="catalog/view/javascript/mf/jquery-ui.min.js" type="text/javascript"></script>-->
 <script src="catalog/view/javascript/jquery.bxslider/jquery.bxslider.min.js"></script>
 <link href="catalog/view/javascript/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
