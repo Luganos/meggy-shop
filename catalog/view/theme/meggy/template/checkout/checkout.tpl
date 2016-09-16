@@ -63,7 +63,7 @@
                         <input type="text" size="30" class="form-control" name ="email"/>
                         </p>
                         <p><b>пароль</b><br>
-                        <input type="text" size="30" class="form-control" name="password"/>
+                        <input type="password" size="30" class="form-control" name="password"/>
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="button" value="войти" id="button-login" class="checkout_button_text_coupon2" />
@@ -130,6 +130,7 @@
                 </div>
             </div>
             <div class="order">
+            <div id ="main-message-field"></div>     
             <hr>
               <div class="checkout_button_text_coupon checkout_button_text_coupon_right">
                 <input type="button" value="подтвердить заказ" id="confirm-buy" class="checkout_button_text_coupon2" >
@@ -274,7 +275,12 @@ $('#confirm-buy').on('click', function() {
  });
 });
  <?php } else { ?>
- 
+ $(document).ready(function() {
+  $('#confirm-buy').on('click', function() {  
+      
+      $('#main-message-field').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>Войдите как постоянный клиент или новый покупатель<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+  });    
+});
  <?php } ?>
 </script>
 <?php echo $footer; ?>
