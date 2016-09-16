@@ -5103,6 +5103,7 @@ a.idTop:hover {
 
 
 /*--------product---------*/
+
 .product_price_discont{
 	font-size: 24px;
 	color: rgb(153,153,153);
@@ -5403,11 +5404,21 @@ a.idTop:hover {
 
 .tovar_img{
 	width: 350px !important;
-	position: relative;
+	position: absolute;
+	left: 100px;
+	top: 0;
 	bottom: 295px;
 	float: right;
 
 }
+/*
+.tovar_img{
+	width: 350px !important;
+	position: relative;
+	bottom: 295px;
+	float: right;
+
+}*/
 
 .tovar_img a{
 	text-decoration: none !important;
@@ -5495,11 +5506,20 @@ a.idTop:hover {
 .tovar_img{
 	width: 300px !important;
 	height: 300px !important;
+	position: absolute;
+	bottom: 295px;
+	left: 85px;
+	float: right;
+}
+/*
+.tovar_img{
+	width: 300px !important;
+	height: 300px !important;
 	position: relative;
 	bottom: 295px;
 	left: 35px;
 	float: right;
-}
+}*/
 
 #product_img_big{
 	width: 300px !important;
@@ -5774,15 +5794,22 @@ a.idTop:hover {
 
 .tovar_img{
 	width: 350px !important;
-	position: relative;
+	position: absolute;
 	top: 0px;
-	left: -300px;
+	left: -50px;
 	float: left;
 }
 
 .tovar_img a{
 	text-decoration: none !important;
 	border: 0px;
+
+}
+
+.thumbnails_product{
+	margin-top: 100px;
+	width: 500px;
+	overflow: hidden !important;
 
 }
 
@@ -6151,15 +6178,21 @@ a.idTop:hover {
 
 .tovar_img{
 	width: 350px !important;
-	position: relative;
-	top: 0px;
-	left: -300px;
+	position: absolute;
+	top: 30px;
+	left: -10px;
 	float: left;
 }
 
 .tovar_img a{
 	text-decoration: none !important;
 	border: 0px;
+}
+
+.thumbnails_product{
+	margin-top: 100px;
+	width: 350px;
+	overflow: hidden !important;
 
 }
 
@@ -6980,12 +7013,15 @@ a.idTop:hover {
 	text-transform: uppercase;
 	font-size: ;
 	color: white;
+	transition-property:background-color;
+	transition-duration:0.5s;
 
 }
 
 .checkout_button_text_coupon2:hover{
 	background-color: rgb(243,129,129);
 	border: 1px solid rgb(247,167,167);
+	transform:scale(1.5);
 
 }
 

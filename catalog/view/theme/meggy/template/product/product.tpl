@@ -471,6 +471,7 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+</div>
 <script type="text/javascript"><!--
 /*
 var timerId = setTimeout(function() {
@@ -683,5 +684,6 @@ $(document).ready(function() {
 		}
 	});
 });
-//--></script>
+</script>
+<div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 <?php echo $footer; ?>
