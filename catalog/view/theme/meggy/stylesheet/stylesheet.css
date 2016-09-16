@@ -2630,6 +2630,7 @@ position: relative;
 	display: table;
 	padding: 5px;
 	visibility: hidden;
+	cursor: pointer;
 }
 
 .sl_kor_1 span,.sl_kor_2 span,.sl_kor_3 span,.sl_kor_4 span,.sl_kor_5 span
@@ -3678,7 +3679,11 @@ input::-webkit-input-placeholder {
 }
 
 #login{
-	margin-right: 15px;
+	margin-right: 0px;
+}
+
+#tr{
+	text-align: left;
 }
 
 .table_cart_total{
@@ -6966,7 +6971,7 @@ a.idTop:hover {
 }
 
 .checkout_button_text_coupon2{
-	width: 208px;
+	width: 208px !important;
 	height: 31px;
 	background-color: rgb(147,190,202);
 	border: 1px solid rgb(180,210,218);
