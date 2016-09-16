@@ -206,6 +206,7 @@ header{
 }
 
 #search_smoll{
+	z-index: 10;
 	visibility: visible;
 }
 
@@ -7396,7 +7397,11 @@ h2{
 /*-------pagination--------*/
 .pagination{
 	margin-top: 20px;
+}
 
+.pagination li span{
+	background-color: rgb(150,210,226) !important;
+	border-color: white !important;
 }
 
 .pagination li a{
@@ -7407,8 +7412,17 @@ h2{
 
 }
 
-.pagination:nth-child(1) {
-	color: red;
+.pagination li:nth-child(1) a{
+	display: none;
 }
 
+.pagination li:nth-child(2) a:after{
+	content: "вперед";
+	margin-left: 10px;
+}
+
+.pagination li:last-child a:after{
+	content: "назад";
+	margin-left: 10px;
+}
 /*------END_pagination--------*/
