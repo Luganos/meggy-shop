@@ -77,7 +77,7 @@
                 ОПТОВЫЙ ОТДЕЛ
               </span>
               <span class="footer_med_two">
-                <?php echo $telephone; ?>
+                <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
               </span>
               <span class="footer_med_three">
                 Пн-Пт с 09:00 до 18:00. Сб-Вc выходной
@@ -88,7 +88,7 @@
                 ПРИЕМ ЗАЯВОК
               </span>
               <span class="footer_med_three">
-                meggi.com.ua@gmail.com
+                <a href="mailto:meggi.com.ua@gmail.com">meggi.com.ua@gmail.com</a>
               </span>
             </div>
             <div class="footer_med_net">

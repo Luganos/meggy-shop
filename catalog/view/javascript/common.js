@@ -1,3 +1,5 @@
+/*(function($) {*/
+//jQuery.noConflict();
 function getURLVar(key) {
 	var value = [];
 
@@ -130,6 +132,7 @@ $(document).ready(function() {
 });
 
 // Cart add remove functions
+
 var cart = {
 	'add': function(product_id, quantity) {
 		$.ajax({
@@ -355,7 +358,7 @@ $(document).delegate('.agree', 'click', function(e) {
 		}
 	});
 });
-
+/*})(window.jQuery);*/
 // Autocomplete */
 (function($) {
 	$.fn.autocomplete = function(option) {
@@ -482,3 +485,4 @@ $(document).delegate('.agree', 'click', function(e) {
 		});
 	}
 })(window.jQuery);
+//})(jQuery);

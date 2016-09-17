@@ -335,120 +335,6 @@
          </add>  
       </operation>
   </file>
-  <file path="catalog/controller/checkout/cart.php">
-      <operation>
-	 <search>
-         <![CDATA[$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));]]>
-         </search>
-         <add position ="replace">
-          <![CDATA[$json['quantity'] = $this->calculateProduct();
-                   $json['total'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));]]>
-         </add>  
-      </operation>
-  </file>
-  <file path="catalog/controller/checkout/cart.php">
-      <operation>
-	 <search>
-         <![CDATA[unset($this->session->data['reward']);]]>
-         </search>
-         <add position ="after">
-          <![CDATA[$json['quantity'] = $this->calculateProduct();]]>
-         </add>  
-      </operation>
-  </file>
-   <file path="catalog/controller/checkout/cart.php">
-      <operation>
-	 <search>
-         <![CDATA[public function index() {]]>
-         </search>
-         <add position ="before">
-          <![CDATA[public function calculateProduct() {
-            
-                       $products = $this->cart->getProducts();
-                       $product_total = 0;
-                        
-                       if (is_array($products)) {
-                           foreach ($products as $product) {
-		              
-
-		                foreach ($products as $product_2) {
-			             if ($product_2['product_id'] == $product['product_id']) {
-				        $product_total += $product_2['quantity'];
-			             }
-		           }
-                        }
-			
-		      }
-            
-                      return intval($product_total);
-                  }]]>
-         </add>  
-      </operation>
-  </file>
-  <file path="catalog/controller/checkout/cart.php">
-      <operation>
-	 <search>
-         <![CDATA[$data['button_checkout'] = $this->language->get('button_checkout');]]>
-         </search>
-         <add position ="after">
-       <![CDATA[// Totals
-		$this->load->model('extension/extension');
-
-		$total_data = array();
-		$total = 0;
-		$taxes = $this->cart->getTaxes();
-                
-                // Display prices
-		if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-			$sort_order = array();
-
-			$results = $this->model_extension_extension->getExtensions('total');
-
-			foreach ($results as $key => $value) {
-				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
-			}
-
-			array_multisort($sort_order, SORT_ASC, $results);
-
-			foreach ($results as $result) {
-				if ($this->config->get($result['code'] . '_status')) {
-					$this->load->model('total/' . $result['code']);
-
-					$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
-				}
-			}
-
-			$sort_order = array();
-
-			foreach ($total_data as $key => $value) {
-				$sort_order[$key] = $value['sort_order'];
-			}
-
-			array_multisort($sort_order, SORT_ASC, $total_data);
-		  }
-                        
-                        $data['text_items'] = sprintf(preg_match("/^0.0/", $this->currency->format($total))? '':  $this->currency->format($total));]]>
-         </add>  
-      </operation>
-  </file>
-  <file path="catalog/controller/checkout/cart.php">
-      <operation>
-	 <search regex ="true" quote = "true">
-              <![CDATA[~if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl', $data));
-			} else {
-				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
-			}~]]>
-         </search>
-         <add position ="replace">
-               <![CDATA[if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/cart_empty.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/cart_empty.tpl', $data));
-			} else {
-				$this->response->setOutput($this->load->view('default/template/checkout/cart_empty.tpl', $data));
-			}]]>
-         </add>  
-      </operation>
-  </file>
   <file path="catalog/controller/product/product.php">
       <operation>
 	 <search>
@@ -613,6 +499,123 @@
 				);]]>
          </add>  
       </operation>
+  </file>
+  <file path="catalog/controller/product/category.php">
+       <operation>
+	    <search><![CDATA['rating'      => $result['rating'],]]></search>
+	    <add position="after"><![CDATA[ 'sku'                 => $result['sku'],
+                                            'new_goods_flag'      => (in_array($result['product_id'], $this->new_goods))? 1: 0,
+                                            'discount_goods_flag' => (in_array($result['product_id'], $this->discount_goods))? 1: 0,
+                                            'action_goods_flag'   => (in_array($result['product_id'], $this->action_goods))? 1: 0,]]></add>
+      </operation>
+      <operation>
+	    <search><![CDATA[$results = $this->model_catalog_product->getProducts($filter_data);]]></search>
+	    <add position="after"><![CDATA[ $this->markForSpecialGoods();]]></add>
+      </operation>
+      <operation>
+	    <search><![CDATA[public function index() {]]></search>
+	    <add position="before">
+<![CDATA[
+       private $new_goods = array();
+       private $action_goods = array();
+       private $discount_goods = array();
+       
+    
+    
+        private function markForSpecialGoods() {
+            
+                $new_goods = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT 50");
+
+		$action_goods = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC"); 
+                
+                $discount_goods = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC");  
+            
+                $new_goods = (!empty($new_goods))? (array)$new_goods : NULL;
+                
+                $action_goods = (!empty($action_goods))? (array)$action_goods : NULL;
+                
+                $discount_goods = (!empty($discount_goods))? (array)$discount_goods : NULL;
+                
+                if (is_array($new_goods)) {
+                    
+                    foreach ($new_goods as $new_good) {
+                        
+                        if (is_array($new_good)) {
+                           foreach ($new_good as $good => $index) {
+                            
+                               if ($good !== 'product_id') {
+                                 $this->new_goods[$good] = $index['product_id'];   
+                               }
+                                
+                           }
+                        }
+                        
+                    }
+                }
+                
+                if (is_array($action_goods)) {
+                    
+                    foreach ($action_goods as $action_good) {
+                        
+                        if (is_array($action_good)) {
+                           foreach ($action_good as $action => $mark) {
+                            
+                               if ($action !== 'product_id') {
+                                 $this->action_goods[$action] = $mark['product_id'];   
+                               }
+                                
+                           }
+                        }
+                        
+                    }
+                }
+                
+                if (is_array($discount_goods)) {
+                    
+                    foreach ($discount_goods as $discount_good) {
+                        
+                        if (is_array($discount_good)) {
+                           foreach ($discount_good as $discount => $sign) {
+                            
+                               if ($discount !== 'product_id') {
+                                 $this->action_goods[$discount] = $sign['product_id'];   
+                               }
+                                
+                           }
+                        }
+                        
+                    }
+                }
+                
+                
+        }]]>
+    </add>
+   </operation>
+   <operation>
+	    <search><![CDATA[$this->load->model('tool/image');]]></search>
+	    <add position="after"><![CDATA[ $this->document->addScript('catalog/view/javascript/picturefill.js');]]></add>
+   </operation>
+   <operation>
+     <search regex ="true" quote = "true">
+     <![CDATA[~$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/home')
+		);~]]>
+     </search>
+     <add position="replace">
+       <![CDATA[
+       
+                $data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/home')
+		);
+
+                $data['breadcrumbs'][] = array(
+			'text' => 'КАТАЛОГ',
+			'href' => $this->url->link('product/category')
+		);]]>
+    </add>
+   </operation>
   </file>
   </modification>
   

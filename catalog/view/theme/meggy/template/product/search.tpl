@@ -1,4 +1,4 @@
-<?php echo $header; ?>
+<?php echo $header; ?><?php if( ! empty( $mfilter_json ) ) { echo '<div id="mfilter-json" style="display:none">' . base64_encode( $mfilter_json ) . '</div>'; } ?>
 <div class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -13,7 +13,7 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?><div id="mfilter-content-container">
       <h1><?php echo $heading_title; ?></h1>
       <label class="control-label" for="input-search"><?php echo $entry_search; ?></label>
       <div class="row">
@@ -65,7 +65,9 @@
           <?php } ?>
           <?php echo $entry_description; ?></label>
       </p>
-      <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
+      <div class="button_text_sea">
+          <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="button_text_search" />
+      </div>
       <h2><?php echo $text_search; ?></h2>
       <?php if ($products) { ?>
       <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>
@@ -154,7 +156,7 @@
       <?php } else { ?>
       <p><?php echo $text_empty; ?></p>
       <?php } ?>
-      <?php echo $content_bottom; ?></div>
+      </div><?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
 <script type="text/javascript"><!--

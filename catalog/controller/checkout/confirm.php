@@ -19,18 +19,13 @@ class ControllerCheckoutConfirm extends Controller {
 			unset($this->session->data['shipping_methods']);
 		}
 
-		// Validate if payment address has been set.
-		if (!isset($this->session->data['payment_address'])) {
-			$redirect = $this->url->link('checkout/checkout', '', 'SSL');
-		}
-
 		// Validate if payment method has been set.
 		if (!isset($this->session->data['payment_method'])) {
 			$redirect = $this->url->link('checkout/checkout', '', 'SSL');
 		}
 
 		// Validate cart has products and has stock.
-		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
+		if (!$this->cart->hasProducts()) {
 			$redirect = $this->url->link('checkout/cart');
 		}
 
@@ -113,7 +108,7 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['telephone'] = $customer_info['telephone'];
 				$order_data['fax'] = $customer_info['fax'];
 				$order_data['custom_field'] = json_decode($customer_info['custom_field'], true);
-			} elseif (isset($this->session->data['guest'])) {
+			} elseif (isset($this->session->data['account'])) {
 				$order_data['customer_id'] = 0;
 				$order_data['customer_group_id'] = $this->session->data['guest']['customer_group_id'];
 				$order_data['firstname'] = $this->session->data['guest']['firstname'];
@@ -124,30 +119,30 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['custom_field'] = $this->session->data['guest']['custom_field'];
 			}
 
-			$order_data['payment_firstname'] = $this->session->data['payment_address']['firstname'];
-			$order_data['payment_lastname'] = $this->session->data['payment_address']['lastname'];
-			$order_data['payment_company'] = $this->session->data['payment_address']['company'];
-			$order_data['payment_address_1'] = $this->session->data['payment_address']['address_1'];
-			$order_data['payment_address_2'] = $this->session->data['payment_address']['address_2'];
-			$order_data['payment_city'] = $this->session->data['payment_address']['city'];
-			$order_data['payment_postcode'] = $this->session->data['payment_address']['postcode'];
-			$order_data['payment_zone'] = $this->session->data['payment_address']['zone'];
-			$order_data['payment_zone_id'] = $this->session->data['payment_address']['zone_id'];
-			$order_data['payment_country'] = $this->session->data['payment_address']['country'];
-			$order_data['payment_country_id'] = $this->session->data['payment_address']['country_id'];
-			$order_data['payment_address_format'] = $this->session->data['payment_address']['address_format'];
-			$order_data['payment_custom_field'] = (isset($this->session->data['payment_address']['custom_field']) ? $this->session->data['payment_address']['custom_field'] : array());
+			$order_data['payment_firstname'] = $this->session->data['shipping_address']['firstname'];
+			$order_data['payment_lastname'] = $this->session->data['shipping_address']['lastname'];
+			$order_data['payment_company'] = $this->session->data['shipping_address']['company'];
+			$order_data['payment_address_1'] = $this->session->data['shipping_address']['address_1'];
+			$order_data['payment_address_2'] = $this->session->data['shipping_address']['address_2'];
+			$order_data['payment_city'] = $this->session->data['shipping_address']['city'];
+			$order_data['payment_postcode'] = $this->session->data['shipping_address']['postcode'];
+			$order_data['payment_zone'] = $this->session->data['shipping_address']['zone'];
+			$order_data['payment_zone_id'] = $this->session->data['shipping_address']['zone_id'];
+			$order_data['payment_country'] = $this->session->data['shipping_address']['country'];
+			$order_data['payment_country_id'] = $this->session->data['shipping_address']['country_id'];
+			$order_data['payment_address_format'] = $this->session->data['shipping_address']['address_format'];
+			$order_data['payment_custom_field'] = (isset($this->session->data['shipping_address']['custom_field']) ? $this->session->data['shipping_address']['custom_field'] : array());
 
 			if (isset($this->session->data['payment_method']['title'])) {
 				$order_data['payment_method'] = $this->session->data['payment_method']['title'];
 			} else {
-				$order_data['payment_method'] = '';
+				$order_data['payment_method'] = $this->session->data['payment_method'];
 			}
 
 			if (isset($this->session->data['payment_method']['code'])) {
 				$order_data['payment_code'] = $this->session->data['payment_method']['code'];
 			} else {
-				$order_data['payment_code'] = '';
+				$order_data['payment_code'] = '1';
 			}
 
 			if ($this->cart->hasShipping()) {
@@ -168,13 +163,13 @@ class ControllerCheckoutConfirm extends Controller {
 				if (isset($this->session->data['shipping_method']['title'])) {
 					$order_data['shipping_method'] = $this->session->data['shipping_method']['title'];
 				} else {
-					$order_data['shipping_method'] = '';
+					$order_data['shipping_method'] = $this->session->data['shipping_method'];
 				}
 
 				if (isset($this->session->data['shipping_method']['code'])) {
 					$order_data['shipping_code'] = $this->session->data['shipping_method']['code'];
 				} else {
-					$order_data['shipping_code'] = '';
+					$order_data['shipping_code'] = 1;
 				}
 			} else {
 				$order_data['shipping_firstname'] = '';
@@ -406,15 +401,109 @@ class ControllerCheckoutConfirm extends Controller {
 				);
 			}
 
-			$data['payment'] = $this->load->controller('payment/' . $this->session->data['payment_method']['code']);
-		} else {
-			$data['redirect'] = $redirect;
+			$data['payment'] = $this->session->data['payment_method'];
+		} 
+                
+            
+               $this->success();
+
+	
+
+
+	}
+        
+        public function success() {
+            
+                $this->load->language('checkout/success');
+
+		if (isset($this->session->data['order_id'])) {
+			$this->cart->clear();
+
+			// Add to activity log
+			$this->load->model('account/activity');
+
+			if ($this->customer->isLogged()) {
+				$activity_data = array(
+					'customer_id' => $this->customer->getId(),
+					'name'        => $this->customer->getFirstName() . ' ' . $this->customer->getLastName(),
+					'order_id'    => $this->session->data['order_id']
+				);
+
+				$this->model_account_activity->addActivity('order_account', $activity_data);
+			} else {
+				$activity_data = array(
+					'name'     => $this->session->data['guest']['firstname'] . ' ' . $this->session->data['guest']['lastname'],
+					'order_id' => $this->session->data['order_id']
+				);
+
+				$this->model_account_activity->addActivity('order_guest', $activity_data);
+			}
+
+			unset($this->session->data['shipping_method']);
+			unset($this->session->data['shipping_methods']);
+			unset($this->session->data['payment_method']);
+			unset($this->session->data['payment_methods']);
+			unset($this->session->data['guest']);
+			unset($this->session->data['comment']);
+			unset($this->session->data['order_id']);
+			unset($this->session->data['coupon']);
+			unset($this->session->data['reward']);
+			unset($this->session->data['voucher']);
+			unset($this->session->data['vouchers']);
+			unset($this->session->data['totals']);
+                        unset($this->session->data['account']);
 		}
 
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/confirm.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/confirm.tpl', $data));
+		$this->document->setTitle($this->language->get('heading_title'));
+
+		$data['breadcrumbs'] = array();
+
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_home'),
+			'href' => $this->url->link('common/home')
+		);
+
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_basket'),
+			'href' => $this->url->link('checkout/cart')
+		);
+
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_checkout'),
+			'href' => $this->url->link('checkout/checkout', '', 'SSL')
+		);
+
+		$data['breadcrumbs'][] = array(
+			'text' => $this->language->get('text_success'),
+			'href' => $this->url->link('checkout/success')
+		);
+
+		$data['heading_title'] = $this->language->get('heading_title');
+
+		if ($this->customer->isLogged()) {
+			$data['text_message'] = sprintf($this->language->get('text_customer'), $this->url->link('account/account', '', 'SSL'), $this->url->link('account/order', '', 'SSL'), $this->url->link('account/download', '', 'SSL'), $this->url->link('information/contact'));
 		} else {
-			$this->response->setOutput($this->load->view('default/template/checkout/confirm.tpl', $data));
+			$data['text_message'] = sprintf($this->language->get('text_guest'), $this->url->link('information/contact'));
 		}
-	}
+
+		$data['button_continue'] = $this->language->get('button_continue');
+
+		$data['continue'] = $this->url->link('common/home');
+
+		$data['column_left'] = $this->load->controller('common/column_left');
+		$data['column_right'] = $this->load->controller('common/column_right');
+		$data['content_top'] = $this->load->controller('common/content_top');
+		$data['content_bottom'] = $this->load->controller('common/content_bottom');
+		$data['footer'] = $this->load->controller('common/footer');
+		$data['header'] = $this->load->controller('common/header');
+
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/common/success.tpl', $data));
+		} else {
+			$this->response->setOutput($this->load->view('default/template/common/success.tpl', $data));
+		}
+
+            
+            
+        }
 }

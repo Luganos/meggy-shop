@@ -36,15 +36,15 @@
 
 ?>
 
-<?php if( ! empty( $hide_container ) ) { ?>
+<?php if( ! empty( $visible_container ) ) { ?>
 	<div style="display: none;">
 <?php } ?>
 
-<div class="box mfilter-box mfilter-<?php echo $_position; ?><?php echo ! empty( $hide_container ) ? ' mfilter-hide-container' : '' ?><?php echo ! empty( $_displayOptionsAs ) && $_displayOptionsAs == 'modern_horizontal' ? ' mfilter-hide' : ''; ?>" id="mfilter-box-<?php echo (int) $_idx; ?>">
+<div class="box mfilter-box mfilter-<?php echo $_position; ?><?php echo ! empty( $visible_container ) ? ' mfilter-visible-container' : '' ?><?php echo ! empty( $_displayOptionsAs ) && $_displayOptionsAs == 'modern_horizontal' ? ' mfilter-visible' : ''; ?>" id="mfilter-box-<?php echo (int) $_idx; ?>">
 	<?php if( $heading_title ) { ?>
 		<h3 class="box-heading"><?php echo $heading_title; ?> <img class="filter_img" src="catalog/view/theme/meggy/image/filter_img.png" alt=""></h3>
 	<?php } ?>
-	<div class="box-content mfilter-content<?php echo empty( $settings['calculate_number_of_products'] ) || empty( $settings['show_number_of_products'] ) ? ' mfilter-hide-counter' : ''; ?>">
+	<div class="box-content mfilter-content<?php echo empty( $settings['calculate_number_of_products'] ) || empty( $settings['show_number_of_products'] ) ? ' mfilter-visible-counter' : ''; ?>">
 		<?php echo $buttons['top']; ?>
 		<ul>
 			<?php foreach( $filters as $kfilter => $filter ) { ?>
@@ -80,7 +80,7 @@
 					class="mfilter-filter-item mfilter-<?php echo $filter['type']; ?> mfilter-<?php echo $base_type; ?><?php echo $base_type == 'attribute' ? ' mfilter-attributes' : ( $base_type == 'option' ? ' mfilter-options' : ( $base_type == 'filter' ? ' mfilter-filters' : '' ) ); ?>"
 					>
 
-					<?php if( $filter['collapsed'] != 'hide_header' && ! empty( $filter['name'] ) ) { ?>
+					<?php if( $filter['collapsed'] != 'visible_header' && ! empty( $filter['name'] ) ) { ?>
 						<div class="mfilter-heading<?php
 
 							if( $filter['collapsed'] ) {
@@ -101,7 +101,7 @@
 
 					<div class="mfilter-content-opts"<?php
 
-							if( ( $filter['collapsed'] == '1' || ( $is_mobile && $filter['collapsed'] == 'mobile' ) || ( ! $is_mobile && $filter['collapsed'] == 'pc' ) ) && $filter['collapsed'] != 'hide_header' && $_position != 'content_top' ) {
+							if( ( $filter['collapsed'] == '1' || ( $is_mobile && $filter['collapsed'] == 'mobile' ) || ( ! $is_mobile && $filter['collapsed'] == 'pc' ) ) && $filter['collapsed'] != 'visible_header' && $_position != 'content_top' ) {
 								if( empty( $params[$filter['seo_name']] ) ) {
 									echo ' style="display:none"';
 								}
@@ -132,7 +132,7 @@
 												<input type="hidden" name="path" value="" />
 												<ul class="mfilter-tb" data-top-url="<?php echo $filter['top_url']; ?>" data-top-path="<?php echo $filter['top_path']; ?>">
 													<?php foreach( $filter['categories'] as $category ) { ?>
-														<?php if( ! empty( $settings['hide_inactive_values'] ) && empty( $category['cnt'] ) ) continue; ?>
+														<?php if( ! empty( $settings['visible_inactive_values'] ) && empty( $category['cnt'] ) ) continue; ?>
 														<li class="mfilter-tb-as-tr">
 															<div class="mfilter-tb-as-td">
 																<a href="#" data-id="<?php echo $category['id']; ?>" data-parent-id="<?php echo $category['pid']; ?>"><?php echo $category['name']; ?></a>
@@ -159,7 +159,7 @@
 															$tmpCatIdx++;
 
 														?>
-														<div class="mfilter-option mfilter-tb-as-tr<?php echo $category['cnt'] ? '' : ' mfilter-hide'; ?><?php echo $tmpCatShown == 1 && $tmpCatIdx > $tmpCatShown ? ' mfilter-first-child' : ''; ?>">
+														<div class="mfilter-option mfilter-tb-as-tr<?php echo $category['cnt'] ? '' : ' mfilter-visible'; ?><?php echo $tmpCatShown == 1 && $tmpCatIdx > $tmpCatShown ? ' mfilter-first-child' : ''; ?>">
 															<div class="mfilter-tb-as-td mfilter-col-input">
 																<input
 																	id="mfilter-cat_checkbox-<?php echo (int) $_idx; ?>-<?php echo $category['id']; ?>"
@@ -358,7 +358,7 @@
 	</div>
 </div>
 
-<?php if( ! empty( $hide_container ) ) { ?>
+<?php if( ! empty( $visible_container ) ) { ?>
 	</div>
 <?php } ?>
 
@@ -418,7 +418,7 @@
 				'inStockStatus'				: '<?php echo empty( $settings['in_stock_status'] ) ? 7 : $settings['in_stock_status']; ?>',
 				'showLoaderOverResults'		: <?php echo empty( $settings['show_loader_over_results'] ) ? 'false' : 'true'; ?>,
 				'showLoaderOverFilter'		: <?php echo empty( $settings['show_loader_over_filter'] ) ? 'false' : 'true'; ?>,
-				'hideInactiveValues'		: <?php echo empty( $settings['hide_inactive_values'] ) ? 'false' : 'true'; ?>,
+				'visibleInactiveValues'		: <?php echo empty( $settings['visible_inactive_values'] ) ? 'false' : 'true'; ?>,
 				'manualInit'				: <?php echo empty( $settings['manual_init'] ) ? 'false' : 'true'; ?>,
 				'homePageAJAX'				: <?php echo empty( $settings['home_page_ajax'] ) ? 'false' : 'true'; ?>,
 				'homePageContentSelector'	: '<?php echo empty( $settings['home_page_content_selector'] ) ? '#content' : addslashes( htmlspecialchars_decode( $settings['home_page_content_selector'] ) ); ?>',

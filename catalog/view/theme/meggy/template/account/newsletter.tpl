@@ -39,9 +39,11 @@
           </div>
         </fieldset>
         <div class="buttons clearfix">
-          <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
+        <!--  <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>-->
           <div class="pull-right">
-            <input type="submit" value="<?php echo $button_continue; ?>" class="btn btn-primary" />
+          <div class="button_text_coupon button_text_coupon_edit ">
+            <input type="submit" value="<?php echo $button_continue; ?>" id="button-coupon" class="button_text_coupon2" />
+          </div>
           </div>
         </div>
       </form>

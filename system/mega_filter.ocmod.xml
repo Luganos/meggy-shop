@@ -71,17 +71,6 @@
 			</add>
         </operation>
 	</file>
-
-	<!-- Header -->
-	<file path="catalog/view/theme/*/template/common/{header}*.tpl">
-		<operation>
-			<search position="before"><![CDATA[catalog/view/javascript/bootstrap/js/bootstrap.min.js]]></search>
-			<add position="before"><![CDATA[
-				<script src="catalog/view/javascript/mf/jquery-ui.min.js" type="text/javascript"></script>
-			]]></add>
-		</operation>
-	</file>
-
 	<file path="catalog/controller/{common, module}/{header, category}*.php">
 		<operation>
 			<search><![CDATA['filter_sub_category' => true]]></search>
@@ -91,7 +80,6 @@
 			]]></add>
 		</operation>
 	</file>
-
 	<!-- Layout -->
 	<file path="admin/controller/design/{layout}*.php">
 		<operation>
@@ -440,22 +428,6 @@
 			]]></add>
 		</operation>
 	</file>
-
-	<file path="catalog/view/theme/*/template/product/{category,manufacturer_info,search,special}*.tpl">
-		<operation>
-			<search ><![CDATA[echo $header; ?>]]></search>
-			<add position="replace"><![CDATA[echo $header; ?><?php if( ! empty( $mfilter_json ) ) { echo '<div id="mfilter-json" style="display:none">' . base64_encode( $mfilter_json ) . '</div>'; } ?>]]></add>
-		</operation>
-		<operation>
-			<search><![CDATA[<?php echo $content_top; ?>]]></search>
-			<add position="replace"><![CDATA[<?php echo $content_top; ?><div id="mfilter-content-container">]]></add>
-		</operation>
-		<operation>
-			<search><![CDATA[<?php echo $content_bottom; ?>]]></search>
-			<add position="replace"><![CDATA[</div><?php echo $content_bottom; ?>]]></add>
-		</operation>
-	</file>
-
 	<file path="admin/model/catalog/category.php">
 		<operation>
 			<search><![CDATA[ModelCatalogCategory extends Model {]]></search>

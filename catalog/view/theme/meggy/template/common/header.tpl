@@ -22,6 +22,8 @@
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-condensed-bold" rel="stylesheet" type="text/css" />
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-semibold" rel="stylesheet" type="text/css" />
 <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="http://code.jquery.com/ui/1.8.24/jquery-ui.js"   integrity="sha256-xWbKoNW9eZkm1RodPMQHsVyql6jqeiD6IYvsGyKEW78="   crossorigin="anonymous"></script>
 <script src="catalog/view/javascript/jquery.bxslider/jquery.bxslider.min.js"></script>
 <link href="catalog/view/javascript/jquery.bxslider/jquery.bxslider.css" rel="stylesheet" />
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -45,12 +47,12 @@
 </head>
 <?php $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
 <body class="<?php echo $class; ?>">
-<div><a href="<?php echo $url; ?>" id="toTop"></a></div>
+<div><a href="<?php echo $url; ?>"></a></div>
 <div>
   <a href="<?php echo $url; ?>" class="idTop"><img src='catalog/view/theme/meggy/image/button_up.png'/></a>
 </div>
   <header class="header">
-      <div class="container col-xs-12">
+      <div class="container col-xs-12 container_header">
         <div class="header_top">
           <nav>
           <div id="header_menu" class="col-xs-12 col-lg-5 col-lg-push-2 hidden-sm">
@@ -127,8 +129,8 @@
                   </div>
                   <li id="login" class="in_item">
                      <?php if ($logged) { ?>
-                      <a href="<?php echo $text_logout; ?>" class="in_in">
-                      <span id="login" class="glyphicon glyphicon-user">
+                      <a href="<?php echo $logout; ?>" class="in_in">
+                      <span id="login" >
                         <img src="catalog/view/theme/meggy/image/face.png" alt="">
                       </span>
                       <span class="in_link_text hidden-xs "><?php echo $text_logout; ?></span>
@@ -179,7 +181,6 @@
         </div>
       </div>
     </header>
-	<div></div>
  <script type =text/javascript>
  </script>
 

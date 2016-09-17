@@ -24,7 +24,7 @@
         <div id="xs_product" class="<?php echo $class; ?>">
 
           <?php if ($thumb || $images) { ?>
-          <ul class="thumbnails">
+          <ul class="thumbnails thumbnails_product">
           <?php } ?>
             <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
@@ -471,6 +471,7 @@
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
+</div>
 <script type="text/javascript"><!--
 /*
 var timerId = setTimeout(function() {
@@ -683,5 +684,6 @@ $(document).ready(function() {
 		}
 	});
 });
-//--></script>
+</script>
+<div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 <?php echo $footer; ?>

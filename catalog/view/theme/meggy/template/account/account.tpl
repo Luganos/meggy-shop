@@ -1,10 +1,12 @@
 <?php echo $header; ?>
-<div class="container">
+<div class="container container_account">
   <ul class="breadcrumb">
+
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
     <?php } ?>
   </ul>
+  <hr class="hr_top_account">
   <?php if ($success) { ?>
   <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?></div>
   <?php } ?>
@@ -16,15 +18,21 @@
     <?php } else { ?>
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h2><?php echo $text_my_account; ?></h2>
+    <div id="content" class="<?php echo $class; ?> content_account"><?php echo $content_top; ?>
+       <h1>Личный кабинет</h1>
+      <div class="account_left_panel col-md-6 col-sm-4 col-sx-4">
+      <h2 ><?php echo $text_my_account; ?></h2>
+      <hr>
       <ul class="list-unstyled">
         <li><a href="<?php echo $edit; ?>"><?php echo $text_edit; ?></a></li>
         <li><a href="<?php echo $password; ?>"><?php echo $text_password; ?></a></li>
         <li><a href="<?php echo $address; ?>"><?php echo $text_address; ?></a></li>
         <li><a href="<?php echo $wishlist; ?>"><?php echo $text_wishlist; ?></a></li>
       </ul>
+      </div>
+      <div class="account_right_panel col-md-6 col-sm-4 col-sx-4">
       <h2><?php echo $text_my_orders; ?></h2>
+        <hr>
       <ul class="list-unstyled">
         <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
         <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
@@ -35,10 +43,14 @@
         <li><a href="<?php echo $transaction; ?>"><?php echo $text_transaction; ?></a></li>
         <li><a href="<?php echo $recurring; ?>"><?php echo $text_recurring; ?></a></li>
       </ul>
+      </div>
+      <div class="account_podpiska_panel col-md-6 col-sm-4 col-sx-4">
       <h2><?php echo $text_my_newsletter; ?></h2>
+      <hr>
       <ul class="list-unstyled">
         <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
       </ul>
+      </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
 </div>
