@@ -1,6 +1,7 @@
 <?php if( ! empty( $settings['javascript'] ) ) { ?>
 	<script type="text/javascript">
 		<?php echo htmlspecialchars_decode( $settings['javascript'] ); ?>
+        </script>
 <?php } ?>
 
 <?php
