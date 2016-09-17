@@ -375,9 +375,9 @@
               <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $reviews; ?></a> | <a href="" onclick="$('a[href=\'#tab-review\']').trigger('click'); return false;"><?php echo $text_write; ?></a></p>
           </div>
           <p id="send_ot">Оставьте отзыв</p>
-               <!-- <div id="review"></div>
+               <div id="review"></div>
                 <h2><?php echo $text_write; ?></h2>
-                <?php if ($review_guest) { ?>-->
+                <?php if ($review_guest) { ?>
                 <div class="form-group required">
                   <div class="col-sm-12">
                     <label class="control-label" for="input-name"><?php echo $entry_name; ?></label>
