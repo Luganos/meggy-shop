@@ -409,7 +409,7 @@
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
                   <div class="pull-right">
-                    <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border"><span ><?php echo $button_continue; ?></span></div></button>
+                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border"><span ><?php echo $button_continue; ?></span></div></button>
                   </div>
                 </div>
                 <?php } else { ?>
@@ -473,9 +473,9 @@
 </div>
 </div>
 <script type="text/javascript"><!--
-/*
+
 var timerId = setTimeout(function() {
- location.reload();
+ //location.reload();
 }, 5000);
 
 setTimeout(clearTimer(),6000);
@@ -484,9 +484,9 @@ function clearTimer(){
   clearTimeout(timerId);
 };
 clearTimer();
-*/
 
-//$('#button-cart').on("click", function(){location.reload();});
+
+//$('#button-cart-1').on("click", function(){location.reload();});
 
 
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
@@ -510,6 +510,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 //--></script>
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
+        
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
