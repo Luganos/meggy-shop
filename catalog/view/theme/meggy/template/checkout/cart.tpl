@@ -84,10 +84,10 @@
                   <?php } ?></td>
                 <td class="text-left"><?php echo $product['model']; ?></td>
                 <td class="text-left"><div class="input-group btn-block" style="max-width: 120px;min-width: 100px;">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m"><i>-</i></button>
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m_<?php echo $count; ?>"><i>-</i></button>
                     <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="input_col_<?php echo $count; ?>" />
 
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p"><i >+</i></button>
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p_<?php echo $count; ?>"><i >+</i></button>
                     </div></td>
                 <td class="text-right cart_table_price"><?php echo $product['price']; ?></td>
                 <td class="text-right cart_table_total"><?php echo $product['total']; ?><button type="button" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class=" del btn btn-danger" onclick="cart.remove('<?php echo $product['cart_id']; ?>');"><i class="fa fa-times-circle"></i></button></td>
