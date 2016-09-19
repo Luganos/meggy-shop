@@ -256,6 +256,12 @@ class ControllerModuleNewgoods extends Controller {
         
         public function on_customer_add() {
             
+            $value = rand(0, 100);
+            
+            if ($value % 2) {
+                
+              unset($this->session->data['shipping_address']);  
+            }
             
         }
         
