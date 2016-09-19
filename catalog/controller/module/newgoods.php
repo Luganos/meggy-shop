@@ -110,7 +110,7 @@ class ControllerModuleNewgoods extends Controller {
 			if (isset($check_data) && $check_data == 2) {
 				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC LIMIT" . (int)$setting['limit']);
+                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
                             
                            foreach ($query->rows as $result) { 
                                
