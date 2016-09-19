@@ -3035,7 +3035,7 @@ input::-webkit-input-placeholder {
 	font-weight: bold;
 }
 
-@media (max-width: 855px) {
+@media (max-width: 854px) {
 	#footer_med_four_text{
 	display: block;
 	margin-left: 8px;
@@ -3081,6 +3081,7 @@ input::-webkit-input-placeholder {
 .table-responsive{
 	//width: 650px;
 	overflow: visible;
+	width: 760px;
 }
 
 /*----cart_table_----*/
@@ -3173,6 +3174,11 @@ input::-webkit-input-placeholder {
 
 .text-center{
 	text-align: left;
+}
+
+.text-center a img{
+	min-width: 120px !important;
+	min-height: auto;
 }
 
 
@@ -3438,6 +3444,11 @@ input::-webkit-input-placeholder {
 	text-align: left;
 }
 
+.text-center a img{
+	min-width: 120px !important;
+	min-height: auto;
+}
+
 .text-left a{
 	color:black;
 }
@@ -3524,9 +3535,13 @@ input::-webkit-input-placeholder {
 }
 
 .button_text_cart{
-	width: 320px;
+	width: 340px;
 }
 .button_text_right_cart {
+	width: 320px;
+}
+
+.button_text_right_cart{
 	width: 320px;
 }
 
@@ -3549,6 +3564,10 @@ input::-webkit-input-placeholder {
 
 #border_table_height tr{
 	height: 100px !important;
+}
+
+#border_table{
+	width: 480px !important;
 }
 
 
@@ -3717,9 +3736,13 @@ input::-webkit-input-placeholder {
 	}
 	.button_text_cart{
 		margin-left: 100px !important;
+		width: 320px;
 	}
 	.button_text_right_cart{
 		margin-right: 45px !important;
+	}
+	.button_text_right_cart span{
+		padding-right: 65px;
 	}
 
 }
@@ -3727,6 +3750,10 @@ input::-webkit-input-placeholder {
 @media (max-width: 389px) {
 .tr_carusel_big_left{
 	display: none;
+}
+
+.alert-danger{
+	width: 320px;
 }
 
 #login{
