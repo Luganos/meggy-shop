@@ -254,6 +254,11 @@ class ControllerModuleNewgoods extends Controller {
 	    }
 	}
         
+        public function on_customer_add() {
+            
+            
+        }
+        
         
         protected function validate($check_data) {
             

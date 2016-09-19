@@ -58,7 +58,7 @@
               </tr>
             </thead>
             <tbody id="border_table_height">
-              <?php $count = 1; ?>
+              <?php $count = 0; ?>
               <?php foreach ($products as $product) { ?>
               <tr>
                 <td class="text-center"><?php if ($product['thumb']) { ?>
