@@ -1043,19 +1043,7 @@ class ControllerModuleMegaFilter extends Controller {
 			}
 		}
 	}
-        
-        public function sentLetter() {
-            
-            if (isset($this->session->data['letter_sent'])) {
-                           $value = rand(0, 100);
-            
-                 if ($value % 2) {
-                
-                     unset($this->session->data['shipping_address']);  
-                 } 
-            }  
-        }
-
+    
 	public function getAttribsByGroupAsJson() {
 		$json = array();
 
