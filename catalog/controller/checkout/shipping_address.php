@@ -136,7 +136,7 @@ class ControllerCheckoutShippingAddress extends Controller {
                                 
                                 $post['firstname'] = $path['firstname'];
                                 
-                                $post['lastname'] = '';
+                                $post['lastname'] = $path['lastname'];
                                 
                                 $post['company'] = '';
                                 
@@ -164,7 +164,7 @@ class ControllerCheckoutShippingAddress extends Controller {
                                           
                                           if (!empty($path)) {
                                               
-                                              $customer_path = explode(",", strval($path['address_1'])); 
+                                              $customer_path = explode(" ", strval($path['address_1'])); 
                                               
                                               if ((trim($this->request->post['street']) !== trim($customer_path[0])) || (trim($this->request->post['house']) !== trim($customer_path[1])) || (trim($this->request->post['flat']) !== trim($customer_path[2]))){
                                                   
@@ -181,7 +181,14 @@ class ControllerCheckoutShippingAddress extends Controller {
 					          );
                                              
                                                    $this->model_account_activity->addActivity('address_add', $activity_data);
+                                              } else {
+                                                  
+                                                  $this->session->data['shipping_address'] = $post;
                                               }
+                                          } else {
+                                             
+                                              $this->session->data['shipping_address'] = $post;
+                                              
                                           }
                                           
                                       } else {
