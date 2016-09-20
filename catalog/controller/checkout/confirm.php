@@ -119,8 +119,17 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['custom_field'] = $this->session->data['guest']['custom_field'];
 			}
                         
+                        if ($this->customer->isLogged()) {
+                                    
+                                   $order_data['payment_firstname'] = $this->session->data['shipping_address']['firstname']; 
+                                   $order_data['payment_lastname'] = $this->session->data['shipping_address']['lastname'];
+                                    
+                        } elseif (isset($this->session->data['account'])) {
+                                   
+                                   $order_data['payment_firstname'] = $this->session->data['shipping_address']['firstname']; 
+				   $order_data['payment_lastname'] = '';
+                        }
                         
-			$order_data['payment_lastname'] = $this->session->data['shipping_address']['lastname'];
 			$order_data['payment_company'] = $this->session->data['shipping_address']['company'];
 			$order_data['payment_address_1'] = $this->session->data['shipping_address']['address_1'];
 			$order_data['payment_address_2'] = $this->session->data['shipping_address']['address_2'];
@@ -148,16 +157,16 @@ class ControllerCheckoutConfirm extends Controller {
 			if ($this->cart->hasShipping()) {
                             
                                 if ($this->customer->isLogged()) {
-                                  $order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname']; 
-                                  $order_data['payment_firstname'] = $this->session->data['shipping_address']['firstname'];
+                                    
+                                   $order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname']; 
+                                   $order_data['shipping_lastname'] = $this->session->data['shipping_address']['lastname'];
+                                    
                                 } elseif (isset($this->session->data['account'])) {
-                                   $order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname'] . ' ' . $this->session->data['shipping_address']['lastname']; 
-                                   $order_data['payment_firstname'] = $this->session->data['shipping_address']['firstname'] . ' ' . $this->session->data['shipping_address']['lastname'];
                                    
+                                   $order_data['shipping_firstname'] = $this->session->data['shipping_address']['firstname']; 
+				   $order_data['shipping_lastname'] = '';
                                 }
                                 
-				
-				$order_data['shipping_lastname'] = $this->session->data['shipping_address']['lastname'];
 				$order_data['shipping_company'] = $this->session->data['shipping_address']['company'];
 				$order_data['shipping_address_1'] = $this->session->data['shipping_address']['address_1'];
 				$order_data['shipping_address_2'] = $this->session->data['shipping_address']['address_2'];

@@ -110,6 +110,8 @@ class ControllerCheckoutShippingAddress extends Controller {
                                     $path['lastname'] = $this->session->data['payment_address']['firstname'];
                                     $path['city'] = $this->session->data['payment_address']['city'];
                                     $path['zone_id'] = $this->session->data['shipping_address']['zone_id'];
+                                    $path['zone'] = $this->session->data['shipping_address']['zone'];
+                                    $path['country'] = $this->session->data['shipping_address']['country'];
                                 }
 
                                 if (isset($this->session->data['shipping_address']['country_id'])) {
@@ -140,9 +142,9 @@ class ControllerCheckoutShippingAddress extends Controller {
                                 
                                 $post['company'] = '';
                                 
-                                $post['zone'] = '';
+                                $post['zone'] = $path['zone'];
                                 
-                                $post['country'] = '';
+                                $post['country'] = $path['country'];
                                 
                                 $post['address_format'] = '';
                                 
