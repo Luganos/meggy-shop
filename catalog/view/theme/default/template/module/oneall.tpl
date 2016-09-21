@@ -7,7 +7,7 @@ if ( ! $oasl_user_is_logged  && ! empty ($oasl_subdomain))
 {
 	if (! empty ($oasl_heading_title))
    	{
-		echo '<h3>'.$oasl_heading_title.'</h3>';
+		/*echo '<h3>'.$oasl_heading_title.'</h3>';*/
 	}                    
 	 
 	if ($oasl_display_modal) 

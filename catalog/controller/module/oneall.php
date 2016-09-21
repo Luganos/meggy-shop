@@ -637,6 +637,11 @@ class ControllerModuleOneall extends Controller
 		$data ['oasl_callback_uri'] = $oasl_callback_uri;
 		
 		// Display Wiget
+		if (stripos ($this->request->get['route'], 'cart')) {
+			
+			return;
+		}
+		
 		return $this->display_widget_template ($data);
 	}
 
