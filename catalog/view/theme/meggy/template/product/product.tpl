@@ -636,8 +636,16 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>', function() {
-    $("#text-above-review").css("visibility", "hidden");
+$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>', function(data) {
+    if (/Нет отзывов о данном товаре./i.test(data)) {
+        
+       $("#text-above-review").css("visibility", "visible");  
+    } else {
+        $("#text-above-review").css("visibility", "hidden"); 
+    }
+        
+ 
+   
     });
 
 $('#button-review').on('click', function() {
