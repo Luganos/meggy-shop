@@ -7068,6 +7068,14 @@ a.idTop:hover {
 	font-size: 14px;
 }
 
+.mfilter-button-reset{
+	font-size: 14px;
+	font-family: 'Open Sans Semibold';
+	color: rgb(107,116,124);
+
+}
+
+
 @media screen and (max-width: 855px) {
 	.container_category{
 		width: 836px;

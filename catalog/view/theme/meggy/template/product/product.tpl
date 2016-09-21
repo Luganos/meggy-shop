@@ -406,7 +406,7 @@
                 <div class="buttons clearfix">
                   <div class="pull-right">
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border_otz"><span ><?php echo $button_continue; ?></span></div></button>
-                    <button type="button" id="button-review2" ><div class="button-cart-border_otz"><span >AJAX</span></div></button>
+                   <!-- <button type="button" id="button-review2" ><div class="button-cart-border_otz"><span >AJAX</span></div></button>-->
                   </div>
                 </div>
                 <?php } else { ?>
@@ -639,14 +639,14 @@ $('#review').delegate('.pagination a', 'click', function(e) {
 
 $('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>', function(data) {
     if (/Нет отзывов о данном товаре./i.test(data)) {
-        
-       $("#text-above-review").css("visibility", "visible");  
+
+       $("#text-above-review").css("visibility", "visible");
     } else {
-        $("#text-above-review").css("visibility", "hidden"); 
+        $("#text-above-review").css("visibility", "hidden");
     }
-        
- 
-   
+
+
+
     });
 
 $('#button-review').on('click', function() {

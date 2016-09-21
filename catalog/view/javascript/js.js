@@ -519,5 +519,17 @@ $('#button-review2').click(function(){
             success: function(response){console.log(response)}
         });
     });
-*/
+*//*
+var b;
+$('#button-review2').click(function(){
+      $.ajax({
+    type: 'POST',
+    url: 'response.php?action=sample2',
+    data: 'name=Andrew&nickname=Aramis',
+    success: function(response){console.log(response)}
+    });
+});*/
+
+
+
 
