@@ -73,10 +73,10 @@
                         </div>
                         <div class="enter_for_user">
                             <p>Войти как пользователь</p>
-                            <a id = "button_facebook" href="#" role ="button">
+                           <!-- <a id = "button_facebook" href="#" role ="button">
                             <img src="catalog/view/theme/meggy/image/fb_checkout.png" alt=""></a>
                             <a id = "button_vkontakte" href="#" role ="button">
-                            <img src="catalog/view/theme/meggy/image/vk_checkout.png" alt=""></a>
+                            <img src="catalog/view/theme/meggy/image/vk_checkout.png" alt=""></a>-->
                         </div>
                 </div>
             </div>

@@ -5956,20 +5956,30 @@ a.idTop:hover {
 }
 
 .button-cart-border_otz{
-	width: 95%;
-	height: 80%;
+	width: 200px;
+	height: 35px;
 	margin-left: 5px;
-	border: 1px solid rgb(247,167,167);
-	color:red;
+	background-color: rgb(148,190,203);
+	border: 1px solid rgb(180,210,219);;
+	color:white;
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
-	//display: table-cell;
+	margin: 5px 7px 5px 7px;
 }
 
 .button-cart-border_otz span{
 	position: relative;
-	top: 3px;
+	top: 5px;
+}
+
+#button-review:hover{
+	background-color: rgb(243,129,129);
+}
+
+.button-cart-border_otz:hover{
+	background-color: rgb(243,129,129);
+	border: 1px solid rgb(247,167,167);
 }
 
 .table-bordered{
@@ -6282,6 +6292,33 @@ a.idTop:hover {
 .button-cart-border span{
 	position: relative;
 	top: 3px;
+}
+
+.button-cart-border_otz{
+	width: 200px;
+	height: 35px;
+	margin-left: 5px;
+	background-color: rgb(148,190,203);
+	border: 1px solid rgb(180,210,219);;
+	color:white;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 5px 7px 5px 7px;
+}
+
+.button-cart-border_otz span{
+	position: relative;
+	top: 5px;
+}
+
+#button-review:hover{
+	background-color: rgb(243,129,129);
+}
+
+.button-cart-border_otz:hover{
+	background-color: rgb(243,129,129);
+	border: 1px solid rgb(247,167,167);
 }
 
 .table-bordered{
@@ -6658,6 +6695,33 @@ a.idTop:hover {
 .button-cart-border span{
 	position: relative;
 	top: 3px;
+}
+
+.button-cart-border_otz{
+	width: 200px;
+	height: 35px;
+	margin-left: 5px;
+	background-color: rgb(148,190,203);
+	border: 1px solid rgb(180,210,219);;
+	color:white;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 5px 7px 5px 7px;
+}
+
+.button-cart-border_otz span{
+	position: relative;
+	top: 5px;
+}
+
+#button-review:hover{
+	background-color: rgb(243,129,129);
+}
+
+.button-cart-border_otz:hover{
+	background-color: rgb(243,129,129);
+	border: 1px solid rgb(247,167,167);
 }
 
 .table-bordered{
@@ -7766,3 +7830,23 @@ h2{
 .input_text{
 	color: black !important;
 }
+
+/*------VK_and_FB-----*/
+.oneall_social_login{
+	display: none;
+}
+
+#branding span{
+	display: none !important;
+	height: 1px !important;
+}
+
+iframe{
+	position: relative !important;
+	top: 670px !important;
+	left: 550px;
+
+}
+
+
+/*------END_VK_and_FB-----*/

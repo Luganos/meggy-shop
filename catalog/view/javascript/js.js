@@ -519,7 +519,8 @@ $('#button-review2').click(function(){
             success: function(response){console.log(response)}
         });
     });
-*//*
+*/
+/*
 var b;
 $('#button-review2').click(function(){
       $.ajax({
@@ -528,8 +529,77 @@ $('#button-review2').click(function(){
     data: 'name=Andrew&nickname=Aramis',
     success: function(response){console.log(response)}
     });
-});*/
+});
+*/
+/*
+var p;
+var text = [];
+$('#button-review2').click(function(){
+      $.ajax({
+    type: 'POST',
+    url: 'response.php?action=sample2',
+    data: 'name=Andrew&nickname=Aramis',
+    success: function(response){
+        p = response;
+        console.log (typeof p);
+        var arr = p.split(' ');
+        console.log (typeof arr);
+        console.log (arr);
+        console.log (arr.length);
+        console.log (arr[8]);
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] === "="){
+               text.push(arr[++i]);
+            }
+        }
+       console.log(text);
+    }
+
+    });
+});
+*/
+
+/*
+var p;
+var text = [];
+function post(){
+      $.ajax({
+    type: 'POST',
+    url: 'response.php?action=sample2',
+    data: 'name=Andrew&nickname=Aramis',
+    success: function(response){
+        p = response;
+        console.log (typeof p);
+        var arr = p.split(' ');
+        console.log (typeof arr);
+        console.log (arr);
+        console.log (arr.length);
+        console.log (arr[8]);
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] === "="){
+               text.push(arr[++i]);
+            }
+        }
+       console.log(text);
+    }
+
+    });
+};
+
+setTimeout(post,2000);
+*/
 
 
-
+/*
+var items = [];
+$('#button-review2').click(function(){
+    $.getJSON('example.json', function(data) {
+        $.each(data, function(key, val) {
+        items.push(val);})});
+        console.log(items);
+});
+*/
+$('#button-review2').click(function(){
+    $.getJSON('example.json', function(data) {console.log(data)});
+});
 
