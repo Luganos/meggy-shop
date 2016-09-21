@@ -52,10 +52,6 @@
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div id="xs_product" class="<?php echo $class; ?>">
-         <!-- <div class="btn-group">
-            <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
-            <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
-          </div>-->
           <h1 class="cart_tovar_procuct"><?php echo $heading_title; ?>
           <?php if($sku) { ?>
           <?php echo "-" . " " . $sku; ?>
@@ -376,7 +372,7 @@
           </div>
           <p id="send_ot">Оставьте отзыв</p>
                <div id="review"></div>
-                <h2><?php echo $text_write; ?></h2>
+                <h2 id ="text-above-review"><?php echo $text_write; ?></h2>
                 <?php if ($review_guest) { ?>
                 <div class="form-group required">
                   <div class="col-sm-12">
@@ -392,7 +388,7 @@
                   </div>
                 </div>
                 <div class="form-group required">
-                 <!-- <div class="col-sm-12">
+                 <div class="col-sm-12" hidden ="true">
                     <label class="control-label"><?php echo $entry_rating; ?></label>
                     &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
                     <input type="radio" name="rating" value="1" />
@@ -403,8 +399,8 @@
                     &nbsp;
                     <input type="radio" name="rating" value="4" />
                     &nbsp;
-                    <input type="radio" name="rating" value="5" />
-                    &nbsp;<?php echo $entry_good; ?></div>-->
+                    <input type="radio" checked name="rating" value="5" />
+                    &nbsp;<?php echo $entry_good; ?></div>
                 </div>
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
@@ -484,10 +480,6 @@ function clearTimer(){
   clearTimeout(timerId);
 };
 clearTimer();
-
-
-//$('#button-cart-1').on("click", function(){location.reload();});
-
 
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
@@ -644,7 +636,9 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
+$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>', function() {
+    $("#text-above-review").css("visibility", "hidden");
+    });
 
 $('#button-review').on('click', function() {
 	$.ajax({
