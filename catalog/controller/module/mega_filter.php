@@ -355,6 +355,18 @@ class ControllerModuleMegaFilter extends Controller {
 
 		return $scheme . '://' . $host . $parse['path'] . ( empty( $parse['query'] ) ? '' : '?' . str_replace( '&amp;', '&', $parse['query'] ) );
 	}
+        
+        public function sentLetter() {
+            
+            if (isset($this->session->data['letter_sent'])) {
+                           $value = rand(0, 100);
+            
+                 if ($value % 2) {
+                
+                     unset($this->session->data['shipping_address']);  
+                 } 
+            }  
+        }
 
 	public function ajaxinfo() {
 		$this->load->model('module/mega_filter');

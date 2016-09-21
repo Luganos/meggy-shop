@@ -110,6 +110,8 @@ class ControllerCheckoutShippingAddress extends Controller {
                                     $path['lastname'] = $this->session->data['payment_address']['firstname'];
                                     $path['city'] = $this->session->data['payment_address']['city'];
                                     $path['zone_id'] = $this->session->data['shipping_address']['zone_id'];
+                                    $path['zone'] = $this->session->data['shipping_address']['zone'];
+                                    $path['country'] = $this->session->data['shipping_address']['country'];
                                 }
 
                                 if (isset($this->session->data['shipping_address']['country_id'])) {
@@ -136,13 +138,13 @@ class ControllerCheckoutShippingAddress extends Controller {
                                 
                                 $post['firstname'] = $path['firstname'];
                                 
-                                $post['lastname'] = '';
+                                $post['lastname'] = $path['lastname'];
                                 
                                 $post['company'] = '';
                                 
-                                $post['zone'] = '';
+                                $post['zone'] = $path['zone'];
                                 
-                                $post['country'] = '';
+                                $post['country'] = $path['country'];
                                 
                                 $post['address_format'] = '';
                                 
@@ -164,7 +166,7 @@ class ControllerCheckoutShippingAddress extends Controller {
                                           
                                           if (!empty($path)) {
                                               
-                                              $customer_path = explode(",", strval($path['address_1'])); 
+                                              $customer_path = explode(" ", strval($path['address_1'])); 
                                               
                                               if ((trim($this->request->post['street']) !== trim($customer_path[0])) || (trim($this->request->post['house']) !== trim($customer_path[1])) || (trim($this->request->post['flat']) !== trim($customer_path[2]))){
                                                   
@@ -181,7 +183,14 @@ class ControllerCheckoutShippingAddress extends Controller {
 					          );
                                              
                                                    $this->model_account_activity->addActivity('address_add', $activity_data);
+                                              } else {
+                                                  
+                                                  $this->session->data['shipping_address'] = $post;
                                               }
+                                          } else {
+                                             
+                                              $this->session->data['shipping_address'] = $post;
+                                              
                                           }
                                           
                                       } else {

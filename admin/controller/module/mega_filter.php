@@ -1043,7 +1043,7 @@ class ControllerModuleMegaFilter extends Controller {
 			}
 		}
 	}
-
+    
 	public function getAttribsByGroupAsJson() {
 		$json = array();
 
@@ -2025,9 +2025,9 @@ class ControllerModuleMegaFilter extends Controller {
 		$this->load->model('localisation/language');
                 $this->load->model('extension/event');
                 
-                $this->event->register('my.module.event', 'module/newgoods/on_customer_add');
+                $this->event->register('my.module.event', 'module/mega_filter/sentLetter');
 
-	        $this->model_extension_event->addEvent('newgoods', 'post.customer.login', 'module/newgoods/on_customer_add');
+	        $this->model_extension_event->addEvent('newgoods', 'post.customer.login', 'module/mega_filter/sentLetter');
 
 		$titles = array();
 

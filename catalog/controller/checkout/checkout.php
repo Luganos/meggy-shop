@@ -18,11 +18,11 @@ class ControllerCheckoutCheckout extends Controller {
                     
                     if (!empty($address)) {
                         
-                       $raw_address = explode(",", strval($address['address_1'])); 
+                       $raw_address = explode(" ", strval($address['address_1'])); 
                        
-                       $data['street'] = $raw_address[0];
-                       $data['house'] = $raw_address[1];
-                       $data['flat'] = $raw_address[2];
+                       $data['street'] = (isset($raw_address[0]))? $raw_address[0]: '';
+                       $data['house'] = (isset($raw_address[1]))? $raw_address[1]: '';
+                       $data['flat'] = (isset($raw_address[2]))? $raw_address[2]: '';
                     } else {
                         
                        $data['street'] = '';
