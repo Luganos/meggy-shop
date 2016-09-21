@@ -138,7 +138,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'radio') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?>55</label>
+              <label class="control-label"><?php echo $option['name']; ?></label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -429,7 +429,7 @@
           <?php foreach ($products as $product)  { ?>
            <div class="sli_slide_<?php echo $n; ?>">
                <div class="sli_img_<?php echo $n; ?>">
-                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
+                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new">
                    <?php if ($new_goods_flag) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                    <?php } ?>
