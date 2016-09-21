@@ -486,8 +486,6 @@ function clearTimer(){
 clearTimer();
 
 
-//$('#button-cart-1').on("click", function(){location.reload();});
-
 
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
