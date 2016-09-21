@@ -108,47 +108,43 @@
         </div>
       </div>
       <br />
-      <div class="row">
-        <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-            <div class="caption">
-              <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-              <p><?php echo $product['description']; ?></p>
-              <?php if ($product['price']) { ?>
-              <p class="price">
-                <?php if (!$product['special']) { ?>
-                <?php echo $product['price']; ?>
-                <?php } else { ?>
-                <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-                <?php } ?>
-                <?php if ($product['tax']) { ?>
-                <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                <?php } ?>
-              </p>
-              <?php } ?>
-              <?php if ($product['rating']) { ?>
-              <div class="rating">
-                <?php for ($i = 1; $i <= 5; $i++) { ?>
-                <?php if ($product['rating'] < $i) { ?>
-                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                <?php } else { ?>
-                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                <?php } ?>
-                <?php } ?>
-              </div>
-              <?php } ?>
+      <!---->
+      <div class="row row_category">
+        <?php $n = 1; ?>
+        <?php foreach ($products as $product)  { ?>
+          <div id="categori_show" class="product-layout product-grid col-lg-4 col-md-4 col-sm-4 col-xs-12"><!--metod show in page-->
+           <div class="sl_slide_<?php echo $n; ?> sl_slider_category">
+           <div class="sli_img_<?php echo $n; ?> category_height_img">
+               <a href="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
+               </div>
+               <span class="sl_text">
+                    <p class="sl_id"><?php echo $product['name']; ?>
+                     <?php if ($product['sku']) { ?>
+                     - <?php echo $product['sku']; ?>
+                     <?php } ?>
+                     </p>
+               </span>
+               <?php if ($product['price']) { ?>
+               <span class="sl_text">
+                   <?php if (!$product['special']) { ?>
+                   <p class="sl_price_center"><?php echo $product['price']; ?></p>
+                   <?php } else { ?>
+                   <p class="sl_price_left"><?php echo $product['price']; ?></p>
+                   <p class="sl_price_right"><?php echo $product['special']; ?></p>
+                   <?php } ?>
+               </span>
+               <?php } ?>
+               <div class="sl_kor_<?php echo $n; ?>">
+                      <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
+               </div>
             </div>
-            <div class="button-group">
-              <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-              <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-              <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
-            </div>
+
           </div>
-        </div>
+
+        <?php $n++; ?>
         <?php } ?>
       </div>
+      <!---->
       <div class="row">
         <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
         <div class="col-sm-6 text-right"><?php echo $results; ?></div>
