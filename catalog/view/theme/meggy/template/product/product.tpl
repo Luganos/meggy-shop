@@ -52,10 +52,6 @@
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
         <div id="xs_product" class="<?php echo $class; ?>">
-         <!-- <div class="btn-group">
-            <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product_id; ?>');"><i class="fa fa-heart"></i></button>
-            <button type="button" data-toggle="tooltip" class="btn btn-default" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product_id; ?>');"><i class="fa fa-exchange"></i></button>
-          </div>-->
           <h1 class="cart_tovar_procuct"><?php echo $heading_title; ?>
           <?php if($sku) { ?>
           <?php echo "-" . " " . $sku; ?>
@@ -138,7 +134,7 @@
             <?php } ?>
             <?php if ($option['type'] == 'radio') { ?>
             <div class="form-group<?php echo ($option['required'] ? ' required' : ''); ?>">
-              <label class="control-label"><?php echo $option['name']; ?>55</label>
+              <label class="control-label"><?php echo $option['name']; ?></label>
               <div id="input-option<?php echo $option['product_option_id']; ?>">
                 <?php foreach ($option['product_option_value'] as $option_value) { ?>
                 <div class="radio">
@@ -376,7 +372,7 @@
           </div>
           <p id="send_ot">Оставьте отзыв</p>
                <div id="review"></div>
-                <h2><?php echo $text_write; ?></h2>
+                <h2 id ="text-above-review"><?php echo $text_write; ?></h2>
                 <?php if ($review_guest) { ?>
                 <div class="form-group required">
                   <div class="col-sm-12">
@@ -392,7 +388,7 @@
                   </div>
                 </div>
                 <div class="form-group required">
-                 <!-- <div class="col-sm-12">
+                 <div class="col-sm-12" hidden ="true">
                     <label class="control-label"><?php echo $entry_rating; ?></label>
                     &nbsp;&nbsp;&nbsp; <?php echo $entry_bad; ?>&nbsp;
                     <input type="radio" name="rating" value="1" />
@@ -403,13 +399,14 @@
                     &nbsp;
                     <input type="radio" name="rating" value="4" />
                     &nbsp;
-                    <input type="radio" name="rating" value="5" />
-                    &nbsp;<?php echo $entry_good; ?></div>-->
+                    <input type="radio" checked name="rating" value="5" />
+                    &nbsp;<?php echo $entry_good; ?></div>
                 </div>
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
                   <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border"><span ><?php echo $button_continue; ?></span></div></button>
+                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border_otz"><span ><?php echo $button_continue; ?></span></div></button>
+                    <button type="button" id="button-review2" ><div class="button-cart-border_otz"><span >AJAX</span></div></button>
                   </div>
                 </div>
                 <?php } else { ?>
@@ -429,7 +426,7 @@
           <?php foreach ($products as $product)  { ?>
            <div class="sli_slide_<?php echo $n; ?>">
                <div class="sli_img_<?php echo $n; ?>">
-                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new">
+                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new">
                    <?php if ($new_goods_flag) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                    <?php } ?>
@@ -485,8 +482,6 @@ function clearTimer(){
 };
 clearTimer();
 
-
-
 $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 	$.ajax({
 		url: 'index.php?route=product/product/getRecurringDescription',
@@ -508,7 +503,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 //--></script>
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
-        
+
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
@@ -642,7 +637,17 @@ $('#review').delegate('.pagination a', 'click', function(e) {
     $('#review').fadeIn('slow');
 });
 
-$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
+$('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>', function(data) {
+    if (/Нет отзывов о данном товаре./i.test(data)) {
+
+       $("#text-above-review").css("visibility", "visible");
+    } else {
+        $("#text-above-review").css("visibility", "hidden");
+    }
+
+
+
+    });
 
 $('#button-review').on('click', function() {
 	$.ajax({

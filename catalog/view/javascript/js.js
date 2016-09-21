@@ -71,18 +71,158 @@ console.log(r);
 console.log(e);*/
 
 /*---add_tovar--*/
-var col_tovar = +$(".input_col").val();
+var col_tovar_0 = +$(".input_col_0").val();
 
-function cart_m(){
-    $(".input_col").val(col_tovar-1);
+function cart_m_0(){
+    $(".input_col_0").val(col_tovar_0-1);
 };
 
-function cart_p(){
-    $(".input_col").val(col_tovar+1);
+function cart_p_0(){
+    $(".input_col_0").val(col_tovar_0+1);
 };
 
-$('.cart_m').on("click", cart_m);
-$('.cart_p').on("click", cart_p);
+$('.cart_m_0').on("click", cart_m_0);
+$('.cart_p_0').on("click", cart_p_0);
+
+//console.log(col_tovar);
+var col_tovar_1 = +$(".input_col_1").val();
+
+function cart_m_1(){
+    $(".input_col_1").val(col_tovar_1-1);
+};
+
+function cart_p_1(){
+    $(".input_col_1").val(col_tovar_1+1);
+};
+
+$('.cart_m_1').on("click", cart_m_1);
+$('.cart_p_1').on("click", cart_p_1);
+
+//console.log(col_tovar);
+var col_tovar_2 = +$(".input_col_2").val();
+
+function cart_m_2(){
+    $(".input_col_2").val(col_tovar_2-1);
+};
+
+function cart_p_2(){
+    $(".input_col_2").val(col_tovar_2+1);
+};
+
+$('.cart_m_2').on("click", cart_m_2);
+$('.cart_p_2').on("click", cart_p_2);
+
+//console.log(col_tovar);
+var col_tovar_3 = +$(".input_col_3").val();
+
+function cart_m_3(){
+    $(".input_col_3").val(col_tovar_3-1);
+};
+
+function cart_p_3(){
+    $(".input_col_3").val(col_tovar_3+1);
+};
+
+$('.cart_m_3').on("click", cart_m_3);
+$('.cart_p_3').on("click", cart_p_3);
+
+//console.log(col_tovar);
+var col_tovar_4 = +$(".input_col_4").val();
+
+function cart_m_4(){
+    $(".input_col_4").val(col_tovar_4-1);
+};
+
+function cart_p_4(){
+    $(".input_col_4").val(col_tovar_4+1);
+};
+
+$('.cart_m_4').on("click", cart_m_4);
+$('.cart_p_4').on("click", cart_p_4);
+
+//console.log(col_tovar);
+var col_tovar_5 = +$(".input_col_5").val();
+
+function cart_m_5(){
+    $(".input_col_5").val(col_tovar_5-1);
+};
+
+function cart_p_5(){
+    $(".input_col_5").val(col_tovar_5+1);
+};
+
+$('.cart_m_5').on("click", cart_m_5);
+$('.cart_p_5').on("click", cart_p_5);
+
+//console.log(col_tovar);
+var col_tovar_6 = +$(".input_col_6").val();
+
+function cart_m_6(){
+    $(".input_col_6").val(col_tovar_6-1);
+};
+
+function cart_p_6(){
+    $(".input_col_6").val(col_tovar_6+1);
+};
+
+$('.cart_m_6').on("click", cart_m_6);
+$('.cart_p_6').on("click", cart_p_6);
+
+//console.log(col_tovar);
+var col_tovar_7 = +$(".input_col_7").val();
+
+function cart_m_7(){
+    $(".input_col_7").val(col_tovar_7-1);
+};
+
+function cart_p_7(){
+    $(".input_col_7").val(col_tovar_7+1);
+};
+
+$('.cart_m_7').on("click", cart_m_7);
+$('.cart_p_7').on("click", cart_p_7);
+
+//console.log(col_tovar);
+var col_tovar_8 = +$(".input_col_8").val();
+
+function cart_m_8(){
+    $(".input_col_8").val(col_tovar_8-1);
+};
+
+function cart_p_8(){
+    $(".input_col_8").val(col_tovar_8+1);
+};
+
+$('.cart_m_8').on("click", cart_m_8);
+$('.cart_p_8').on("click", cart_p_8);
+
+//console.log(col_tovar);
+var col_tovar_9 = +$(".input_col_9").val();
+
+function cart_m_9(){
+    $(".input_col_9").val(col_tovar_9-1);
+};
+
+function cart_p_9(){
+    $(".input_col_9").val(col_tovar_9+1);
+};
+
+$('.cart_m_9').on("click", cart_m_9);
+$('.cart_p_9').on("click", cart_p_9);
+
+//console.log(col_tovar);
+var col_tovar_10 = +$(".input_col_10").val();
+
+function cart_m_10(){
+    $(".input_col_10").val(col_tovar_10-1);
+};
+
+function cart_p_10(){
+    $(".input_col_10").val(col_tovar_10+1);
+};
+
+$('.cart_m_10').on("click", cart_m_10);
+$('.cart_p_10').on("click", cart_p_10);
 
 //console.log(col_tovar);
 
@@ -295,3 +435,171 @@ if(width < 855){
             console.log("ccc")
 };
 /*----END_filter_size----*/
+
+
+/*
+var screen = window.navigator;
+//var screen2 = window.navigator[appVersion];
+var web_client = screen["appVersion"];
+console.log(screen);
+console.log(web_client);
+if(/chrome/i.test(web_client)){
+    console.log("YES");
+}
+else{
+console.log("No");};
+
+if(web_client.search(/Chrome/)){
+    console.log("YES");
+}
+else{
+console.log("No")};
+
+function tet(){
+console.log("eeeeeeeee");
+};
+
+var link = document.links;
+console.log(link.length);
+
+var click = document.getElementById('search_smoll');
+console.log(click);
+*/
+
+
+/*
+Number.prototype.pow = function(x){
+    return Math.pow(this.valueOf(),x);
+};
+
+pow(5);
+
+
+function User(name,age){
+    this.name = name;
+    this.age = age;
+    this.admin = false;
+  //  return age + 10;
+}
+
+var constructor = new User("term", 10);
+console.log(constructor);
+
+console.log(User("max",25));
+User.prototype.say = function(w){console.log(this.age + w)};
+console.log(User("terminator",10));
+User.say("terminator",10,20);*/
+
+
+/*
+$('#button-review2').click(function(){
+        $.ajax({
+            type: "GET",
+            url: "js_test.js",
+            dataType: "script"
+        });
+    });
+*/
+/*
+$('#button-review2').click(function(){
+        $.ajax({
+            type: "GET",
+            url: "js_test.js",
+            dataType: "script",
+            success: function(response){console.log(response)}
+        });
+    });
+*/
+/*
+$('#button-review2').click(function(){
+        $.ajax({
+            type: "POST",
+            url: "index.php?route=product/product/write&product_id=44",
+           //dataType: "script",
+            success: function(response){console.log(response)}
+        });
+    });
+*/
+/*
+var b;
+$('#button-review2').click(function(){
+      $.ajax({
+    type: 'POST',
+    url: 'response.php?action=sample2',
+    data: 'name=Andrew&nickname=Aramis',
+    success: function(response){console.log(response)}
+    });
+});
+*/
+/*
+var p;
+var text = [];
+$('#button-review2').click(function(){
+      $.ajax({
+    type: 'POST',
+    url: 'response.php?action=sample2',
+    data: 'name=Andrew&nickname=Aramis',
+    success: function(response){
+        p = response;
+        console.log (typeof p);
+        var arr = p.split(' ');
+        console.log (typeof arr);
+        console.log (arr);
+        console.log (arr.length);
+        console.log (arr[8]);
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] === "="){
+               text.push(arr[++i]);
+            }
+        }
+       console.log(text);
+    }
+
+    });
+});
+*/
+
+/*
+var p;
+var text = [];
+function post(){
+      $.ajax({
+    type: 'POST',
+    url: 'response.php?action=sample2',
+    data: 'name=Andrew&nickname=Aramis',
+    success: function(response){
+        p = response;
+        console.log (typeof p);
+        var arr = p.split(' ');
+        console.log (typeof arr);
+        console.log (arr);
+        console.log (arr.length);
+        console.log (arr[8]);
+        for(var i = 0; i < arr.length; i++){
+            if(arr[i] === "="){
+               text.push(arr[++i]);
+            }
+        }
+       console.log(text);
+    }
+
+    });
+};
+
+setTimeout(post,2000);
+*/
+
+
+/*
+var items = [];
+$('#button-review2').click(function(){
+    $.getJSON('example.json', function(data) {
+        $.each(data, function(key, val) {
+        items.push(val);})});
+        console.log(items);
+});
+*/
+$('#button-review2').click(function(){
+    $.getJSON('example.json', function(data) {console.log(data)});
+});
+

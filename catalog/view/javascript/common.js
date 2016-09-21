@@ -160,7 +160,7 @@ var cart = {
 					setTimeout(function () {
 						$('#cart > button').html('<span id="cart-total"><i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span >' + json['quantity'] + '</span></div>' + json['total'] + '</span>');
 					}, 100);
-
+					console.log("www");
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
@@ -248,7 +248,7 @@ var voucher = {
 				$('#cart > button').button('reset');
 			},
 			success: function(json) {
-				// Need to set timeout otherwise it wont update the total
+			// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
 					$('#cart > button').html('<span id="cart-total"><i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span >' + json['quantity'] + '</span></div>' + json['total'] + '</span>');
 				}, 100);
@@ -262,6 +262,7 @@ var voucher = {
 	        error: function(xhr, ajaxOptions, thrownError) {
 	            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 	        }
+
 		});
 	}
 }

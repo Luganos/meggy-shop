@@ -1043,7 +1043,7 @@ class ControllerModuleMegaFilter extends Controller {
 			}
 		}
 	}
-
+    
 	public function getAttribsByGroupAsJson() {
 		$json = array();
 
@@ -1991,7 +1991,7 @@ class ControllerModuleMegaFilter extends Controller {
 			$this->response->redirect($this->url->link('module/' . $this->_name . '/installprogress', 'token=' . $this->session->data['token'], 'SSL'));
 		}
 	}
-
+        
 	public function installprogress() {
 		if( ! $this->_hasMFilterPlus() ) {
 			$this->response->redirect($this->url->link('module/' . $this->_name, 'token=' . $this->session->data['token'], 'SSL'));
@@ -2023,6 +2023,11 @@ class ControllerModuleMegaFilter extends Controller {
 		$this->load->model('setting/setting');
 		$this->load->model('extension/extension');
 		$this->load->model('localisation/language');
+                $this->load->model('extension/event');
+                
+                $this->event->register('my.module.event', 'module/mega_filter/sentLetter');
+
+	        $this->model_extension_event->addEvent('newgoods', 'post.customer.login', 'module/mega_filter/sentLetter');
 
 		$titles = array();
 
@@ -2114,6 +2119,9 @@ class ControllerModuleMegaFilter extends Controller {
 		 */
 		$this->load->model('extension/extension');
 		$this->load->model('setting/store');
+                $this->load->model('extension/event');
+
+                $this->model_extension_event->deleteEvent('newgoods');
 
 		$this->db->query("
 			DELETE FROM

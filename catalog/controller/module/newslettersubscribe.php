@@ -107,6 +107,19 @@ class ControllerModuleNewslettersubscribe extends Controller {
       echo json_encode(array('status' => false, 'message' => $this->language->get('error_invalid')));
     }
   }
+  
+  public function letterSent() {
+      
+     if (isset($this->request->get['letter_']) && intval($this->request->get['letter_']) == 1)  {
+         
+         $this->session->data['letter_sent'] = 1;
+     } 
+     
+     if (isset($this->request->get['letter_']) && intval($this->request->get['letter_']) == 0)  {
+         
+         unset($this->session->data['letter_sent']);
+     }
+  }
 
   public function unsubscribe() {
     $this->language->load('module/newslettersubscribe');

@@ -78,7 +78,7 @@
                   <span class="menu_link_text">ПАРТНЕРАМ</span>
                 </a>
               </li>
-                <li class="menu_item">
+                <li class="menu_item qqq">
                 <a href="index.php?route=information/contact" class="menu_link">
                   <span class="menu_link_text">ДОСТАВКА И ОПЛАТА</span>
                 </a>
