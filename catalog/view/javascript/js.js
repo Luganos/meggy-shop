@@ -435,3 +435,57 @@ if(width < 855){
             console.log("ccc")
 };
 /*----END_filter_size----*/
+
+
+/*
+var screen = window.navigator;
+//var screen2 = window.navigator[appVersion];
+var web_client = screen["appVersion"];
+console.log(screen);
+console.log(web_client);
+if(/chrome/i.test(web_client)){
+    console.log("YES");
+}
+else{
+console.log("No");};
+
+if(web_client.search(/Chrome/)){
+    console.log("YES");
+}
+else{
+console.log("No")};
+
+function tet(){
+console.log("eeeeeeeee");
+};
+
+var link = document.links;
+console.log(link.length);
+
+var click = document.getElementById('search_smoll');
+console.log(click);
+*/
+
+
+/*
+Number.prototype.pow = function(x){
+    return Math.pow(this.valueOf(),x);
+};
+
+pow(5);
+
+
+function User(name,age){
+    this.name = name;
+    this.age = age;
+    this.admin = false;
+  //  return age + 10;
+}
+
+var constructor = new User("term", 10);
+console.log(constructor);
+
+console.log(User("max",25));
+User.prototype.say = function(w){console.log(this.age + w)};
+console.log(User("terminator",10));
+User.say("terminator",10,20);*/

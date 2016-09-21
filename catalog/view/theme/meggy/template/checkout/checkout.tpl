@@ -87,7 +87,7 @@
             <p>Выбор способа доставки и оплаты</p>
             <hr>
             <div class="deliveri">
-                <div id="message-about-delivery"></div>   
+                <div id="message-about-delivery"></div>
                 <p>Доставка</p>
                 <div class="pickup">
                     <p>самовывоз</p>
@@ -102,7 +102,7 @@
             <div class="payment">
             <hr>
                 <p>Оплата</p>
-                <div id="message-about-payment"></div>  
+                <div id="message-about-payment"></div>
                 <div class="cash">
                     <input class="new_post_input" type="radio" name="payment_method" checked ="checked" value="1"><span>Наличными</span><br>
                     <input class="pickup_input" type="radio" name="payment_method" value="2"><span>Безналичными</span><br>
@@ -113,7 +113,7 @@
             <div class="client_address">
             <hr>
                 <p>Адрес получателя</p>
-                <div id="message-about-buyer"></div> 
+                <div id="message-about-buyer"></div>
                 <div class="street">
                     <div class="streen_inline nstreet_input_w">
                     <span>улица</span>
@@ -130,7 +130,7 @@
                 </div>
             </div>
             <div class="order">
-            <div id ="main-message-field"></div>     
+            <div id ="main-message-field"></div>
             <hr>
               <div class="checkout_button_text_coupon checkout_button_text_coupon_right">
                 <input type="button" value="подтвердить заказ" id="confirm-buy" class="checkout_button_text_coupon2" >
@@ -200,12 +200,23 @@ $('#button-guest').on('click', function() {
 
             if (json['redirect']) {
                 location = json['redirect'];
+                 alert(json['redirect']);
             } else if (json['error']) {
-                $('#message-about-guest').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+               /* $('#message-about-guest').html('<div class=""><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
                 $('input[name=\'email\']').parent().addClass('has-error');
                 $('input[name=\'password\']').parent().addClass('has-error');
+                $('input[name=\'firstname\']').parent().addClass('has-error');
+                $('input[name=\'city\']').parent().addClass('has-error');
+                $('input[name=\'telephone\']').parent().addClass('has-error');
+
+                $('input[name=\'firstname\']').attr("value",json['error']['firstname']);
+                $('input[name=\'city\']').attr("value",json['error']['city']);
+                $('input[name=\'telephone\']').attr("value",json['error']['telephone']);
+                $('input[name=\'email\']').attr("value",json['error']['email']);
+               // console.log(json['error']['city']);
+               console.log(json['error']);
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
@@ -219,7 +230,7 @@ $('#button-guest').on('click', function() {
 <?php if ($logged || $account) { ?>
 $(document).ready(function() {
 $('#confirm-buy').on('click', function() {
-         
+
     $.ajax({
         url: 'index.php?route=checkout/shipping_address/save',
         type: 'post',
@@ -233,7 +244,7 @@ $('#confirm-buy').on('click', function() {
             } else if (json['error']) {
                 $('#message-about-buyer').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
            } else if (json['success']) {
-               
+
              $.ajax({
                  url: 'index.php?route=checkout/shipping_method/save',
                 type: 'post',
@@ -247,7 +258,7 @@ $('#confirm-buy').on('click', function() {
                  } else if (json['error']) {
                        $('#message-about-delivery').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                  } else if (json['success']) {
-                     
+
                          $.ajax({
                               url: 'index.php?route=checkout/payment_method/save',
                               type: 'post',
@@ -261,25 +272,25 @@ $('#confirm-buy').on('click', function() {
                                   } else if (json['error']) {
                                        $('#message-about-payment').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
                                   } else if (json['success']) {
-                                      
+
                                          window.location.href = 'index.php?route=checkout/confirm/index';
                                   }
                               }
                          });
                      }
                 }
-            });    
+            });
           }
        }
-    });    
+    });
  });
 });
  <?php } else { ?>
  $(document).ready(function() {
-  $('#confirm-buy').on('click', function() {  
-      
+  $('#confirm-buy').on('click', function() {
+
       $('#main-message-field').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>Войдите как постоянный клиент или новый покупатель<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-  });    
+  });
 });
  <?php } ?>
 </script>

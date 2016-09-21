@@ -149,10 +149,10 @@
                   <?php } ?></td>
 
                 <td class="text-left"><?php echo $product['model']; ?><div class="input-group btn-block" style="max-width: 120px;">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m"><i>-</i></button>
-                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="input_col" />
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m_<?php echo $count; ?>"><i>-</i></button>
+                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="input_col_<?php echo $count; ?>" />
 
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p"><i >+</i></button>
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p_<?php echo $count; ?>"><i >+</i></button>
                     </div></td>
 
               </tr>
@@ -221,10 +221,10 @@
               <tr class="cart_table_small_320_button">
                 <td class="text-left "><?php echo $product['model']; ?></td>
                 <td class="text-left"><div class="input-group btn-block" style="max-width: 120px;">
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m"><i>-</i></button>
-                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="input_col" />
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m_<?php echo $count; ?>"><i>-</i></button>
+                    <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="input_col_<?php echo $count; ?>" />
 
-                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p"><i >+</i></button>
+                    <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_p_<?php echo $count; ?>"><i >+</i></button>
                     </div></td>
               </tr>
               <tr class="cart_table_small_tr">
