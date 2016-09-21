@@ -410,6 +410,7 @@
                 <div class="buttons clearfix">
                   <div class="pull-right">
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border_otz"><span ><?php echo $button_continue; ?></span></div></button>
+                    <button type="button" id="button-review2" ><div class="button-cart-border_otz"><span >AJAX</span></div></button>
                   </div>
                 </div>
                 <?php } else { ?>

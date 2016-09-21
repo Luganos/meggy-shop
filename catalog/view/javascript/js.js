@@ -489,3 +489,35 @@ console.log(User("max",25));
 User.prototype.say = function(w){console.log(this.age + w)};
 console.log(User("terminator",10));
 User.say("terminator",10,20);*/
+
+
+/*
+$('#button-review2').click(function(){
+        $.ajax({
+            type: "GET",
+            url: "js_test.js",
+            dataType: "script"
+        });
+    });
+*/
+/*
+$('#button-review2').click(function(){
+        $.ajax({
+            type: "GET",
+            url: "js_test.js",
+            dataType: "script",
+            success: function(response){console.log(response)}
+        });
+    });
+*/
+/*
+$('#button-review2').click(function(){
+        $.ajax({
+            type: "POST",
+            url: "index.php?route=product/product/write&product_id=44",
+           //dataType: "script",
+            success: function(response){console.log(response)}
+        });
+    });
+*/
+

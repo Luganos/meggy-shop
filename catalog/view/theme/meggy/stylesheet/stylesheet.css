@@ -7744,6 +7744,17 @@ h2{
 
 /*------END_search-----*/
 
+/*--------search.tpl--------*/
+
+.container_search{
+	width: 960px;
+	margin:0 auto;
+}
+
+
+
+/*--------END_search.tpl--------*/
+
 .input_text{
 	color: black !important;
 }
