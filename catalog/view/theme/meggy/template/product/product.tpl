@@ -409,7 +409,7 @@
                 <?php echo $captcha; ?>
                 <div class="buttons clearfix">
                   <div class="pull-right">
-                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border"><span ><?php echo $button_continue; ?></span></div></button>
+                    <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border_otz"><span ><?php echo $button_continue; ?></span></div></button>
                   </div>
                 </div>
                 <?php } else { ?>
@@ -510,7 +510,7 @@ $('select[name=\'recurring_id\'], input[name="quantity"]').change(function(){
 //--></script>
 <script type="text/javascript"><!--
 $('#button-cart').on('click', function() {
-        
+
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
