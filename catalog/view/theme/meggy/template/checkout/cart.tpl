@@ -196,7 +196,7 @@
             <tbody id="border_table_height">
               <?php foreach ($products as $product) { ?>
               <tr class="cart_table_start">
-                <td class="text-center"><?php if ($product['thumb']) { ?>
+                <td class="text-center cart_table_start_img"><?php if ($product['thumb']) { ?>
                   <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
                   <?php } ?></td>
                 <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
