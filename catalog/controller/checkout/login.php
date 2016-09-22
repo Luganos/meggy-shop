@@ -50,6 +50,14 @@ class ControllerCheckoutLogin extends Controller {
 		if ((!$this->cart->hasProducts() && empty($this->session->data['vouchers'])) || (!$this->cart->hasStock() && !$this->config->get('config_stock_checkout'))) {
 			$json['redirect'] = $this->url->link('checkout/cart');
 		}
+                
+                if ((utf8_strlen($this->request->post['email']) > 96) || !preg_match('/^[^\@]+@.*.[a-z]{2,15}$/i', $this->request->post['email'])) {
+			$json['error']['email'] = $this->language->get('error_email');
+		}
+                
+                if ((utf8_strlen($this->request->post['telephone']) < 9) || (utf8_strlen($this->request->post['telephone']) > 32) || !is_numeric($this->request->post['telephone'])) {
+			$json['error']['password'] = $this->language->get('error_password');
+		}
 
 		if (!$json) {
 			$this->load->model('account/customer');
