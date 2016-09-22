@@ -5554,6 +5554,7 @@ a.idTop:hover {
 #table_big{
 	//visibility: collapse;
 	display: table;
+	width: 960px;
 }
 
 .table-bordered_product td{
@@ -7395,15 +7396,15 @@ a.idTop:hover {
 	text-transform: uppercase;
 	font-size: ;
 	color: white;
-	transition-property:background-color;
-	transition-duration:0.5s;
+	//transition-property:background-color;
+	//transition-duration:0.5s;
 
 }
 
 .checkout_button_text_coupon2:hover{
 	background-color: rgb(243,129,129);
 	border: 1px solid rgb(247,167,167);
-	transform:scale(1.5);
+	//transform:scale(1.5);
 
 }
 
@@ -7416,6 +7417,14 @@ a.idTop:hover {
 	left: 245px;
 	bottom: 20px;
 	text-decoration: underline;
+}
+
+.forgotten{
+	position: relative;
+	top: 10px;
+	color: black;
+	text-decoration: underline;
+	margin-top: 10px;
 }
 
 .enter_for_user{
@@ -7868,7 +7877,7 @@ h2{
 
 iframe{
 	position: relative !important;
-	top: 670px !important;
+	top: 680px !important;
 	left: 550px;
 
 }
@@ -7876,7 +7885,7 @@ iframe{
 @media screen and (max-width: 855px) {
 	iframe{
 	position: relative !important;
-	top: 670px !important;
+	top: 680px !important;
 	left: 360px !important;
 
 }
@@ -7885,7 +7894,7 @@ iframe{
 @media screen and (max-width: 768px) {
 	iframe{
 	position: relative !important;
-	top: 1125px !important;
+	top: 1145px !important;
 	left: 217px !important;
 }
 	.provider{

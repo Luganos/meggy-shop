@@ -60,17 +60,17 @@
                 <div id="message-about-login"></div>
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email"/>
+                        <input type="text" size="30" class="form-control" name ="email_login"/>
                         </p>
                         <p><b>пароль</b><br>
                         <input type="password" size="30" class="form-control" name="password"/>
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="button" value="войти" id="button-login" class="checkout_button_text_coupon2" />
-                         <a href="<?php echo $forgotten; ?>">
-                         <span>Я забыл пароль</span>
-                         </a>
                         </div>
+                         <a href="<?php echo $forgotten; ?>">
+                            <span class="forgotten">Я забыл пароль</span>
+                         </a>
                         <div class="enter_for_user">
                             <p>Войти как пользователь</p>
                            <!-- <a id = "button_facebook" href="#" role ="button">
@@ -169,7 +169,7 @@ $('#button-login').on('click', function() {
                 $('#message-about-login').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
                 // Highlight any found errors
-                $('input[name=\'email\']').parent().addClass('has-error');
+                $('input[name=\'email_login\']').parent().addClass('has-error');
                 $('input[name=\'password\']').parent().addClass('has-error');
            }
         },
@@ -206,7 +206,7 @@ $('#button-guest').on('click', function() {
 
                 // Highlight any found errors
                 $('input[name=\'email\']').parent().addClass('has-error');
-                $('input[name=\'password\']').parent().addClass('has-error');
+              //  $('input[name=\'password\']').parent().addClass('has-error');
                 $('input[name=\'firstname\']').parent().addClass('has-error');
                 $('input[name=\'city\']').parent().addClass('has-error');
                 $('input[name=\'telephone\']').parent().addClass('has-error');
