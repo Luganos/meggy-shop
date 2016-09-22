@@ -409,10 +409,15 @@ header{
 }
 
 @media screen and (max-width: 769px) {
+	.content_product{
+		margin-top: 50px !important;
+	}
 	#content{
-	margin-top: 200px !important;
+	margin-top: 50px !important;
 	margin-left: 15px !important;
 	}
+
+
 }
 
 @media screen and (max-width: 535px) {
@@ -754,7 +759,7 @@ search_bottom span{
 @media screen and (max-width: 1100px) {
 
 #time{
-	margin-left: 40% !important;
+	margin-left: 37% !important;
 }
 
 footer {
@@ -920,7 +925,7 @@ input::-webkit-input-placeholder {
 }
 
 .footer_med{
-	width: 63% !important;
+	width: 80% !important;
 	height: 135px;
 	margin-left: 19% !important;
 	border-bottom: 1px solid rgb(40, 43, 58);
@@ -951,7 +956,7 @@ input::-webkit-input-placeholder {
 
 .footer_med_net{
 	vertical-align:middle;
-	text-align: right;
+	text-align: left;
 	display:table-cell;
 	width: 36%;
 	//float: right;
@@ -1099,7 +1104,7 @@ input::-webkit-input-placeholder {
 .footer_top{
 	width: 89% !important;/*--------------------------------------------*/
 	height: 480px;
-	margin-left: 60px !important;
+	margin-left: 20px !important;
 	border-bottom: 1px solid rgb(40, 43, 58);
 }
 
@@ -1216,6 +1221,7 @@ input::-webkit-input-placeholder {
 	vertical-align:middle;
 	display:table-cell;
 	width: 36%;
+	padding-bottom:25px;
 }
 
 .footer_med_net img{
@@ -1533,7 +1539,7 @@ input::-webkit-input-placeholder {
 	vertical-align:middle;
 	display:table-cell;
 	padding-top: 20px;
-	padding-left: 40px;
+	padding-left: 15px;
 
 }
 
@@ -1558,7 +1564,7 @@ input::-webkit-input-placeholder {
 
 @media screen and (max-width: 449px) {
 footer {
-	height: 1550px !important;
+	height: 1650px !important;
 	background-color: rgb(28,30,42) !important;
 }
 
@@ -2923,6 +2929,13 @@ input::-webkit-input-placeholder {
 		margin-left: 5% !important;
 		margin-right: 5% !important;
 	}
+	.slick-next{
+		right: 40px !important;
+	}
+	#time{
+	margin-left: 24% !important;
+}
+
 }
 @media (max-width: 389px) {
 	.owl-wrapper-outer{
@@ -2985,7 +2998,7 @@ input::-webkit-input-placeholder {
 	width: 30%;
 	}
 	.footer_med{
-		margin-left: 12% !important;
+		margin-left: 8% !important;
 	}
 }
 
@@ -3042,7 +3055,7 @@ input::-webkit-input-placeholder {
 .footer_med_net img{
 	width: 17px;
 	height: 17px;
-	margin: 0 2% 0 2%;
+	margin: 0 1% 0 1%;
 }
 
 
@@ -3071,10 +3084,11 @@ input::-webkit-input-placeholder {
 	font-weight: bold;
 }
 
+
 @media (max-width: 854px) {
 	#footer_med_four_text{
 	display: block;
-	margin-left: 8px;
+	margin-left: 2px;
 	}
 }
 
@@ -3369,6 +3383,10 @@ input::-webkit-input-placeholder {
 @media (max-width: 855px) {
 /*------coupon-------*/
 
+.table-bordered_size{
+	width: 755px;
+}
+
 #login{
 	margin-left: 12% !important;
 }
@@ -3382,7 +3400,7 @@ input::-webkit-input-placeholder {
 }
 
 .table-responsive{
-	width: 750px;
+	width: 735px;
 	overflow: visible;
 	//margin-left: 60px;
 }
@@ -3811,10 +3829,6 @@ input::-webkit-input-placeholder {
 	//padding-left: 0px !important;
 }
 
-#time{
-	margin-left: 24% !important;
-}
-
 .baner_all{
 	margin-top: 85px !important;
 	margin-left: 0px !important;
@@ -4124,84 +4138,84 @@ input::-webkit-input-placeholder {
 
 /*------add_tovar------*/
 .cart_m_0{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_1{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_2{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_3{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_4{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_5{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_6{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_7{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_8{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_9{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 .cart_m_10{
-	padding:12px 8px 7px 8px;
+	padding:8px 8px 7px 8px;
 	margin-top: 1px;
 }
 
 .cart_p_0{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }
 .cart_p_1{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_2{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_3{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_4{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_5{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_6{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_7{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_8{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }
 .cart_p_9{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }.cart_p_10{
-	padding:12px 6px 7px 6px;
+	padding:8px 6px 7px 6px;
 	margin-top: 1px;
 }
 
@@ -5751,6 +5765,9 @@ a.idTop:hover {
 	font-family: 'Open Sans Semibold';
 
 }
+.tab-content{
+	width: 768px !important;
+}
 
 /*-----END_Отзывы-------*/
 
@@ -5829,6 +5846,7 @@ a.idTop:hover {
 }
 
 .col_price_header{
+	width: 320px;
 	color: black;
 	font-size: 14px;
 	font-weight: bold;
@@ -5845,6 +5863,7 @@ a.idTop:hover {
 }
 
 .col_price_tr{
+	width:320px;
 	border-top: 1px dashed black;
 	color: rgb(146,153,159);
 	font-size: 14px;
@@ -6041,6 +6060,14 @@ a.idTop:hover {
 	font-family: 'Open Sans Semibold';
 
 }
+
+.tab-content{
+	width: 480px !important;
+}
+#table_big{
+	width: 600px;
+}
+
 
 /*-----END_Отзывы-------*/
 
@@ -6458,7 +6485,7 @@ a.idTop:hover {
 }
 
 .tab-content{
-	width: 480px;
+	width: 480px !important;
 }
 
 /*-----END_Отзывы-------*/
@@ -6481,6 +6508,7 @@ a.idTop:hover {
 
 #xs_product{
 	bottom: 140px !important;
+	padding-left: 0px;
 }
 
 #table_small{
@@ -6578,7 +6606,7 @@ a.idTop:hover {
 
 .col_price{
 	//width:80% !important;
-	width: 300px !important;
+	width: 280px !important;
 	padding-right: 70px;
 }
 
@@ -6599,6 +6627,7 @@ a.idTop:hover {
 }
 
 .col_price_tr{
+	width: 280px;
 	border-top: 1px dashed black;
 	color: rgb(146,153,159);
 	font-size: 14px;
@@ -6875,7 +6904,7 @@ a.idTop:hover {
 	margin-top: 100px;
 }
 .table_size{
-	margin-right: 140px;
+	margin-right: 170px;
 }
 }
 
