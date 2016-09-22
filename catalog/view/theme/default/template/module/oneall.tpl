@@ -7,19 +7,12 @@ if ( ! $oasl_user_is_logged  && ! empty ($oasl_subdomain))
 {
 	if (! empty ($oasl_heading_title))
    	{
-<<<<<<< HEAD
-		echo '<h3 class="oneall_social_login">'.$oasl_heading_title.'</h3>';
-	}
-
-	if ($oasl_display_modal)
-	{
-=======
 		/*echo '<h3>'.$oasl_heading_title.'</h3>';*/
 	}                    
 	 
 	if ($oasl_display_modal) 
 	{ 
->>>>>>> ab495dd4efcd3b33aab6987e5f70661521d1b64d
+
 		echo '<a id="'.$oasl_container.'" class="button">'.$oasl_login_button.'</a>';
 	}
 	else
