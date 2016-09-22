@@ -7877,7 +7877,7 @@ h2{
 
 iframe{
 	position: relative !important;
-	top: 680px !important;
+	top: 700px !important;
 	left: 550px;
 
 }
@@ -7904,6 +7904,14 @@ iframe{
 		margin: 0 5px 0 5px !important;
 		border-radius: 50% !important;
 	}*/
+}
+
+#input_error_password{
+	font-size: 12px;
+}
+
+.has-error{
+	margin-bottom: 0px;
 }
 
 /*------END_VK_and_FB-----*/

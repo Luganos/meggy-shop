@@ -44,7 +44,7 @@
                         <input type="text" size="30" class="form-control" name="telephone">
                         </p>
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email">
+                        <input id="input_email_guest" type="text" size="30" class="form-control" name ="email">
                         </p>
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="lastname">
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="address_1">
@@ -60,10 +60,11 @@
                 <div id="message-about-login"></div>
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email"/>
+                        <input id="input_email_login" type="text" size="30" class="form-control" name ="email"/>
                         </p>
                         <p><b>пароль</b><br>
                         <input type="password" size="30" class="form-control" name="password"/>
+                        <span id="input_error_password"></span>
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="button" value="войти" id="button-login" class="checkout_button_text_coupon2" />
@@ -166,11 +167,14 @@ $('#button-login').on('click', function() {
             if (json['redirect']) {
                 location = json['redirect'];
             } else if (json['error']) {
-                $('#message-about-login').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+               /* $('#message-about-login').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
-                $('input[name=\'email\']').parent().addClass('has-error');
+                $('#input_email_login').parent().addClass('has-error');
                 $('input[name=\'password\']').parent().addClass('has-error');
+
+                $('#input_error_password').html(json['error']['password']);
+                $('#input_email_login').attr("value",json['error']['email']);
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
@@ -205,7 +209,7 @@ $('#button-guest').on('click', function() {
                /* $('#message-about-guest').html('<div class=""><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
-                $('input[name=\'email\']').parent().addClass('has-error');
+                $('#input_email_guest').parent().addClass('has-error');
               //  $('input[name=\'password\']').parent().addClass('has-error');
                 $('input[name=\'firstname\']').parent().addClass('has-error');
                 $('input[name=\'city\']').parent().addClass('has-error');
@@ -214,7 +218,7 @@ $('#button-guest').on('click', function() {
                 $('input[name=\'firstname\']').attr("value",json['error']['firstname']);
                 $('input[name=\'city\']').attr("value",json['error']['city']);
                 $('input[name=\'telephone\']').attr("value",json['error']['telephone']);
-                $('input[name=\'email\']').attr("value",json['error']['email']);
+                $('#input_email_guest').attr("value",json['error']['email']);
                // console.log(json['error']['city']);
                console.log(json['error']);
            }
