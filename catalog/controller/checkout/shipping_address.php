@@ -84,16 +84,16 @@ class ControllerCheckoutShippingAddress extends Controller {
 					unset($this->session->data['shipping_methods']);
 				}
 			} else {
-				if ((utf8_strlen(trim($this->request->post['street'])) < 1) || (utf8_strlen(trim($this->request->post['street'])) > 32)) {
-					$json['error']['address_1'] = $this->language->get('error_address_1');
+				if ((utf8_strlen(trim($this->request->post['street'])) < 1) || (utf8_strlen(trim($this->request->post['street'])) > 50)) {
+					$json['error']['street'] = $this->language->get('error_street');
 				}
 
-				if ((utf8_strlen(trim($this->request->post['house'])) < 1) || (utf8_strlen(trim($this->request->post['house'])) > 32)) {
-					$json['error']['address_1'] = $this->language->get('error_address_1');
+				if ((utf8_strlen(trim($this->request->post['house'])) < 1) || (utf8_strlen(trim($this->request->post['house'])) > 5) || !is_numeric($this->request->post['house'])) {
+					$json['error']['house'] = $this->language->get('error_house');
 				}
 
-				if ((utf8_strlen(trim($this->request->post['flat'])) < 1) || (utf8_strlen(trim($this->request->post['flat'])) > 32)) {
-					$json['error']['address_1'] = $this->language->get('error_address_1');
+				if ((utf8_strlen(trim($this->request->post['flat'])) < 1) || (utf8_strlen(trim($this->request->post['flat'])) > 5) || !is_numeric($this->request->post['flat'])) {
+					$json['error']['flat'] = $this->language->get('error_flat');
 				}
                                 
                                 if ($this->customer->isLogged()) {
