@@ -55,7 +55,7 @@ class ControllerCheckoutLogin extends Controller {
 			$json['error']['email'] = $this->language->get('error_email');
 		}
                 
-                if ((utf8_strlen($this->request->post['telephone']) < 9) || (utf8_strlen($this->request->post['telephone']) > 32) || !is_numeric($this->request->post['telephone'])) {
+                if ((utf8_strlen($this->request->post['password']) < 9) || (utf8_strlen($this->request->post['password']) > 32)) {
 			$json['error']['password'] = $this->language->get('error_password');
 		}
 
