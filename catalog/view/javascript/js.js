@@ -229,7 +229,7 @@ $('.cart_p_10').on("click", cart_p_10);
 /*---End add_tocar----*/
 
 /*------adoptiv slaider-----*/
-if(width < 371){
+if(width < 400){
     console.log("small");
     teg = document.getElementById('srcoll');
     teg.setAttribute('data-slick','{"slidesToShow": 1, "slidesToScroll": 1}')

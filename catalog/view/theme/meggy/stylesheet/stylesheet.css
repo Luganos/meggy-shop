@@ -102,7 +102,7 @@ header{
 
 }
 
-@media (max-width: 371px) {
+@media (max-width: 471px) {
 	.bx-prev{
 	left: 20px !important;
 }
@@ -2919,7 +2919,18 @@ input::-webkit-input-placeholder {
 	.footer_top_compani{
 		width: 60% !important;
 	}
+	.owl-wrapper-outer{
+		margin-left: 5% !important;
+		margin-right: 5% !important;
+	}
 }
+@media (max-width: 389px) {
+	.owl-wrapper-outer{
+		margin-left: 0% !important;
+	}
+}
+
+
 
 
 
@@ -6441,6 +6452,14 @@ a.idTop:hover {
 	width: 450px !important;
 }
 
+.table_size{
+	margin-right: 50px;
+}
+
+.tab-content{
+	width: 480px;
+}
+
 /*-----END_Отзывы-------*/
 
 }
@@ -6854,6 +6873,9 @@ a.idTop:hover {
 .thumbnails_product{
 	margin-top: 100px;
 }
+.table_size{
+	margin-right: 140px;
+}
 }
 
 #button-cart{
@@ -6869,6 +6891,9 @@ a.idTop:hover {
 
 .button-cart-border:hover{
 	border: 1px solid rgb(246,168,167);
+}
+.tab-content{
+	width: 320px;
 }
 
 /*-----END_Отзывы-------*/
@@ -7848,5 +7873,28 @@ iframe{
 
 }
 
+@media screen and (max-width: 855px) {
+	iframe{
+	position: relative !important;
+	top: 670px !important;
+	left: 360px !important;
+
+}
+}
+
+@media screen and (max-width: 768px) {
+	iframe{
+	position: relative !important;
+	top: 1125px !important;
+	left: 217px !important;
+}
+	.provider{
+		width: 50px;
+	}
+	/*#button_vkontakte{
+		margin: 0 5px 0 5px !important;
+		border-radius: 50% !important;
+	}*/
+}
 
 /*------END_VK_and_FB-----*/
