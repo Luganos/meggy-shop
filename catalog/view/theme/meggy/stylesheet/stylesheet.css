@@ -2902,7 +2902,7 @@ input::-webkit-input-placeholder {
 	font-size: 0.875em;
 }
 
-.footer_top_logo_text a{
+.footer_top_logo_text span{
 	color: rgb(198,200,214);
 }
 
@@ -7558,6 +7558,9 @@ a.idTop:hover {
 	font-family: 'Open Sans Semibold' !important;
 	color: rgb(146,153,159);
 	font-size: 14px;
+	position: relative;
+	top: -3px;
+	left: 5px;
 }
 
 .courier{
@@ -7577,6 +7580,9 @@ a.idTop:hover {
 	font-family: 'Open Sans Semibold' !important;
 	color: rgb(146,153,159);
 	font-size: 14px;
+	position: relative;
+	top: -3px;
+	left: 5px;
 }
 
 .payment{
@@ -7601,6 +7607,9 @@ a.idTop:hover {
 	font-family: 'Open Sans Semibold' !important;
 	color: rgb(146,153,159);
 	font-size: 14px;
+	position: relative;
+	top: -3px;
+	left: 5px;
 }
 
 .client_address{

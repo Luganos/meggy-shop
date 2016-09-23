@@ -92,12 +92,17 @@
                 <p>Доставка</p>
                 <div class="pickup">
                     <p>самовывоз</p>
-                    <input class="new_post_input" type="radio" checked ="checked" name="pickup" value="1"><span>из Новой Почты</span><br>
+                    <label><input class="new_post_input" type="radio" checked ="checked" name="pickup" value="1"><span>из Новой Почты</span><br>
+                    </label>
+                    <label>
                     <input class="pickup_input" type="radio" name="pickup" value="2"><span>из точки выдачи</span>
+                    </label>
                 </div>
                 <div class="courier">
                     <p>курьер</p>
+                    <label>
                     <input class="Mist_e" type="radio" name="pickup" value="3"><span>Мист Экспресс</span><br>
+                    </label>
                 </div>
             </div>
             <div class="payment">
@@ -107,7 +112,9 @@
                 <div class="cash">
                     <input class="new_post_input" type="radio" name="payment_method" checked ="checked" value="1"><span>Наличными</span><br>
                     <input class="pickup_input" type="radio" name="payment_method" value="2"><span>Безналичными</span><br>
+                    <label>
                     <input class="pickup_input" type="radio" name="payment_method" value="3"><span>Visa/MasterCard</span>
+                    </label>
                     <input class="pickup_input" type="text" name="agree" value="1" style ="visibility: hidden;">
                 </div>
             </div>
