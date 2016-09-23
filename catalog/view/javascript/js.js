@@ -438,7 +438,11 @@ if(width < 855){
 
 /*---vertical_slider----*/
 $(function() {
-    $('#va-accordion').vaccordion();
+    $('#va-accordion').vaccordion({
+        accordionH:320,
+        animSpeed:0,
+      //  expandedHeight:50
+    });
      });
 
 /*---END_vertical_slider----*/
