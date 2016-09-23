@@ -26,13 +26,13 @@
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails thumbnails_product">
           <?php } ?>
-           <!-- <?php if ($images) { ?>
+            <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
-            <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+            <li class="image-additional vertical_slider_small"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
             <?php } ?>
-            <?php } ?>-->
+            <?php } ?>
 
-          <div class="container">
+          <div class="container vertical_slider_big">
             <div id="va-accordion" class="va-container">
               <div class="va-nav">
                <span class="va-nav-prev">Назад</span>
@@ -66,10 +66,10 @@
 
 
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title=""><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
-          <a class="addthis_button_compact"></a>
+          <a class="addthis_button_compact"></a><p>SHARE</p>
           </div>
           <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
           <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR_ACCOUNT_ID!!"></script>

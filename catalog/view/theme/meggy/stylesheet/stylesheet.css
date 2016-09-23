@@ -8212,8 +8212,45 @@ iframe{
 	height: 40px !important;
 	top: 340px !important;
 	bottom: 0px;
-
-
 }
 
+.vertical_slider_small{
+	margin-top: 10px;
+	display: none;
+}
+
+@media (max-width: 854px) {
+	.va-container{
+		right: 310px;
+		height: 300px;
+	}
+}
+/*
+@media (max-width: 852px) {
+	.va-container{
+		right: 210px;
+		height: 300px;
+	}
+}*/
+
+
+@media (max-width: 535px) {
+	.vertical_slider_big{
+		display: none;
+	}
+	.vertical_slider_small{
+		display:inline !important;
+	}
+}
+
+
 /*----vertical_slider----*/
+
+/*-----pop_up_product_click_big_image--*/
+.mfp-bg{
+	//display: none;
+}
+.mfp-wrap{
+	display: none;
+}
+/*-----END_pop_up_product_click_big_image--*/
