@@ -8061,7 +8061,8 @@ iframe{
 	background-color: #f3f4ef; border: 1px solid #dedede; padding: 5px;
 	background-color: transparent;
 	border: 0px solid transparent;
-	padding: 0px;
+	padding-bottom: 5px;
+	//bottom: 50px;
 }
 .va-wrapper{
 	width:100%;
@@ -8079,8 +8080,8 @@ iframe{
 }
 
 .va-slice img{
-	width: 100%;
-	height: 100%;
+	width: 95%;
+	height: 95%;
 }
 /*
 .va-slice-1{
@@ -8175,6 +8176,10 @@ iframe{
 	color:#fff;
 	text-shadow:none;
 }
+.va-nav{
+	margin: 10px 0 0px 0;
+}
+
 .va-nav span{
 	width:40px;
 	height:25px;
@@ -8196,6 +8201,19 @@ iframe{
 }
 .va-nav span:hover{
 	opacity:1.0;
+}
+
+.va-nav-prev{
+	height: 40px !important;
+
+}
+
+.va-nav-next{
+	height: 40px !important;
+	top: 340px !important;
+	bottom: 0px;
+
+
 }
 
 /*----vertical_slider----*/
