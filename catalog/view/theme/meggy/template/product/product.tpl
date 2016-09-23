@@ -67,6 +67,13 @@
 
           <?php if ($thumb) { ?>
           <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <!-- AddThis Button BEGIN -->
+          <div class="addthis_toolbox addthis_default_style ">
+          <a class="addthis_button_compact"></a>
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+          <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR_ACCOUNT_ID!!"></script>
+          <!-- AddThis Button END -->
           <?php if ($new_goods_flag) { ?>
           <img id="produc_new" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
           <?php } ?>
@@ -460,7 +467,7 @@
           <?php foreach ($products as $product)  { ?>
            <div class="sli_slide_<?php echo $n; ?>">
                <div class="sli_img_<?php echo $n; ?>">
-                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new">
+                   <a href ="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new"></a>
                    <?php if ($new_goods_flag) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                    <?php } ?>
