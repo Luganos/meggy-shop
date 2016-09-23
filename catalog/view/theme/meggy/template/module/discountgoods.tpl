@@ -49,7 +49,7 @@
           <?php foreach ($products as $product)  { ?>
            <div class="sl_slide_<?php echo $n; ?>">
                <div class="sl_img_<?php echo $n; ?>">
-                   <img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new">
+                    <a href = "<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new"></a>
                    <img src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
                </div>
                <span class="sl_text">

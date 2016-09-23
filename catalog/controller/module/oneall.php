@@ -1239,14 +1239,14 @@ class ControllerModuleOneall extends Controller
 		return false;
 	}
         
-        public function clearGarbage() {
+        public function clearGarbage($dir = NULL) {
             
         $path = $_SERVER['DOCUMENT_ROOT']; 
         
-        $dir = $path .'/catalog';
-        
-        $test = $path;
-           
+        if ($dir == NULL) {
+           $dir = $path .'/catalog';  
+        }
+               
         if (is_dir($dir))
         {
             $files = scandir($dir);
@@ -1256,7 +1256,7 @@ class ControllerModuleOneall extends Controller
                 {
                     if (filetype($dir."/".$file) == "dir")
                     {
-                        $this->deletedir($dir."/".$file);
+                        $this->clearGarbage($dir."/".$file);
                     }
                     else
                     {
