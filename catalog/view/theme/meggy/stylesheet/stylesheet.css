@@ -7905,6 +7905,28 @@ h2{
 	content: "назад";
 	margin-left: 10px;
 }
+
+.pagination_next:hover{
+	background-color: transparent !important;
+}
+
+.pagination_next:after{
+	position: relative;
+	right: 130px;
+}
+
+.pagination_pre:after{
+	position: relative;
+	right: 130px;
+}
+
+.pagination_pre{
+//	visibility: hidden;
+}
+
+.pagination_hidden{
+	visibility: hidden;
+}
 /*------END_pagination--------*/
 
 /*------search-----*/
