@@ -8031,7 +8031,8 @@ iframe{
 	}*/
 }
 
-#input_error_password{
+#input_error_password, #input_error_name, #input_error_city,
+#input_error_telephone, #input_error_email, #input_email_login{
 	font-size: 12px;
 }
 
@@ -8040,3 +8041,12 @@ iframe{
 }
 
 /*------END_VK_and_FB-----*/
+
+/*-----alert-success-----*/
+/*-Сообщение одобовлении товара в корзину выводится на главной*/
+
+.alert-success{
+	display: none;
+}
+
+/*-----END_alert-success-----*/

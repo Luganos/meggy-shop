@@ -36,15 +36,18 @@
                 <div class="checkout-input" id ="guest-form">
                         <p><b>имя и фамилия</b><br>
                         <input type="text" size="30" class="form-control" name ="firstname">
+                        <span id="input_error_name"></span>
                         </p>
                         <p><b>город</b><br>
-                        <input type="text" size="30" class="form-control" name="city">
+                        <input type="text" size="30" class="form-control" name="city"><span id="input_error_city"></span>
                         </p>
                         <p><b>мобильный телефон</b><br>
                         <input type="text" size="30" class="form-control" name="telephone">
+                        <span id="input_error_telephone"></span>
                         </p>
                         <p><b>e-mail</b><br>
                         <input id="input_email_guest" type="text" size="30" class="form-control" name ="email">
+                        <span id="input_error_email"></span>
                         </p>
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="lastname">
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="address_1">
@@ -60,7 +63,8 @@
                 <div id="message-about-login"></div>
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
-                        <input id="input_email_login" type="text" size="30" class="form-control" name ="email"/>
+                        <input type="text" size="30" class="form-control" name ="email"/>
+                        <span id="input_email_login"></span>
                         </p>
                         <p><b>пароль</b><br>
                         <input type="password" size="30" class="form-control" name="password"/>
@@ -181,7 +185,7 @@ $('#button-login').on('click', function() {
                 $('input[name=\'password\']').parent().addClass('has-error');
 
                 $('#input_error_password').html(json['error']['password']);
-                $('#input_email_login').attr("value",json['error']['email']);
+                $('#input_email_login').html(json['error']['email']);
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
@@ -222,10 +226,10 @@ $('#button-guest').on('click', function() {
                 $('input[name=\'city\']').parent().addClass('has-error');
                 $('input[name=\'telephone\']').parent().addClass('has-error');
 
-                $('input[name=\'firstname\']').attr("value",json['error']['firstname']);
-                $('input[name=\'city\']').attr("value",json['error']['city']);
-                $('input[name=\'telephone\']').attr("value",json['error']['telephone']);
-                $('#input_email_guest').attr("value",json['error']['email']);
+                $('#input_error_name').html(json['error']['firstname']);
+                $('#input_error_city').html(json['error']['city']);
+                $('#input_error_telephone').html(json['error']['telephone']);
+                $('#input_error_email').html(json['error']['email']);
                // console.log(json['error']['city']);
                console.log(json['error']);
            }
