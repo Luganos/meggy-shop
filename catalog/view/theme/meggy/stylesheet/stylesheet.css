@@ -286,6 +286,12 @@ header{
 	display: inline;
 }
 
+.currency{
+	width: 65px;
+	margin-right: 3px;
+
+}
+
 .in_item{
 	display: inline;
 	float: left;
@@ -408,13 +414,13 @@ header{
 
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 854px) {
 	.content_product{
 		margin-top: 50px !important;
 	}
 	#content{
 	margin-top: 50px !important;
-	margin-left: 15px !important;
+	margin-left: 0px !important;
 	}
 
 
@@ -471,6 +477,14 @@ search_bottom span{
 }
 
 /*-------Большой слайдер--------*/
+.z{
+	border: 2px solid rgb(186,220,229) !important;
+	background-color: black;
+}
+/*
+.active{
+	background-color: green !important;
+}*/
 
 .carusel_big{
 	width: 100%;
@@ -485,7 +499,7 @@ search_bottom span{
 }
 
 .carousel-indicators{
-	top: 550px;
+	top: 500px;
 	//position: relative;
 	//top: 630px;
 	margin-top: 50px;
@@ -506,9 +520,28 @@ search_bottom span{
 	bottom:0px !important;
 
 }
-
+}
+@media screen and (max-width: 1350px) {
+		.carousel-indicators{
+	top: 400px;
+	//position: relative;
+	//top: 630px;
+	margin-top: 50px;
+}
+}
+@media screen and (max-width: 1100px) {
+		.carousel-indicators{
+	top: 320px;
+	//position: relative;
+	//top: 630px;
+	margin-top: 50px;
+}
+	.baner_all{
+		margin-top: 50px !important;
+	}
 }
 @media screen and (max-width: 855px) {
+
 	#carousel{
 	bottom:0px !important;
 }
@@ -1935,6 +1968,15 @@ header{
 
 @media screen and (max-width: 1431px) {
 	.header_menu {
+		margin-left: 35px;
+	}
+	.header_in{
+		width: 123% !important;
+	}
+	.header_tel {
+		width: 130% !important;
+	}
+	.header_menu {
 		width: 70% !important;
 	}
 	.qqq span{
@@ -2129,9 +2171,20 @@ header{
 	//float: left;
 }
 
-@media (max-width: 855px) {
+@media (max-width: 769px) {
 	.baner_all{
-		margin-top: 0px;
+		margin-top: 10px !important;
+		margin-left: 10px;
+	}
+	.baner_one{
+	margin-left: 20%;
+	}
+}
+
+@media (max-width: 751px) {
+	.baner_all{
+		margin-top: 160px !important;
+		margin-left: 10px;
 	}
 	.baner_one{
 	margin-left: 20%;
@@ -4557,6 +4610,7 @@ div.required .control-label:before {
 	padding-left:0px;
 	color:red;
 	width: 142px;
+
 }
 
 @media screen and (max-width: 855px) {
