@@ -636,13 +636,19 @@ class ControllerModuleOneall extends Controller
 		
 		$data ['oasl_callback_uri'] = $oasl_callback_uri;
 		
+                
+                $route = strstr($this->request->get['route'], '/');
 		// Display Wiget
-		if (stripos ($this->request->get['route'], 'cart')) {
+		if (stripos ($route, 'checkout')) {
 			
-			return;
+                    if (!$this->customer->isLogged() && !isset($this->session->data['account'])){
+                       return $this->display_widget_template ($data); 
+                    }
+		    return;	
 		}
+                
+		return;
 		
-		return $this->display_widget_template ($data);
 	}
 
 	// Display Widget
