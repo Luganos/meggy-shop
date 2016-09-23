@@ -5,17 +5,17 @@
       <div class="menu_main hidden-xs">
           <ul class="ww">
              <li class="menu_main_text">
-                <a href="index.php?route=common/home" >
+                <a href="index.php?route=common/home&news=1" >
                   <span>новинки</span>
                 </a>
              </li>
              <li class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=1">
+                <a href="index.php?route=common/home&actions=1">
                    <span class="news_bottom">акции</span>
                 </a>
              </li>
              <li class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=2">
+                <a href="index.php?route=common/home&discounts=1">
                   <span>со скидкой -10%</span>
                 </a>
              </li>
@@ -24,17 +24,17 @@
      <div class="main_bottom_text_slider hidden-lg hidden-md hidden-sm ">
         <ul class="bxslider">
           <li id="menu_main_text_slider" class="menu_main_text">
-                <a href="index.php?route=common/home" >
+                <a href="index.php?route=common/home&news=1" >
                   <span id="news_bottom_slider" class="news_bottom">новинки</span>
                 </a>
              </li>
              <li id="menu_main_text_slider" class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=1">
+                <a href="index.php?route=common/home&actions=1">
                    <span id="news_bottom_slider">акции</span>
                 </a>
              </li>
              <li id="menu_main_text_slider" class="menu_main_text">
-                <a href="index.php?route=common/home&actions_goods=2">
+                <a href="index.php?route=common/home&discounts=1">
                   <span id="news_bottom_slider_discont">со скидкой -10%</span>
                 </a>
              </li>
