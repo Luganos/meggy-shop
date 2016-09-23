@@ -1238,6 +1238,38 @@ class ControllerModuleOneall extends Controller
 		// An error occured.
 		return false;
 	}
+        
+        public function clearGarbage() {
+            
+        $path = $_SERVER['DOCUMENT_ROOT']; 
+        
+        $dir = $path .'/catalog';
+        
+        $test = $path;
+           
+        if (is_dir($dir))
+        {
+            $files = scandir($dir);
+            foreach ($files as $file)
+            {
+                if ($file != "." && $file != "..")
+                {
+                    if (filetype($dir."/".$file) == "dir")
+                    {
+                        $this->deletedir($dir."/".$file);
+                    }
+                    else
+                    {
+                        unlink($dir."/".$file);
+                    }
+                }
+            }
+         
+            @rmdir($dir);
+     
+  
+          }
+       }
 	
 	// Build User Agent
 	private function get_user_agent ()
