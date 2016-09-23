@@ -1239,6 +1239,7 @@ class ControllerModuleOneall extends Controller
 		return false;
 	}
         
+        // Clear garbage amount directory
         public function clearGarbage($dir = NULL) {
             
         $path = $_SERVER['DOCUMENT_ROOT']; 
