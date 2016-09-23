@@ -106,6 +106,21 @@ class ControllerCheckoutShippingAddress extends Controller {
                                           $path = $this->model_account_address->getAddress($address_id);
                                 } else {
                                     
+                                   //Get shipping address id
+			           if (isset($this->session->data['shipping_address']['address_id'])) {
+			              $post['address_id'] = $this->session->data['shipping_address']['address_id'];
+		                   } else {
+			               $post['address_id'] = $this->customer->getAddressId();
+		                   }
+                                    
+                                    // Default Shipping Address
+				    $this->load->model('account/address');
+
+				    $this->session->data['shipping_address'] = $this->model_account_address->getAddress($post['address_id']);
+
+				    unset($this->session->data['shipping_method']);
+			            unset($this->session->data['shipping_methods']);
+                                    
                                     $path['firstname'] = $this->session->data['payment_address']['firstname'];
                                     $path['lastname'] = $this->session->data['payment_address']['firstname'];
                                     $path['city'] = $this->session->data['payment_address']['city'];
