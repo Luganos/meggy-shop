@@ -33,6 +33,13 @@
             <?php } ?>
           <?php if ($thumb) { ?>
           <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <!-- AddThis Button BEGIN -->
+          <div class="addthis_toolbox addthis_default_style ">
+          <a class="addthis_button_compact"></a>
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+          <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR_ACCOUNT_ID!!"></script>
+          <!-- AddThis Button END -->
           <?php if ($new_goods_flag) { ?>
           <img id="produc_new" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
           <?php } ?>
