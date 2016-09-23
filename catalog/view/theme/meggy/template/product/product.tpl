@@ -26,11 +26,45 @@
           <?php if ($thumb || $images) { ?>
           <ul class="thumbnails thumbnails_product">
           <?php } ?>
-            <?php if ($images) { ?>
+           <!-- <?php if ($images) { ?>
             <?php foreach ($images as $image) { ?>
             <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
             <?php } ?>
-            <?php } ?>
+            <?php } ?>-->
+
+          <div class="container">
+            <div id="va-accordion" class="va-container">
+              <div class="va-nav">
+               <span class="va-nav-prev">Назад</span>
+               <span class="va-nav-next">Дальше</span>
+              </div>
+              <div class="va-wrapper">
+                <div class="va-slice va-slice-1">
+                  <img src="catalog/view/theme/meggy/image/1.jpg" alt="">
+                </div>
+                <div class="va-slice va-slice-2">
+                  <img src="catalog/view/theme/meggy/image/2.jpg" alt="">
+                </div>
+                <div class="va-slice va-slice-3">
+                  <img src="catalog/view/theme/meggy/image/3.jpg" alt="">
+                </div>
+                <div class="va-slice va-slice-4">
+                  <img src="catalog/view/theme/meggy/image/4.jpg" alt="">
+                </div>
+                <div class="va-slice va-slice-5">
+                  <img src="catalog/view/theme/meggy/image/5.jpg" alt="">
+                </div>
+                <div class="va-slice va-slice-6">
+                  <img src="catalog/view/theme/meggy/image/6.jpg" alt="">
+                </div>
+                <div class="va-slice va-slice-7">
+                  <img src="catalog/view/theme/meggy/image/7.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <?php if ($thumb) { ?>
           <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
           <?php if ($new_goods_flag) { ?>

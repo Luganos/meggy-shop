@@ -436,6 +436,12 @@ if(width < 855){
 };
 /*----END_filter_size----*/
 
+/*---vertical_slider----*/
+$(function() {
+    $('#va-accordion').vaccordion();
+     });
+
+/*---END_vertical_slider----*/
 
 /*
 var screen = window.navigator;
