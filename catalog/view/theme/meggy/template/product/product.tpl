@@ -46,7 +46,7 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title=""><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img"><a href="<?php echo $popup; ?>" title=""><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
           <a class="addthis_button_compact"></a><p>SHARE</p>
@@ -700,14 +700,14 @@ $('#button-review').on('click', function() {
 	});
 });
 
-$(document).ready(function() {
+/*$(document).ready(function() {
 	$('.thumbnails').magnificPopup({
 		type:'image',
 		delegate: 'a',
 		gallery: {
 			enabled:true
 		}
-	});
+	});*/
 });
 </script>
 <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
