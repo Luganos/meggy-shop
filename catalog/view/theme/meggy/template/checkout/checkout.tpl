@@ -36,15 +36,18 @@
                 <div class="checkout-input" id ="guest-form">
                         <p><b>имя и фамилия</b><br>
                         <input type="text" size="30" class="form-control" name ="firstname">
+                        <span id="input_error_name"></span>
                         </p>
                         <p><b>город</b><br>
-                        <input type="text" size="30" class="form-control" name="city">
+                        <input type="text" size="30" class="form-control" name="city"><span id="input_error_city"></span>
                         </p>
                         <p><b>мобильный телефон</b><br>
                         <input type="text" size="30" class="form-control" name="telephone">
+                        <span id="input_error_telephone"></span>
                         </p>
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email">
+                        <input id="input_email_guest" type="text" size="30" class="form-control" name ="email">
+                        <span id="input_error_email"></span>
                         </p>
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="lastname">
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="address_1">
@@ -61,16 +64,18 @@
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
                         <input type="text" size="30" class="form-control" name ="email"/>
+                        <span id="input_email_login"></span>
                         </p>
                         <p><b>пароль</b><br>
                         <input type="password" size="30" class="form-control" name="password"/>
+                        <span id="input_error_password"></span>
                         </p>
                         <div class="checkout_button_text_coupon">
                         <input type="button" value="войти" id="button-login" class="checkout_button_text_coupon2" />
-                         <a href="<?php echo $forgotten; ?>">
-                         <span>Я забыл пароль</span>
-                         </a>
                         </div>
+                         <a href="<?php echo $forgotten; ?>">
+                            <span class="forgotten">Я забыл пароль</span>
+                         </a>
                         <div class="enter_for_user">
                             <p>Войти как пользователь</p>
                            <!-- <a id = "button_facebook" href="#" role ="button">
@@ -91,12 +96,17 @@
                 <p>Доставка</p>
                 <div class="pickup">
                     <p>самовывоз</p>
-                    <input class="new_post_input" type="radio" checked ="checked" name="pickup" value="1"><span>из Новой Почты</span><br>
+                    <label><input class="new_post_input" type="radio" checked ="checked" name="pickup" value="1"><span>из Новой Почты</span><br>
+                    </label>
+                    <label>
                     <input class="pickup_input" type="radio" name="pickup" value="2"><span>из точки выдачи</span>
+                    </label>
                 </div>
                 <div class="courier">
                     <p>курьер</p>
+                    <label>
                     <input class="Mist_e" type="radio" name="pickup" value="3"><span>Мист Экспресс</span><br>
+                    </label>
                 </div>
             </div>
             <div class="payment">
@@ -106,7 +116,9 @@
                 <div class="cash">
                     <input class="new_post_input" type="radio" name="payment_method" checked ="checked" value="1"><span>Наличными</span><br>
                     <input class="pickup_input" type="radio" name="payment_method" value="2"><span>Безналичными</span><br>
+                    <label>
                     <input class="pickup_input" type="radio" name="payment_method" value="3"><span>Visa/MasterCard</span>
+                    </label>
                     <input class="pickup_input" type="text" name="agree" value="1" style ="visibility: hidden;">
                 </div>
             </div>
@@ -166,11 +178,14 @@ $('#button-login').on('click', function() {
             if (json['redirect']) {
                 location = json['redirect'];
             } else if (json['error']) {
-                $('#message-about-login').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+               /* $('#message-about-login').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
-                $('input[name=\'email\']').parent().addClass('has-error');
+                $('#input_email_login').parent().addClass('has-error');
                 $('input[name=\'password\']').parent().addClass('has-error');
+
+                $('#input_error_password').html(json['error']['password']);
+                $('#input_email_login').html(json['error']['email']);
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
@@ -205,16 +220,16 @@ $('#button-guest').on('click', function() {
                /* $('#message-about-guest').html('<div class=""><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
-                $('input[name=\'email\']').parent().addClass('has-error');
-                $('input[name=\'password\']').parent().addClass('has-error');
+                $('#input_email_guest').parent().addClass('has-error');
+              //  $('input[name=\'password\']').parent().addClass('has-error');
                 $('input[name=\'firstname\']').parent().addClass('has-error');
                 $('input[name=\'city\']').parent().addClass('has-error');
                 $('input[name=\'telephone\']').parent().addClass('has-error');
 
-                $('input[name=\'firstname\']').attr("value",json['error']['firstname']);
-                $('input[name=\'city\']').attr("value",json['error']['city']);
-                $('input[name=\'telephone\']').attr("value",json['error']['telephone']);
-                $('input[name=\'email\']').attr("value",json['error']['email']);
+                $('#input_error_name').html(json['error']['firstname']);
+                $('#input_error_city').html(json['error']['city']);
+                $('#input_error_telephone').html(json['error']['telephone']);
+                $('#input_error_email').html(json['error']['email']);
                // console.log(json['error']['city']);
                console.log(json['error']);
            }

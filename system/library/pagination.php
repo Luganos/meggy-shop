@@ -60,14 +60,14 @@ class Pagination {
 				if ($page == $i) {
 					$output .= '<li class="active"><span>' . $i . '</span></li>';
 				} else {
-					$output .= '<li><a href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
+					$output .= '<li><a class="pagination_next" href="' . str_replace('{page}', $i, $this->url) . '">' . $i . '</a></li>';
 				}
 			}
 		}
 
 		if ($page < $num_pages) {
-			$output .= '<li><a href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
-			$output .= '<li><a href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
+			$output .= '<li><a class="pagination_hidden" href="' . str_replace('{page}', $page + 1, $this->url) . '">' . $this->text_next . '</a></li>';
+			$output .= '<li><a class="pagination_pre" href="' . str_replace('{page}', $num_pages, $this->url) . '">' . $this->text_last . '</a></li>';
 		}
 
 		$output .= '</ul>';

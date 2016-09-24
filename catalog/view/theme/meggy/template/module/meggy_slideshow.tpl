@@ -5,10 +5,10 @@
                    <!--Индикаторы слайдов-->
                    <ol class="carousel-indicators">
                      <?php if (count($banners) > 1) { ?>
-                     <li class="active" data-target="#carousel" data-slide-to="0"></li>
+                     <li class="z" data-target="#carousel" data-slide-to="0"></li>
                      <?php } ?>
                      <?php for ($n = 1; $n <= count($banners) - 1; $n++) { ?>
-                     <li data-target="#carousel" data-slide-to="<?php echo $n; ?>"></li>
+                     <li class="active z" data-target="#carousel" data-slide-to="<?php echo $n; ?>"></li>
                       <?php } ?>
                    </ol>
                    <div class="carousel-inner">

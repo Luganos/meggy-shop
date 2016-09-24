@@ -27,12 +27,33 @@
           <ul class="thumbnails thumbnails_product">
           <?php } ?>
             <?php if ($images) { ?>
+            <div class="container vertical_slider_big">
+             <div id="va-accordion" class="va-container">
+              <div class="va-nav">
+               <span class="va-nav-prev">Назад</span>
+               <span class="va-nav-next">Дальше</span>
+              </div>
+             <div class="va-wrapper"> 
+            <?php $l = 1; ?>     
             <?php foreach ($images as $image) { ?>
-            <li class="image-additional"><a class="thumbnail" href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"> <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a></li>
+            <div class="va-slice va-slice-<?php echo $l; ?>">
+            <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+            </div>
+            <?php $l++; ?>
             <?php } ?>
-            <?php } ?>
+              </div>
+            </div>
+          </div>
+          <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title=""><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <!-- AddThis Button BEGIN -->
+          <div class="addthis_toolbox addthis_default_style ">
+          <a class="addthis_button_compact"></a><p>SHARE</p>
+          </div>
+          <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+          <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR_ACCOUNT_ID!!"></script>
+          <!-- AddThis Button END -->
           <?php if ($new_goods_flag) { ?>
           <img id="produc_new" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
           <?php } ?>
@@ -406,7 +427,7 @@
                 <div class="buttons clearfix">
                   <div class="pull-right">
                     <button type="button" id="button-review" data-loading-text="<?php echo $text_loading; ?>" class=""><div class="button-cart-border_otz"><span ><?php echo $button_continue; ?></span></div></button>
-                    <button type="button" id="button-review2" ><div class="button-cart-border_otz"><span >AJAX</span></div></button>
+                    <!--<button type="button" id="button-review2" ><div class="button-cart-border_otz"><span >AJAX</span></div></button>-->
                   </div>
                 </div>
                 <?php } else { ?>
@@ -426,7 +447,7 @@
           <?php foreach ($products as $product)  { ?>
            <div class="sli_slide_<?php echo $n; ?>">
                <div class="sli_img_<?php echo $n; ?>">
-                   <img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new">
+                   <a href ="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new"></a>
                    <?php if ($new_goods_flag) { ?>
                    <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
                    <?php } ?>

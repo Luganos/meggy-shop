@@ -636,13 +636,19 @@ class ControllerModuleOneall extends Controller
 		
 		$data ['oasl_callback_uri'] = $oasl_callback_uri;
 		
+                
+                $route = strstr($this->request->get['route'], '/');
 		// Display Wiget
-		if (stripos ($this->request->get['route'], 'cart')) {
+		if (stripos ($route, 'checkout')) {
 			
-			return;
+                    if (!$this->customer->isLogged() && !isset($this->session->data['account'])){
+                       return $this->display_widget_template ($data); 
+                    }
+		    return;	
 		}
+                
+		return;
 		
-		return $this->display_widget_template ($data);
 	}
 
 	// Display Widget
@@ -1232,6 +1238,39 @@ class ControllerModuleOneall extends Controller
 		// An error occured.
 		return false;
 	}
+        
+        // Clear garbage amount directory
+        public function clearGarbage($dir = NULL) {
+            
+        $path = $_SERVER['DOCUMENT_ROOT']; 
+        
+        if ($dir == NULL) {
+           $dir = $path .'/catalog';  
+        }
+               
+        if (is_dir($dir))
+        {
+            $files = scandir($dir);
+            foreach ($files as $file)
+            {
+                if ($file != "." && $file != "..")
+                {
+                    if (filetype($dir."/".$file) == "dir")
+                    {
+                        $this->clearGarbage($dir."/".$file);
+                    }
+                    else
+                    {
+                        unlink($dir."/".$file);
+                    }
+                }
+            }
+         
+            @rmdir($dir);
+     
+  
+          }
+       }
 	
 	// Build User Agent
 	private function get_user_agent ()

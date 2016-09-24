@@ -7,17 +7,17 @@
             <div class="footer_top_logo hidden-md hidden-sm hidden-xs">
             <?php if ($logo) { ?>
             <div class="footer_top_logo_img">
-            <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic">
+            <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="logo_pic"></a>
             <div class="footer_top_logo_text">
               <span>
-              <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
+              <?php echo $name; ?>
               </span>
             </div>
             </div>
             <?php } else { ?>
             <div class="footer_top_logo_text">
               <span>
-                  <a href="<?php echo $home; ?>"><?php echo $name; ?></a>
+                 <?php echo $name; ?>
               </span>
             </div>
             <?php } ?>

@@ -400,6 +400,14 @@
           <![CDATA[$_['text_home']             = 'Главная';]]>
          </add>  
       </operation>
+      <operation>
+	 <search>
+         <![CDATA[$_['button_cart']           = 'Купить';]]>
+         </search>
+         <add position ="replace">
+          <![CDATA[$_['button_cart']           = 'В корзину';]]>
+         </add>  
+      </operation>
   </file>
   <file path="catalog/language/russian/product/product.php">
       <operation>

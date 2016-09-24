@@ -35,6 +35,10 @@
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.vaccordion.js"></script>
+
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>

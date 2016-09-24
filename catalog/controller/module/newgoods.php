@@ -25,11 +25,13 @@ class ControllerModuleNewgoods extends Controller {
 
 		$product_data = array();
                 
-                $check_data = (isset($this->request->get['actions_goods']))? intval($this->request->get['actions_goods']): 0;
+                $news = (isset($this->request->get['news']))? intval($this->request->get['news']): 0;
+                $actions = (isset($this->request->get['actions']))? intval($this->request->get['actions']): 0;
+                $discounts = (isset($this->request->get['discounts']))? intval($this->request->get['discounts']): 0;
                 
                 //For actions goods
-                if (($this->request->server['REQUEST_METHOD'] == 'GET') && $this->validate($check_data)) {
-			if (isset($check_data) && $check_data == 1) {
+                if (($this->request->server['REQUEST_METHOD'] == 'GET') && $this->validate($actions)) {
+			if (isset($actions) && $actions == 1) {
 				
                             
                            $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 AND quantity >= 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
@@ -106,8 +108,8 @@ class ControllerModuleNewgoods extends Controller {
 		}
                 
                 //For discount goods
-                if (($this->request->server['REQUEST_METHOD'] == 'GET') && $this->validate($check_data)) {
-			if (isset($check_data) && $check_data == 2) {
+                if (($this->request->server['REQUEST_METHOD'] == 'GET') && $this->validate($discounts)) {
+			if (isset($discounts) && $discounts == 1) {
 				
                             
                            $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);

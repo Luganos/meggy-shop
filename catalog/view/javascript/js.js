@@ -229,7 +229,7 @@ $('.cart_p_10').on("click", cart_p_10);
 /*---End add_tocar----*/
 
 /*------adoptiv slaider-----*/
-if(width < 371){
+if(width < 400){
     console.log("small");
     teg = document.getElementById('srcoll');
     teg.setAttribute('data-slick','{"slidesToShow": 1, "slidesToScroll": 1}')
@@ -436,6 +436,16 @@ if(width < 855){
 };
 /*----END_filter_size----*/
 
+/*---vertical_slider----*/
+$(function() {
+    $('#va-accordion').vaccordion({
+        accordionH:320,
+        animSpeed:0,
+      //  expandedHeight:50
+    });
+     });
+
+/*---END_vertical_slider----*/
 
 /*
 var screen = window.navigator;

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Интересный вертикальный слайдер с помощью jQuery | Демонстрация для сайта RUDEBOX</title>
+		<meta charset="UTF-8" />
+		<!-- Стили демонстарционной страницы -->
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<!-- Стили компонента -->
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css">
+		<noscript>
+			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
+		</noscript>
+		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&v2&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+	<br><br><br><br><br><br><br><br><br>
+		<div class="container">
+			
+			<div id="va-accordion" class="va-container">
+				<div class="va-nav">
+					<span class="va-nav-prev">Назад</span>
+					<span class="va-nav-next">Дальше</span>
+				</div>
+				<div class="va-wrapper">
+					<div class="va-slice va-slice-1">
+						<h3 class="va-title">Маркетинг</h3>
+						<div class="va-content">
+							<p>Женя Ватсонов</p>
+							<ul>
+								<li><a href="#">Кто такой</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="va-slice va-slice-2">
+						<h3 class="va-title">менеджмент</h3>
+						<div class="va-content">
+							<p>Константин Эдуардович</p>
+							<ul>
+								<li><a href="#">Кто такой</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="va-slice va-slice-3">
+						<h3 class="va-title">Визаульный дизайн</h3>
+						<div class="va-content">
+							<p>Андрюха Аланизов</p>
+							<ul>
+								<li><a href="#">Кто такой</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="va-slice va-slice-4">
+						<h3 class="va-title">Контроль качества</h3>
+						<div class="va-content">
+							<p>Беня Фримансон</p>
+							<ul>
+								<li><a href="#">Кто такой</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="va-slice va-slice-5">
+						<h3 class="va-title">Веб разработка</h3>
+						<div class="va-content">
+							<p>Алеха Шуманин</p>
+							<ul>
+								<li><a href="#">Кто такой</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="va-slice va-slice-6">
+						<h3 class="va-title">Поддержка пользователей</h3>
+						<div class="va-content">
+							<p>Машуня Стеновая</p>
+							<ul>
+								<li><a href="#">Кто такая</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>	
+					</div>
+					<div class="va-slice va-slice-7">
+						<h3 class="va-title">Администратор сервера</h3>
+						<div class="va-content">
+							<p>Паша Белых</p>
+							<ul>
+								<li><a href="#">Кто такой</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Контакт</a></li>
+							</ul>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<br><br><br><br>
+				<ul>
+					<div align=center>
+					<a class="green goodbutton" href="index.html">Пример 1</a>
+					<a class="green goodbutton" href="example2.html">Пример 2</a>
+					<a class="green goodbutton" href="example3.html">Пример 3</a>
+					<a class="green goodbutton" href="example4.html">Пример 4</a>
+				    <a class="green goodbutton" href="example5.html">Пример 5</a>
+				</ul>
+			</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+		<script type="text/javascript" src="js/jquery.vaccordion.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#va-accordion').vaccordion({
+					visibleSlices	: 5,
+					expandedHeight	: 250,
+					animOpacity		: 0.1,
+					contentAnimSpeed: 100
+				});
+			});
+		</script>
+    </body>
+</html>
