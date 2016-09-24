@@ -20,7 +20,7 @@
 	height:250px;
 	overflow:hidden;
 }
-.va-slice-1{
+/*.va-slice-1{
 	background:#000 url(../images/1.jpg) no-repeat center center;
 }
 .va-slice-2{
@@ -40,7 +40,7 @@
 }
 .va-slice-7{
 	background:#000 url(../images/7.jpg) no-repeat center center;
-}
+}*/
 .va-title{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-transform:uppercase;

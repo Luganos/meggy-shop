@@ -8069,7 +8069,7 @@ iframe{
 	height:100%;
 	position:relative;
 	overflow:hidden;
-	background:#000;
+	background:#fff;
 }
 .va-slice{
 	cursor:pointer;
@@ -8083,12 +8083,12 @@ iframe{
 	width: 95%;
 	height: 95%;
 }
-/*
-.va-slice-1{
-	background:white url(../image/2.jpg) no-repeat center center;
-	background-size: 100%;
-}*/
 
+.va-slice{
+	background:white;
+	background-size: 100%;
+}
+/*
 .va-slice-1{
 	background:white ;
 	background-size: 100%;
@@ -8138,7 +8138,7 @@ iframe{
 }
 .va-slice-color-7{
 	background-color:#002144;
-}
+}*/
 .va-title{
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-transform:uppercase;
