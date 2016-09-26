@@ -8262,6 +8262,13 @@ iframe{
 	display: none;
 }
 
+@media screen and (min-width: 854px) and (max-width: 1100px) {
+	.va-container{
+		right: 310px;
+		height: 300px;
+	}
+}
+
 @media (max-width: 854px) {
 	.va-container{
 		right: 310px;
@@ -8284,10 +8291,13 @@ iframe{
 	.vertical_slider_small{
 		display:inline !important;
 	}
+	.addthis_toolbox {
+		margin-left: 35px;
+	}
 }
 
 
-/*----vertical_slider----*/
+/*----END_vertical_slider----*/
 
 /*-----pop_up_product_click_big_image--*/
 .mfp-bg{
