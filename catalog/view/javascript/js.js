@@ -613,3 +613,18 @@ $('#button-review2').click(function(){
     $.getJSON('example.json', function(data) {console.log(data)});
 });
 
+/*
+var numbers = "[name, age, 2, 3]";
+
+numbers = JSON.stringify(numbers);
+//console.log(typeof(numbers));
+//console.log(numbers);
+
+var obj = {name:'max', age:30, city:'Dnepr'};
+var json = JSON.stringify(obj);
+console.log(typeof(json));
+console.log(json);
+
+var parse = JSON.parse(json);
+console.log(typeof(pasre));
+console.log(parse);*/
