@@ -912,10 +912,10 @@
             </div>
             <div class="tab-pane" id="tab-relation">
                 <table class="table table-striped table-bordered table-hover" style="margin-top: 10px;">
-                   <tr id="image-row">
+                    <tr id="image-row">
                       <td class="text-left col-sm-2"> Загрузите фото продукта :  </td>
-                      <td class="text-left col-sm-6"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="image_for_colour[image]" value="<?php echo $image_for_colour['image']; ?>" id="input-image<?php echo $image_row; ?>" class="form-control" /></td>
-                    </tr>  
+                      <td class="text-left col-sm-6"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $image_for_colour; ?>" alt="" title="" data-placeholder="<?php echo $image_for_colour; ?>" /></a><input type="hidden" name="image_for_colour[image]" value="<?php echo $image_for_colour['image']; ?>" id="input-image<?php echo $image_row; ?>" class="form-control" /></td>
+                    </tr> 
                 </table>  
            </div>  
           </div>
