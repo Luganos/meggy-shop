@@ -64,14 +64,14 @@
 		}~]]>
       </search>
       <add position="replace">
-      <![CDATA[foreach ($product_options as $product_option) {
+      <![CDATA[	 foreach ($product_options as $product_option) {
 			$product_option_value_data = array();
 
 			if (isset($product_option['product_option_value'])) {
 				foreach ($product_option['product_option_value'] as $product_option_value) {
                                     
                                         $name = $this->model_catalog_product->getProductDescriptions($product_option_value['bind_with']);
-                                        if (!empty($name[(int)$this->config->get('config_language_id')]['name'])) {
+                                        if (!empty($name[(int)$this->config->get('config_language_id')]['name']) && $name[(int)$this->config->get('config_language_id')]['name'] !== 0) {
                                             
                                             $name_product = $name[(int)$this->config->get('config_language_id')]['name'];
                                         }
@@ -86,7 +86,7 @@
 						'points'                  => $product_option_value['points'],
 						'points_prefix'           => $product_option_value['points_prefix'],
 						'weight'                  => $product_option_value['weight'],
-                                                'bind_name'               => $name_product,
+                                                'bind_name'               => (empty($name_product))? 'Нет связей': $name_product,
                                                 'bind_id'                 => $product_option_value['bind_with'],
 						'weight_prefix'           => $product_option_value['weight_prefix']
 					);
@@ -209,7 +209,10 @@
       <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>]]>
       </search>
       <add position="after">
-      <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_name]" value="<?php echo $product_option_value['bind_name']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" /></td>]]>
+      <![CDATA[<td class="text-right">
+                    <input id = "id-for-user-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>" type="text" value="<?php echo $product_option_value['bind_name']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" name ="bind_option[<?php echo $option_row; ?>][<?php echo $option_value_row; ?>]" />
+                    <input type="hidden" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_name]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" />
+      </td>]]>
       </add>
     </operation>    
   </file>
@@ -229,7 +232,7 @@
         <![CDATA['weight'                  => $product_option_value['weight'],]]>
       </search>
       <add position="after">
-        <![CDATA['bind_with'                  => $product_option_value['bind_product_id'],]]>
+        <![CDATA['bind_with'               => (empty($product_option_value['bind_product_id']))? 0 : $product_option_value['bind_product_id'],]]>
       </add>
     </operation>
   </file>   
