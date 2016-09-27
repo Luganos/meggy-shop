@@ -7144,6 +7144,8 @@ a.idTop:hover {
 
 .close_table_size{
 	cursor: pointer;
+	float: right;
+	padding-right: 62px;
 }
 
 .open_big_img{
@@ -7156,7 +7158,7 @@ a.idTop:hover {
 	position: absolute; /* Абсолютное позиционирование блока */
 	margin-top: -250px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
 	margin-left: -250px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
-	background-image:url(../image/next.png);
+	background-image:url();
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100%;
@@ -8295,6 +8297,10 @@ iframe{
 	display: none;
 }
 
+.addthis_toolbox {
+	margin: 10px 0 0 75px;
+}
+
 @media screen and (min-width: 854px) and (max-width: 1100px) {
 	.va-container{
 		right: 310px;
@@ -8325,7 +8331,7 @@ iframe{
 		display:inline !important;
 	}
 	.addthis_toolbox {
-		margin-left: 35px;
+		margin-left: 70px;
 	}
 }
 

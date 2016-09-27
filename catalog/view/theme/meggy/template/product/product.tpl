@@ -56,7 +56,7 @@
           <li class="tovar_img"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
-          <a class="addthis_button_compact"></a><p>SHARE</p>
+          <a class="addthis_button_compact"></a><p>Поделится в соц. сетях</p>
           </div>
           <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
           <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR_ACCOUNT_ID!!"></script>
