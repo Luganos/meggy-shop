@@ -17,11 +17,18 @@ var click = 1;
 
 function Click(){
     if(click){
-        $(this).css({"border": "1px solid red"});
+        $('#size-image-0').css({"border": "3px solid white"});
+        $('#size-image-1').css({"border": "3px solid white"});
+        $('#size-image-2').css({"border": "3px solid white"});
+        $('#size-image-3').css({"border": "3px solid white"});
+        $('#size-image-4').css({"border": "3px solid white"});
+        $('#size-image-5').css({"border": "3px solid white"});
+        $('#size-image-6').css({"border": "3px solid white"});
+        $(this).css({"border": "3px solid rgb(201,230,238)"});
         click = 0;
     }
     else{
-        $(this).css({"border": "0px solid red"});
+        $(this).css({"border": "3px solid white"});
         click = 1;
     }
 };
@@ -36,13 +43,33 @@ $('#size-image-5').on("click", Click);
 $('#size-image-6').on("click", Click);
 
 
-$('#color-image-0').on("click", Click);
-$('#color-image-1').on("click", Click);
-$('#color-image-2').on("click", Click);
-$('#color-image-3').on("click", Click);
-$('#color-image-4').on("click", Click);
-$('#color-image-5').on("click", Click);
-$('#color-image-6').on("click", Click);
+var click_two = 1;
+
+function Click_color(){
+    if(click_two){
+        $('#color-image-0').css({"border": "3px solid white"});
+        $('#color-image-1').css({"border": "3px solid white"});
+        $('#color-image-2').css({"border": "3px solid white"});
+        $('#color-image-3').css({"border": "3px solid white"});
+        $('#color-image-4').css({"border": "3px solid white"});
+        $('#color-image-5').css({"border": "3px solid white"});
+        $('#color-image-6').css({"border": "3px solid white"});
+        $(this).css({"border": "3px solid rgb(201,230,238)"});
+        click_two = 0;
+    }
+    else{
+        $(this).css({"border": "3px solid white"});
+        click_two = 1;
+    }
+};
+
+$('#color-image-0').on("click", Click_color);
+$('#color-image-1').on("click", Click_color);
+$('#color-image-2').on("click", Click_color);
+$('#color-image-3').on("click", Click_color);
+$('#color-image-4').on("click", Click_color);
+$('#color-image-5').on("click", Click_color);
+$('#color-image-6').on("click", Click_color);
 
 
 /*
@@ -446,6 +473,73 @@ $(function() {
      });
 
 /*---END_vertical_slider----*/
+
+$('.va-nav-next').on('mouseover',function(){
+    $('.va-nav-next').css("background-image","url(../image/next_click.png)")
+});
+$('.va-nav-next').on('mouseout',function(){
+    $('.va-nav-next').css("background-image","url(../image/next.png)")
+});
+
+$('.va-nav-prev').on('mouseover',function(){
+    $('.va-nav-prev').css("background-image","url(../image/prev_click.png)")
+});
+$('.va-nav-prev').on('mouseout',function(){
+    $('.va-nav-prev').css("background-image","url(../image/prev.png)")
+});
+
+$('#ttest-1').on('click',function(){
+    var img = $('#ttest-1').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('#ttest-2').on('click',function(){
+    var img = $('#ttest-2').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('#ttest-3').on('click',function(){
+    var img = $('#ttest-3').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('#ttest-4').on('click',function(){
+    var img = $('#ttest-4').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('#ttest-5').on('click',function(){
+    var img = $('#ttest-5').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('#ttest-6').on('click',function(){
+    var img = $('#ttest-6').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('#ttest-7').on('click',function(){
+    var img = $('#ttest-7').attr("src");
+    $('.tovar_img_img').attr("src",img);
+    console.log(img);
+});
+
+$('.tovar_img_img').on("click", function(){
+    var big_img = $('.tovar_img_img').attr("src");
+    console.log(big_img);
+    $(".open_big_img").css("background-image","url("+big_img+")");
+    $(".open_big_img").css({"visibility": "visible"});
+
+});
+$('.close_table_size').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
+
+
 
 /*
 var screen = window.navigator;

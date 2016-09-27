@@ -478,7 +478,7 @@ search_bottom span{
 
 /*-------Большой слайдер--------*/
 .z{
-	border: 2px solid rgb(186,220,229) !important;
+	border: 0px solid rgb(186,220,229) !important;
 	background-color: black;
 }
 /*
@@ -5719,47 +5719,47 @@ a.idTop:hover {
 	}
 
 #size-image-0{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #size-image-1{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #size-image-2{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #size-image-3{
-	border: 0px solid red;
+	border: 3px solid white
 }
 #size-image-4{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #size-image-5{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #size-image-6{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 
 #color-image-0{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #color-image-1{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #color-image-2{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #color-image-3{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #color-image-4{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #color-image-5{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 #color-image-6{
-	border: 0px solid red;
+	border: 3px solid white;
 }
 
 #produc_new{
@@ -7146,6 +7146,22 @@ a.idTop:hover {
 	cursor: pointer;
 }
 
+.open_big_img{
+	visibility:hidden;
+	z-index: 999;
+	top: 50%; /* Отступ в процентах от верхнего края окна */
+	left: 50%; /* Отступ в процентах от левого края окна */
+	width: 500px; /* Ширина блока */
+	height: 500px; /* Высота блока */
+	position: absolute; /* Абсолютное позиционирование блока */
+	margin-top: -250px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+	margin-left: -250px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+	background-image:url(../image/next.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+}
+
 
 .sl_slide_1:hover {
 	border: 0px solid white !important;
@@ -8261,12 +8277,14 @@ iframe{
 }
 
 .va-nav-prev{
-	height: 40px !important;
+	width: 41px !important;
+	height: 41px !important;
 
 }
 
 .va-nav-next{
-	height: 40px !important;
+	width: 41px !important;
+	height: 41px !important;
 	top: 340px !important;
 	bottom: 0px;
 }

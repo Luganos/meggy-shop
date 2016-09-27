@@ -1,5 +1,6 @@
 <?php echo $header; ?>
-<div class="open_table_size"><img class="close_table_size" src="catalog/view/theme/meggy/image/table_size.png" alt=""></div>
+<div class="open_table_size"><img class="close_table_size" src="catalog/view/theme/meggy/image/close.png" alt=""></div>
+<div class="open_big_img"><img class="close_table_size" src="catalog/view/theme/meggy/image/close.png" alt=""></div>
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -36,14 +37,14 @@
             <div class="container vertical_slider_big">
              <div id="va-accordion" class="va-container">
               <div class="va-nav">
-               <span class="va-nav-prev">Назад</span>
-               <span class="va-nav-next">Дальше</span>
+               <span id="va-nav-prev" class="va-nav-prev">Назад</span>
+               <span id="va-nav-next" class="va-nav-next">Дальше</span>
               </div>
              <div class="va-wrapper">
             <?php $l = 1; ?>
             <?php foreach ($images as $image) { ?>
             <div class="va-slice va-slice-<?php echo $l; ?>">
-            <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+            <img id="ttest-<?php echo $l; ?>" src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
             </div>
             <?php $l++; ?>
             <?php } ?>
@@ -52,7 +53,7 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><a href="<?php echo $popup; ?>" title=""><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
           <a class="addthis_button_compact"></a><p>SHARE</p>
