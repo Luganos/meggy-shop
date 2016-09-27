@@ -542,6 +542,11 @@ $('.tovar_img_img').on("click", function(){
 $('.close_table_size').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
 
 
+/*-----maska_fo_tel------*/
+jQuery(function($){
+   $("#phone").mask("+38(999) 999-9999");
+});
+/*-----END_maska_fo_tel------*/
 
 /*
 var screen = window.navigator;

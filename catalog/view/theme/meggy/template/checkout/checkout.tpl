@@ -39,14 +39,14 @@
                         <span id="input_error_name"></span>
                         </p>
                         <p><b>город</b><br>
-                        <input type="text" size="30" class="form-control" name="city"><span id="input_error_city"></span>
+                        <input type="text" size="30" class="form-control" name="city" placeholder="Ваш город"><span id="input_error_city"></span>
                         </p>
                         <p><b>мобильный телефон</b><br>
-                        <input type="text" size="30" class="form-control" name="telephone">
+                        <input id="phone" type="text" size="30" class="form-control" name="telephone" placeholder="Введите ваш телефон">
                         <span id="input_error_telephone"></span>
                         </p>
                         <p><b>e-mail</b><br>
-                        <input id="input_email_guest" type="text" size="30" class="form-control" name ="email">
+                        <input id="input_email_guest" type="text" size="30" class="form-control" name ="email" placeholder="Введите ваш email">
                         <span id="input_error_email"></span>
                         </p>
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="lastname">
@@ -63,7 +63,7 @@
                 <div id="message-about-login"></div>
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email"/>
+                        <input type="text" size="30" class="form-control" name ="email" placeholder="Введите ваш email"/>
                         <span id="input_email_login"></span>
                         </p>
                         <p><b>пароль</b><br>
