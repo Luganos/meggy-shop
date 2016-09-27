@@ -23,6 +23,89 @@
       </add>
     </operation>
     <operation>
+      <search>
+        <![CDATA[$data['entry_quantity'] = $this->language->get('entry_quantity');]]>
+      </search>
+      <add position="after">
+        <![CDATA[$data['entry_bind_with'] = $this->language->get('entry_bind_with');]]>
+      </add>
+    </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+    <![CDATA[~foreach ($product_options as $product_option) {
+			$product_option_value_data = array();
+
+			if (isset($product_option['product_option_value'])) {
+				foreach ($product_option['product_option_value'] as $product_option_value) {
+					$product_option_value_data[] = array(
+						'product_option_value_id' => $product_option_value['product_option_value_id'],
+						'option_value_id'         => $product_option_value['option_value_id'],
+						'quantity'                => $product_option_value['quantity'],
+						'subtract'                => $product_option_value['subtract'],
+						'price'                   => $product_option_value['price'],
+						'price_prefix'            => $product_option_value['price_prefix'],
+						'points'                  => $product_option_value['points'],
+						'points_prefix'           => $product_option_value['points_prefix'],
+						'weight'                  => $product_option_value['weight'],
+						'weight_prefix'           => $product_option_value['weight_prefix']
+					);
+				}
+			}
+
+			$data['product_options'][] = array(
+				'product_option_id'    => $product_option['product_option_id'],
+				'product_option_value' => $product_option_value_data,
+				'option_id'            => $product_option['option_id'],
+				'name'                 => $product_option['name'],
+				'type'                 => $product_option['type'],
+				'value'                => isset($product_option['value']) ? $product_option['value'] : '',
+				'required'             => $product_option['required']
+			);
+		}~]]>
+      </search>
+      <add position="replace">
+      <![CDATA[foreach ($product_options as $product_option) {
+			$product_option_value_data = array();
+
+			if (isset($product_option['product_option_value'])) {
+				foreach ($product_option['product_option_value'] as $product_option_value) {
+                                    
+                                        $name = $this->model_catalog_product->getProductDescriptions($product_option_value['bind_with']);
+                                        if (!empty($name[(int)$this->config->get('config_language_id')]['name'])) {
+                                            
+                                            $name_product = $name[(int)$this->config->get('config_language_id')]['name'];
+                                        }
+                                        
+					$product_option_value_data[] = array(
+						'product_option_value_id' => $product_option_value['product_option_value_id'],
+						'option_value_id'         => $product_option_value['option_value_id'],
+						'quantity'                => $product_option_value['quantity'],
+						'subtract'                => $product_option_value['subtract'],
+						'price'                   => $product_option_value['price'],
+						'price_prefix'            => $product_option_value['price_prefix'],
+						'points'                  => $product_option_value['points'],
+						'points_prefix'           => $product_option_value['points_prefix'],
+						'weight'                  => $product_option_value['weight'],
+                                                'bind_name'               => $name_product,
+                                                'bind_id'                 => $product_option_value['bind_with'],
+						'weight_prefix'           => $product_option_value['weight_prefix']
+					);
+				}
+			}
+
+			$data['product_options'][] = array(
+				'product_option_id'    => $product_option['product_option_id'],
+				'product_option_value' => $product_option_value_data,
+				'option_id'            => $product_option['option_id'],
+				'name'                 => $product_option['name'],
+				'type'                 => $product_option['type'],
+				'value'                => isset($product_option['value']) ? $product_option['value'] : '',
+				'required'             => $product_option['required']
+			);
+		}]]>
+      </add>
+    </operation>
+    <operation>
       <search regex ="true" quote = "true">
       <![CDATA[~if (isset($this->request->post['image']) && is_file(DIR_IMAGE . $this->request->post['image'])) {
 			$data['thumb'] = $this->model_tool_image->resize($this->request->post['image'], 100, 100);
@@ -112,6 +195,45 @@
                 </table>  
            </div>]]>
       </add>
+    </operation>
+    <operation>
+      <search>
+      <![CDATA[<td class="text-right"><?php echo $entry_quantity; ?></td>]]>
+      </search>
+      <add position="after">
+      <![CDATA[<td class="text-right"><?php echo $entry_bind_with; ?></td>]]>
+      </add>
+    </operation> 
+    <operation>
+      <search>
+      <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>]]>
+      </search>
+      <add position="after">
+      <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_name]" value="<?php echo $product_option_value['bind_name']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" /></td>]]>
+      </add>
     </operation>    
   </file>
+  <file path="admin/language/russian/catalog/product.php">
+    <operation>
+      <search>
+        <![CDATA[$_['entry_quantity']         = 'Количество';]]>
+      </search>
+      <add position="after">
+        <![CDATA[$_['entry_bind_with']         = 'Связать с';]]>
+      </add>
+    </operation>
+  </file>   
+  <file path="admin/model/catalog/product.php">
+    <operation>
+      <search>
+        <![CDATA['weight'                  => $product_option_value['weight'],]]>
+      </search>
+      <add position="after">
+        <![CDATA['bind_with'                  => $product_option_value['bind_product_id'],]]>
+      </add>
+    </operation>
+  </file>   
 </modification>
+
+
+
