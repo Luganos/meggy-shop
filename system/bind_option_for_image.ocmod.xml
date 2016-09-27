@@ -234,7 +234,7 @@
       <add position="after">
       <![CDATA[<td class="text-right">
                     <input id = "id-for-user-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>" type="text" value="<?php echo $product_option_value['bind_name']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" name ="bind_option[<?php echo $option_row; ?>][<?php echo $option_value_row; ?>]" />
-                    <input type="hidden" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_name]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" />
+                    <input type="hidden" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" />
       </td>]]>
       </add>
     </operation>    
@@ -256,6 +256,14 @@
       </search>
       <add position="after">
         <![CDATA['bind_with'               => (empty($product_option_value['bind_product_id']))? 0 : $product_option_value['bind_product_id'],]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$this->db->query("DELETE FROM " . DB_PREFIX . "url_alias WHERE query = 'product_id=" . (int)$product_id . "'");]]>
+      </search>
+      <add position="after">
+        <![CDATA[$this->db->query("DELETE FROM " . DB_PREFIX . "product_to_bind_image WHERE product_id = " . (int)$product_id);]]>
       </add>
     </operation>
   </file>   
