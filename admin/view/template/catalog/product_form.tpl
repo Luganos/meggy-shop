@@ -37,7 +37,6 @@
             <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
-            <li><a href="#tab-relation" data-toggle="tab">Цвет продукта</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">
@@ -910,14 +909,6 @@
                 </table>
               </div>
             </div>
-            <div class="tab-pane" id="tab-relation">
-                <table class="table table-striped table-bordered table-hover" style="margin-top: 10px;">
-                    <tr id="image-row">
-                      <td class="text-left col-sm-2"> Загрузите фото продукта :  </td>
-                      <td class="text-left col-sm-6"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $image_for_colour; ?>" alt="" title="" data-placeholder="<?php echo $image_for_colour; ?>" /></a><input type="hidden" name="image_for_colour[image]" value="<?php echo $image_for_colour['image']; ?>" id="input-image<?php echo $image_row; ?>" class="form-control" /></td>
-                    </tr> 
-                </table>  
-           </div>  
           </div>
         </form>
       </div>
