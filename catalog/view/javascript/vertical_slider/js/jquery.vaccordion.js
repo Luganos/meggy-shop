@@ -368,14 +368,14 @@
 						.css( 'line-height', cache.sliceH + 'px' );
 
 						// click event
-						$slices.bind('click.vaccordion', function(e) {
+						/*$slices.bind('click.vaccordion', function(e) {
 							// only if we have more than 1 visible slice.
 							// otherwise we will just be able to slide.
 							if( settings.visibleSlices > 1 ) {
 								var $el			= $(this);
 								aux.selectSlice( $el, $slices, $navNext, $navPrev, settings );
 							}
-						});
+						});*/
 
 						// navigation events
 						$navNext.bind('click.vaccordion', function(e){

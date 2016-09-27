@@ -468,6 +468,8 @@ $(function() {
     $('#va-accordion').vaccordion({
         accordionH:320,
         animSpeed:0,
+        animOpacity:1
+
       //  expandedHeight:50
     });
      });
