@@ -129,15 +129,18 @@
                 <div class="street">
                     <div class="streen_inline nstreet_input_w">
                     <span>улица</span>
-                    <input class="form-control nstreet_input" type="text" name="street" value="<?php echo $street; ?>">
+                    <input  class="form-control nstreet_input" type="text" name="street" value="<?php echo $street; ?>">
+                    <p id="nstreet_input"></p>
                     </div>
                     <div class="streen_inline house_input_w">
                     <span>дом</span>
                     <input class="form-control house_input" type="text" name="house" value="<?php echo $house; ?>">
+                    <p id="house_input"></p>
                     </div>
                     <div class="streen_inline r_input_w">
                     <span>квартира</span>
                      <input class="form-control k_input" type="text" name="flat" value="<?php echo $flat; ?>">
+                     <p id="k_input"></p>
                      </div>
                 </div>
             </div>
@@ -257,7 +260,10 @@ $('#confirm-buy').on('click', function() {
             if (json['redirect']) {
                 location = json['redirect'];
             } else if (json['error']) {
-                $('#message-about-buyer').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+              // $('#message-about-buyer').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                    $('#nstreet_input').html(json['error']['street'] );
+                    $('#house_input').html(json['error']['house'] );
+                    $('#k_input').html(json['error']['flat'] );
            } else if (json['success']) {
 
              $.ajax({
@@ -272,6 +278,7 @@ $('#confirm-buy').on('click', function() {
                     location = json['redirect'];
                  } else if (json['error']) {
                        $('#message-about-delivery').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
                  } else if (json['success']) {
 
                          $.ajax({

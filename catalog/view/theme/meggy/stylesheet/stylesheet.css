@@ -8340,7 +8340,12 @@ iframe{
 	display: none;
 }
 /*-----END_pop_up_product_click_big_image--*/
+/*------check_street-----*/
+#nstreet_input, #house_input, #k_input{
+	font-size: 10px;
+}
 
+/*------END_check_street-----*/
 
 @media (min-width: 1920px) {
 .carusel_big{
