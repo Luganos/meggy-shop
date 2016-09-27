@@ -35,7 +35,7 @@
                 <div id="message-about-guest"></div>
                 <div class="checkout-input" id ="guest-form">
                         <p><b>имя и фамилия</b><br>
-                        <input type="text" size="30" class="form-control" name ="firstname">
+                        <input type="text" size="30" class="form-control" name ="firstname" minlength="5">
                         <span id="input_error_name"></span>
                         </p>
                         <p><b>город</b><br>
@@ -46,7 +46,7 @@
                         <span id="input_error_telephone"></span>
                         </p>
                         <p><b>e-mail</b><br>
-                        <input id="input_email_guest" type="text" size="30" class="form-control" name ="email" placeholder="Введите ваш email">
+                        <input id="input_email_guest" type="email" size="30" class="form-control" name ="email" placeholder="Введите ваш email">
                         <span id="input_error_email"></span>
                         </p>
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="lastname">
@@ -63,7 +63,7 @@
                 <div id="message-about-login"></div>
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email" placeholder="Введите ваш email"/>
+                        <input type="email" size="30" class="form-control" name ="email" placeholder="Введите ваш email"/>
                         <span id="input_email_login"></span>
                         </p>
                         <p><b>пароль</b><br>
@@ -134,7 +134,7 @@
                     </div>
                     <div class="streen_inline house_input_w">
                     <span>дом</span>
-                    <input class="form-control house_input" type="text" name="house" value="<?php echo $house; ?>">
+                    <input class="form-control house_input" type="number" min="1" max="1000" name="house" value="<?php echo $house; ?>">
                     <p id="house_input"></p>
                     </div>
                     <div class="streen_inline r_input_w">
@@ -223,7 +223,8 @@ $('#button-guest').on('click', function() {
                /* $('#message-about-guest').html('<div class=""><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
-                $('#input_email_guest').parent().addClass('has-error');
+                if(json['error']['email']){
+                $('#input_email_guest').parent().addClass('has-error');}
               //  $('input[name=\'password\']').parent().addClass('has-error');
                 $('input[name=\'firstname\']').parent().addClass('has-error');
                 $('input[name=\'city\']').parent().addClass('has-error');
