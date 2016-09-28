@@ -97,7 +97,7 @@
 						'points'                  => $product_option_value['points'],
 						'points_prefix'           => $product_option_value['points_prefix'],
 						'weight'                  => $product_option_value['weight'],
-                                                'bind_name'               => (empty($name_product))? 'Нет связей': $name_product,
+                                                'bind_name'               => (empty($name_product))? 0 : $name_product,
                                                 'bind_id'                 => $product_option_value['bind_with'],
 						'weight_prefix'           => $product_option_value['weight_prefix']
 					);
@@ -243,10 +243,7 @@
       <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>]]>
       </search>
       <add position="after">
-      <![CDATA[<td class="text-right">
-                    <input id = "id-for-user-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>" type="text" value="<?php echo $product_option_value['bind_name']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" name ="bind_option[<?php echo $option_row; ?>][<?php echo $option_value_row; ?>]" />
-                    <input type="hidden" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" />
-      </td>]]>
+      <![CDATA[<td class="text-right"><input type="text" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" /></td>]]>
       </add>
     </operation>  
     <operation>
@@ -271,10 +268,7 @@
       </search>
       <add position="after">
       <![CDATA[
-       html += '<td class="text-right">';
-       html += '    <input id = "id-for-user-'+option_row+'-'+option_value_row+'" type="text" value="Нет связей" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" name ="bind_option[' + option_row + '][' + option_value_row + ']" />';
-       html += '    <input type="hidden" id = "id-for-server-'+option_row+'-'+option_value_row+'"  name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][bind_id]" value="0" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" />';
-       html += '</td>';]]>
+       html += '   <td class="text-right"><input type="text" id = "id-for-server-'+option_row+'-'+option_value_row+'"  name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][bind_id]" value="0" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" /></td>';]]>
       </add>
     </operation>    
   </file>
