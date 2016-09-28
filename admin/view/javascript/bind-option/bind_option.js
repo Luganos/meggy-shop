@@ -3,15 +3,15 @@
  */
 $(function(){
 
-   $('#id-for-user-0-0').autocomplete({
+  $('#id-for-server-0-0').autocomplete({
   'source': function(request, response) {
     $.ajax({
-      url: 'index.php?route=catalog/manufacturer/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request),
+      url: 'index.php?route=catalog/product/autocomplete&token='+token+'&filter_name=' +  encodeURIComponent(request),
       dataType: 'json',
       success: function(json) {
         json.unshift({
           manufacturer_id: 0,
-          name: '<?php echo $text_none; ?>'
+          name: text_none
         });
 
         response($.map(json, function(item) {
@@ -24,8 +24,8 @@ $(function(){
     });
   },
   'select': function(item) {
-    $('#id-for-user-0-0').val(item['label']);
-    $('#id-for-server-0-0').val(item['value']);
+    $('#id-for-server-0-0').val(item['label']);
+    $('input[name=\'manufacturer_id\']').val(item['value']);
   }
 });
 
