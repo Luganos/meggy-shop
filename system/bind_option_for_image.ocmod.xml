@@ -259,7 +259,12 @@
       <![CDATA[<?php echo $footer; ?>]]>
       </search>
       <add position="before">
-      <![CDATA[<script src ="<?php echo $base; ?>"></script>]]>
+      <![CDATA[
+               <script type="text/javascript"><!--
+                     var token = '<?php echo $token; ?>';
+                     var text_none = '<?php echo $text_none; ?>';
+               //--></script>
+               <script src ="<?php echo $base; ?>"></script>]]>
       </add>
     </operation>
     <operation>
