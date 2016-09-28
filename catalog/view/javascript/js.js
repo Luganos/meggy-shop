@@ -534,10 +534,10 @@ $('#ttest-7').on('click',function(){
 
 $('.tovar_img_img').on("click", function(){
     var big_img = $('.tovar_img_img').attr("src");
-    console.log(big_img);
+
     $(".open_big_img").css("background-image","url("+big_img+")");
     $(".open_big_img").css({"visibility": "visible"});
-
+console.log(big_img);
 });
 $('.close_table_size').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
 

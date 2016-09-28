@@ -420,7 +420,7 @@ header{
 	}
 	#content{
 	margin-top: 50px !important;
-	margin-left: 0px !important;
+	margin-left: 10px !important;
 	}
 
 
@@ -3772,7 +3772,7 @@ input::-webkit-input-placeholder {
 
 
 #content {
-	margin-left: 0px !important;
+	margin-left: 10px !important;
 	}
 
 .z{
@@ -7179,6 +7179,10 @@ a.idTop:hover {
 	background-size: 80%;
 }
 
+.open_big_img:hover{
+	zoom:1.2;
+}
+
 
 .sl_slide_1:hover {
 	border: 0px solid white !important;
@@ -7274,6 +7278,7 @@ a.idTop:hover {
 }
 
 .category_cort{
+	visibility: hidden;
 	width: 120px;
 	float: right;
 	text-align: right;
