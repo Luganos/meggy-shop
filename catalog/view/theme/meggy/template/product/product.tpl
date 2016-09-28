@@ -79,7 +79,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
-        <div id="xs_product" class="<?php echo $class; ?>">
+        <div id="xs_product" class="<?php echo $class; ?> xs_product_right">
           <h1 class="cart_tovar_procuct"><?php echo $heading_title; ?>
           <?php if($sku) { ?>
           <?php echo "-" . " " . $sku; ?>
@@ -715,7 +715,7 @@ $('#button-review').on('click', function() {
 			enabled:true
 		}
 	});*/
-});
+
 </script>
 <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 <?php echo $footer; ?>
