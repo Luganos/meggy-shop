@@ -6,7 +6,7 @@ $(function(){
   $('#id-for-server-0-0').autocomplete({
   'source': function(request, response) {
     $.ajax({
-      url: 'index.php?route=catalog/product/autocomplete&token='+token+'&filter_name=' +  encodeURIComponent(request),
+      url: 'index.php?route=catalog/product/autocomplete&token='+token+'&filter_sku=' +  encodeURIComponent(request),
       dataType: 'json',
       success: function(json) {
         json.unshift({
