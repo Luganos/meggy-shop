@@ -38,6 +38,56 @@
         <![CDATA[$data['entry_bind_with'] = $this->language->get('entry_bind_with');]]>
       </add>
     </operation>
+    <operation>
+      <search>
+        <![CDATA[if (isset($this->request->get['filter_name']) || isset($this->request->get['filter_model'])) {]]>
+      </search>
+      <add position="replace">
+        <![CDATA[if (isset($this->request->get['filter_name']) || isset($this->request->get['filter_model']) || isset($this->request->get['filter_sku'])) {]]>
+      </add>
+    </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+              <![CDATA[~if (isset($this->request->get['limit'])) {
+				$limit = $this->request->get['limit'];
+			} else {
+				$limit = 5;
+			}~]]>
+      </search>
+      <add position="replace">
+               <![CDATA[
+                        if (isset($this->request->get['limit'])) {
+				$limit = $this->request->get['limit'];
+			} else {
+				$limit = 5;
+			}
+
+                        if (isset($this->request->get['filter_sku'])) {
+				$filter_sku = $this->request->get['filter_sku'];
+			} else {
+				$filter_sku = '';
+			}]]>
+      </add>
+    </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+        <![CDATA[~$filter_data = array(
+				'filter_name'  => $filter_name,
+				'filter_model' => $filter_model,
+				'start'        => 0,
+				'limit'        => $limit
+			);~]]>
+      </search>
+      <add position="replace">
+               <![CDATA[$filter_data = array(
+				'filter_name'  => $filter_name,
+				'filter_model' => $filter_model,
+                                'filter_sku' => $filter_sku,
+				'start'        => 0,
+				'limit'        => $limit
+			);]]>
+      </add>
+    </operation>
      <operation>
       <search regex ="true" quote = "true">
                      <![CDATA[~$json[] = array(
@@ -349,12 +399,17 @@
                  }]]>
       </add>
     </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+        <![CDATA[~if (!empty($data['filter_name'])) {
+			$sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+		}~]]>
+      </search>
+      <add position="after">
+        <![CDATA[if (!empty($data['filter_sku'])) {
+			$sql .= " AND p.sku LIKE '" . $this->db->escape($data['filter_sku']) . "%'";
+		 }]]>
+      </add>
+    </operation>
   </file>   
 </modification>
-
-
-
-
-
-
-
