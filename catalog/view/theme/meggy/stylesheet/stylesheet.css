@@ -5431,8 +5431,8 @@ h2.price {
 .tovar_img_img{
 	//width: 100%;
 	//height: 100%;
-	width: 350px !important;
-	height: 350px !important;
+	width: 300px !important;
+	height: 450px !important;
 
 }
 
@@ -6183,9 +6183,23 @@ a.idTop:hover {
 
 }
 
+@media (max-width: 1200px) {
+	.rating{
+		width: 347px !important;
+	}
+}
+
+@media (max-width: 855px) {
+	.xs_product_right{
+		padding-left: 35px;
+	}
+}
+
+
 @media (max-width: 767px) {
 	#xs_product{
 		width: 600px;
+		padding-left: 30px !important;
 	}
 	.col_price{
 		width: 80% !important;
@@ -6229,7 +6243,7 @@ a.idTop:hover {
 }
 
 .thumbnails{
-	height: 510px !important;
+	height: 600px !important;
 }
 
 #thumbnail_img_big{
@@ -6649,7 +6663,7 @@ a.idTop:hover {
 }
 
 .thumbnails{
-	height: 510px !important;
+	height: 620px !important;
 }
 
 #thumbnail_img_big{
@@ -6721,6 +6735,7 @@ a.idTop:hover {
 }
 
 .col_price_header{
+	width: 290px;
 	color: black;
 	font-size: 14px;
 	font-weight: bold;
@@ -6737,7 +6752,7 @@ a.idTop:hover {
 }
 
 .col_price_tr{
-	width: 280px;
+	width: 270px;
 	border-top: 1px dashed black;
 	color: rgb(146,153,159);
 	font-size: 14px;
@@ -7153,15 +7168,15 @@ a.idTop:hover {
 	z-index: 999;
 	top: 50%; /* Отступ в процентах от верхнего края окна */
 	left: 50%; /* Отступ в процентах от левого края окна */
-	width: 500px; /* Ширина блока */
-	height: 500px; /* Высота блока */
+	width: 600px; /* Ширина блока */
+	height: 600px; /* Высота блока */
 	position: absolute; /* Абсолютное позиционирование блока */
-	margin-top: -250px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
-	margin-left: -250px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
+	margin-top: -300px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
+	margin-left: -300px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
 	background-image:url();
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 100%;
+	background-size: 80%;
 }
 
 
@@ -8155,8 +8170,8 @@ iframe{
 }
 
 .va-slice img{
-	width: 95%;
-	height: 95%;
+	width: 90%;
+	height: 100%;
 	max-height: 170px;
 }
 
@@ -8297,6 +8312,10 @@ iframe{
 	display: none;
 }
 
+.vertical_slider_small a{
+	border: 0px solid #ddd !important;
+}
+
 .addthis_toolbox {
 	margin: 10px 0 0 75px;
 }
@@ -8328,11 +8347,19 @@ iframe{
 		display: none;
 	}
 	.vertical_slider_small{
+		margin-top: 50px;
 		display:inline !important;
 	}
 	.addthis_toolbox {
+		margin-top: 0px;
 		margin-left: 70px;
 	}
+}
+
+@media (max-width: 535px) {
+	.vertical_slider_small{
+	margin-top: 80px;
+}
 }
 
 
