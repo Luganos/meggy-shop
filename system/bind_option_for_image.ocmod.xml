@@ -72,16 +72,19 @@
 		}~]]>
       </search>
       <add position="replace">
-      <![CDATA[	 foreach ($product_options as $product_option) {
+      <![CDATA[	foreach ($product_options as $product_option) {
 			$product_option_value_data = array();
 
 			if (isset($product_option['product_option_value'])) {
 				foreach ($product_option['product_option_value'] as $product_option_value) {
                                     
-                                        $name = $this->model_catalog_product->getProductDescriptions($product_option_value['bind_with']);
-                                        if (!empty($name[(int)$this->config->get('config_language_id')]['name']) && $name[(int)$this->config->get('config_language_id')]['name'] !== 0) {
+                                        $name = $this->model_catalog_product->getProductBySku($product_option_value['bind_with']);
+                                        if (!empty($name['name']) && $name['name'] !== 0 && $name['name'] !== NULL) {
                                             
-                                            $name_product = $name[(int)$this->config->get('config_language_id')]['name'];
+                                            $name_product = $name['name'];
+                                        }  else {
+                                             
+                                           $name_product = NULL; 
                                         }
                                         
 					$product_option_value_data[] = array(
@@ -310,8 +313,26 @@
         <![CDATA[$this->db->query("INSERT INTO " . DB_PREFIX . "product_option_value SET product_option_value_id = '" . (int)$product_option_value['product_option_value_id'] . "', product_option_id = '" . (int)$product_option_id . "', product_id = '" . (int)$product_id . "', option_id = '" . (int)$product_option['option_id'] . "', option_value_id = '" . (int)$product_option_value['option_value_id'] . "', quantity = '" . (int)$product_option_value['quantity'] . "', subtract = '" . (int)$product_option_value['subtract'] . "', price = '" . (float)$product_option_value['price'] . "', price_prefix = '" . $this->db->escape($product_option_value['price_prefix']) . "', points = '" . (int)$product_option_value['points'] . "', points_prefix = '" . $this->db->escape($product_option_value['points_prefix']) . "', weight = '" . (float)$product_option_value['weight'] . "', weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "', bind_product_id = '" . (int)$product_option_value['bind_id'] . "'");]]>
       </add>
     </operation>
+    <operation>
+      <search regex ="true" quote = "true">
+  <![CDATA[~public function getTotalProductsByLayoutId($layout_id) {
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "product_to_layout WHERE layout_id = '" . (int)$layout_id . "'");
+
+		return $query->row['total'];
+	}~]]>
+      </search>
+      <add position="after">
+        <![CDATA[public function getProductBySku($sku) {
+            
+                        $query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "product` p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE sku = '" . $this->db->escape($sku) . "'");
+                        return $query->row;
+                 }]]>
+      </add>
+    </operation>
   </file>   
 </modification>
+
+
 
 
 
