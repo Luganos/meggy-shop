@@ -258,8 +258,10 @@ $('#button-guest').on('click', function() {
 // Shipping and payment
 <?php if ($logged || $account) { ?>
 $(document).ready(function() {
-$('#confirm-buy').on('click', function() {
-
+     $('#confirm-buy').on('click',function(e){
+         if($('.new_post_input').prop('checked') && !$('#checked_NP').val()){
+            $("#NP_input").html('Введите № отделения');
+        }else{
     $.ajax({
         url: 'index.php?route=checkout/shipping_address/save',
         type: 'post',
@@ -316,7 +318,11 @@ $('#confirm-buy').on('click', function() {
           }
        }
     });
- });
+ };
+
+    });
+
+
 });
  <?php } else { ?>
  $(document).ready(function() {
@@ -330,15 +336,3 @@ $('#confirm-buy').on('click', function() {
 </script>
 <?php echo $footer; ?>
 
-<script>
-   $('#confirm-buy').on('click',function(){
-         if($('.new_post_input').prop('checked') && !$('#checked_NP').val()){
-            $("#NP_input").html('Введите № отделения');
-            console.log("check_NP");
-        }else{
-            console.log("twe");
-        }
-
-    });
-
-</script>
