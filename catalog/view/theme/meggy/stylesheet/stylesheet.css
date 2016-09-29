@@ -2956,7 +2956,7 @@ input::-webkit-input-placeholder {
 
 .line{
 	width: 15%;
-	padding-top: 20px;
+	padding-top: 21px;
 	//padding-left: 20%;
 	//margin-left:50px;
 	margin-left:20%;
@@ -2971,13 +2971,13 @@ input::-webkit-input-placeholder {
 
 @media (max-width: 555px) {
 	.line{
-	margin-left: 30px !important;
+	margin-left: 27px !important;
 	}
 	.owl-wrapper-outer{
 		width: 93% !important;
 	}
 	#work{
-		margin-left: 42px !important;
+		margin-left: 38px !important;
 	}
 	.footer_top_compani{
 		width: 33% !important;
@@ -3003,7 +3003,7 @@ input::-webkit-input-placeholder {
 		margin-left: 45px !important;
 	}
 	#work{
-		margin-left: 40px !important;
+		margin-left: 47px !important;
 	}
 	.footer_top_katalog{
 		width: 60% !important;
@@ -3069,7 +3069,7 @@ input::-webkit-input-placeholder {
 .footer_top_one{
 	width: 110%;
 	padding-top: 65px;
-	padding-left: 20%;
+	padding-left: 18%;
 	rgb(198, 200, 214);
 	font-size: 1.125em;
 	color: rgb(198, 200, 214);
@@ -4195,6 +4195,9 @@ input::-webkit-input-placeholder {
 #footer{
 	height: 1450px !important;
 	background: rgb(28,30,42);
+}
+#work{
+	margin-left: 35px !important;
 }
 .header_tel p {
 	margin-left: 25px;
@@ -7236,6 +7239,16 @@ a.idTop:hover {
 	height: 80px;
 	background: rgb(208,239,242);
 	margin-bottom:70px;
+}
+
+.mfilter-opts-container{
+	border-top: 1px solid #ccc !important;
+}
+
+.b{
+	border-radius: 0% !important;
+	background-color: red !important;
+
 }
 
 .category_big_text_mid{

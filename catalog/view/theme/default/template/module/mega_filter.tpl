@@ -1,4 +1,4 @@
-mfilter-tb-as-td mfilter-col-input<?php if( ! empty( $settings['javascript'] ) ) { ?>
+<?php if( ! empty( $settings['javascript'] ) ) { ?>
 	<script type="text/javascript">
 		<?php echo htmlspecialchars_decode( $settings['javascript'] ); ?>
         </script>
@@ -294,7 +294,7 @@ mfilter-tb-as-td mfilter-col-input<?php if( ! empty( $settings['javascript'] ) )
 												<?php echo $_position == 'content_top' ? '<div class="mfilter-tb">' : ''; ?>
 												<div class="mfilter-option mfilter-tb-as-tr">
 													<div class="mfilter-tb-as-td mfilter-col-input">
-														<input
+														<input class="b"
 															id="mfilter-opts-attribs-<?php echo (int) $_idx; ?>-<?php echo $base_id; ?>-<?php echo $option['key']; ?>"
 															name="<?php echo $filter['seo_name']; ?>"
 															type="<?php echo $_tmp_type == 'image_list_checkbox' ? 'checkbox' : ( $_tmp_type == 'image_list_radio' ? 'radio' : $_tmp_type ); ?>"
