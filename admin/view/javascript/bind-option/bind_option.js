@@ -2,10 +2,46 @@
  * Developed by Lugano.
  */
 $(function(){
-
-    $(".form-control").focus(function(){console.log("dddd")});
+  var trr;
+   $(".form-control").focus(function(){console.log("dddd")});
    var tr = $(".form-control").focus(function(){console.log($(this).attr('id'))});
+  $(".form-control").focus(function(){
+    trr =$(this).attr('id');
+    //var trr = '\''+trr+'\'';
+    console.log(typeof(trr));
+    console.log(trr);
+  });
 
+
+$(tr).autocomplete({
+  'source': function(request, response) {
+    $.ajax({
+      url: 'index.php?route=catalog/product/autocomplete&token='+token+'&filter_sku=' +  encodeURIComponent(request),
+      dataType: 'json',
+      success: function(json) {
+        json.unshift({
+          manufacturer_id: 0,
+          name: 0
+        });
+        response($.map(json, function(item) {
+          return {
+            label: item['sku'],
+            value: item['sku']
+          }
+        }));
+      }
+    });
+  },
+  'select': function(item) {
+   console.log(item);
+    //$(trr).val(item['label']);
+   document.getElementById(trr).setAttribute('value',item['label']);
+    $('input[name=\'manufacturer_id\']').val(item['value']);
+  }
+});
+
+
+/*
   $('#id-for-server-0-0').autocomplete({
   'source': function(request, response) {
     $.ajax({
@@ -265,6 +301,5 @@ $(function(){
     $('input[name=\'manufacturer_id\']').val(item['value']);
   }
 });
-
+*/
 });
-
