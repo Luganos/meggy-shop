@@ -317,7 +317,7 @@
       <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>]]>
       </search>
       <add position="after">
-      <![CDATA[<td class="text-right"><input type="text" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" /></td>]]>
+      <![CDATA[<td class="text-right"><input type="text" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control bind" /></td>]]>
       </add>
     </operation>  
     <operation>
@@ -347,7 +347,7 @@
       </search>
       <add position="after">
       <![CDATA[
-       html += '   <td class="text-right"><input type="text" id = "id-for-server-'+option_row+'-'+option_value_row+'"  name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][bind_id]" value="0" placeholder="<?php echo $entry_bind_with; ?>" class="form-control" /></td>';]]>
+       html += '   <td class="text-right"><input type="text" id = "id-for-server-'+option_row+'-'+option_value_row+'"  name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][bind_id]" value="0" placeholder="<?php echo $entry_bind_with; ?>" class="form-control bind" /></td>';]]>
       </add>
     </operation>    
   </file>
