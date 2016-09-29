@@ -88,6 +88,7 @@
         </div>
         <?php } ?>
         <!--end check of customer-->
+        <?php if ($logged || $account == 'guest') { ?>
         <div class="contakt_data">
             <p>Шаг 2. Выбор способа доставки и оплаты</p>
             <hr>
@@ -144,7 +145,7 @@
                      </div>
                      <div class="streen_inline NP_input_w">
                     <span>№ отделения</span>
-                     <input class="form-control NP_input" type="text" name="flat" value="<?php echo $flat; ?>">
+                     <input class="form-control NP_input" type="text" name="department" value="">
                      <p id="NP_input"></p>
                      </div>
                 </div>
@@ -157,6 +158,7 @@
               </div>
             </div>
          </div>
+        <?php } ?>
       </div>
     </div>
 
