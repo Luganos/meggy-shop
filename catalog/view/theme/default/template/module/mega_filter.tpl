@@ -1,4 +1,4 @@
-<?php if( ! empty( $settings['javascript'] ) ) { ?>
+mfilter-tb-as-td mfilter-col-input<?php if( ! empty( $settings['javascript'] ) ) { ?>
 	<script type="text/javascript">
 		<?php echo htmlspecialchars_decode( $settings['javascript'] ); ?>
         </script>

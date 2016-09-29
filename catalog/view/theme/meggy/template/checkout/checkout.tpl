@@ -231,9 +231,12 @@ $('#button-guest').on('click', function() {
                 if(json['error']['email']){
                 $('#input_email_guest').parent().addClass('has-error');}
               //  $('input[name=\'password\']').parent().addClass('has-error');
-                $('input[name=\'firstname\']').parent().addClass('has-error');
-                $('input[name=\'city\']').parent().addClass('has-error');
-                $('input[name=\'telephone\']').parent().addClass('has-error');
+                if(json['error']['firstname']){
+                $('input[name=\'firstname\']').parent().addClass('has-error');}
+                if(json['error']['city']){
+                $('input[name=\'city\']').parent().addClass('has-error');}
+                if(json['error']['telephone']){
+                $('input[name=\'telephone\']').parent().addClass('has-error');}
 
                 $('#input_error_name').html(json['error']['firstname']);
                 $('#input_error_city').html(json['error']['city']);
