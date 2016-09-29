@@ -145,7 +145,7 @@
                      </div>
                      <div class="streen_inline NP_input_w">
                     <span>№ отделения</span>
-                     <input class="form-control NP_input" type="text" name="department" value="">
+                     <input id="checked_NP" class="form-control NP_input " type="text" name="department" value="">
                      <p id="NP_input"></p>
                      </div>
                 </div>
@@ -325,7 +325,20 @@ $('#confirm-buy').on('click', function() {
       $('#main-message-field').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>Войдите как постоянный клиент или новый покупатель<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
   });
 });
+
  <?php } ?>
 </script>
 <?php echo $footer; ?>
 
+<script>
+   $('#confirm-buy').on('click',function(){
+         if($('.new_post_input').prop('checked') && !$('#checked_NP').val()){
+            $("#NP_input").html('Введите № отделения');
+            console.log("check_NP");
+        }else{
+            console.log("twe");
+        }
+
+    });
+
+</script>
