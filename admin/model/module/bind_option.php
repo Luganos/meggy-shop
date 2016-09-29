@@ -27,7 +27,7 @@ class ModelModuleBindOption extends Model {
        
        $this->db->query("DELETE FROM `" . DB_PREFIX . "product_to_bind_image` WHERE product_id = " . (int)$product_id);
        
-       $this->db->query("INSERT INTO " . DB_PREFIX . "product_to_bind_image SET product_id = '" . (int)$product_id . "', image_for_bind = '" . $this->db->escape($request_data['image_for_colour']['image']) . "', sku = '" . $this->db->escape($request_data['sku']) . "'");
+       $this->db->query("INSERT INTO " . DB_PREFIX . "product_to_bind_image SET product_id = '" . (int)$product_id . "', image_for_bind = '" . $this->db->escape($request_data['image_for_colour']['image']) . "', sku_bind = '" . $this->db->escape($request_data['sku']) . "'");
        
    }
    
