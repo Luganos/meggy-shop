@@ -8419,8 +8419,3 @@ legend{
 	display: none;
 }
 
-@media (min-width: 350px) {
-	body{
-	max-width: 310px !important;
-	}
-}
