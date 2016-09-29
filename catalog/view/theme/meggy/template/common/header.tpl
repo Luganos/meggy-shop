@@ -78,12 +78,12 @@
                 <?php } ?>
               </li>
                 <li class="menu_item">
-                <a href="index.php?route=information/contact" class="menu_link">
+                <a href="index.php?route=information/information&information_id=11" class="menu_link">
                   <span class="menu_link_text">ПАРТНЕРАМ</span>
                 </a>
               </li>
                 <li class="menu_item qqq">
-                <a href="index.php?route=information/contact" class="menu_link">
+                <a href="index.php?route=information/information&information_id=6" class="menu_link">
                   <span class="menu_link_text">ДОСТАВКА И ОПЛАТА</span>
                 </a>
               </li>

@@ -262,7 +262,7 @@
             <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
-            <li><a href="#tab-relation" data-toggle="tab">Цвет продукта</a></li>
+            <li><a href="#tab-relation" data-toggle="tab">Изображение цвета продукта</a></li>
           </ul>]]>
       </add>
     </operation>  
@@ -316,8 +316,9 @@
       <search>
       <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>]]>
       </search>
-      <add position="after">
-      <![CDATA[<td class="text-right"><input type="text" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control bind" /></td>]]>
+      <add position="replace">
+      <![CDATA[<td class="text-right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" placeholder="<?php echo $entry_quantity; ?>" class="form-control" /></td>
+               <td class="text-right"><input type="text" id = "id-for-server-<?php echo $option_row; ?>-<?php echo $option_value_row; ?>"  name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][bind_id]" value="<?php echo $product_option_value['bind_id']; ?>" placeholder="<?php echo $entry_bind_with; ?>" class="form-control bind" /></td>]]>
       </add>
     </operation>  
     <operation>
