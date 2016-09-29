@@ -3,9 +3,9 @@
  */
 $(function(){
   var trr;
-   $(".form-control").focus(function(){console.log("dddd")});
-   var tr = $(".form-control").focus(function(){console.log($(this).attr('id'))});
-  $(".form-control").focus(function(){
+   $(".bind").focus(function(){console.log("dddd")});
+   var tr = $(".bind").focus(function(){console.log($(this).attr('id'))});
+  $(".bind").focus(function(){
     trr =$(this).attr('id');
     //var trr = '\''+trr+'\'';
     console.log(typeof(trr));

@@ -3026,11 +3026,17 @@ input::-webkit-input-placeholder {
 		width: 430px; !important;
 	}*/
 	.header_tel p{
-		margin-right: 85px;
+		margin-right: -10px;
 	}
 	#time{
 		//width: 430px;
-		margin-left: 22% !important;
+		margin-left: 26% !important;
+	}
+	.header_in{
+		width: 112% !important;
+	}
+	.header_tel{
+		width: 105% !important;
 	}
 }
 
@@ -3040,7 +3046,7 @@ input::-webkit-input-placeholder {
 		margin-left: 22% !important;
 	}
 	.header_tel p{
-		margin-right: 65px;
+		margin-right: 10px;
 	}
 	.owl-wrapper-outer{
 		margin-left: 0% !important;
