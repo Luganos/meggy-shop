@@ -209,12 +209,9 @@
                     <?php if (strtolower($option['name']) == strtolower("Размер")) { ?>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
                     <img src="<?php echo $option_value['image']; ?>" id = "size-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
-                    <?php } else if (strtolower($option['name']) == strtolower("Цвет")) { ?>
+                    <?php } else if (strtolower($option['name']) == strtolower("Связать с")) { ?>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
-                    <img src="<?php echo $option_value['image']; ?>" id = "color-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
-                    <?php } else { ?>
-                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
-                    <img src="<?php echo $option_value['image']; ?>" id = "other-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <a href = "<?php echo $option_value['bind_id']; ?>"><img src="<?php echo $option_value['bind_image']; ?>" id = "color-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /></a>
                     <?php } ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)

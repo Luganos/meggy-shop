@@ -214,14 +214,17 @@
                  if (empty($image_for_colour['image_for_bind'])) {
                      
                         $data['image_for_colour'] = $this->model_tool_image->resize('no_image.png', 100, 100);
-                 } else {
+                        $data['bind_image'] = NULL;
+                     } else {
                      
                      if (is_file(DIR_IMAGE . $image_for_colour['image_for_bind'])) {
                          
                         $data['image_for_colour'] = $this->model_tool_image->resize($image_for_colour['image_for_bind'], 100, 100); 
+                        $data['bind_image'] = $image_for_colour['image_for_bind'];
                      } else {
                          
                         $data['image_for_colour'] = $this->model_tool_image->resize('no_image.png', 100, 100);
+                        $data['bind_image'] = NULL;
                      }
                      
                      
@@ -272,7 +275,7 @@
                 <table class="table table-striped table-bordered table-hover" style="margin-top: 10px;">
                     <tr id="image-row">
                       <td class="text-left col-sm-2"> Загрузите фото продукта :  </td>
-                      <td class="text-left col-sm-6"><a href="" id="thumb-image-1-1" data-toggle="image" class="img-thumbnail"><img src="<?php echo $image_for_colour; ?>" alt="" title="" data-placeholder="<?php echo $image_for_colour; ?>" /></a><input type="hidden" name="image_for_colour[image]" value="<?php echo $image_for_colour['image']; ?>" id="input-image-1-1" class="form-control" /></td>
+                      <td class="text-left col-sm-6"><a href="" id="thumb-image-1-1" data-toggle="image" class="img-thumbnail"><img src="<?php echo $image_for_colour; ?>" alt="" title="" data-placeholder="<?php echo $image_for_colour; ?>" /></a><input type="hidden" name="image_for_colour[image]" value="<?php echo (empty($bind_image))? 0 : $bind_image; ?>" id="input-image-1-1" class="form-control" /></td>
                     </tr> 
                 </table>  
            </div>]]>
@@ -411,5 +414,127 @@
 		 }]]>
       </add>
     </operation>
-  </file>   
+  </file> 
+  <file path="catalog/model/catalog/product.php"> 
+   <operation>
+      <search regex ="true" quote = "true">
+                      <![CDATA[~$product_option_value_data[] = array(
+					'product_option_value_id' => $product_option_value['product_option_value_id'],
+					'option_value_id'         => $product_option_value['option_value_id'],
+					'name'                    => $product_option_value['name'],
+					'image'                   => $product_option_value['image'],
+					'quantity'                => $product_option_value['quantity'],
+					'subtract'                => $product_option_value['subtract'],
+					'price'                   => $product_option_value['price'],
+					'price_prefix'            => $product_option_value['price_prefix'],
+					'weight'                  => $product_option_value['weight'],
+					'weight_prefix'           => $product_option_value['weight_prefix']
+				);~]]>
+      </search>
+      <add position="replace">
+                         <![CDATA[$product_option_value_data[] = array(
+					'product_option_value_id' => $product_option_value['product_option_value_id'],
+					'option_value_id'         => $product_option_value['option_value_id'],
+					'name'                    => $product_option_value['name'],
+					'image'                   => $product_option_value['image'],
+					'quantity'                => $product_option_value['quantity'],
+					'subtract'                => $product_option_value['subtract'],
+					'price'                   => $product_option_value['price'],
+					'price_prefix'            => $product_option_value['price_prefix'],
+					'weight'                  => $product_option_value['weight'],
+                                        'bind_id'                 => $product_option_value['bind_product_id'],
+					'weight_prefix'           => $product_option_value['weight_prefix']
+				);]]>
+      </add>
+    </operation>  
+  </file> 
+  <file path="catalog/controller/product/product.php"> 
+    <operation>
+      <search regex ="true" quote = "true">
+              <![CDATA[~$data['options'] = array();
+
+			foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
+				$product_option_value_data = array();
+
+				foreach ($option['product_option_value'] as $option_value) {
+					if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+						if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
+							$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false));
+						} else {
+							$price = false;
+						}
+
+						$product_option_value_data[] = array(
+							'product_option_value_id' => $option_value['product_option_value_id'],
+							'option_value_id'         => $option_value['option_value_id'],
+							'name'                    => $option_value['name'],
+							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
+							'price'                   => $price,
+							'price_prefix'            => $option_value['price_prefix']
+						);
+					}
+				}
+
+				$data['options'][] = array(
+					'product_option_id'    => $option['product_option_id'],
+					'product_option_value' => $product_option_value_data,
+					'option_id'            => $option['option_id'],
+					'name'                 => $option['name'],
+					'type'                 => $option['type'],
+					'value'                => $option['value'],
+					'required'             => $option['required']
+				);
+			}~]]>
+      </search>
+      <add position="replace">
+              <![CDATA[$data['options'] = array();
+  
+                        $this->load->model('module/bind_option');
+                        
+			foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
+				$product_option_value_data = array();
+
+				foreach ($option['product_option_value'] as $option_value) {
+					if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+						if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
+							$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false));
+						} else {
+							$price = false;
+						}
+                                                
+                                                if (!empty($option_value['bind_id']) && $option_value['bind_id'] !== 0 && $option_value['bind_id'] !== NULL) {
+                                                
+                                                    $bind_option = $this->model_module_bind_option->getProductBySku($option_value['bind_id']);
+                                                } else {
+                                                    $bind_option = NULL;
+                                                }
+                                                
+
+						$product_option_value_data[] = array(
+							'product_option_value_id' => $option_value['product_option_value_id'],
+							'option_value_id'         => $option_value['option_value_id'],
+							'name'                    => $option_value['name'],
+							'image'                   => $this->model_tool_image->resize($option_value['image'], 50, 50),
+							'price'                   => $price,
+                                                        'bind_id'                 => (!empty($bind_option['product_id']))? $this->url->link('product/product', 'product_id=' . $bind_option['product_id']) : '',
+                                                        'bind_image'              => (!empty($bind_option['image_for_bind']))? $this->model_tool_image->resize($bind_option['image_for_bind'], 50, 50) : '',
+							'price_prefix'            => $option_value['price_prefix']
+						);
+					}
+				}
+
+				$data['options'][] = array(
+					'product_option_id'    => $option['product_option_id'],
+					'product_option_value' => $product_option_value_data,
+					'option_id'            => $option['option_id'],
+					'name'                 => $option['name'],
+					'type'                 => $option['type'],
+					'value'                => $option['value'],
+					'required'             => $option['required']
+				);
+			}]]>
+      </add>
+    </operation> 
+  </file>        
 </modification>
+
