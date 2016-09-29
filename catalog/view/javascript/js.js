@@ -256,7 +256,7 @@ $('.cart_p_10').on("click", cart_p_10);
 /*---End add_tocar----*/
 
 /*------adoptiv slaider-----*/
-if(width < 400){
+if(width < 454){
     console.log("small");
     teg = document.getElementById('srcoll');
     teg.setAttribute('data-slick','{"slidesToShow": 1, "slidesToScroll": 1}')
@@ -545,6 +545,7 @@ $('.close_table_size').on("click", function(){$(".open_big_img").css({"visibilit
 /*-----maska_fo_tel------*/
 jQuery(function($){
    $("#phone").mask("+38(999) 999-9999");
+   $("#input-telephone").mask("+38(999) 999-9999");
 });
 /*-----END_maska_fo_tel------*/
 

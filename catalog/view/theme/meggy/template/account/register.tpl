@@ -17,7 +17,7 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
+      <h1 class="register_hidden"><?php echo $heading_title; ?></h1>
       <p><?php echo $text_account_already; ?></p>
       <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
         <fieldset id="account">
@@ -72,7 +72,7 @@
           <div class="form-group required">
             <label class="col-sm-2 control-label" for="input-telephone"><?php echo $entry_telephone; ?></label>
             <div class="col-sm-10">
-              <input type="tel" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />
+              <input type="tel" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-telephone" class="form-control" />5
               <?php if ($error_telephone) { ?>
               <div class="text-danger"><?php echo $error_telephone; ?></div>
               <?php } ?>

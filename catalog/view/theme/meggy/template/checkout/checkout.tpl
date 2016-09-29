@@ -21,12 +21,12 @@
     <div id="content" class="<?php echo $class; ?> content_checkout "><?php echo $content_top; ?>
      <div class="checkout">
         <div class="header_title">
-            <h1><?php echo $heading_title; ?></h1>
+            <h1><?php echo $heading_title; ?> в 2 шага</h1>
         </div>
         <!--customer check-->
         <?php if (!$logged && $account != 'guest') { ?>
         <div class="contakt_data">
-            <p>Контактные данные</p>
+            <p>Шаг 1. Укажите свои контактные данные</p>
         </div>
         <hr>
         <div class="checkout_client">
@@ -89,7 +89,7 @@
         <?php } ?>
         <!--end check of customer-->
         <div class="contakt_data">
-            <p>Выбор способа доставки и оплаты</p>
+            <p>Шаг 2. Выбор способа доставки и оплаты</p>
             <hr>
             <div class="deliveri">
                 <div id="message-about-delivery"></div>
@@ -124,7 +124,7 @@
             </div>
             <div class="client_address">
             <hr>
-                <p>Адрес получателя</p>
+                <p>Адрес получателя/отделения новой почты.<br> Со списком отделений можно ознакомится по <a href="https://novaposhta.ua/office">ссылки</a></p>
                 <div id="message-about-buyer"></div>
                 <div class="street">
                     <div class="streen_inline nstreet_input_w">
@@ -141,6 +141,11 @@
                     <span>квартира</span>
                      <input class="form-control k_input" type="text" name="flat" value="<?php echo $flat; ?>">
                      <p id="k_input"></p>
+                     </div>
+                     <div class="streen_inline NP_input_w">
+                    <span>№ отделения</span>
+                     <input class="form-control NP_input" type="text" name="flat" value="<?php echo $flat; ?>">
+                     <p id="NP_input"></p>
                      </div>
                 </div>
             </div>
