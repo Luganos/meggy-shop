@@ -8418,3 +8418,9 @@ legend{
 .col-sm-12 h1{
 	display: none;
 }
+
+@media (min-width: 350px) {
+	body{
+	max-width: 310px !important;
+	}
+}
