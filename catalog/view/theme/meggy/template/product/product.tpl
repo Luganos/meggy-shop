@@ -478,6 +478,7 @@
                    <p class="sl_price_right"><?php echo $product['special']; ?></p>
                    <?php } ?>
                </span>
+              <p class="sl_price_bottom">
                <?php } ?>
                <?php if ($product['size']) { ?>
                <?php $out = FALSE; ?>
@@ -487,7 +488,7 @@
 				      <?php foreach ($option as $sizes) { ?>
 					    <?php if (is_array($sizes)) { ?>
 					         <?php foreach ($sizes as $size) { ?>
-						  <?php echo $size['name']; ?>
+						  <?php echo $size['name']; ?>|
                                                   <?php $out = TRUE; ?>
 						  <?php } ?>
 					     <?php } ?>
@@ -504,10 +505,11 @@
 				<?php } ?>
 			   <?php } ?>
 			<?php if ($out) { ?>
-			<?php break; ?> 
+			<?php break; ?>
 			<?php } ?>
 			<?php } ?>
-	        <?php } ?> 
+	        <?php } ?>
+          </p>
                <div class="sl_kor_<?php echo $n; ?>">
                       <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
                </div>
