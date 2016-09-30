@@ -34,7 +34,7 @@ class ControllerModuleNewgoods extends Controller {
 			if (isset($actions) && $actions == 1) {
 				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 AND quantity >= 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
+                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 AND quantity >= 1 AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
                             
                            foreach ($query->rows as $result) { 
                                
@@ -113,7 +113,7 @@ class ControllerModuleNewgoods extends Controller {
 			if (isset($discounts) && $discounts == 1) {
 				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
+                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1  AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
                             
                            foreach ($query->rows as $result) { 
                                
@@ -188,7 +188,7 @@ class ControllerModuleNewgoods extends Controller {
 		}
 
 		
-		$query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 AND quantity >= 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
+		$query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
 		
 		
 		foreach ($query->rows as $result) { 		
