@@ -47,7 +47,7 @@
       <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>
-           <div class="sl_slide_<?php echo $n; ?>">
+           <div id="sl_slide" class="sl_slide_<?php echo $n; ?>">
                <div class="sl_img_<?php echo $n; ?>">
                     <a href = "<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new"></a>
                    <img src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">

@@ -115,12 +115,17 @@
                 <p>Оплата</p>
                 <div id="message-about-payment"></div>
                 <div class="cash">
-                    <input class="new_post_input" type="radio" name="payment_method" checked ="checked" value="1"><span>Наличными</span><br>
+
+                    <label class="checkout_input_block"><input class="new_post_input_" type="radio" checked ="checked" name="payment_method" value="1"><span>Наличными</span><br>
+                    </label>
+                    <label class="checkout_input_block">
                     <input class="pickup_input" type="radio" name="payment_method" value="2"><span>Безналичными</span><br>
+                    </label>
                     <label>
                     <input class="pickup_input" type="radio" name="payment_method" value="3"><span>Visa/MasterCard</span>
                     </label>
                     <input class="pickup_input" type="text" name="agree" value="1" style ="visibility: hidden;">
+
                 </div>
             </div>
             <div class="client_address">
@@ -199,7 +204,7 @@ $('#button-login').on('click', function() {
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
-            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+          //  alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
 });
@@ -225,7 +230,7 @@ $('#button-guest').on('click', function() {
 
             if (json['redirect']) {
                 location = json['redirect'];
-                 alert(json['redirect']);
+                 //alert(json['redirect']);
             } else if (json['error']) {
                /* $('#message-about-guest').html('<div class=""><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
@@ -249,7 +254,7 @@ $('#button-guest').on('click', function() {
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
-            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+           // alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
 });
