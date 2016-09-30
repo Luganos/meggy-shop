@@ -1,5 +1,8 @@
 <?php if( ! empty( $settings['javascript'] ) ) { ?>
 	<script type="text/javascript">
+		$('.sl_slide_1').on("mouseover", function(){$(".sl_kor_1").css({"visibility": "visible"});});
+$('.sl_slide_1').on("mouseout", function(){$(".sl_kor_1").css({"visibility": "hidden"});});
+
 		<?php echo htmlspecialchars_decode( $settings['javascript'] ); ?>
         </script>
 <?php } ?>
