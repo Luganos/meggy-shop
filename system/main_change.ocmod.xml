@@ -586,7 +586,7 @@
                            foreach ($discount_good as $discount => $sign) {
                             
                                if ($discount !== 'product_id') {
-                                 $this->action_goods[$discount] = $sign['product_id'];   
+                                 $this->discount_goods[$discount] = $sign['product_id'];   
                                }
                                 
                            }
@@ -602,27 +602,6 @@
    <operation>
 	    <search><![CDATA[$this->load->model('tool/image');]]></search>
 	    <add position="after"><![CDATA[ $this->document->addScript('catalog/view/javascript/picturefill.js');]]></add>
-   </operation>
-   <operation>
-     <search regex ="true" quote = "true">
-     <![CDATA[~$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);~]]>
-     </search>
-     <add position="replace">
-       <![CDATA[
-       
-                $data['breadcrumbs'][] = array(
-			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
-		);
-
-                $data['breadcrumbs'][] = array(
-			'text' => 'КАТАЛОГ',
-			'href' => $this->url->link('product/category')
-		);]]>
-    </add>
    </operation>
   </file>
   <file path="catalog/controller/product/search.php">

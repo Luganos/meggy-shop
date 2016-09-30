@@ -92,6 +92,7 @@ class ControllerModuleNewgoods extends Controller {
 				          'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				          'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
                                           'sku'          => $result['sku'],
+                                          'size'         => $this->OptionForNewGoods($result['product_id'])
 			              );
                                       $count++;
 		              }
@@ -170,6 +171,7 @@ class ControllerModuleNewgoods extends Controller {
 				          'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				          'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
                                           'sku'          => $result['sku'],
+                                          'size'         => $this->OptionForNewGoods($result['product_id'])
 			              );
                                       $count++;
 		              }
@@ -230,6 +232,7 @@ class ControllerModuleNewgoods extends Controller {
 			} else {
 				$rating = false;
 			}
+                        
 							
 			$data['products'][$count] = array(
 				'product_id'   => $result['product_id'],
@@ -243,6 +246,7 @@ class ControllerModuleNewgoods extends Controller {
 				'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
                                 'sku'          => $result['sku'],
+                                'size'         => $this->OptionForNewGoods($result['product_id'])
 			);
                         $count++;
 		}
@@ -266,5 +270,37 @@ class ControllerModuleNewgoods extends Controller {
 		
 		return $status;
 	}
+        
+        protected function OptionForNewGoods($product_id) {
+            
+            $options = array();
+            
+            $this->load->model('catalog/product');
+            
+            foreach ($this->model_catalog_product->getProductOptions($product_id) as $option) {
+		   $product_option_value_data = array();
+				foreach ($option['product_option_value'] as $option_value) {
+					if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+			
+			              		$product_option_value_data[] = array(
+							'product_option_value_id' => $option_value['product_option_value_id'],
+							'option_value_id'         => $option_value['option_value_id'],
+							'name'                    => $option_value['name']
+						);
+					}
+				}
+
+				$options['options'][] = array(
+					'product_option_id'    => $option['product_option_id'],
+					'product_option_value' => $product_option_value_data,
+					'option_id'            => $option['option_id'],
+					'name'                 => $option['name'],
+					'type'                 => $option['type'],
+					'value'                => $option['value'],
+					'required'             => $option['required']
+				);
+	    }
+            return $options;
+        }
         
 }
