@@ -2744,6 +2744,10 @@ position: relative;
 
 }
 
+.sl_price_bottom{
+	text-align: center;
+}
+
 .sl_kor_1,.sl_kor_2,.sl_kor_3,.sl_kor_4,.sl_kor_5,.sl_kor_6,.sl_kor_7,
 .sl_kor_8,.sl_kor_9,.sl_kor_10,.sl_kor_11,.sl_kor_12,.sl_kor_13,.sl_kor_14
 ,.sl_kor_15,.sl_kor_16,.sl_kor_17,.sl_kor_18,.sl_kor_19,.sl_kor_20,.sl_kor_21
@@ -2757,6 +2761,11 @@ position: relative;
 	visibility: hidden;
 	cursor: pointer;
 }
+
+.sl_kor_1:hover{
+	visibility: visible;
+}
+
 
 .sl_kor_1 span,.sl_kor_2 span,.sl_kor_3 span,.sl_kor_4 span,.sl_kor_5 span
 ,.sl_kor_6 span,.sl_kor_7 span,.sl_kor_8 span,.sl_kor_9 span,.sl_kor_10 span
@@ -7233,6 +7242,10 @@ a.idTop:hover {
 	text-transform: uppercase;
 }
 
+.mfilter-tb-as-td:hover{
+	color: rgb(217,83,79);
+}
+
 .category_big_text{
 	display: table;
 	width: 100%;
@@ -7241,13 +7254,35 @@ a.idTop:hover {
 	margin-bottom:70px;
 }
 
-.mfilter-opts-container{
+.mfilter-heading-content{
 	border-top: 1px solid #ccc !important;
 }
 
+.mfilter-opts-container{
+	border-top: 0px solid #ccc !important;
+}
+
+.mfilter-reset-icon{
+	margin-right: 10px !important;
+}
+
+.mfilter-options{
+	border-top:
+}
+
+.iScrollIndicator{
+	background-color: rgb(147,190,202) !important;
+	height: 50px !important;
+}
+
 .b{
-	border-radius: 0% !important;
-	background-color: red !important;
+	color: red;
+
+}
+
+input[type="checkbox"]{
+	border-radius: 0px !important;
+	color: red;
 
 }
 
