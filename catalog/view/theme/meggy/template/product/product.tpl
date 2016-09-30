@@ -452,14 +452,14 @@
            <div class="sli_slide_<?php echo $n; ?>">
                <div class="sli_img_<?php echo $n; ?>">
                    <a href ="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new"></a>
-                   <?php if ($new_goods_flag) { ?>
-                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
+                   <?php if ($product['new_goods_flag']) { ?>
+                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new category_new_large" alt="">
                    <?php } ?>
-                   <?php if ($discount_goods_flag) { ?>
+                   <?php if ($product['discount_goods_flag']) { ?>
                    <img id="product_discont_large" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
                    <?php } ?>
-                   <?php if ($action_goods_flag) { ?>
-                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt="">
+                   <?php if ($product['action_goods_flag']) { ?>
+                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new category_discont_large" alt="">
                    <?php } ?>
                </div>
                <span class="sl_text">
