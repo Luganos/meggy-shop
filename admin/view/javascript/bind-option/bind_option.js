@@ -2,14 +2,10 @@
  * Developed by Lugano.
  */
 $(function(){
-  var trr;
-   $(".bind").focus(function(){console.log("dddd")});
-   var tr = $(".bind").focus(function(){console.log($(this).attr('id'))});
+  var trr = null;
+  var tr = $(".bind").focus(function(){$(this).attr('id')});
   $(".bind").focus(function(){
-    trr =$(this).attr('id');
-    //var trr = '\''+trr+'\'';
-    console.log(typeof(trr));
-    console.log(trr);
+    trr = $(this).attr('id');
   });
 
 
@@ -20,8 +16,8 @@ $(tr).autocomplete({
       dataType: 'json',
       success: function(json) {
         json.unshift({
-          manufacturer_id: 0,
-          name: 0
+          sku: 0,
+          name: 'Нет связей'
         });
         response($.map(json, function(item) {
           return {
@@ -33,10 +29,9 @@ $(tr).autocomplete({
     });
   },
   'select': function(item) {
-   console.log(item);
-    //$(trr).val(item['label']);
    document.getElementById(trr).setAttribute('value',item['label']);
-    $('input[name=\'manufacturer_id\']').val(item['value']);
+   var name = $('#' + trr).attr('name');
+   $('input[name=\''+name+'\']').val(item['value']);
   }
 });
 

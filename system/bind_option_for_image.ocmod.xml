@@ -330,16 +330,21 @@
       </add>
     </operation>
     <operation>
-      <search>
-      <![CDATA[<?php echo $footer; ?>]]>
+      <search regex ="true" quote = "true">
+<![CDATA[~</form>
+      </div>
+    </div>
+  </div>~]]>
       </search>
-      <add position="before">
-      <![CDATA[
-               <script type="text/javascript"><!--
-                     var token = '<?php echo $token; ?>';
-                     var text_none = '<?php echo $text_none; ?>';
-               //--></script>
-               <script src ="<?php echo $base; ?>"></script>]]>
+      <add position="after">
+      <![CDATA[</form>
+          </div>
+      </div>
+  </div>
+  <script type="text/javascript"><!--
+        var token = '<?php echo $token; ?>';
+  //--></script>
+  <script src ="<?php echo $base; ?>"></script>]]>
       </add>
     </operation>
     <operation>
