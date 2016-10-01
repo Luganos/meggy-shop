@@ -335,6 +335,11 @@ class ControllerCheckoutConfirm extends Controller {
 			$data['column_quantity'] = $this->language->get('column_quantity');
 			$data['column_price'] = $this->language->get('column_price');
 			$data['column_total'] = $this->language->get('column_total');
+                        
+			$this->load->model('checkout/order');
+
+			$this->model_checkout_order->addOrderHistory($this->session->data['order_id'], $this->config->get('cod_order_status_id'));
+
 
 			$this->load->model('tool/upload');
 
