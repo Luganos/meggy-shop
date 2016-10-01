@@ -34,7 +34,7 @@ class ControllerModuleNewgoods extends Controller {
 			if (isset($actions) && $actions == 1) {
 				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 AND quantity >= 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
+                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 AND quantity >= 1 AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
                             
                            foreach ($query->rows as $result) { 
                                
@@ -92,6 +92,7 @@ class ControllerModuleNewgoods extends Controller {
 				          'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				          'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
                                           'sku'          => $result['sku'],
+                                          'size'         => $this->OptionForNewGoods($result['product_id'])
 			              );
                                       $count++;
 		              }
@@ -112,7 +113,7 @@ class ControllerModuleNewgoods extends Controller {
 			if (isset($discounts) && $discounts == 1) {
 				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
+                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1  AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
                             
                            foreach ($query->rows as $result) { 
                                
@@ -170,6 +171,7 @@ class ControllerModuleNewgoods extends Controller {
 				          'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				          'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
                                           'sku'          => $result['sku'],
+                                          'size'         => $this->OptionForNewGoods($result['product_id'])
 			              );
                                       $count++;
 		              }
@@ -186,7 +188,7 @@ class ControllerModuleNewgoods extends Controller {
 		}
 
 		
-		$query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 AND quantity >= 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
+		$query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
 		
 		
 		foreach ($query->rows as $result) { 		
@@ -230,6 +232,7 @@ class ControllerModuleNewgoods extends Controller {
 			} else {
 				$rating = false;
 			}
+                        
 							
 			$data['products'][$count] = array(
 				'product_id'   => $result['product_id'],
@@ -243,6 +246,7 @@ class ControllerModuleNewgoods extends Controller {
 				'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
 				'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
                                 'sku'          => $result['sku'],
+                                'size'         => $this->OptionForNewGoods($result['product_id'])
 			);
                         $count++;
 		}
@@ -266,5 +270,37 @@ class ControllerModuleNewgoods extends Controller {
 		
 		return $status;
 	}
+        
+        protected function OptionForNewGoods($product_id) {
+            
+            $options = array();
+            
+            $this->load->model('catalog/product');
+            
+            foreach ($this->model_catalog_product->getProductOptions($product_id) as $option) {
+		   $product_option_value_data = array();
+				foreach ($option['product_option_value'] as $option_value) {
+					if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
+			
+			              		$product_option_value_data[] = array(
+							'product_option_value_id' => $option_value['product_option_value_id'],
+							'option_value_id'         => $option_value['option_value_id'],
+							'name'                    => $option_value['name']
+						);
+					}
+				}
+
+				$options['options'][] = array(
+					'product_option_id'    => $option['product_option_id'],
+					'product_option_value' => $product_option_value_data,
+					'option_id'            => $option['option_id'],
+					'name'                 => $option['name'],
+					'type'                 => $option['type'],
+					'value'                => $option['value'],
+					'required'             => $option['required']
+				);
+	    }
+            return $options;
+        }
         
 }

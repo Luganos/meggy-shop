@@ -116,6 +116,15 @@
            <div class="sl_slide_<?php echo $n; ?> sl_slider_category">
            <div class="sli_img_<?php echo $n; ?> category_height_img">
                <a href="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sli_img_new" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>"></a>
+                   <?php if ($product['new_goods_flag']) { ?>
+                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new category_new_large" alt="">
+                   <?php } ?>
+                   <?php if ($product['discount_goods_flag']) { ?>
+                   <img id="product_discont_large" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
+                   <?php } ?>
+                   <?php if ($product['action_goods_flag']) { ?>
+                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new category_discont_large" alt="">
+                   <?php } ?>
                </div>
                <span class="sl_text">
                     <p class="sl_id"><?php echo $product['name']; ?>
@@ -134,6 +143,35 @@
                    <?php } ?>
                </span>
                <?php } ?>
+               <?php if ($product['size']) { ?>
+               <?php $out = FALSE; ?>
+		     <?php foreach ($product['size'] as $options) { ?>
+			  <?php foreach ($options as $option) { ?>
+				<?php if ($option['name'] == strtolower("Размер") && $option['type'] == "image") { ?>
+				      <?php foreach ($option as $sizes) { ?>
+					    <?php if (is_array($sizes)) { ?>
+					         <?php foreach ($sizes as $size) { ?>
+						  <?php echo $size['name']; ?>
+                                                  <?php $out = TRUE; ?>
+						  <?php } ?>
+					     <?php } ?>
+					  <?php if ($out) { ?>
+					  <?php break; ?>
+					  <?php } ?>
+				      <?php } ?>
+				<?php if ($out) { ?>
+			        <?php break; ?>
+				<?php } ?>
+				<?php } ?>
+				<?php if ($out) { ?>
+				<?php break; ?>
+				<?php } ?>
+			   <?php } ?>
+			<?php if ($out) { ?>
+			<?php break; ?> 
+			<?php } ?>
+			<?php } ?>
+	        <?php } ?> 
                <div class="sl_kor_<?php echo $n; ?>">
                       <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
                </div>

@@ -21,12 +21,12 @@
     <div id="content" class="<?php echo $class; ?> content_checkout "><?php echo $content_top; ?>
      <div class="checkout">
         <div class="header_title">
-            <h1><?php echo $heading_title; ?></h1>
+            <h1><?php echo $heading_title; ?> в 2 шага</h1>
         </div>
         <!--customer check-->
         <?php if (!$logged && $account != 'guest') { ?>
         <div class="contakt_data">
-            <p>Контактные данные</p>
+            <p>Шаг 1. Укажите свои контактные данные</p>
         </div>
         <hr>
         <div class="checkout_client">
@@ -35,18 +35,18 @@
                 <div id="message-about-guest"></div>
                 <div class="checkout-input" id ="guest-form">
                         <p><b>имя и фамилия</b><br>
-                        <input type="text" size="30" class="form-control" name ="firstname">
+                        <input type="text" size="30" class="form-control" name ="firstname" minlength="5">
                         <span id="input_error_name"></span>
                         </p>
                         <p><b>город</b><br>
-                        <input type="text" size="30" class="form-control" name="city"><span id="input_error_city"></span>
+                        <input type="text" size="30" class="form-control" name="city" placeholder="Ваш город"><span id="input_error_city"></span>
                         </p>
                         <p><b>мобильный телефон</b><br>
-                        <input type="text" size="30" class="form-control" name="telephone">
+                        <input id="phone" type="text" size="30" class="form-control" name="telephone" placeholder="Введите ваш телефон">
                         <span id="input_error_telephone"></span>
                         </p>
                         <p><b>e-mail</b><br>
-                        <input id="input_email_guest" type="text" size="30" class="form-control" name ="email">
+                        <input id="input_email_guest" type="email" size="30" class="form-control" name ="email" placeholder="Введите ваш email">
                         <span id="input_error_email"></span>
                         </p>
                         <input type="text" size="30" style = "display: none;" class="form-control" name ="lastname">
@@ -63,7 +63,7 @@
                 <div id="message-about-login"></div>
                 <div class="checkout-input" id = "login-form">
                         <p><b>e-mail</b><br>
-                        <input type="text" size="30" class="form-control" name ="email"/>
+                        <input type="email" size="30" class="form-control" name ="email" placeholder="Введите ваш email"/>
                         <span id="input_email_login"></span>
                         </p>
                         <p><b>пароль</b><br>
@@ -88,8 +88,9 @@
         </div>
         <?php } ?>
         <!--end check of customer-->
+        <?php if ($logged || $account == 'guest') { ?>
         <div class="contakt_data">
-            <p>Выбор способа доставки и оплаты</p>
+            <p>Шаг 2. Выбор способа доставки и оплаты</p>
             <hr>
             <div class="deliveri">
                 <div id="message-about-delivery"></div>
@@ -114,30 +115,43 @@
                 <p>Оплата</p>
                 <div id="message-about-payment"></div>
                 <div class="cash">
-                    <input class="new_post_input" type="radio" name="payment_method" checked ="checked" value="1"><span>Наличными</span><br>
+
+                    <label class="checkout_input_block"><input class="new_post_input_" type="radio" checked ="checked" name="payment_method" value="1"><span>Наличными</span><br>
+                    </label>
+                    <label class="checkout_input_block">
                     <input class="pickup_input" type="radio" name="payment_method" value="2"><span>Безналичными</span><br>
+                    </label>
                     <label>
                     <input class="pickup_input" type="radio" name="payment_method" value="3"><span>Visa/MasterCard</span>
                     </label>
                     <input class="pickup_input" type="text" name="agree" value="1" style ="visibility: hidden;">
+
                 </div>
             </div>
             <div class="client_address">
             <hr>
-                <p>Адрес получателя</p>
+                <p>Адрес получателя/отделения новой почты.<br> Со списком отделений можно ознакомится по <a href="https://novaposhta.ua/office">ссылки</a></p>
                 <div id="message-about-buyer"></div>
                 <div class="street">
                     <div class="streen_inline nstreet_input_w">
                     <span>улица</span>
-                    <input class="form-control nstreet_input" type="text" name="street" value="<?php echo $street; ?>">
+                    <input  class="form-control nstreet_input" type="text" name="street" value="<?php echo $street; ?>">
+                    <p id="nstreet_input"></p>
                     </div>
                     <div class="streen_inline house_input_w">
                     <span>дом</span>
-                    <input class="form-control house_input" type="text" name="house" value="<?php echo $house; ?>">
+                    <input class="form-control house_input" type="number" min="1" max="1000" name="house" value="<?php echo $house; ?>">
+                    <p id="house_input"></p>
                     </div>
                     <div class="streen_inline r_input_w">
                     <span>квартира</span>
                      <input class="form-control k_input" type="text" name="flat" value="<?php echo $flat; ?>">
+                     <p id="k_input"></p>
+                     </div>
+                     <div class="streen_inline NP_input_w">
+                    <span>№ отделения</span>
+                     <input id="checked_NP" class="form-control NP_input " type="text" name="department" value="">
+                     <p id="NP_input"></p>
                      </div>
                 </div>
             </div>
@@ -149,6 +163,7 @@
               </div>
             </div>
          </div>
+        <?php } ?>
       </div>
     </div>
 
@@ -189,7 +204,7 @@ $('#button-login').on('click', function() {
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
-            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+          //  alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
 });
@@ -215,16 +230,20 @@ $('#button-guest').on('click', function() {
 
             if (json['redirect']) {
                 location = json['redirect'];
-                 alert(json['redirect']);
+                 //alert(json['redirect']);
             } else if (json['error']) {
                /* $('#message-about-guest').html('<div class=""><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');*/
 
                 // Highlight any found errors
-                $('#input_email_guest').parent().addClass('has-error');
+                if(json['error']['email']){
+                $('#input_email_guest').parent().addClass('has-error');}
               //  $('input[name=\'password\']').parent().addClass('has-error');
-                $('input[name=\'firstname\']').parent().addClass('has-error');
-                $('input[name=\'city\']').parent().addClass('has-error');
-                $('input[name=\'telephone\']').parent().addClass('has-error');
+                if(json['error']['firstname']){
+                $('input[name=\'firstname\']').parent().addClass('has-error');}
+                if(json['error']['city']){
+                $('input[name=\'city\']').parent().addClass('has-error');}
+                if(json['error']['telephone']){
+                $('input[name=\'telephone\']').parent().addClass('has-error');}
 
                 $('#input_error_name').html(json['error']['firstname']);
                 $('#input_error_city').html(json['error']['city']);
@@ -235,7 +254,7 @@ $('#button-guest').on('click', function() {
            }
         },
         error: function(xhr, ajaxOptions, thrownError) {
-            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+           // alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
 });
@@ -244,8 +263,10 @@ $('#button-guest').on('click', function() {
 // Shipping and payment
 <?php if ($logged || $account) { ?>
 $(document).ready(function() {
-$('#confirm-buy').on('click', function() {
-
+     $('#confirm-buy').on('click',function(e){
+         if($('.new_post_input').prop('checked') && !$('#checked_NP').val()){
+            $("#NP_input").html('Введите № отделения');
+        }else{
     $.ajax({
         url: 'index.php?route=checkout/shipping_address/save',
         type: 'post',
@@ -257,7 +278,10 @@ $('#confirm-buy').on('click', function() {
             if (json['redirect']) {
                 location = json['redirect'];
             } else if (json['error']) {
-                $('#message-about-buyer').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+              // $('#message-about-buyer').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+                    $('#nstreet_input').html(json['error']['street'] );
+                    $('#house_input').html(json['error']['house'] );
+                    $('#k_input').html(json['error']['flat'] );
            } else if (json['success']) {
 
              $.ajax({
@@ -272,6 +296,7 @@ $('#confirm-buy').on('click', function() {
                     location = json['redirect'];
                  } else if (json['error']) {
                        $('#message-about-delivery').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> ' + json['error']['warning'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+
                  } else if (json['success']) {
 
                          $.ajax({
@@ -298,7 +323,11 @@ $('#confirm-buy').on('click', function() {
           }
        }
     });
- });
+ };
+
+    });
+
+
 });
  <?php } else { ?>
  $(document).ready(function() {
@@ -307,6 +336,7 @@ $('#confirm-buy').on('click', function() {
       $('#main-message-field').html('<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i>Войдите как постоянный клиент или новый покупатель<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
   });
 });
+
  <?php } ?>
 </script>
 <?php echo $footer; ?>

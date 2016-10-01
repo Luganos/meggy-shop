@@ -1,5 +1,6 @@
 <?php echo $header; ?>
-<div class="open_table_size"><img class="close_table_size" src="catalog/view/theme/meggy/image/table_size.png" alt=""></div>
+<div class="open_table_size"><img class="close_table_size" src="catalog/view/theme/meggy/image/close.png" alt=""></div>
+<div class="open_big_img"><img class="close_table_size" src="catalog/view/theme/meggy/image/close.png" alt=""></div>
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
@@ -36,14 +37,14 @@
             <div class="container vertical_slider_big">
              <div id="va-accordion" class="va-container">
               <div class="va-nav">
-               <span class="va-nav-prev">Назад</span>
-               <span class="va-nav-next">Дальше</span>
+               <span id="va-nav-prev" class="va-nav-prev">Назад</span>
+               <span id="va-nav-next" class="va-nav-next">Дальше</span>
               </div>
              <div class="va-wrapper">
             <?php $l = 1; ?>
             <?php foreach ($images as $image) { ?>
             <div class="va-slice va-slice-<?php echo $l; ?>">
-            <img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+            <img id="ttest-<?php echo $l; ?>" src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
             </div>
             <?php $l++; ?>
             <?php } ?>
@@ -52,10 +53,10 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><a href="<?php echo $popup; ?>" title=""><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
-          <a class="addthis_button_compact"></a><p>SHARE</p>
+          <a class="addthis_button_compact"></a><p>Поделится в соц. сетях</p>
           </div>
           <script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
           <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=YOUR_ACCOUNT_ID!!"></script>
@@ -78,7 +79,7 @@
         <?php } else { ?>
         <?php $class = 'col-sm-6'; ?>
         <?php } ?>
-        <div id="xs_product" class="<?php echo $class; ?>">
+        <div id="xs_product" class="<?php echo $class; ?> xs_product_right">
           <h1 class="cart_tovar_procuct"><?php echo $heading_title; ?>
           <?php if($sku) { ?>
           <?php echo "-" . " " . $sku; ?>
@@ -208,12 +209,9 @@
                     <?php if (strtolower($option['name']) == strtolower("Размер")) { ?>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
                     <img src="<?php echo $option_value['image']; ?>" id = "size-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
-                    <?php } else if (strtolower($option['name']) == strtolower("Цвет")) { ?>
+                    <?php } else if (strtolower($option['name']) == strtolower("Связать с")) { ?>
                     <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
-                    <img src="<?php echo $option_value['image']; ?>" id = "color-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
-                    <?php } else { ?>
-                    <input type="radio" name="option[<?php echo $option['product_option_id']; ?>]" value="<?php echo $option_value['product_option_value_id']; ?>" hidden="true" />
-                    <img src="<?php echo $option_value['image']; ?>" id = "other-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" />
+                    <a href = "<?php echo $option_value['bind_id']; ?>"><img src="<?php echo $option_value['bind_image']; ?>" id = "color-image-<?php echo $unique_id; ?>" alt="<?php echo $option_value['name'] . ($option_value['price'] ? ' ' . $option_value['price_prefix'] . $option_value['price'] : ''); ?>" class="img-thumbnail" /></a>
                     <?php } ?>
                     <?php if ($option_value['price']) { ?>
                     (<?php echo $option_value['price_prefix']; ?><?php echo $option_value['price']; ?>)
@@ -454,14 +452,14 @@
            <div class="sli_slide_<?php echo $n; ?>">
                <div class="sli_img_<?php echo $n; ?>">
                    <a href ="<?php echo $product['href']; ?>"><img id="sliii" src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" title ="<?php echo $product['name']; echo ($product['sku'])? ' - ' . $product['sku']: ''; ?>" class="sli_img_new"></a>
-                   <?php if ($new_goods_flag) { ?>
-                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
+                   <?php if ($product['new_goods_flag']) { ?>
+                   <img id="product_new_large" src="catalog/view/theme/meggy/image/new.png" class="label_new category_new_large" alt="">
                    <?php } ?>
-                   <?php if ($discount_goods_flag) { ?>
+                   <?php if ($product['discount_goods_flag']) { ?>
                    <img id="product_discont_large" src="catalog/view/theme/meggy/image/sale.png" class="label_new" alt="">
                    <?php } ?>
-                   <?php if ($action_goods_flag) { ?>
-                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new" alt="">
+                   <?php if ($product['action_goods_flag']) { ?>
+                   <img id="product_action_large" src="catalog/view/theme/meggy/image/action.png" class="label_new category_discont_large" alt="">
                    <?php } ?>
                </div>
                <span class="sl_text">
@@ -480,7 +478,38 @@
                    <p class="sl_price_right"><?php echo $product['special']; ?></p>
                    <?php } ?>
                </span>
+              <p class="sl_price_bottom">
                <?php } ?>
+               <?php if ($product['size']) { ?>
+               <?php $out = FALSE; ?>
+		     <?php foreach ($product['size'] as $options) { ?>
+			  <?php foreach ($options as $option) { ?>
+				<?php if ($option['name'] == strtolower("Размер") && $option['type'] == "image") { ?>
+				      <?php foreach ($option as $sizes) { ?>
+					    <?php if (is_array($sizes)) { ?>
+					         <?php foreach ($sizes as $size) { ?>
+						  <?php echo $size['name']; ?>|
+                                                  <?php $out = TRUE; ?>
+						  <?php } ?>
+					     <?php } ?>
+					  <?php if ($out) { ?>
+					  <?php break; ?>
+					  <?php } ?>
+				      <?php } ?>
+				<?php if ($out) { ?>
+			        <?php break; ?>
+				<?php } ?>
+				<?php } ?>
+				<?php if ($out) { ?>
+				<?php break; ?>
+				<?php } ?>
+			   <?php } ?>
+			<?php if ($out) { ?>
+			<?php break; ?>
+			<?php } ?>
+			<?php } ?>
+	        <?php } ?>
+          </p>
                <div class="sl_kor_<?php echo $n; ?>">
                       <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
                </div>
@@ -714,7 +743,7 @@ $('#button-review').on('click', function() {
 			enabled:true
 		}
 	});*/
-});
+
 </script>
 <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 <?php echo $footer; ?>

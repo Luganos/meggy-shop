@@ -165,7 +165,7 @@ class ControllerCheckoutShippingAddress extends Controller {
                                 
                                 $post['address_1'] = $this->validateDataFromForm(trim($this->request->post['street'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['house'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['flat']));
                                 
-                                $post['address_2'] = $this->validateDataFromForm(trim($this->request->post['street'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['house'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['flat']));
+                                $post['address_2'] = (isset($this->request->post['department']))? $this->validateDataFromForm(trim($this->request->post['department'])) : '';
                                 
                                 //Get data for customer country
 				$this->load->model('localisation/country');

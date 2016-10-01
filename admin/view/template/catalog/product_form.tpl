@@ -37,7 +37,6 @@
             <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
             <li><a href="#tab-reward" data-toggle="tab"><?php echo $tab_reward; ?></a></li>
             <li><a href="#tab-design" data-toggle="tab"><?php echo $tab_design; ?></a></li>
-            <li><a href="#tab-relation" data-toggle="tab">Цвет продукта</a></li>
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab-general">

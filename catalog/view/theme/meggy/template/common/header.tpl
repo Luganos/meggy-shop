@@ -38,7 +38,7 @@
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.vaccordion.js"></script>
-
+<script src="catalog/view/javascript/maskedinput.js"></script>
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>
@@ -78,12 +78,12 @@
                 <?php } ?>
               </li>
                 <li class="menu_item">
-                <a href="index.php?route=information/contact" class="menu_link">
+                <a href="index.php?route=information/information&information_id=11" class="menu_link">
                   <span class="menu_link_text">ПАРТНЕРАМ</span>
                 </a>
               </li>
                 <li class="menu_item qqq">
-                <a href="index.php?route=information/contact" class="menu_link">
+                <a href="index.php?route=information/information&information_id=6" class="menu_link">
                   <span class="menu_link_text">ДОСТАВКА И ОПЛАТА</span>
                 </a>
               </li>
@@ -137,13 +137,23 @@
                       <span id="login" >
                         <img src="catalog/view/theme/meggy/image/face.png" alt="">
                       </span>
+                      <li class="dropdown"></li>
                       <span class="in_link_text hidden-xs "><?php echo $text_logout; ?></span>
                       </a>
                      <?php } else { ?>
                       <a href="<?php echo $login; ?>" class="in_in">
                       <span><img src="catalog/view/theme/meggy/image/face.png" alt=""></span>
-                      <span class="in_link_text hidden-xs hidden-sm"><?php echo $text_login; ?>
-                      </span>
+                      <li class="dropdown">
+                        <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">Вход
+                      <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Текст1</a></li>
+                          <li><a href="#">Текст2</a></li>
+                        </ul>
+                      </li>
+                      <!--<span class="in_link_text hidden-xs hidden-sm"><?php echo $text_login; ?>
+                      </span>-->
                       </a>
                      <?php } ?>
                   </li>

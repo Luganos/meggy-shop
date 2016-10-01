@@ -67,6 +67,17 @@ class ControllerCheckoutShippingMethod extends Controller {
                         if (intval($this->request->post['pickup']) == 1) {
                             
                             $shipping = "Самовывоз из Новой Почты";
+                            
+                            if ((utf8_strlen(trim($this->session->data['shipping_address']['address_2'])) > 1) && (utf8_strlen(trim($this->session->data['shipping_address']['address_2'])) < 5) && $this->session->data['shipping_address']['address_2']) {
+				$path = $this->session->data['shipping_address']['address_2'];
+                                $this->session->data['shipping_address']['address_2'] = 'Отделение ' .$path;
+			    } else {
+                                
+                                $this->session->data['shipping_address']['address_2'] = 'Отделение не указано';
+                            }
+                            
+                            
+                            
                         } else if (intval($this->request->post['pickup']) == 2) {
                             
                             $shipping = "Самовывоз из точки выдачи";

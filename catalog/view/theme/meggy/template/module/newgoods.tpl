@@ -43,7 +43,7 @@
       <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>
-           <div class="sl_slide_<?php echo $n; ?>">
+           <div id="sl_slide" class="sl_slide_<?php echo $n; ?>">
                <div class="sl_img_<?php echo $n; ?>">
                    <a href = "<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" class="sl_img_new"></a>
                    <img src="catalog/view/theme/meggy/image/new.png" class="label_new" alt="">
@@ -64,7 +64,37 @@
                    <p class="sl_price_right"><?php echo $product['special']; ?></p>
                    <?php } ?>
                </span>
+               <p class="sl_price_bottom">
                <?php } ?>
+               <?php if ($product['size']) { ?>
+               <?php $out = FALSE; ?>
+		     <?php foreach ($product['size'] as $options) { ?>
+			  <?php foreach ($options as $option) { ?>
+				<?php if ($option['name'] == strtolower("Размер") && $option['type'] == "image") { ?>
+				      <?php foreach ($option as $sizes) { ?>
+					    <?php if (is_array($sizes)) { ?>
+					         <?php foreach ($sizes as $size) { ?>
+						  <?php echo $size['name']; ?>|
+                                                  <?php $out = TRUE; ?>
+						  <?php } ?>
+					     <?php } ?>
+					  <?php if ($out) { ?>
+					  <?php break; ?>
+					  <?php } ?>
+				      <?php } ?>
+				<?php if ($out) { ?>
+			        <?php break; ?>
+				<?php } ?>
+				<?php } ?>
+				<?php if ($out) { ?>
+				<?php break; ?>
+				<?php } ?>
+			   <?php } ?>
+			<?php if ($out) { ?>
+			<?php break; ?>
+			<?php } ?>
+			<?php } ?>
+	        <?php } ?></p>
                <div class="sl_kor_<?php echo $n; ?>">
                       <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
                </div>
