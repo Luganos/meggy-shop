@@ -866,13 +866,7 @@
                   </tbody>
                 </table>
               </div>
-            </div>
-            <div class="tab-pane" id ="tab-relation">
-                   <tr id="image-row">
-                      <td class="text-left col-sm-2"> Загрузите фото для цвета продукта :  </td>
-                      <td class="text-left col-sm-6"><a href="" id="thumb-image<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $thumb; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="product_series_image[<?php echo $image_row; ?>][image]" value="<?php echo $product_series_image['image']; ?>" id="input-image<?php echo $image_row; ?>" class="form-control" /></td>
-                    </tr>   
-            </div>     
+            </div>    
             <div class="tab-pane" id="tab-design">
               <div class="table-responsive">
                 <table class="table table-bordered table-hover">
