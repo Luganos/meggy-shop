@@ -133,27 +133,21 @@
                   </div>
                   <li id="login" class="in_item">
                      <?php if ($logged) { ?>
-                      <a href="<?php echo $logout; ?>" class="in_in">
-                      <span id="login" >
+                     <span class="in_link_text  dropdown">
+                        <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="catalog/view/theme/meggy/image/face.png" alt="">
-                      </span>
-                      <li class="dropdown"></li>
-                      <span class="in_link_text hidden-xs "><?php echo $text_logout; ?></span>
-                      </a>
-                     <?php } else { ?>
-                      <a href="<?php echo $login; ?>" class="in_in">
-                      <span><img src="catalog/view/theme/meggy/image/face.png" alt=""></span>
-                      <li class="dropdown">
-                        <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">Вход
-                      <span class="caret"></span>
+                      <span class="caret caret_login"></span>
                         </a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Текст1</a></li>
-                          <li><a href="#">Текст2</a></li>
+                          <a href="<?php echo $logout; ?>" class="in_in">
+                          <li class="in_link_text in_link_text_login "><?php echo $text_logout; ?></li></a>
+                          <a href="<?php echo $logout; ?>" class="in_in">
+                          <li class="in_link_text"><?php echo $text_logout; ?></li></a>
                         </ul>
-                      </li>
-                      <!--<span class="in_link_text hidden-xs hidden-sm"><?php echo $text_login; ?>
-                      </span>-->
+                      </span>
+                      <?php } else { ?>
+                      <a href="<?php echo $login; ?>" class="in_in">
+                      <span><img src="catalog/view/theme/meggy/image/face.png" alt=""></span>
                       </a>
                      <?php } ?>
                   </li>

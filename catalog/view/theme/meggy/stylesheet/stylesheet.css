@@ -8480,4 +8480,11 @@ legend{
 .col-sm-12 h1{
 	display: none;
 }
+.caret_login{
+		margin-top: 16px !important;
+	}
+.in_link_text_login{
+	display: block;
+}
+
 
