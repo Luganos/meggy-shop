@@ -265,7 +265,7 @@ else if(width < 517){
      teg = document.getElementById('srcoll');
      teg.setAttribute('data-slick','{"slidesToShow": 2, "slidesToScroll": 1}')
 }
-else if(width < 837){
+else if(width < 944){
      teg = document.getElementById('srcoll');
      teg.setAttribute('data-slick','{"slidesToShow": 3, "slidesToScroll": 1}')
 }

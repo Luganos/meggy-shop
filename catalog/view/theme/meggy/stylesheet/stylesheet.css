@@ -1610,7 +1610,7 @@ input::-webkit-input-placeholder {
 
 @media screen and (max-width: 449px) {
 footer {
-	height: 1650px !important;
+	height: 1550px !important;
 	background-color: rgb(28,30,42) !important;
 }
 
@@ -7135,13 +7135,13 @@ a.idTop:hover {
 .well{
 	background: white !important;
 	border: 0px;
-
+	padding-left: 0px;
 }
 
 .well h2{
 	color: black;
 	font-weight: bold;
-	font-size: 26px;
+	font-size: 22px;
 }
 
 .well strong{
@@ -7826,7 +7826,7 @@ input[type="checkbox"]{
 .street{
 	width: 100%;
 	float: left;
-	margin-left: 22%;
+	margin-left: 0%;
 	margin-bottom: 30px;
 	display: inline;
 }
@@ -7887,6 +7887,12 @@ input[type="checkbox"]{
 .checkout_input_block{
 	display: block;
 }
+@media screen and (min-width: 855px) and (max-width: 1100px) {
+	.NP_input_w{
+		width: 18% !important;
+	}
+
+}
 
 @media screen and (max-width: 855px) {
 	.checkout{
@@ -7911,6 +7917,11 @@ input[type="checkbox"]{
 	.breadcrumb{
 	margin: 0 auto 0 auto;
 	width: 90% !important;
+}
+
+.NP_input_w{
+	width: 30%;
+	margin-right: 0px;
 }
 
 	.row_category{
