@@ -4715,7 +4715,12 @@ div.required .control-label:before {
 }
 /* search */
 #search {
+	width: 230px;
+	position: relative;
+	right: 147px !important;
+	bottom: 64px;
 	margin-bottom: 10px;
+	z-index: 12;
 }
 #search .input-lg {
 	height: 40px;
@@ -4727,6 +4732,14 @@ div.required .control-label:before {
 	line-height: 18px;
 	padding: 10px 35px;
 	text-shadow: 0 1px 0 #FFF;
+}
+
+#search button{
+	padding: 10px 15px 10px 15px !important;
+	border-radius: 0px !important;
+	bottom: 40px !important;
+	left: 161px !important;
+
 }
 
 #tr{
