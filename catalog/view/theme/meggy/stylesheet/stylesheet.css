@@ -1070,7 +1070,7 @@ input::-webkit-input-placeholder {
 
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 854px) {
 	footer {
 	height: 752px;
 }
@@ -1150,7 +1150,7 @@ input::-webkit-input-placeholder {
 .footer_top{
 	width: 89% !important;/*--------------------------------------------*/
 	height: 480px;
-	margin-left: 20px !important;
+	margin-left: 0px !important;
 	border-bottom: 1px solid rgb(40, 43, 58);
 }
 
@@ -2208,11 +2208,15 @@ header{
 
 @media (max-width: 769px) {
 	.baner_all{
-		margin-top: 10px !important;
+		margin-top: 0px !important;
 		margin-left: 10px;
+		margin-bottom: -50px !important;
 	}
 	.baner_one{
 	margin-left: 20%;
+	}
+	.slick-next{
+		right: -3px !important;
 	}
 }
 
@@ -2951,10 +2955,43 @@ input::-webkit-input-placeholder {
 //	display: block;
 }
 
-@media (max-width: 855px) {
+@media (max-width: 854px) {
 	.footer_top_katalog{
 	width: 30%;
 	}
+	.footer_top{
+	width: 55%;
+	height: 480px;
+	margin-left: 5% !important;
+	border-bottom: 1px solid rgb(40, 43, 58);
+	}
+	.footer_top_ul{
+		padding-left: 0% !important;
+	}
+	.footer_top_one{
+		padding-left: 0% !important;
+	}
+	.footer_med{
+		width: 90% !important;
+	}
+	.footer_med_seil{
+		width: 34% !important;
+	}
+	.footer_med_get{
+		width: 34% !important;
+	}
+	.footer_med_net{
+		padding-bottom: 25px;
+	}
+	.footer_med_four img{
+		margin: 0 4% 0 4% !important;
+	}
+	.footer_down{
+		width: 85% !important;
+		margin-left: 5% !important;
+	}
+
+
 }
 
 
@@ -2969,19 +3006,19 @@ input::-webkit-input-placeholder {
 
 @media (max-width: 855px) {
 	.line{
-	margin-left: 43px !important;
+	margin-left: 4px !important;
 	}
 }
 
 @media (max-width: 555px) {
 	.line{
-	margin-left: 27px !important;
+	margin-left: 4px !important;
 	}
 	.owl-wrapper-outer{
 		width: 93% !important;
 	}
 	#work{
-		margin-left: 38px !important;
+		margin-left: 4px !important;
 	}
 	.footer_top_compani{
 		width: 33% !important;
@@ -3004,10 +3041,10 @@ input::-webkit-input-placeholder {
 		margin-right: 5px !important;
 	}
 	.line{
-		margin-left: 45px !important;
+		margin-left: 4px !important;
 	}
 	#work{
-		margin-left: 47px !important;
+		margin-left: 4px !important;
 	}
 	.footer_top_katalog{
 		width: 60% !important;
@@ -3114,10 +3151,10 @@ input::-webkit-input-placeholder {
 
 @media (max-width: 855px) {
 	.footer_top_work{
-	width: 30%;
+	width: 35%;
 	}
 	.footer_med{
-		margin-left: 20% !important;
+		margin-left: 5% !important;
 	}
 }
 
@@ -3126,7 +3163,14 @@ input::-webkit-input-placeholder {
 	width: 45%;
 	}
 	.footer_med{
-		margin-left: 14% !important;
+		margin-left: 5% !important;
+	}
+	.footer_med_seil{
+		width: 100% !important;
+	}
+	.footer_med_four img{
+		margin-right: 4% !important;
+		margin-left: 0% !important;
 	}
 }
 
@@ -3708,7 +3752,7 @@ input::-webkit-input-placeholder {
 }
 
 #about_compani{
-	margin-left: 35px !important;
+	margin-left: 3px !important;
 }
 .text_top_cart{
 	margin:10px 0 0 0;
@@ -3875,7 +3919,7 @@ input::-webkit-input-placeholder {
 }
 
 #about_compani{
-	margin-left: 30px !important;
+	margin-left: 4px !important;
 }
 
 #login{
@@ -4200,8 +4244,13 @@ input::-webkit-input-placeholder {
 	height: 1450px !important;
 	background: rgb(28,30,42);
 }
+
+.footer_med_get{
+	width: 100% !important;
+}
+
 #work{
-	margin-left: 35px !important;
+	margin-left: 4px !important;
 }
 .header_tel p {
 	margin-left: 25px;
@@ -4229,7 +4278,8 @@ input::-webkit-input-placeholder {
 }
 
 .sl_img_new{
-	width: 320px !important;
+	width: 280px !important;
+	//width: 90% !important;
 	height: auto !important;
 }
 
@@ -4258,11 +4308,11 @@ input::-webkit-input-placeholder {
 }
 
 #footer_catalog{
-	margin-left: 38px !important;
+	margin-left: 4px !important;
 }
 
 #about_compani{
-	margin-left: 38px !important;
+	margin-left: 4px !important;
 }
 
 }
@@ -6665,7 +6715,7 @@ a.idTop:hover {
 }
 
 .baner_all{
-	padding-top: 0px;
+	padding-top: 20px;
 	margin-left: 0px !important;
 }
 
