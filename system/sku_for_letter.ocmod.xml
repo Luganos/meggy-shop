@@ -43,7 +43,7 @@
       </add>
    </operation>
   </file>
-  <file path="catalog/view/theme/meggy/template/mail/order.tpl">
+  <file path="catalog/view/theme/*/template/mail/order.tpl">
     <operation>
       <search>
         <![CDATA[<td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $product['model']; ?></td>]]>
@@ -218,6 +218,89 @@
       </add>
    </operation> 
   </file>
+  <file path="catalog/view/theme/*/template/account/order_info.tpl">
+    <operation>
+      <search>
+        <![CDATA[<td class="text-left"><?php echo $column_model; ?></td>]]>
+      </search>
+      <add position="after">
+        <![CDATA[<td class="text-left"><?php echo $column_sku; ?></td>]]>
+      </add>
+   </operation> 
+   <operation>
+      <search>
+        <![CDATA[ <td class="text-left"><?php echo $product['model']; ?></td>]]>
+      </search>
+      <add position="after">
+        <![CDATA[ <td class="text-left"><?php echo $product['sku']; ?></td>]]>
+      </add>
+   </operation> 
+  </file>
+  <file path="catalog/language/russian/account/order.php">
+      <operation>
+      <search>
+        <![CDATA[$_['column_model']          = 'Модель';]]>
+      </search>
+      <add position="after">
+        <![CDATA[$_['column_sku']          = 'SKU';]]>
+      </add>
+   </operation> 
+    </file>
+    <file path="catalog/controller/account/order.php">
+      <operation>
+      <search>
+        <![CDATA[$data['column_model'] = $this->language->get('column_model');]]>
+      </search>
+      <add position="after">
+        <![CDATA[$data['column_sku'] = $this->language->get('column_sku');]]>
+      </add>
+   </operation> 
+   <operation>
+      <search regex ="true" quote = "true">
+                      <![CDATA[~$data['products'][] = array(
+					'name'     => $product['name'],
+					'model'    => $product['model'],
+					'option'   => $option_data,
+					'quantity' => $product['quantity'],
+					'price'    => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
+					'total'    => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
+					'reorder'  => $reorder,
+					'return'   => $this->url->link('account/return/add', 'order_id=' . $order_info['order_id'] . '&product_id=' . $product['product_id'], 'SSL')
+				);~]]>
+      </search>
+      <add position="replace">
+                       <![CDATA[$data['products'][] = array(
+					'name'     => $product['name'],
+					'model'    => $product['model'],
+                                        'sku'      => $product['sku'],
+					'option'   => $option_data,
+					'quantity' => $product['quantity'],
+					'price'    => $this->currency->format($product['price'] + ($this->config->get('config_tax') ? $product['tax'] : 0), $order_info['currency_code'], $order_info['currency_value']),
+					'total'    => $this->currency->format($product['total'] + ($this->config->get('config_tax') ? ($product['tax'] * $product['quantity']) : 0), $order_info['currency_code'], $order_info['currency_value']),
+					'reorder'  => $reorder,
+					'return'   => $this->url->link('account/return/add', 'order_id=' . $order_info['order_id'] . '&product_id=' . $product['product_id'], 'SSL')
+				);]]>
+      </add>
+   </operation> 
+    </file>
+    <file path="catalog/model/account/order.php">
+    <operation>
+      <search regex ="true" quote = "true">
+<![CDATA[~public function getOrderProducts($order_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_product WHERE order_id = '" . (int)$order_id . "'");
+
+		return $query->rows;
+	}~]]>
+      </search>
+      <add position="replace">
+        <![CDATA[public function getOrderProducts($order_id) {
+		  $query = $this->db->query("SELECT op.*,p.sku FROM " . DB_PREFIX . "order_product op LEFT JOIN ".DB_PREFIX."product p ON (op.product_id = p.product_id) WHERE order_id = '" . (int)$order_id . "'");
+
+		  return $query->rows;
+	  }]]>
+      </add>
+   </operation>      
+  </file> 
   </modification>
   
   
