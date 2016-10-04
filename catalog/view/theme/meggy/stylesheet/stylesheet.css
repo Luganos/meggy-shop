@@ -2734,8 +2734,8 @@ position: relative;
 .sl_price_center{
 	display: inline;
 	text-align: center;
-	color: rgb(180, 180, 180);
-	font-size: 0.875em;
+	color: rgb(246, 163, 163);
+	font-size: 1.25em;
 	//text-decoration: line-through;
 }
 
@@ -4714,13 +4714,14 @@ div.required .control-label:before {
 	margin: 0 0 10px 0;
 }
 /* search */
+@media screen and (min-width: 1184px) {
 #search {
 	width: 230px;
 	position: relative;
 	right: 147px !important;
 	bottom: 64px;
 	margin-bottom: 10px;
-	z-index: 12;
+	//z-index: 12;
 }
 #search .input-lg {
 	height: 40px;
@@ -4741,6 +4742,22 @@ div.required .control-label:before {
 	left: 161px !important;
 
 }
+}
+@media screen and (max-width: 1184px) {
+#search {
+	margin-bottom: 10px;
+}
+#search .input-lg {
+	height: 40px;
+	line-height: 20px;
+	padding: 0 10px;
+}
+#search .btn-lg {
+	font-size: 15px;
+	line-height: 18px;
+	padding: 10px 35px;
+	text-shadow: 0 1px 0 #FFF;
+}
 
 #tr{
 	padding-left:0px;
@@ -4748,7 +4765,7 @@ div.required .control-label:before {
 	width: 142px;
 
 }
-
+}
 @media screen and (max-width: 855px) {
 	#tr{
 	width: 152px;
@@ -5644,7 +5661,7 @@ a.idTop:hover {
 	width:220px;
 	height: 40px;
 	background: rgb(243,129,129);
-	//border: 1px solid blue;
+	border: 1px solid blue;
 }
 
 .button-cart-border{
@@ -7248,7 +7265,7 @@ a.idTop:hover {
 .close_table_size{
 	cursor: pointer;
 	float: right;
-	padding-right: 62px;
+	padding-right: 76px;
 }
 
 .open_big_img{
@@ -7256,8 +7273,8 @@ a.idTop:hover {
 	z-index: 999;
 	top: 50%; /* Отступ в процентах от верхнего края окна */
 	left: 50%; /* Отступ в процентах от левого края окна */
-	width: 600px; /* Ширина блока */
-	height: 600px; /* Высота блока */
+	width: 700px; /* Ширина блока */
+	height: 700px; /* Высота блока */
 	position: absolute; /* Абсолютное позиционирование блока */
 	margin-top: -300px; /* Отрицательный отступ от верхнего края страницы, должен равняться половине высоты блока со знаком минус */
 	margin-left: -300px; /* Отрицательный отступ от левого края страницы, должен равняться половине высоты блока со знаком минус */
@@ -7268,7 +7285,7 @@ a.idTop:hover {
 }
 
 .open_big_img:hover{
-	zoom:1.2;
+	//zoom:1.2;
 }
 
 
