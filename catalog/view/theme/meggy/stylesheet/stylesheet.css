@@ -7599,10 +7599,10 @@ input[type="checkbox"]{
 		width:400px;
 	}
 	.category_big_text{
-		width: 520px;
+		width: 100%;
 	}
 		.container_category{
-		width: 836px;
+		width: 100%;
 	}
 
 	.box-heading{
@@ -7614,7 +7614,7 @@ input[type="checkbox"]{
 	width: 100% !important;
 }
 	.row_filter{
-		width: 480px;
+		width: 100%;
 	}
 
 	.row_category{
@@ -8063,7 +8063,7 @@ input[type="checkbox"]{
 		width: 320px;
 	}
 	.row_category{
-		width: 340px;
+		width: 100%;
 	}
 	.pickup{
 		width: 150px !important;
@@ -8630,5 +8630,4 @@ legend{
 .in_link_text_login{
 	display: block;
 }
-
 
