@@ -5661,7 +5661,8 @@ a.idTop:hover {
 	width:220px;
 	height: 40px;
 	background: rgb(243,129,129);
-	border: 1px solid blue;
+	//border: 1px solid blue;
+	border-style:none !important;
 }
 
 .button-cart-border{

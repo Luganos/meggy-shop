@@ -51,9 +51,13 @@
 </head>
 <?php $url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
 <body class="<?php echo $class; ?>">
-<div><a href="<?php echo $url; ?>"></a></div>
+<!--<div><a href="<?php echo $url; ?>"></a></div>
 <div>
   <a href="<?php echo $url; ?>" class="idTop"><img src='catalog/view/theme/meggy/image/button_up.png'/></a>
+</div>-->
+<div><a href="#"></a></div>
+<div>
+  <a class="idTop"><img src='catalog/view/theme/meggy/image/button_up.png'/></a>
 </div>
   <header class="header">
       <div class="container col-xs-12 container_header">
