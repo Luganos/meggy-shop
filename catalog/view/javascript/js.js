@@ -5,6 +5,7 @@ console.log("OK2");
     //$('.table_size').on("click", function(){console.log("Hello")});
     $('.table_size').on("click", function(){$(".open_table_size").css({"visibility": "visible"});});
     $('.close_table_size').on("click", function(){$(".open_table_size").css({"visibility": "hidden"});});
+    $('.open_big_img').on("click", function(){$(".open_table_size").css({"visibility": "hidden"});});
 /*--END_product_window_up-----*/
 
 //$('.img-thumbnail').on("click", function(){$(".img-thumbnail").css({"border": "1px solid rgb(245,154,154)"});});
@@ -588,7 +589,7 @@ $('.tovar_img_img').on("click", function(){
 console.log(big_img);
 });
 $('.close_table_size').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
-
+$('.open_big_img').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
 
 /*-----maska_fo_tel------*/
 jQuery(function($){
@@ -778,3 +779,4 @@ console.log(json);
 var parse = JSON.parse(json);
 console.log(typeof(pasre));
 console.log(parse);*/
+

@@ -105,14 +105,14 @@
                 <ul class="header_men_in">
                   <!--search begin-->
                   <li id="search" class="in_item dropdown hidden-lg">
-                   <div class="btn-group">
+                   <div id="zx" class="btn-group">
                       <button id="button_catalog" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><img src="catalog/view/theme/meggy/image/menu_smoll.png" alt=""></button>
                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdown">
-                         <li class="dropdown-submenu">
+                         <li class="dropdown-submenu pop">
                           <a tabindex="-1" href="#">Каталог
                           </a>
                           <?php if ($categories) { ?>
-                           <ul class="dropdown-menu">
+                           <ul class="dropdown-menu ert">
                            <?php foreach ($categories as $category) { ?>
                            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
                            <?php } ?>
@@ -192,7 +192,12 @@
         </div>
         </div>
       </div>
+      <div class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
+      <div id="column-left" class="col-sx-12"></div>
+      <div id="cart_hr_top" style="display: block;"></div>
+
     </header>
  <script type =text/javascript>
+   $('.ert').css({"display":"block"});
  </script>
 
