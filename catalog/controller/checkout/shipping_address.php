@@ -62,39 +62,24 @@ class ControllerCheckoutShippingAddress extends Controller {
 				break;
 			}
 		}
+                
+                if ((utf8_strlen(trim($this->request->post['street'])) < 1) || (utf8_strlen(trim($this->request->post['street'])) > 50)) {
+		    $json['error']['street'] = $this->language->get('error_street');
+		}
+
+		if ((utf8_strlen(trim($this->request->post['house'])) < 1) || (utf8_strlen(trim($this->request->post['house'])) > 5) || !is_numeric($this->request->post['house'])) {
+		     $json['error']['house'] = $this->language->get('error_house');
+		}
+
+		if ((utf8_strlen(trim($this->request->post['flat'])) < 1) || (utf8_strlen(trim($this->request->post['flat'])) > 5) || !is_numeric($this->request->post['flat'])) {
+		    $json['error']['flat'] = $this->language->get('error_flat');
+		}
 
 		if (!$json) {
-			if (isset($this->request->post['shipping_address']) && $this->request->post['shipping_address'] == 'existing') {
-				$this->load->model('account/address');
+		
+			      unset($this->session->data['shipping_method']);
+			      unset($this->session->data['shipping_methods']);
 
-                                //Get shipping address id
-			        if (isset($this->session->data['shipping_address']['address_id'])) {
-			              $post['address_id'] = $this->session->data['shipping_address']['address_id'];
-		                } else {
-			            $post['address_id'] = $this->customer->getAddressId();
-		                }
-
-				if (!$json) {
-					// Default Shipping Address
-					$this->load->model('account/address');
-
-					$this->session->data['shipping_address'] = $this->model_account_address->getAddress($post['address_id']);
-
-					unset($this->session->data['shipping_method']);
-					unset($this->session->data['shipping_methods']);
-				}
-			} else {
-				if ((utf8_strlen(trim($this->request->post['street'])) < 1) || (utf8_strlen(trim($this->request->post['street'])) > 50)) {
-					$json['error']['street'] = $this->language->get('error_street');
-				}
-
-				if ((utf8_strlen(trim($this->request->post['house'])) < 1) || (utf8_strlen(trim($this->request->post['house'])) > 5) || !is_numeric($this->request->post['house'])) {
-					$json['error']['house'] = $this->language->get('error_house');
-				}
-
-				if ((utf8_strlen(trim($this->request->post['flat'])) < 1) || (utf8_strlen(trim($this->request->post['flat'])) > 5) || !is_numeric($this->request->post['flat'])) {
-					$json['error']['flat'] = $this->language->get('error_flat');
-				}
                                 
                                 if ($this->customer->isLogged()) {
                                 
@@ -104,6 +89,36 @@ class ControllerCheckoutShippingAddress extends Controller {
 		                          $this->load->model('account/address');
                     
                                           $path = $this->model_account_address->getAddress($address_id);
+                                          
+                                          $control_path = explode(" ", strval($path['address_1'])); 
+                                          
+                                          if(empty($control_path[0]) && empty($this->request->post['street'])) {
+                                              
+                                              $json['error']['street'] = $this->language->get('error_street');
+                                          } else if (!empty($this->request->post['street'])){
+                                              
+                                              $street = $this->validateDataFromForm(trim($this->request->post['street']));
+                                          }
+                                          
+                                                                               
+                                          if(empty($control_path[1]) && empty($this->request->post['house'])) {
+                                              
+                                              $json['error']['house'] = $this->language->get('error_house');
+                                          } else if (!empty($this->request->post['house'])){
+                                              
+                                              $house = $this->validateDataFromForm(trim($this->request->post['house']));
+                                          }
+                                          
+                                                                               
+                                          if(empty($control_path[2]) && empty($this->request->post['flat'])) {
+                                              
+                                              $json['error']['flat'] = $this->language->get('error_flat');
+                                          } else if (!empty($this->request->post['flat'])){
+                                              
+                                             $flat = $this->validateDataFromForm(trim($this->request->post['flat']));
+                                          }
+                                          
+                                          
                                 } else {
                                     
                                    //Get shipping address id
@@ -120,6 +135,12 @@ class ControllerCheckoutShippingAddress extends Controller {
 
 				    unset($this->session->data['shipping_method']);
 			            unset($this->session->data['shipping_methods']);
+                                    
+                                    $street = $this->validateDataFromForm(trim($this->request->post['street']));
+                                    
+                                    $house = $this->validateDataFromForm(trim($this->request->post['house']));
+                                    
+                                    $flat = $this->validateDataFromForm(trim($this->request->post['flat']));
                                     
                                     $path['firstname'] = $this->session->data['payment_address']['firstname'];
                                     $path['lastname'] = $this->session->data['payment_address']['firstname'];
@@ -163,7 +184,7 @@ class ControllerCheckoutShippingAddress extends Controller {
                                 
                                 $post['address_format'] = '';
                                 
-                                $post['address_1'] = $this->validateDataFromForm(trim($this->request->post['street'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['house'])) . ' ' . $this->validateDataFromForm(trim($this->request->post['flat']));
+                                $post['address_1'] = $street . ' ' . $house . ' ' . $flat;
                                 
                                 $post['address_2'] = (isset($this->request->post['department']))? $this->validateDataFromForm(trim($this->request->post['department'])) : '';
                                 
@@ -182,6 +203,9 @@ class ControllerCheckoutShippingAddress extends Controller {
                                           if (!empty($path)) {
                                               
                                               $customer_path = explode(" ", strval($path['address_1'])); 
+                                              $customer_path[0] = (empty($customer_path[0]))? ' ': $customer_path[0];
+                                              $customer_path[1] = (empty($customer_path[1]))? ' ': $customer_path[1];
+                                              $customer_path[2] = (empty($customer_path[2]))? ' ': $customer_path[2];
                                               
                                               if ((trim($this->request->post['street']) !== trim($customer_path[0])) || (trim($this->request->post['house']) !== trim($customer_path[1])) || (trim($this->request->post['flat']) !== trim($customer_path[2]))){
                                                   
@@ -219,7 +243,6 @@ class ControllerCheckoutShippingAddress extends Controller {
 
                                         $json['success'] = 1;
 				}
-			}
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
