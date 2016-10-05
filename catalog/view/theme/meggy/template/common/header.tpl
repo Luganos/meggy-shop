@@ -183,12 +183,12 @@
           <?php } ?>
           </div>
           </div>
-          <a href="#">
+
           <div class="search_bottom col-xs-12 hidden-lg hidden-md">
             <p>Поиск</p>
               <span class="glyphicon glyphicon-search"></span>
           </div>
-          </a>
+
         </div>
         </div>
       </div>
