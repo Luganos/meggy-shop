@@ -50,6 +50,7 @@
       <ul class="list-unstyled">
         <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
       </ul>
+      <div id="srcoll" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'></div>
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
