@@ -598,6 +598,11 @@ jQuery(function($){
 });
 /*-----END_maska_fo_tel------*/
 
+$(".checkout_button_text_coupon").on("click", function(){
+    $(".enter_for_user").css({"margin-top":"15px"});
+    console.log("jkljk");
+})
+
 /*
 var screen = window.navigator;
 //var screen2 = window.navigator[appVersion];

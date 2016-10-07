@@ -165,6 +165,7 @@
          </div>
         <?php } ?>
       </div>
+      <div id="srcoll" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'></div>
     </div>
 
       <?php echo $content_bottom; ?></div>
