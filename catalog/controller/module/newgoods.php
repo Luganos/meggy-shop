@@ -4,6 +4,9 @@ class ControllerModuleNewgoods extends Controller {
             
                 static $module = 0;
                 
+                $customer = $this->customer->getGroupName();
+                $customer = strtolower($customer);
+                
 		$this->load->language('module/newgoods');
                 $this->document->addScript('catalog/view/javascript/home_scroll.js');
 		
@@ -55,11 +58,13 @@ class ControllerModuleNewgoods extends Controller {
 			             }
 			
 			
-			              if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				         $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-			              } else {
-				          $price = false;
-			              }
+			             if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
+		                           $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                     } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
+                                          $price = $this->currency->format($this->tax->calculate($result['large_price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                     } else {
+		                         $price = false;
+			             }
 					
 			              if ((float)$result['special']) {
 				          $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
@@ -134,11 +139,13 @@ class ControllerModuleNewgoods extends Controller {
 			             }
 			
 			
-			              if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				         $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-			              } else {
-				          $price = false;
-			              }
+			             if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
+		                          $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                     } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
+                                          $price = $this->currency->format($this->tax->calculate($result['large_price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                     } else {
+		                         $price = false;
+			             }
 					
 			              if ((float)$result['special']) {
 				          $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
@@ -208,10 +215,12 @@ class ControllerModuleNewgoods extends Controller {
 			}
 			
 			
-			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-			} else {
-				$price = false;
+			if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
+		            $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                        } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
+                            $price = $this->currency->format($this->tax->calculate($result['large_price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                        } else {
+		            $price = false;
 			}
 					
 			if ((float)$result['special']) {
