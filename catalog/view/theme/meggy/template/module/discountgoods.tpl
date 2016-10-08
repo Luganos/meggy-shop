@@ -59,14 +59,9 @@
                      <?php } ?>
                      </p>
                </span>
-               <?php if ($product['price']) { ?>
+               <?php if ($product['special']) { ?>
                <span class="sl_text">
-                   <?php if (!$product['special']) { ?>
-                   <p class="sl_price_center"><?php echo $product['price']; ?></p>
-                   <?php } else { ?>
-                   <p class="sl_price_left"><?php echo $product['price']; ?></p>
                    <p class="sl_price_right"><?php echo $product['special']; ?></p>
-                   <?php } ?>
                </span>
                <p class="sl_price_bottom">
                <?php } ?>

@@ -41,9 +41,9 @@ class ControllerModuleNewgoods extends Controller {
                             
                            foreach ($query->rows as $result) { 
                                
-			    $product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
-                            
-		           }
+			          $product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
+ 
+                           }
 					 	 		
 		            $results = $product_data;
 		
@@ -57,14 +57,26 @@ class ControllerModuleNewgoods extends Controller {
 				         $image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 			             }
 			
+                                     $discounts = $this->model_catalog_product->getProductDiscountsCustomer($result['product_id']);
+		                     $discount_customer = 0.0;
+                        
+                                      foreach ($discounts as $discount) {
+                                       
+                                             if (intval($discount['quantity']) == 1) {
+                                           
+                                                 $discount_customer = $discount['price'];
+                                             } 
+                               
+			               }
 			
-			             if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
-		                           $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-                                     } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
-                                          $price = $this->currency->format($this->tax->calculate($result['large_price'], $result['tax_class_id'], $this->config->get('config_tax')));
-                                     } else {
-		                         $price = false;
-			             }
+			
+			               if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
+		                          $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                       } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
+                                          $price = $this->currency->format($this->tax->calculate($discount_customer, $result['tax_class_id'], $this->config->get('config_tax')));
+                                       } else {
+		                          $price = false;
+			               }
 					
 			              if ((float)$result['special']) {
 				          $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
@@ -139,12 +151,25 @@ class ControllerModuleNewgoods extends Controller {
 			             }
 			
 			
+			             $discounts = $this->model_catalog_product->getProductDiscountsCustomer($result['product_id']);
+		                     $discount_customer = 0.0;
+                        
+                                     foreach ($discounts as $discount) {
+                                       
+                                            if (intval($discount['quantity']) == 1) {
+                                           
+                                                $discount_customer = $discount['price'];
+                                            } 
+                               
+			             }
+			
+			
 			             if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
-		                          $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+		                        $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
                                      } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
-                                          $price = $this->currency->format($this->tax->calculate($result['large_price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                         $price = $this->currency->format($this->tax->calculate($discount_customer, $result['tax_class_id'], $this->config->get('config_tax')));
                                      } else {
-		                         $price = false;
+		                        $price = false;
 			             }
 					
 			              if ((float)$result['special']) {
@@ -199,8 +224,8 @@ class ControllerModuleNewgoods extends Controller {
 		
 		
 		foreach ($query->rows as $result) { 		
-			$product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
-		}
+			$product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);       
+                }
 					 	 		
 		$results = $product_data;
 		
@@ -213,12 +238,24 @@ class ControllerModuleNewgoods extends Controller {
 			} else {
 				$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 			}
+                        
+                        $discounts = $this->model_catalog_product->getProductDiscountsCustomer($result['product_id']);
+		        $discount_customer = 0.0;
+                        
+                        foreach ($discounts as $discount) {
+                                       
+                                if (intval($discount['quantity']) == 1) {
+                                           
+                                    $discount_customer = $discount['price'];
+                                } 
+                               
+			}
 			
 			
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged() && $customer !== strtolower("Опт")) || (!$this->config->get('config_customer_price') && $customer !== strtolower("Опт"))) {
 		            $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
                         } else if ($this->customer->isLogged() && $customer == strtolower("Опт")) {
-                            $price = $this->currency->format($this->tax->calculate($result['large_price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                            $price = $this->currency->format($this->tax->calculate($discount_customer, $result['tax_class_id'], $this->config->get('config_tax')));
                         } else {
 		            $price = false;
 			}
