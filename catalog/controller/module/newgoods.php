@@ -156,7 +156,7 @@ class ControllerModuleNewgoods extends Controller {
                         
                                      foreach ($discounts as $discount) {
                                        
-                                            if (intval($discount['quantity']) == 1) {
+                                            if (intval($discount['quantity']) == 5) {
                                            
                                                 $discount_customer = $discount['price'];
                                             } 
