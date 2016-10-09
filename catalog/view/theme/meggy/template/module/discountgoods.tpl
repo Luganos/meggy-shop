@@ -59,9 +59,9 @@
                      <?php } ?>
                      </p>
                </span>
-               <?php if ($product['special']) { ?>
+               <?php if ($product['discount']) { ?>
                <span class="sl_text">
-                   <p class="sl_price_right"><?php echo $product['special']; ?></p>
+                   <p class="sl_price_right"><?php echo $product['discount']; ?></p>
                </span>
                <p class="sl_price_bottom">
                <?php } ?>
