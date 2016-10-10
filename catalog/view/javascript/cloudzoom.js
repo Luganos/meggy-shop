@@ -4,7 +4,7 @@
     Please purchase an appropriate license to use this software.
     License Agreement: www.starplugins.com/license
     Copyright (c)2012-2015 Star Plugins - www.starplugins.com
-    
+
     Downloaded on Mar 18, 2015 by account #1
     License Key: 35148aa836e5ea8097a60ef1a0916abxx
     Licensed website(s): starplugins

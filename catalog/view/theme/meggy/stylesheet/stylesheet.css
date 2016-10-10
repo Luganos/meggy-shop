@@ -882,7 +882,7 @@ input::-webkit-input-placeholder {
 }
 
 .footer_top{
-	width: 90% !important;/*--------------------------------------------*/
+	width: 85% !important;/*--------------------------------------------*/
 	height: 480px;
 	margin-left: 15% !important;
 	border-bottom: 1px solid rgb(40, 43, 58);
@@ -6393,7 +6393,7 @@ a.idTop:hover {
 		width: 80% !important;
 	}
 	.thumbnails_product{
-		height:430px;
+		height:475px;
 	}
 	#product{
 		width: 80% !important;
@@ -8090,7 +8090,7 @@ input[type="checkbox"]{
 }
 
 .NP_input_w{
-	width: 14%;
+	width: 22%;
 }
 
 .checkout_button_text_coupon_right{
@@ -8797,7 +8797,7 @@ legend{
 
 @media screen and (max-width: 400px) {
 	.search_768 {
-	top: 149px !important;
+	top: 130px !important;
 	left: 90px !important;
 	margin-bottom: 10px;
 	z-index: 99;
