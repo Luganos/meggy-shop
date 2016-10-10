@@ -35,6 +35,9 @@
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/cloudzoom.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/cloudzoom.css" rel="stylesheet">
+<script type="text/javascript">CloudZoom.quickStart();</script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.vaccordion.js"></script>

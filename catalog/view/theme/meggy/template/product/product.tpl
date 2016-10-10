@@ -53,7 +53,7 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><img class="tovar_img_img" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+          <li class="tovar_img"><img class="tovar_img_img cloudzoom" src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
           <a class="addthis_button_compact"></a><p>Поделится в соц. сетях</p>
