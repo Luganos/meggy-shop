@@ -59,14 +59,9 @@
                      <?php } ?>
                      </p>
                </span>
-               <?php if ($product['price']) { ?>
+               <?php if ($product['discount']) { ?>
                <span class="sl_text">
-                   <?php if (!$product['special']) { ?>
-                   <p class="sl_price_center"><?php echo $product['price']; ?></p>
-                   <?php } else { ?>
-                   <p class="sl_price_left"><?php echo $product['price']; ?></p>
-                   <p class="sl_price_right"><?php echo $product['special']; ?></p>
-                   <?php } ?>
+                   <p class="sl_price_right"><?php echo $product['discount']; ?></p>
                </span>
                <p class="sl_price_bottom">
                <?php } ?>
@@ -74,7 +69,7 @@
                <?php $out = FALSE; ?>
 		     <?php foreach ($product['size'] as $options) { ?>
 			  <?php foreach ($options as $option) { ?>
-				<?php if ($option['name'] == strtolower("Размер") && $option['type'] == "image") { ?>
+				<?php if (strtolower($option['name']) == strtolower("Размер") && $option['type'] == "image") { ?>
 				      <?php foreach ($option as $sizes) { ?>
 					    <?php if (is_array($sizes)) { ?>
 					         <?php foreach ($sizes as $size) { ?>

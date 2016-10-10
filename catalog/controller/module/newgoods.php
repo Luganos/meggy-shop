@@ -4,6 +4,9 @@ class ControllerModuleNewgoods extends Controller {
             
                 static $module = 0;
                 
+                $customer = $this->customer->getGroupName();
+                $customer = strtolower($customer);
+                
 		$this->load->language('module/newgoods');
                 $this->document->addScript('catalog/view/javascript/home_scroll.js');
 		
@@ -34,13 +37,13 @@ class ControllerModuleNewgoods extends Controller {
 			if (isset($actions) && $actions == 1) {
 				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON A.product_id =  B.product_id  WHERE status = 1 AND quantity >= 1 AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
+                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_special B ON (A.product_id =  B.product_id)  WHERE status = 1 AND quantity >= 1 AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' ORDER BY date_added ASC LIMIT " . (int)$setting['limit']); 
                             
                            foreach ($query->rows as $result) { 
                                
-			    $product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
-                            
-		           }
+			          $product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
+ 
+                           }
 					 	 		
 		            $results = $product_data;
 		
@@ -54,12 +57,12 @@ class ControllerModuleNewgoods extends Controller {
 				         $image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 			             }
 			
-			
-			              if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				         $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-			              } else {
-				          $price = false;
-			              }
+   		
+			               if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || (!$this->config->get('config_customer_price'))) {
+		                          $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                       } else {
+		                          $price = false;
+			               }
 					
 			              if ((float)$result['special']) {
 				          $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
@@ -111,15 +114,15 @@ class ControllerModuleNewgoods extends Controller {
                 //For discount goods
                 if (($this->request->server['REQUEST_METHOD'] == 'GET') && $this->validate($discounts)) {
 			if (isset($discounts) && $discounts == 1) {
-				
                             
-                           $query = $this->db->query("SELECT A.product_id FROM " . DB_PREFIX . "product A INNER JOIN " . DB_PREFIX . "product_discount B ON A.product_id =  B.product_id  WHERE status = 1  AND ((B.date_start = '0000-00-00' OR B.date_start < NOW()) AND (B.date_end = '0000-00-00' OR B.date_end > NOW())) ORDER BY date_added ASC LIMIT " . (int)$setting['limit']);
-                            
+                           $query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product_discount WHERE quantity = 1 AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' LIMIT " . (int)$setting['limit']);
+                           
                            foreach ($query->rows as $result) { 
                                
-			    $product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
+                            $product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
+		           
                             
-		           }
+                           }
 					 	 		
 		            $results = $product_data;
 		
@@ -133,12 +136,22 @@ class ControllerModuleNewgoods extends Controller {
 				         $image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 			             }
 			
-			
-			              if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				         $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-			              } else {
-				          $price = false;
-			              }
+		
+			             $discounts = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$result['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND quantity = 1 AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity ASC, priority ASC, price ASC");
+		                     $discount_customer = NULL;
+                                     
+                                     if (!empty($discounts->row['price'])) {
+                                         
+                                       $discount_customer = $discounts->row['price'];  
+                                     }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+			             if (!empty($discount_customer)) {
+		                        $discount = $this->currency->format($this->tax->calculate($discount_customer, $result['tax_class_id'], $this->config->get('config_tax')));
+                                     } else if (empty($discount_customer) && !empty($result['price'])) {
+                                         $discount = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                                     } else {
+		                        $discount = false;
+			             }
 					
 			              if ((float)$result['special']) {
 				          $special = $this->currency->format($this->tax->calculate($result['special'], $result['tax_class_id'], $this->config->get('config_tax')));
@@ -164,7 +177,7 @@ class ControllerModuleNewgoods extends Controller {
 				          'thumb'   	   => $image,
 				          'name'         => $result['name'],
 				          'description'  => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
-				          'price'   	   => $price,
+				          'discount'   	   => $discount,
 				          'special' 	   => $special,
 				          'tax'          => $tax,
 				          'rating'       => $rating,
@@ -192,8 +205,8 @@ class ControllerModuleNewgoods extends Controller {
 		
 		
 		foreach ($query->rows as $result) { 		
-			$product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);
-		}
+			$product_data[$result['product_id']] = $this->model_catalog_product->getProduct($result['product_id']);       
+                }
 					 	 		
 		$results = $product_data;
 		
@@ -206,12 +219,12 @@ class ControllerModuleNewgoods extends Controller {
 			} else {
 				$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
 			}
-			
-			
-			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
-			} else {
-				$price = false;
+                        
+						
+			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || (!$this->config->get('config_customer_price'))) {
+		            $price = $this->currency->format($this->tax->calculate($result['price'], $result['tax_class_id'], $this->config->get('config_tax')));
+                        } else {
+		            $price = false;
 			}
 					
 			if ((float)$result['special']) {

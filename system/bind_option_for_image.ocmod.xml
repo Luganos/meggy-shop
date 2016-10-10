@@ -422,6 +422,18 @@
     </operation>
   </file> 
   <file path="catalog/model/catalog/product.php"> 
+    <operation>
+      <search>
+ <![CDATA[public function getProductDiscounts($product_id) {]]>
+      </search>
+      <add position="before">
+  <![CDATA[public function getProductDiscountsCustomer($product_id) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$product_id . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND quantity >= 1 AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity ASC, priority ASC, price ASC");
+
+		return $query->rows;
+	   }]]>
+      </add>
+    </operation>
    <operation>
       <search regex ="true" quote = "true">
                       <![CDATA[~$product_option_value_data[] = array(
@@ -514,7 +526,7 @@
                                                 } else {
                                                     $bind_option = NULL;
                                                 }
-                                                
+                                               
 
 						$product_option_value_data[] = array(
 							'product_option_value_id' => $option_value['product_option_value_id'],
@@ -541,6 +553,81 @@
 			}]]>
       </add>
     </operation> 
-  </file>        
-</modification>
+  </file> 
+  <file path="system/library/customer.php">
+    <operation>
+      <search>
+        <![CDATA[private $customer_group_id;]]>
+      </search>
+      <add position="after">
+        <![CDATA[private $customer_group_name;]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+        <![CDATA[$this->customer_group_id = '';]]>
+      </search>
+      <add position="after">
+        <![CDATA[$this->customer_group_name = '';]]>
+      </add>
+    </operation>
+     <operation>
+      <search>
+        <![CDATA[$this->customer_group_id = $customer_query->row['customer_group_id'];]]>
+      </search>
+      <add position="after">
+        <![CDATA[
+          $customer_name = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_group_description WHERE customer_group_id = '" . (int)$this->customer_group_id . "'");
+          $this->customer_group_name = $customer_name->row['name'];
+        ]]>
+      </add>
+    </operation>
+    <operation>
+      <search>
+<![CDATA[public function getGroupId() {]]>
+      </search>
+      <add position="before">
+<![CDATA[ 
+	        public function getGroupName() {
+		    return $this->customer_group_name;
+	        }
+        ]]>
+      </add>
+    </operation>
+     </file>  
+      <file path="system/library/cart.php"> 
+     <operation>
+      <search>
+        <![CDATA[$cart_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "cart WHERE customer_id = '" . (int)$this->customer->getId() . "' AND session_id = '" . $this->db->escape($this->session->getId()) . "'");]]>
+      </search>
+      <add position="after">
+        <![CDATA[
+                $cart_product = 0;
+                
+	        foreach ($cart_query->rows as $amount) {
+                     $cart_product += $amount['quantity'];
+                }
+        ]]>
+      </add>
+    </operation> 
+    <operation>
+      <search>
+        <![CDATA[$product_discount_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND quantity <= '" . (int)$discount_quantity . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity DESC, priority ASC, price ASC LIMIT 1");]]>
+      </search>
+      <add position="replace">
+        <![CDATA[
+                                $group = $this->customer->getGroupName();
+                                
+                                if ((strtolower($group) !== strtolower("Опт")) && ($cart_product >= 5)) {
+                                    
+                                    	$product_discount_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND quantity <= '" . (int)$cart_product . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity DESC, priority ASC, price ASC LIMIT 1");
+                                } else {
+                                    
+                                    	$product_discount_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$cart['product_id'] . "' AND customer_group_id = '" . (int)$this->config->get('config_customer_group_id') . "' AND quantity <= '" . (int)$discount_quantity . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity DESC, priority ASC, price ASC LIMIT 1");
+                                }
 
+        ]]>
+      </add>
+    </operation> 
+      </file>         
+</modification>
