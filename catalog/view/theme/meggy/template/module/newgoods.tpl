@@ -1,6 +1,5 @@
 <?php $a = 3?>
    <?php $size = count($products); ?>
-   <?php if ($size > 0) { ?>
    <div class="main_bottom_text">
       <div class="menu_main hidden-xs">
           <ul class="ww">
@@ -40,6 +39,7 @@
              </li>
         </ul>
      </div>
+	 <?php if ($size > 0) { ?>
       <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'>
           <?php $n = 1; ?>
           <?php foreach ($products as $product)  { ?>

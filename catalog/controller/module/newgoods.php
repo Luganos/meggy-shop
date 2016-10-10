@@ -190,12 +190,14 @@ class ControllerModuleNewgoods extends Controller {
 		              }
                 
   
-			      if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/discountgoods.tpl')) {
+
+	                   }
+                           
+                              if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/discountgoods.tpl')) {
 				  return $this->load->view($this->config->get('config_template') . '/template/module/discountgoods.tpl', $data);
 			      } else {
 			         return $this->load->view('default/template/module/discountgoods.tpl', $data);
 		              }
-	                   }
 	              }
 
 		}
