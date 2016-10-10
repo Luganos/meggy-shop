@@ -147,7 +147,7 @@
                <?php $out = FALSE; ?>
 		     <?php foreach ($product['size'] as $options) { ?>
 			  <?php foreach ($options as $option) { ?>
-				<?php if ($option['name'] == strtolower("Размер") && $option['type'] == "image") { ?>
+				<?php if (strtolower($option['name']) == strtolower("Размер") && $option['type'] == "image") { ?>
 				      <?php foreach ($option as $sizes) { ?>
 					    <?php if (is_array($sizes)) { ?>
 					         <?php foreach ($sizes as $size) { ?>
