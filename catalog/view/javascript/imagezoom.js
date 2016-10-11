@@ -9,13 +9,13 @@
     zoomviewborder: '1px solid #222',
     focusborder: '1px solid #222',
     zoomviewposition: 'right',
-    zoomviewsize: [240,300],
+    zoomviewsize: [300,450],
     cursorcolor: '#ffffff',
     cursor: 'crosshair',
     zoomviewmargin: 10,
     magnification: 3.5,
     zindex: 2000000,
-    opacity: 0.5
+    opacity: 0.1
   };
   var imagezoomCursor,imagezoomView,settings,imageWidth,imageHeight,offset;
   var methods = {

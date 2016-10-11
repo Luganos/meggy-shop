@@ -589,7 +589,7 @@ $('#ttest-9').on('click',function(){
     $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
-
+/*
 $('.tovar_img_img').on("click", function(){
     var big_img = $('.tovar_img_img').attr("src");
 
@@ -599,7 +599,7 @@ console.log(big_img);
 });
 $('.close_table_size').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
 $('.open_big_img').on("click", function(){$(".open_big_img").css({"visibility": "hidden"});});
-
+*/
 /*-----maska_fo_tel------*/
 jQuery(function($){
    $("#phone").mask("+38(999) 999-9999");
