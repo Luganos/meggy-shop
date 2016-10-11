@@ -13,7 +13,7 @@
     cursorcolor: '#ffffff',
     cursor: 'crosshair',
     zoomviewmargin: 10,
-    magnification: 2.5,
+    magnification: 3.5,
     zindex: 2000000,
     opacity: 0.5
   };
