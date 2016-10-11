@@ -1,6 +1,6 @@
 console.log("OK2");
 
-jQuery('.cloud-zoom, .cloud-zoom-gallery').CloudZoom();
+
 /*---product_window_up-----*/
     //$('.table_size').on("click", function(){console.log("Hello")});
     $('.table_size').on("click", function(){$(".open_table_size").css({"visibility": "visible"});});
@@ -308,7 +308,6 @@ function scrollDown(){
 
 
 $(function() {
-
     //$('#button-cart').on("click", function(){location.reload()});
 
     $('#search_smoll').on("mouseover", function(){console.log("tr")});
@@ -529,55 +528,65 @@ $('.va-nav-prev').on('mouseout',function(){
 
 $('#ttest-1').on('click',function(){
     var img = $('#ttest-1').attr("src");
+    //var data_imagezoom =
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-2').on('click',function(){
     var img = $('#ttest-2').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-3').on('click',function(){
     var img = $('#ttest-3').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-4').on('click',function(){
     var img = $('#ttest-4').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-5').on('click',function(){
     var img = $('#ttest-5').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-6').on('click',function(){
     var img = $('#ttest-6').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-7').on('click',function(){
     var img = $('#ttest-7').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-8').on('click',function(){
     var img = $('#ttest-8').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 
 $('#ttest-9').on('click',function(){
     var img = $('#ttest-9').attr("src");
     $('.tovar_img_img').attr("src",img);
+    $('.tovar_img_img').attr("data-imagezoom",img);
     console.log(img);
 });
 

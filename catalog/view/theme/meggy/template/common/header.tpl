@@ -19,6 +19,7 @@
 <meta name="keywords" content= "<?php echo $keywords; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+
 <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.js"   integrity="sha256-xWbKoNW9eZkm1RodPMQHsVyql6jqeiD6IYvsGyKEW78="   crossorigin="anonymous"></script>
 <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
  <link href="http://allfont.ru/allfont.css?fonts=open-sans-condensed-bold" rel="stylesheet" type="text/css" />
@@ -35,9 +36,7 @@
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
-<script src="catalog/view/javascript/cloudzoom.js" type="text/javascript"></script>
-<link href="catalog/view/javascript/cloudzoom.css" rel="stylesheet">
-<script type="text/javascript">CloudZoom.quickStart();</script>
+<script src="catalog/view/javascript/imagezoom.js" type="text/javascript"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.mousewheel.js"></script>
 <script type="text/javascript" src="catalog/view/javascript/vertical_slider/js/jquery.vaccordion.js"></script>
