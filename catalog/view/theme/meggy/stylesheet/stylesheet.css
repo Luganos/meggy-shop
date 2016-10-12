@@ -3705,6 +3705,11 @@ input::-webkit-input-placeholder {
 	text-align: left;
 }
 
+.img-thumbnail{
+	max-width: 60px !important;
+	max-height: auto;
+}
+
 .text-center a img{
 	min-width: 120px !important;
 	min-height: auto;
@@ -7277,7 +7282,7 @@ a.idTop:hover {
 }
 
 #menu_main_text_slider_procuct span{
-	margin-left: 25% !important;
+	margin-left: 22% !important;
 
 	}
 
@@ -8811,5 +8816,16 @@ legend{
 .text-right_price{
 	width: 96px !important;
 	padding: 0px !important;
+}
+.cart_small_product{
+	margin-left: 40px;
+}
+.text-right_price{
+	margin-left: 35px;
+}
+.cart_small_bottom strong{
+	display: block;
+	margin-bottom: 20px;
+}
 }
 
