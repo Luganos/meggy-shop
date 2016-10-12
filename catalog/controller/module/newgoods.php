@@ -101,12 +101,14 @@ class ControllerModuleNewgoods extends Controller {
 		              }
                 
   
-			      if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/actiongoods.tpl')) {
+
+	                   }
+                              if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/actiongoods.tpl')) {
 				  return $this->load->view($this->config->get('config_template') . '/template/module/actiongoods.tpl', $data);
 			      } else {
 			         return $this->load->view('default/template/module/actiongoods.tpl', $data);
 		              }
-	                   }
+                           
 	              }
 
 		}
