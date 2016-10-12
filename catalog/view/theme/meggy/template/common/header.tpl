@@ -146,7 +146,7 @@
                         </a>
                         <ul class="dropdown-menu">
                           <a href="<?php echo $account; ?>" class="in_in">
-                          <li class="in_link_text in_link_text_login "><?php echo $text_logout; ?><?php echo $text_account; ?></li></a>
+                          <li class="in_link_text in_link_text_login "><?php echo $text_account; ?></li></a>
                           <a href="<?php echo $logout; ?>" class="in_in">
                           <li class="in_link_text"><?php echo $text_logout; ?></li></a>
                         </ul>
