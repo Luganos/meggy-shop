@@ -99,14 +99,14 @@
                       <span class="sl_kor_text" onclick="cart.add('<?php echo $product['product_id']; ?>');"><?php echo $button_cart; ?></span>
                </div>
             </div>
-        <?php $n++; ?>
-         </div>
+         <?php $n++; ?>
         <?php } ?>
+         </div>
          <!--End slider-->
-   </div>
 <script type =text/javascript>
 $(function() {
 scrollHomeDown();
 })
    </script>
    <?php } ?>
+   </div>

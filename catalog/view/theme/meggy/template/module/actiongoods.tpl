@@ -100,13 +100,13 @@
                </div>
             </div>
         <?php $n++; ?>
-         </div>
         <?php } ?>
+        </div>
          <!--End slider-->
-   </div>
 <script type =text/javascript>
 $(function() {
 scrollHomeDown();
 })
    </script>
    <?php } ?>
+   </div>
