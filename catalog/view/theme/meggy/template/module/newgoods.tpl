@@ -105,5 +105,5 @@
         <?php } ?>
         </div>
          <!--End slider-->
-   </div>
    <?php } ?>
+  </div>

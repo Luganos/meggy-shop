@@ -1,25 +1,29 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://meggi.geeker.pro/admin/');
-define('HTTP_CATALOG', 'http://meggi.geeker.pro/');
+$host = $_SERVER['HTTP_HOST'];
+define('HTTP_SERVER', 'http://'.$host.'/admin/');
+define('HTTP_CATALOG', 'http://'.$host.'/');
+define('HTTP_IMAGE', 'http://'.$host.'/image/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://meggi.geeker.pro/admin/');
-define('HTTPS_CATALOG', 'http://meggi.geeker.pro/');
+define('HTTPS_SERVER', 'http://'.$host.'/admin/');
+define('HTTPS_CATALOG', 'http://'.$host.'/');
+define('HTTPS_IMAGE', 'http://'.$host.'/image/');
 
 // DIR
-define('DIR_APPLICATION', '/var/www/meggi/data/www/meggi.geeker.pro/admin/');
-define('DIR_SYSTEM', '/var/www/meggi/data/www/meggi.geeker.pro/system/');
-define('DIR_LANGUAGE', '/var/www/meggi/data/www/meggi.geeker.pro/admin/language/');
-define('DIR_TEMPLATE', '/var/www/meggi/data/www/meggi.geeker.pro/admin/view/template/');
-define('DIR_CONFIG', '/var/www/meggi/data/www/meggi.geeker.pro/system/config/');
-define('DIR_IMAGE', '/var/www/meggi/data/www/meggi.geeker.pro/image/');
-define('DIR_CACHE', '/var/www/meggi/data/www/meggi.geeker.pro/system/storage/cache/');
-define('DIR_DOWNLOAD', '/var/www/meggi/data/www/meggi.geeker.pro/system/storage/download/');
-define('DIR_LOGS', '/var/www/meggi/data/www/meggi.geeker.pro/system/storage/logs/');
-define('DIR_MODIFICATION', '/var/www/meggi/data/www/meggi.geeker.pro/system/storage/modification/');
-define('DIR_UPLOAD', '/var/www/meggi/data/www/meggi.geeker.pro/system/storage/upload/');
-define('DIR_CATALOG', '/var/www/meggi/data/www/meggi.geeker.pro/catalog/');
+$dir = $_SERVER['DOCUMENT_ROOT'];
+define('DIR_APPLICATION', $dir . '/admin/');
+define('DIR_SYSTEM', $dir . '/system/');
+define('DIR_LANGUAGE', $dir . '/admin/language/');
+define('DIR_TEMPLATE', $dir . '/admin/view/template/');
+define('DIR_CONFIG', $dir . '/system/config/');
+define('DIR_IMAGE', $dir . '/image/');
+define('DIR_CACHE', $dir . '/system/storage/cache/');
+define('DIR_DOWNLOAD', $dir . '/system/storage/download/');
+define('DIR_LOGS', $dir . '/system/storage/logs/');
+define('DIR_MODIFICATION', $dir . '/system/storage/modification/');
+define('DIR_UPLOAD', $dir . '/system/storage/upload/');
+define('DIR_CATALOG', $dir . '/catalog/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
