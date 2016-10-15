@@ -110,17 +110,42 @@ class ControllerModuleNewslettersubscribe extends Controller {
   
   public function letterSent() {
       
-     if (isset($this->request->get['letter_']) && intval($this->request->get['letter_']) == 1)  {
+     $this->load->model('setting/setting');
+     
+     $settings = $this->model_setting_setting->getSetting('mega_filter_settings');
+      
+     if (isset($this->request->get['letter']) && intval($this->request->get['letter']) == 1)  {
          
-         $this->session->data['letter_sent'] = 1;
+         $settings['mega_filter_settings']['letter'] = 1;
+         $this->saveSettings('mega_filter_settings', $settings);
      } 
      
-     if (isset($this->request->get['letter_']) && intval($this->request->get['letter_']) == 0)  {
+     if (isset($this->request->get['letter']) && intval($this->request->get['letter']) == 0)  {
          
-         unset($this->session->data['letter_sent']);
+         $settings['mega_filter_settings']['letter'] = 0;
+         $this->saveSettings('mega_filter_settings', $settings);
      }
   }
+  
+  
+  private function saveSettings( $group, $data ) {
+		
+		$this->load->model('setting/store');
 
+		$stores_list = array(0);
+
+		foreach( $this->model_setting_store->getStores() as $row ) {
+				$stores_list[] = $row['store_id'];
+		}
+		
+
+		$this->load->model('setting/setting');
+
+		foreach( $stores_list as $store_id ) {
+			$this->model_setting_setting->editSetting($group, $data, $store_id);
+		}
+  }
+  
   public function unsubscribe() {
     $this->language->load('module/newslettersubscribe');
     $this->load->model('account/newslettersubscribe');

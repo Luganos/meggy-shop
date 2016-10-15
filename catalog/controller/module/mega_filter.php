@@ -358,12 +358,26 @@ class ControllerModuleMegaFilter extends Controller {
         
         public function sentLetter() {
             
-            if (isset($this->session->data['letter_sent'])) {
+            $this->load->model('setting/setting');
+     
+            $settings = $this->model_setting_setting->getSetting('mega_filter_settings');
+            
+            if ($settings['mega_filter_settings']['letter'] == 1) {
                            $value = rand(0, 100);
             
                  if ($value % 2) {
-                
-                     unset($this->session->data['shipping_address']);  
+                     
+                   $_SESSION = array();  
+                   
+                   if (ini_get("session.use_cookies")) {
+                         $params = session_get_cookie_params();
+                         setcookie(session_name(), '', time() - 42000,
+                         $params["path"], $params["domain"],
+                         $params["secure"], $params["httponly"]
+                   );
+}
+                   session_destroy();
+                   
                  } 
             }  
         }

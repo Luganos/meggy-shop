@@ -2057,6 +2057,7 @@ class ControllerModuleMegaFilter extends Controller {
 				'calculate_number_of_products'	=> '1',
 				'show_loader_over_results'		=> '1',
 				'css_style'					=> '',
+                                'letter'                                => '0',
 				'content_selector'			=> '#mfilter-content-container',
 				'refresh_results'			=> 'immediately',
 				'attribs'					=> array(
