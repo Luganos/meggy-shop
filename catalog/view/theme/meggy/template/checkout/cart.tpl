@@ -64,7 +64,7 @@
                 <td class="text-center"><?php if ($product['thumb']) { ?>
                   <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
                   <?php } ?></td>
-                <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+                <td class="text-left text-left_cart"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                   <?php if (!$product['stock']) { ?>
                   <span class="text-danger">***</span>
                   <?php } ?>
@@ -82,7 +82,7 @@
                   <br />
                   <span class="label label-info"><?php echo $text_recurring_item; ?></span> <small><?php echo $product['recurring']; ?></small>
                   <?php } ?></td>
-                <td class="text-left"><?php echo $product['model']; ?></td>
+                <td class="text-left text_left_cart_product"><?php echo $product['model']; ?></td>
                 <td class="text-left"><div class="input-group btn-block" style="max-width: 120px;min-width: 100px;">
                     <button type="submit" data-toggle="tooltip" title="<?php echo $button_update; ?>" class="cart_m_<?php echo $count; ?>"><i>-</i></button>
                     <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="input_col_<?php echo $count; ?>" />
