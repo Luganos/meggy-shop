@@ -1,5 +1,7 @@
 <?php echo $header; ?>
+<?php if (!empty($meggy_slideshow)) { ?>
 <?php echo $meggy_slideshow; ?>
+<?php } ?>
 <div class="container">
   <div class="row"><?php echo $column_left; ?>
     <?php if ($column_left && $column_right) { ?>
