@@ -47,7 +47,7 @@
               <div class="footer_top_ul">
                 <ul>
                   <li><a href="index.php?route=information/information&information_id=6">оплата и доставка</a></li>
-                  <li><a href="index.php?route=information/information&information_id=11">партнерам</a></li>
+                  <li><a href="<?php echo $affiliate; ?>">партнерам</a></li>
                   <li><a href="index.php?route=information/information&information_id=12">дилерам</a></li>
                 </ul>
               </div>

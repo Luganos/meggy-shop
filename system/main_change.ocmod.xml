@@ -335,6 +335,16 @@
          </add>  
       </operation>
   </file>
+  <file path="catalog/controller/common/header.php">
+      <operation>
+	 <search>
+         <![CDATA[$data['telephone'] = $this->config->get('config_telephone');]]>
+         </search>
+         <add position ="after">
+          <![CDATA[$data['affiliate'] = $this->url->link('affiliate/account', '', 'SSL');]]>
+         </add>  
+      </operation>
+  </file>
   <file path="catalog/controller/product/product.php">
       <operation>
 	 <search>
