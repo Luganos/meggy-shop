@@ -310,7 +310,7 @@ header{
 }
 
 #login{
-	width: 75px;
+	width: 50px;
 }
 
 .currency-select{
@@ -2592,7 +2592,7 @@ position: relative;
 /*-------slaider small--------*/
 
 .sl{
-	margin-left: 10px !important;
+	margin-left: 0px !important;
 }
 
 .slick-prev:before, .slick-next:before {
@@ -3113,7 +3113,7 @@ input::-webkit-input-placeholder {
 		width:140px;
 	}
 	#tr{
-		width: 131px !important;
+		width: 110px !important;
 	}
 
 
@@ -3750,10 +3750,10 @@ input::-webkit-input-placeholder {
 }
 
 .button_text span{
-	width: 90% !impotant;
+	width: 90% ;
 	height: 90%;
 	border: 1px solid rgb(180,210,218);
-	padding: 2px 40px 2px 65px;
+	padding: 2px 40px 2px 40px;
 	font-weight: bold;
 	font-size: 1.25em;
 	color: white;
@@ -3775,10 +3775,10 @@ input::-webkit-input-placeholder {
 }
 
 .button_text_right span{
-	width: 90% !impotant;
+	width: 90% ;
 	height: 90%;
 	border: 1px solid rgb(180,210,218);
-	padding: 2px 53px 2px 47px;
+	padding: 2px 25px 2px 47px;
 	font-weight: bold;
 	font-size: 1.25em;
 	color: white;
@@ -4209,7 +4209,7 @@ input::-webkit-input-placeholder {
 		margin-left: 60px !important;
 	}
 	.button_text_right_cart{
-		margin-right: 25px !important;
+		margin-right: 31px !important;
 	}
 
 	/*----cart_table_small_320----*/
@@ -4813,7 +4813,7 @@ div.required .control-label:before {
 @media screen and (max-width: 990px) {
 	.search_768 {
 	top: 130px;
-	right: 250px;
+	right: 160px;
 
 	margin-bottom: 10px;
 	z-index: 99;
@@ -5166,6 +5166,7 @@ footer h5 {
 }
 /* buttons */
 .buttons {
+	width: 102%;
 	margin: 1em 0;
 }
 .btn {
@@ -6345,7 +6346,7 @@ a.idTop:hover {
 }
 
 #sliii{
-	min-width: 200px !important;
+	min-width: 180px !important;
 }
 
 /*-----Отзывы-------*/
@@ -6369,7 +6370,7 @@ a.idTop:hover {
 	width: 480px !important;
 }
 #table_big{
-	width: 600px !important;
+	width: 100% !important;
 }
 
 
@@ -6392,7 +6393,7 @@ a.idTop:hover {
 
 @media (max-width: 767px) {
 	#xs_product{
-		width: 600px;
+		width: 100%;
 		padding-left: 30px !important;
 	}
 	.col_price{
@@ -8175,7 +8176,7 @@ input[type="checkbox"]{
 
 @media (max-width: 470px) { /* от 422 до 320*/
 	#content{
-		width: 100%;
+		width: 99%;
 		margin-top: 10px !important;
 	}
 
@@ -8480,15 +8481,16 @@ iframe{
 	position: relative !important;
 	top: 680px !important;
 	left: 360px !important;
+	width: 250px !important;
 
 }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
 	iframe{
 	position: relative !important;
 	top: 1145px !important;
-	left: 217px !important;
+	left: 0px !important;
 }
 	.provider{
 		width: 50px;
@@ -8785,6 +8787,9 @@ iframe{
 .carusel_big{
 	margin-top: 56px;
 }
+.baner_all{
+	margin-top: -250px;
+}
 }
 
 legend{
@@ -8865,6 +8870,6 @@ legend{
 		display: none;
 	}
 	.text-left_cart{
-		padding-left: 75px !important;
+		padding-left: 53px !important;
 	}
 }
