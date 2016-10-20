@@ -252,18 +252,6 @@
           </table>
         </div>
       </form>
-
-
-
-
-
-
-
-
-
-
-
-
       <div class="row table-bordered_size">
         <div class="col-sm-4 col-sm-offset-8">
           <table class="table table-bordered">
@@ -290,6 +278,7 @@
       </div>
       <?php echo $content_bottom; ?></div>
     <?php echo $column_right; ?></div>
+  <div id="srcoll" class="sl" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
 </div>
 <?php echo $footer; ?>
 <script>

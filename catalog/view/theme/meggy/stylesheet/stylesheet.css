@@ -8489,7 +8489,7 @@ iframe{
 @media screen and (max-width: 767px) {
 	iframe{
 	position: relative !important;
-	top: 1145px !important;
+	top: 1180px !important;
 	left: 0px !important;
 }
 	.provider{
@@ -8504,7 +8504,7 @@ iframe{
 @media screen and (max-width: 470px) {
 	iframe{
 		width: 150px !important;
-		top: 1190px !important;
+		top: 1200px !important;
 		left: 0px !important;
 	}
 	#social_login{
@@ -8739,7 +8739,7 @@ iframe{
 
 @media (max-width: 767px) {
 	.va-container{
-		right: 220px;
+		right: 240px;
 		height: 300px;
 	}
 }
@@ -8763,6 +8763,16 @@ iframe{
 	.vertical_slider_small{
 	margin-top: 80px;
 }
+	.cart_small_text-center{
+		padding: 0px !important;
+		width: 50px;
+	}
+	.cart_small_text-left{
+		position: absolute;
+		top: 75px;
+		left: 125px;
+		padding: 0px !important;
+	}
 }
 
 
@@ -8812,7 +8822,7 @@ legend{
 
 @media screen and (max-width: 400px) {
 	.search_768 {
-	top: 130px !important;
+	top: 150px !important;
 	left: 90px !important;
 	margin-bottom: 10px;
 	z-index: 99;
@@ -8827,10 +8837,10 @@ legend{
 	padding: 0px !important;
 }
 .cart_small_product{
-	margin-left: 40px;
+	margin-left: 65px;
 }
 .text-right_price{
-	margin-left: 35px;
+	margin-left: 50px;
 }
 .cart_small_bottom strong{
 	display: block;
@@ -8872,4 +8882,17 @@ legend{
 	.text-left_cart{
 		padding-left: 53px !important;
 	}
+	.cart_small_text-left{
+		padding-left: 40px !important;
+	}
+	.cart_table_price{
+		display: none;
+	}
+	.cart_table_total{
+		padding: 0px;
+	}
+	.del{
+		margin-left: 10px;
+	}
+
 }
