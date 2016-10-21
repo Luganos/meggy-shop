@@ -102,6 +102,16 @@
          </add>
     </operation>
   </file>
+  <file path="admin/view/template/design/banner_form.tpl">
+      <operation>
+	 <search>
+         <![CDATA[html += '  <td class="text-right" style="width: 10%;><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';]]>   
+         </search> 
+         <add position ="replace">
+         <![CDATA[html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';]]> 
+         </add>
+    </operation>
+  </file>
   <file path="catalog/controller/common/footer.php">
       <operation>
 	 <search regex ="true" quote = "true">
