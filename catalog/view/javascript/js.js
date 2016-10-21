@@ -1,6 +1,5 @@
 console.log("OK2");
 
-
 /*---product_window_up-----*/
     //$('.table_size').on("click", function(){console.log("Hello")});
     $('.table_size').on("click", function(){$(".open_table_size").css({"visibility": "visible"});});

@@ -53,7 +53,7 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img"><img class="tovar_img_img" src="<?php echo $thumb; ?>" data-imagezoom="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" />
+          <li class="tovar_img"><a class="thumbnail" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img id="zse" class="tovar_img_img" src="<?php echo $thumb; ?>" data-imagezoom="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
           <a class="addthis_button_compact"></a><p>Поделится в соц. сетях</p>
@@ -527,6 +527,31 @@
 </div>
 <script type="text/javascript"><!--
 
+/*---show_product.tpl_click_img----*/
+var wep = 0;
+$(".product-product-30").on("click",function(){
+       if(!wep){
+       $("#zse").removeAttr("data-imagezoom");
+        console.log("1");
+        wep = 1;
+      }else{
+         $("#zse").attr("data-imagezoom", "<?php echo $thumb; ?>");
+        wep = 0;
+        console.log("2");
+      //  $(".mfp-img").attr("data-imagezoom", "<?php echo $thumb; ?>");
+      }
+
+});
+/*
+$('body').on("mouseover",'.mfp-close', function(){
+     // var rty = document.getElementById("zse");
+     // rty.setAttribute("data-imagezoom", "<?php echo $thumb; ?>");
+      $(".tovar_img_img").attr("data-imagezoom", "<?php echo $thumb; ?>");
+});*/
+
+
+/*---END_show_product.tpl_click_img----*/
+
 var timerId = setTimeout(function() {
  //location.reload();
 }, 5000);
@@ -735,15 +760,15 @@ $('#button-review').on('click', function() {
 	});
 });
 
-/*$(document).ready(function() {
+$(document).ready(function() {
 	$('.thumbnails').magnificPopup({
 		type:'image',
 		delegate: 'a',
 		gallery: {
 			enabled:true
 		}
-	});*/
-
+	});
+});
 </script>
 <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 <?php echo $footer; ?>

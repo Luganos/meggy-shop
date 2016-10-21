@@ -8783,7 +8783,7 @@ iframe{
 	//display: none;
 }
 .mfp-wrap{
-	display: none;
+	//display: none;
 }
 /*-----END_pop_up_product_click_big_image--*/
 /*------check_street-----*/
@@ -8894,5 +8894,16 @@ legend{
 	.del{
 		margin-left: 10px;
 	}
+
+}
+
+.mfp-img{
+	position: relative;
+	left: -125px !important;
+	right: 100px !important;
+	min-width: 150%;
+	min-height: 200%;
+	max-width: 150%;
+	background-color: transparent;
 
 }
