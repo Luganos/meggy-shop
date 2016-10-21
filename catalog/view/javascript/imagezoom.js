@@ -9,11 +9,11 @@
     zoomviewborder: '1px solid #222',
     focusborder: '1px solid #222',
     zoomviewposition: 'right',
-    zoomviewsize: [300,450],
+    zoomviewsize: [500,700],
     cursorcolor: '#ffffff',
     cursor: 'crosshair',
     zoomviewmargin: 10,
-    magnification: 3.5,
+    magnification: 6,
     zindex: 2000000,
     opacity: 0.1
   };
@@ -45,7 +45,7 @@
         $(imagezoomView.selector).css({
           'position':'absolute',
           'left': zoomViewPositionX,
-          'top': offset.top,
+          'top': offset.top-130,
           'width': cursorSize[0]*settings.magnification,
           'height': cursorSize[1]*settings.magnification,
           'background':'#000',
