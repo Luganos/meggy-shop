@@ -5,7 +5,8 @@
  */
 
 (function($){
-  var defaults = {
+
+   var defaults = {
     zoomviewborder: '1px solid #222',
     focusborder: '1px solid #222',
     zoomviewposition: 'right',
