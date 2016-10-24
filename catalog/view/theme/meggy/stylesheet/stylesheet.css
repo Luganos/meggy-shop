@@ -8907,3 +8907,7 @@ legend{
 	background-color: transparent;
 
 }
+
+.thumbnail{
+	cursor: zoom-in;
+}

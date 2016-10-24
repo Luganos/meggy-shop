@@ -53,7 +53,7 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img thumbnails"><a class="thumbnail thumbnails" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img id="zse" class="tovar_img_img thumbnails" src="<?php echo $thumb; ?>" data-imagezoom="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img thumbnails"><a class="thumbnail thumbnails" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img id="zse" class="tovar_img_img " src="<?php echo $thumb; ?>" data-imagezoom="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
           <a class="addthis_button_compact"></a><p>Поделится в соц. сетях</p>
@@ -534,18 +534,21 @@ $("#ver").on("click",function(){
        if(!wep){
        $("#zse").removeAttr("data-imagezoom");
         console.log("1");
-        console.log(event);
-        console.log(event.clientX);
+       // console.log(event);
+      //  console.log(event.clientX);
         event.clientX += event.clientX
-        console.log(event.clientX);
+     //   console.log(event.clientX);
         event.pageX += event.pageX;
         event.clientX = 100;
-
         wep = 1;
       }else{
-         $("#zse").attr("data-imagezoom", "<?php echo $thumb; ?>");
+        var img = $("#zse").attr("src");
+        //var img = event.srcElement.src;
+        //console.log(event.srcElement.src);
+         $("#zse").attr("data-imagezoom", img);
         wep = 0;
         console.log("2");
+        img = $(this).attr("src");
       //  $(".mfp-img").attr("data-imagezoom", "<?php echo $thumb; ?>");
       }
 
