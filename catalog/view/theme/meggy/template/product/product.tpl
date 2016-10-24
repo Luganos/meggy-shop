@@ -529,7 +529,7 @@
 
 /*---show_product.tpl_click_img----*/
 var wep = 0;
-$(".product-product-30").on("click",function(){
+$("#ver").on("click",function(){
        if(!wep){
        $("#zse").removeAttr("data-imagezoom");
         console.log("1");
@@ -725,10 +725,7 @@ $('#review').load('index.php?route=product/product/review&product_id=<?php echo 
     } else {
         $("#text-above-review").css("visibility", "hidden");
     }
-
-
-
-    });
+});
 
 $('#button-review').on('click', function() {
 	$.ajax({
