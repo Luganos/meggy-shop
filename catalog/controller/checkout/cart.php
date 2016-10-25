@@ -8,13 +8,9 @@ public function calculateProduct() {
                        if (is_array($products)) {
                            foreach ($products as $product) {
 		              
+                                $product_total += $product['quantity'];    
 
-		                foreach ($products as $product_2) {
-			             if ($product_2['product_id'] == $product['product_id']) {
-				        $product_total += $product_2['quantity'];
-			             }
-		           }
-                        }
+                           }
 			
 		      }
             
