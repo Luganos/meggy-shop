@@ -53,7 +53,7 @@
           </div>
           <?php } ?>
           <?php if ($thumb) { ?>
-          <li class="tovar_img thumbnails"><a class="thumbnail thumbnails" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"><img id="zse" class="tovar_img_img " src="<?php echo $thumb; ?>" data-imagezoom="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+          <li class="tovar_img thumbnails"><!--<a class="thumbnail thumbnails" href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>">--><img id="zse" class="tovar_img_img " src="<?php echo $thumb; ?>" data-imagezoom="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /><!--</a>-->
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style ">
           <a class="addthis_button_compact"></a><p>Поделится в соц. сетях</p>

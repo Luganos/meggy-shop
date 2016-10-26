@@ -5627,6 +5627,7 @@ h2.price {
 	//height: 100%;
 	width: 300px !important;
 	height: 450px !important;
+	margin-left: 20px;
 
 }
 
@@ -5993,6 +5994,7 @@ a.idTop:hover {
 	top: 0;
 	bottom: 295px;
 	float: right;
+	//padding-left: 20px;
 
 }
 /*
@@ -8908,7 +8910,7 @@ legend{
 	background-color: transparent;
 
 }
-/*
+
 .thumbnail{
 	cursor: zoom-in;
-}*/
+}
