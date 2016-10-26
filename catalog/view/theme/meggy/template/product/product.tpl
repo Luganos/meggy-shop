@@ -528,7 +528,7 @@
 <script type="text/javascript"><!--
 
 /*---show_product.tpl_click_img----*/
-
+/*
 var wep = 0;
 $("#ver").on("click",function(){
        if(!wep){
@@ -552,7 +552,7 @@ $("#ver").on("click",function(){
       //  $(".mfp-img").attr("data-imagezoom", "<?php echo $thumb; ?>");
       }
 
-});
+});*/
 /*
 $('body').on("mouseover",'.mfp-close', function(){
      // var rty = document.getElementById("zse");
@@ -767,7 +767,7 @@ $('#button-review').on('click', function() {
 		}
 	});
 });
-
+/*
 $(document).ready(function() {
 	$('.thumbnails').magnificPopup({
 		type:'image',
@@ -776,7 +776,7 @@ $(document).ready(function() {
 			enabled:true
 		}
 	});
-});
+});*/
 </script>
 <div id="srcoll" class="sl" data-slick='{"slidesToShow": 4, "slidesToScroll": 1}'></div>
 <?php echo $footer; ?>

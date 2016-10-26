@@ -5456,10 +5456,10 @@ h2.price {
 }
 .thumbnails > li {
 	margin-left: 20px;
-}
+}/*
 .thumbnails {
 	margin-left: -20px;
-}
+}*/
 .thumbnails > img {
 	width: 100%;
 }
@@ -5976,6 +5976,7 @@ a.idTop:hover {
 }
 
 .thumbnails{
+	width: 300px;
 	height: 600px;
 	overflow: hidden !important;
 
@@ -8907,7 +8908,7 @@ legend{
 	background-color: transparent;
 
 }
-
+/*
 .thumbnail{
 	cursor: zoom-in;
-}
+}*/
