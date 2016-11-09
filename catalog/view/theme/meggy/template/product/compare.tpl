@@ -31,7 +31,13 @@
           <tr>
             <td><?php echo $text_name; ?></td>
             <?php foreach ($products as $product) { ?>
-            <td><a href="<?php echo $product['href']; ?>"><strong><?php echo $product['name']; ?></strong></a></td>
+            <td><a href="<?php echo $product['href']; ?>">
+            <strong>
+            <?php echo mb_strimwidth(strval($product['name']), 0, 70); ?>
+            <?php if (strlen(strval($product['name'])) > 70) { ?>
+            <?php echo '...'; ?>
+            <?php } ?>
+            </strong></a></td>
             <?php } ?>
           </tr>
           <tr>
