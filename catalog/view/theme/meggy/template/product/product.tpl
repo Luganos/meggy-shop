@@ -4,10 +4,12 @@
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 50); ?>
-    <?php if (strlen(strval($breadcrumb['text'])) > 50) { ?>
+    <li><a href="<?php echo $breadcrumb['href']; ?>">
+    <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 20); ?>
+    <?php if (strlen(strval($breadcrumb['text'])) > 20) { ?>
     <?php echo '...'; ?>
+    <?php } ?>
+    </a></li>
     <?php } ?>
   </ul>
   <div class="row"><?php echo $column_left; ?>
