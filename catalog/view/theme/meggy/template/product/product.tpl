@@ -5,8 +5,8 @@
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
     <li><a href="<?php echo $breadcrumb['href']; ?>">
-    <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 20); ?>
-    <?php if (strlen(strval($breadcrumb['text'])) > 20) { ?>
+    <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 30); ?>
+    <?php if (strlen(strval($breadcrumb['text'])) > 30) { ?>
     <?php echo '...'; ?>
     <?php } ?>
     </a></li>
