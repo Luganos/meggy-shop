@@ -646,9 +646,6 @@ $('#button-cart').on('click', function() {
 
         $('#cart > button').html('<i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i><div class="number_of_purchases"><span >' + json['quantity'] + '</span></div>'+ json['total']);
 
-				//$('#cart > button').html('<i><img src="catalog/view/theme/meggy/image/noun.png" alt=""></i>' + json['total']);
-
-//<div class="number_of_purchases"><span ><?php echo $cart_value; ?></span></div>
 
 				$('html, body').animate({ scrollTop: 0 }, 'slow');
 
