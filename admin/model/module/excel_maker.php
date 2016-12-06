@@ -1991,7 +1991,8 @@ function download($value, $settings) {
 		    header('Content-Type: application/vnd.ms-excel');
             header('Content-Disposition: attachment;filename="export_price.xlsx"');
             header('Cache-Control: max-age=0');
-            $objWriter->save('php://output'); 
+			$this->SaveViaTempFile($objWriter);
+            //$objWriter->save('php://output'); 
               
 			// Clear the spreadsheet caches
 			$this->clearSpreadsheetCache();
@@ -2011,5 +2012,12 @@ function download($value, $settings) {
 		}
 		return true;
 	}
+	
+    public function SaveViaTempFile($objWriter){
+           $filePath = '' . rand(0, getrandmax()) . rand(0, getrandmax()) . ".tmp";
+           $objWriter->save($filePath);
+           readfile($filePath);
+           unlink($filePath);
+    }
   }
 ?>
