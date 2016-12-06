@@ -2208,9 +2208,9 @@ header{
 
 /*-------Сезонные предложения--------*/
 .baner_all{
-	margin-left: 60px;
+	margin-left: 99px;
 	margin-top: 150px;
-	width: 100%;
+	width: 88%;
 	//height: 360px;
 }
 
@@ -2272,7 +2272,7 @@ header{
 
 @media (max-width: 751px) {
 	.baner_all{
-		margin-top: 190px !important;
+		margin-top: 195px !important;
 		margin-left: 10px;
 	}
 	.baner_one{
