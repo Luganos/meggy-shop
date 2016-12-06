@@ -4092,7 +4092,7 @@ input::-webkit-input-placeholder {
 }
 
 .baner_all{
-	margin-top: 85px !important;
+	margin-top: 45px !important;
 	margin-left: 0px !important;
 }
 
@@ -6898,6 +6898,7 @@ a.idTop:hover {
 }
 
 .baner_all{
+	margin-top: 20px;
 	padding-top: 20px;
 	margin-left: 0px !important;
 }
