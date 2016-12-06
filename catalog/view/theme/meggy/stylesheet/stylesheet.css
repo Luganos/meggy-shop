@@ -2210,17 +2210,41 @@ header{
 .baner_all{
 	margin-left: 60px;
 	margin-top: 150px;
-	width: 75%;
+	width: 100%;
 	//height: 360px;
 }
 
 .baner_one{
-	//text-align: center;
+	//text-align: center !important;
 	//width: 33% !important;
 	//margin-left: 20%;
 	height: 100%;
 	//display: inline;
 	//float: left;
+}
+.baner_one img{
+	margin-left: 0% !important;
+	margin-right: 0% !important;
+	max-width: 100% !important;
+	max-height: 360px !important;
+	min-height: 360px !important;
+}
+
+.baner_two img{
+	margin-left: 0% !important;
+	margin-right: 0% !important;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	max-height: 360px !important;
+	min-height: 360px !important;
+}
+.baner_three img{
+	margin-left: 0% !important;
+	margin-right: 0% !important;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	max-height: 360px !important;
+	min-height: 360px !important;
 }
 
 @media (max-width: 769px) {
@@ -2230,7 +2254,16 @@ header{
 		margin-bottom: -50px !important;
 	}
 	.baner_one{
-	margin-left: 20%;
+	text-align: center !important;
+	margin-left: 5%;
+	}
+	.baner_two{
+	text-align: center !important;
+	margin-left: 5%;
+	}
+	.baner_three{
+	text-align: center !important;
+	margin-left: 5%;
 	}
 	.slick-next{
 		right: -3px !important;
@@ -2243,12 +2276,24 @@ header{
 		margin-left: 10px;
 	}
 	.baner_one{
-	margin-left: 20%;
+	text-align: center !important;
+	margin-left: 5%;
 	}
 }
 
 @media (max-width: 535px) {
 	.baner_one{
+	text-align: center !important;
+	margin-left: 0px;
+	padding-left: 0px;
+	}
+	.baner_two{
+	text-align: center !important;
+	margin-left: 0px;
+	padding-left: 0px;
+	}
+	.baner_three{
+	text-align: center !important;
 	margin-left: 0px;
 	padding-left: 0px;
 	}
@@ -2271,7 +2316,7 @@ header{
 
 @media (max-width: 855px) {
 	.baner_two{
-	margin-left: 20%;
+	margin-left: 5%;
 	}
 }
 
@@ -2299,7 +2344,7 @@ header{
 
 @media (max-width: 855px) {
 	.baner_three{
-	margin-left: 20%;
+	margin-left: 5%;
 	}
 }
 
@@ -2524,7 +2569,7 @@ position: relative;
 */
 /*-------Меню main--------*/
 #banner0{
-	margin-top: 550px;
+	margin-top: 530px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
