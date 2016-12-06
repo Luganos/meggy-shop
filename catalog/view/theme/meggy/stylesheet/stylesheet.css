@@ -2209,7 +2209,7 @@ header{
 /*-------Сезонные предложения--------*/
 .baner_all{
 	margin-left: 99px;
-	margin-top: 150px;
+	margin-top: 110px;
 	width: 88%;
 	//height: 360px;
 }
@@ -2569,7 +2569,7 @@ position: relative;
 */
 /*-------Меню main--------*/
 #banner0{
-	margin-top: 530px;
+	margin-top: 480px;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -8847,6 +8847,9 @@ iframe{
 }
 .baner_all{
 	margin-top: -250px;
+}
+#banner0{
+	margin-top: 400px;
 }
 }
 
