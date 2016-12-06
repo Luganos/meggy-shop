@@ -2225,6 +2225,7 @@ header{
 .baner_one img{
 	margin-left: 0% !important;
 	margin-right: 0% !important;
+	margin-bottom: 10px;
 	max-width: 100% !important;
 	max-height: 360px !important;
 	min-height: 360px !important;
@@ -2249,11 +2250,12 @@ header{
 
 @media (max-width: 769px) {
 	.baner_all{
-		margin-top: 0px !important;
+		margin-top: 65px !important;
 		margin-left: 10px;
 		margin-bottom: -50px !important;
 	}
 	.baner_one{
+	margin-top: 65px;
 	text-align: center !important;
 	margin-left: 5%;
 	}
@@ -2302,6 +2304,7 @@ header{
 .baner_one img{
 	margin-left: 35%;
 	margin-right: 25%;
+	margin-bottom: 10px;
 	max-width: 84%;
 	max-height: 100%;
 }
@@ -2311,6 +2314,7 @@ header{
 	//width: 33% !important;
 	//display: inline;
 	height: 100%;
+	margin-bottom: 10px;
 	//float: left;
 }
 
@@ -2324,12 +2328,14 @@ header{
 	.baner_two{
 	margin-left: 0px;
 	padding-left: 0px;
+
 	}
 }
 
 .baner_two img{
 	margin-left: 35%;
 	margin-right: 25%;
+	margin-bottom: 10px;
 	max-width: 84% ;
 	max-height: 100%;
 }
@@ -6434,7 +6440,7 @@ a.idTop:hover {
 
 @media (max-width: 855px) {
 	.xs_product_right{
-		padding-left: 35px;
+		padding-left: 45px;
 	}
 }
 
