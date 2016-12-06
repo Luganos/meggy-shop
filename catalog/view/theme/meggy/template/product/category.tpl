@@ -112,7 +112,11 @@
                    <?php } ?>
                </div>
                <span class="sl_text">
-                    <p class="sl_id"><?php echo $product['name']; ?>
+                    <p class="sl_id">
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 70); ?>
+                    <?php if (strlen(strval($product['name'])) > 70) { ?>
+                    <?php echo '...'; ?>
+                    <?php } ?>   
                      <?php if ($product['sku']) { ?>
                      - <?php echo $product['sku']; ?>
                      <?php } ?>

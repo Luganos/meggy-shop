@@ -4,7 +4,12 @@
 <div id="container_product" class="container">
   <ul class="breadcrumb">
     <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
+    <li><a href="<?php echo $breadcrumb['href']; ?>">
+    <?php echo mb_strimwidth(strval($breadcrumb['text']), 0, 30); ?>
+    <?php if (strlen(strval($breadcrumb['text'])) > 30) { ?>
+    <?php echo '...'; ?>
+    <?php } ?>
+    </a></li>
     <?php } ?>
   </ul>
   <div class="row"><?php echo $column_left; ?>
@@ -463,7 +468,11 @@
                    <?php } ?>
                </div>
                <span class="sl_text">
-                    <p class="sl_id"><?php echo $product['name']; ?>
+                    <p class="sl_id">
+                    <?php echo mb_strimwidth(strval($product['name']), 0, 70); ?>
+                    <?php if (strlen(strval($product['name'])) > 70) { ?>
+                    <?php echo '...'; ?>
+                    <?php } ?>  
                      <?php if ($product['sku']) { ?>
                      - <?php echo $product['sku']; ?>
                      <?php } ?>

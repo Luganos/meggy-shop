@@ -280,6 +280,7 @@
     <?php echo $column_right; ?></div>
   <div id="srcoll" class="sl" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
 </div>
+</div>
 <?php echo $footer; ?>
 <script>
   if(width < 855){

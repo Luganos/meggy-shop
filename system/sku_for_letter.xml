@@ -31,23 +31,8 @@
                               <![CDATA[ $product_data = array();
                                         $product_data = $this->model_catalog_product->getProduct($product['product_id']);
                                         
-                                        if (strlen(strval($product['name'])) > 25) {
-                                        
-                                           $name = mb_strimwidth(strval($product['name']), 0, 25);
-                                           $name .= '...';
-                                           
-                                        } elseif (strlen(strval($product['name'])) < 25) {
-                           
-                                           $name = mb_strimwidth(strval($product['name']), 0, 25); 
-                    
-                                        } else {
-                                        
-                                           $name = '';
-                                        }
-                                        
-      
                                         $data['products'][] = array(
-						'name'     => $name,
+						'name'     => $product['name'],
 						'model'    => $product['model'],
 						'option'   => $option_data,
 						'quantity' => $product['quantity'],
@@ -87,55 +72,6 @@
    </operation> 
    <operation>
       <search regex ="true" quote = "true">
-                                      <![CDATA[~$product_data[] = array(
-							'name'     => $product_info['name'],
-							'model'    => $product_info['model'],
-							'option'   => $option_data,
-							'quantity' => $product['quantity'],
-							'location' => $product_info['location'],
-							'sku'      => $product_info['sku'],
-							'upc'      => $product_info['upc'],
-							'ean'      => $product_info['ean'],
-							'jan'      => $product_info['jan'],
-							'isbn'     => $product_info['isbn'],
-							'mpn'      => $product_info['mpn'],
-							'weight'   => $this->weight->format(($product_info['weight'] + $option_weight) * $product['quantity'], $product_info['weight_class_id'], $this->language->get('decimal_point'), $this->language->get('thousand_point'))
-						);~]]>
-      </search>
-      <add position="replace">
-                                       <![CDATA[
-                                             if (strlen(strval($product_info['name'])) > 25) {
-                                        
-                                                 $name = mb_strimwidth(strval($product_info['name']), 0, 25);
-                                                 $name .= '...';
-                                           
-                                              } elseif (strlen(strval($product_info['name'])) < 25) {
-                           
-                                                 $name = mb_strimwidth(strval($product_info['name']), 0, 25); 
-                    
-                                              } else {
-                                        
-                                                   $name = '';
-                                              }
-                                       
-                                              $product_data[] = array(
-							'name'     => $name,
-							'model'    => $product_info['model'],
-							'option'   => $option_data,
-							'quantity' => $product['quantity'],
-							'location' => $product_info['location'],
-							'sku'      => $product_info['sku'],
-							'upc'      => $product_info['upc'],
-							'ean'      => $product_info['ean'],
-							'jan'      => $product_info['jan'],
-							'isbn'     => $product_info['isbn'],
-							'mpn'      => $product_info['mpn'],
-							'weight'   => $this->weight->format(($product_info['weight'] + $option_weight) * $product['quantity'], $product_info['weight_class_id'], $this->language->get('decimal_point'), $this->language->get('thousand_point'))
-						);]]>
-      </add>
-   </operation> 
-   <operation>
-      <search regex ="true" quote = "true">
                               <![CDATA[~$product_data[] = array(
 						'name'     => $product['name'],
 						'model'    => $product['model'],
@@ -146,22 +82,8 @@
 					);~]]>
       </search>
       <add position="replace">
-                               <![CDATA[if (strlen(strval($product['name'])) > 25) {
-                                        
-                                           $name = mb_strimwidth(strval($product['name']), 0, 25);
-                                           $name .= '...';
-                                           
-                                        } elseif (strlen(strval($product['name'])) < 25) {
-                           
-                                           $name = mb_strimwidth(strval($product['name']), 0, 25); 
-                    
-                                        } else {
-                                        
-                                           $name = '';
-                                        }
-
-                                       $product_data[] = array(
-						'name'     => $name,
+                               <![CDATA[$product_data[] = array(
+						'name'     => $product['name'],
 						'model'    => $product['model'],
                                                 'sku'      => $product['sku'],
 						'option'   => $option_data,
@@ -186,25 +108,10 @@
 				);~]]>
       </search>
       <add position="replace">
-                      <![CDATA[if (strlen(strval($product['name'])) > 25) {
-                                        
-                                    $name = mb_strimwidth(strval($product['name']), 0, 25);
-                                    $name .= '...';
-                                           
-                                } elseif (strlen(strval($product['name'])) < 25) {
-                           
-                                    $name = mb_strimwidth(strval($product['name']), 0, 25); 
-                    
-                                } else {
-                                        
-                                    $name = '';
-                                }
-                                
-                                
-                                $data['products'][] = array(
+                       <![CDATA[$data['products'][] = array(
 					'order_product_id' => $product['order_product_id'],
 					'product_id'       => $product['product_id'],
-					'name'    	 	   => $name,
+					'name'    	 	   => $product['name'],
 					'model'    		   => $product['model'],
                                         'sku'                      => $product['sku'],
 					'option'   		   => $option_data,
@@ -232,25 +139,9 @@
       </search>
       <add position="replace">
                <![CDATA[foreach ($products as $product) {
-               
-                                if (strlen(strval($product['name'])) > 25) {
-                                        
-                                    $name = mb_strimwidth(strval($product['name']), 0, 25);
-                                    $name .= '...';
-                                           
-                                } elseif (strlen(strval($product['name'])) < 25) {
-                           
-                                    $name = mb_strimwidth(strval($product['name']), 0, 25); 
-                    
-                                } else {
-                                        
-                                    $name = '';
-                                }
-               
-               
 				$data['order_products'][] = array(
 					'product_id' => $product['product_id'],
-					'name'       => $name,
+					'name'       => $product['name'],
 					'model'      => $product['model'],
                                         'sku'        => $product['sku'],
 					'option'     => $this->model_sale_order->getOrderOptions($this->request->get['order_id'], $product['order_product_id']),
@@ -378,22 +269,8 @@
 				);~]]>
       </search>
       <add position="replace">
-                      <![CDATA[if (strlen(strval($product['name'])) > 25) {
-                                        
-                                    $name = mb_strimwidth(strval($product['name']), 0, 25);
-                                    $name .= '...';
-                                           
-                                } elseif (strlen(strval($product['name'])) < 25) {
-                           
-                                    $name = mb_strimwidth(strval($product['name']), 0, 25); 
-                    
-                                } else {
-                                        
-                                    $name = '';
-                                }
-
-                               $data['products'][] = array(
-					'name'     => $name,
+                       <![CDATA[$data['products'][] = array(
+					'name'     => $product['name'],
 					'model'    => $product['model'],
                                         'sku'      => $product['sku'],
 					'option'   => $option_data,
