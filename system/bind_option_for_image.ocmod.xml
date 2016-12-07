@@ -211,8 +211,6 @@
                     
                     $image_for_colour = $this->model_module_bind_option->getProduct($this->request->get['product_id']);
                 }
-        
-                $image_for_colour = $this->model_module_bind_option->getProduct($this->request->get['product_id']);
                 
                  if (empty($image_for_colour['image_for_bind'])) {
                      
