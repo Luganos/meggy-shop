@@ -496,8 +496,14 @@
   </file>
   <file path="catalog/controller/product/product.php">
       <operation>
-	    <search><![CDATA[$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);]]></search>
-	    <add position="after"><![CDATA[ $this->markForSpecialGoods();]]></add>
+       <search><![CDATA[$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);]]></search>
+	<add position="after">
+            <![CDATA[ 
+	        $this->related_goods = $results;
+		
+                $this->markForSpecialGoods();
+            ]]>
+        </add>
       </operation>
       <operation>
 	 <search regex ="true" quote = "true">
@@ -531,6 +537,7 @@
                                         'new_goods_flag'      => (in_array($result['product_id'], $this->new_goods))? 1: 0,
                                         'discount_goods_flag' => (in_array($result['product_id'], $this->discount_goods))? 1: 0,
                                         'action_goods_flag'   => (in_array($result['product_id'], $this->action_goods))? 1: 0,
+                                        'quick_delivery_flag'   => (in_array($result['product_id'], $this->quick_delivery_goods))? 1: 0,
                                         'size'         => $this->OptionForNewGoods($result['product_id'])
 				);]]>
          </add>  
@@ -544,6 +551,8 @@
      private $new_goods = array();
      private $action_goods = array();
      private $discount_goods = array();
+     private $related_goods = array();
+     private $quick_delivery_goods = array();
        
      protected function OptionForNewGoods($product_id) {
             
@@ -576,8 +585,43 @@
 	    }
             return $options;
         }
+	
+        private function tableExist() {
+       
+               $result = $this->db->query("SHOW TABLES LIKE '" . DB_PREFIX . "product_to_quick_delivery'");
+       
+               if($result->num_rows > 0) {
+
+	         return TRUE;
+               } else {
+	    
+	         return FALSE;
+	       }
+        }
+	
+	
+	private function markForQuickDelivery() {
+	
+             if ($this->tableExist()) {
+	      
+	          foreach($this->related_goods as $key => $value) {
+		      
+		      $query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product_to_quick_delivery WHERE product_id = '" . (int)$key . "'");
+		      
+		      if ($query->num_rows) {
+			  
+			    $this->quick_delivery_goods[$key] = $query->row['product_id'];
+			  
+		      }
+		  
+		    
+		  }
+	      }
+	}
         
         private function markForSpecialGoods() {
+	
+	        $this->markForQuickDelivery();
             
                 $new_goods = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT 50");
 
@@ -653,6 +697,7 @@
 	    <add position="after"><![CDATA[ 'sku'                 => $result['sku'],
                                             'new_goods_flag'      => (in_array($result['product_id'], $this->new_goods))? 1: 0,
                                             'discount_goods_flag' => (in_array($result['product_id'], $this->discount_goods))? 1: 0,
+	                                    'quick_delivery_flag'   => (in_array($result['product_id'], $this->quick_delivery_goods))? 1: 0,
                                             'size'                => $this->OptionForNewGoods($result['product_id']),
                                             'action_goods_flag'   => (in_array($result['product_id'], $this->action_goods))? 1: 0,]]></add>
       </operation>
@@ -667,6 +712,7 @@
        private $new_goods = array();
        private $action_goods = array();
        private $discount_goods = array();
+       private $quick_delivery_goods = array();
        
        protected function OptionForNewGoods($product_id) {
             
@@ -699,10 +745,54 @@
 	    }
             return $options;
         }
+	
+	private function tableExist() {
+       
+               $result = $this->db->query("SHOW TABLES LIKE '" . DB_PREFIX . "product_to_quick_delivery'");
+       
+               if($result->num_rows > 0) {
+
+	         return TRUE;
+               } else {
+	    
+	         return FALSE;
+	       }
+        }
+	
+	private function getCategoryId() {
+	
+	     $path = '';
+
+	     $parts = explode('_', (string)$this->request->get['path']);
+
+	     return (int)array_pop($parts);
+	}
+	
+	private function markForQuickDelivery() {
+	
+	      $category_id = $this->getCategoryId();
+	      
+	      if (!is_int($category_id)) {
+	      
+	          $category_id = 0;
+	      }
+	      
+              if ($this->tableExist()) {
+	
+	          $results = $this->db->query("SELECT q.product_id FROM " . DB_PREFIX . "product_to_quick_delivery q LEFT JOIN " . DB_PREFIX . "product_to_category p ON(q.product_id = p.product_id) WHERE category_id = '" . (int)$category_id . "'");
+	
+	          foreach ($results->rows as $result) {
+	      
+	               $this->quick_delivery_goods[$result['product_id']] = $result['product_id'];
+	          }
+	      }
+	}
        
     
     
         private function markForSpecialGoods() {
+	
+	        $this->markForQuickDelivery();
             
                 $new_goods = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT 50");
 
@@ -807,6 +897,7 @@
                                         'sku'         => $result['sku'],
                                         'new_goods_flag'      => (in_array($result['product_id'], $this->new_goods))? 1: 0,
                                         'discount_goods_flag' => (in_array($result['product_id'], $this->discount_goods))? 1: 0,
+	                                'quick_delivery_flag'   => (in_array($result['product_id'], $this->quick_delivery_goods))? 1: 0,
                                         'action_goods_flag'   => (in_array($result['product_id'], $this->action_goods))? 1: 0,
                                         'size'         => $this->OptionForNewGoods($result['product_id'])
 				);]]>
@@ -821,8 +912,12 @@
        private $new_goods = array();
        private $action_goods = array();
        private $discount_goods = array();
+       private $quick_delivery_goods = array();
+       private $filter_goods = array();
 
         private function markForSpecialGoods() {
+	
+	        $this->markForQuickDelivery();
             
                 $new_goods = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product WHERE status = 1 ORDER BY date_added ASC LIMIT 50");
 
@@ -889,6 +984,39 @@
                 
                 
         }
+	
+	private function tableExist() {
+       
+               $result = $this->db->query("SHOW TABLES LIKE '" . DB_PREFIX . "product_to_quick_delivery'");
+       
+               if($result->num_rows > 0) {
+
+	         return TRUE;
+               } else {
+	    
+	         return FALSE;
+	       }
+        }
+	
+	private function markForQuickDelivery() {
+	
+	      if ($this->tableExist()) {
+	      
+	          foreach($this->filter_goods as $key => $value) {
+		      
+		      $query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product_to_quick_delivery WHERE product_id = '" . (int)$key . "'");
+		      
+		      if ($query->num_rows) {
+			  
+			    $this->quick_delivery_goods[$key] = $query->row['product_id'];
+			  
+		      }
+		  
+		    
+		  }
+	      }
+	}
+	
         protected function OptionForNewGoods($product_id) {
             
             $options = array();
@@ -923,11 +1051,18 @@
          </add>  
       </operation>
       <operation>
-	    <search><![CDATA[$product_total = $this->model_catalog_product->getTotalProducts($filter_data);]]></search>
-	    <add position="after"><![CDATA[ $this->markForSpecialGoods();]]></add>
+	    <search><![CDATA[$results = $this->model_catalog_product->getProducts($filter_data);]]></search>
+	    <add position="after">
+            <![CDATA[ 
+	        $this->filter_goods = $results;
+		
+		$this->markForSpecialGoods(); 
+            ]]></add>
       </operation>
   </file>
   </modification>
+  
+  
   
   
   
