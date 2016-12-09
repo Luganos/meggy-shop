@@ -1,5 +1,20 @@
 <?php
 class ControllerModuleNewgoods extends Controller {
+    
+    /**
+     * List of products with quick delivery option
+     * @var array
+     */
+    private $quick_delivery_goods = array();
+    
+    
+    /**
+     * List of products
+     * @var array
+     */
+    private $list_goods = array();
+    
+    
 	public function index($setting) {
             
                 static $module = 0;
@@ -46,6 +61,10 @@ class ControllerModuleNewgoods extends Controller {
                            }
 					 	 		
 		            $results = $product_data;
+			    
+			    $this->list_goods = $results;
+			    
+			    $this->markForQuickDelivery();
 		
                             $count = 1;
                 
@@ -84,18 +103,19 @@ class ControllerModuleNewgoods extends Controller {
 			              }
 							
 			              $data['products'][$count] = array(
-				          'product_id'   => $result['product_id'],
-				          'thumb'   	   => $image,
-				          'name'         => $result['name'],
-				          'description'  => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
-				          'price'   	   => $price,
-				          'special' 	   => $special,
-				          'tax'          => $tax,
-				          'rating'       => $rating,
-				          'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
-				          'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-                                          'sku'          => $result['sku'],
-                                          'size'         => $this->OptionForNewGoods($result['product_id'])
+				          'product_id'          => $result['product_id'],
+				          'thumb'   	        => $image,
+				          'name'                => (strlen(strval($result['name'])) > 14)? mb_strimwidth(strval($result['name']), 0, 14) . '...' : mb_strimwidth(strval($result['name']), 0, 14),
+				          'description'         => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
+				          'price'   	        => $price,
+				          'special' 	        => $special,
+				          'tax'                 => $tax,
+				          'rating'              => $rating,
+				          'href'                => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+				          'reviews'             => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+					  'quick_delivery_flag' => (in_array($result['product_id'], $this->quick_delivery_goods))? 1: 0,
+                                          'sku'                 => (strlen(strval($result['sku'])) > 4)? mb_strimwidth(strval($result['sku']), 0, 4) . '...' : mb_strimwidth(strval($result['sku']), 0, 4),
+                                          'size'                => $this->OptionForNewGoods($result['product_id'])
 			              );
                                       $count++;
 		              }
@@ -127,6 +147,10 @@ class ControllerModuleNewgoods extends Controller {
                            }
 					 	 		
 		            $results = $product_data;
+			    
+			    $this->list_goods = $results;
+			    
+			    $this->markForQuickDelivery();
 		
                             $count = 1;
                 
@@ -175,18 +199,19 @@ class ControllerModuleNewgoods extends Controller {
 			              }
 							
 			              $data['products'][$count] = array(
-				          'product_id'   => $result['product_id'],
-				          'thumb'   	   => $image,
-				          'name'         => $result['name'],
-				          'description'  => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
-				          'discount'   	   => $discount,
-				          'special' 	   => $special,
-				          'tax'          => $tax,
-				          'rating'       => $rating,
-				          'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
-				          'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-                                          'sku'          => $result['sku'],
-                                          'size'         => $this->OptionForNewGoods($result['product_id'])
+				          'product_id'          => $result['product_id'],
+				          'thumb'   	        => $image,
+				          'name'                => (strlen(strval($result['name'])) > 14)? mb_strimwidth(strval($result['name']), 0, 14) . '...' : mb_strimwidth(strval($result['name']), 0, 14),
+				          'description'         => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
+				          'discount'   	        => $discount,
+				          'special' 	        => $special,
+				          'tax'                 => $tax,
+				          'rating'              => $rating,
+				          'href'                => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+				          'reviews'             => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+					  'quick_delivery_flag' => (in_array($result['product_id'], $this->quick_delivery_goods))? 1: 0,
+                                          'sku'                 => (strlen(strval($result['sku'])) > 4)? mb_strimwidth(strval($result['sku']), 0, 4) . '...' : mb_strimwidth(strval($result['sku']), 0, 4),
+                                          'size'                => $this->OptionForNewGoods($result['product_id'])
 			              );
                                       $count++;
 		              }
@@ -213,6 +238,10 @@ class ControllerModuleNewgoods extends Controller {
                 }
 					 	 		
 		$results = $product_data;
+		
+		$this->list_goods = $results;
+		
+		$this->markForQuickDelivery();
 		
                 $count = 1;
                 
@@ -252,18 +281,19 @@ class ControllerModuleNewgoods extends Controller {
                         
 							
 			$data['products'][$count] = array(
-				'product_id'   => $result['product_id'],
-				'thumb'   	   => $image,
-				'name'         => $result['name'],
-				'description'  => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
-				'price'   	   => $price,
-				'special' 	   => $special,
-				'tax'          => $tax,
-				'rating'       => $rating,
-				'href'         => $this->url->link('product/product', 'product_id=' . $result['product_id']),
-				'reviews'      => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
-                                'sku'          => $result['sku'],
-                                'size'         => $this->OptionForNewGoods($result['product_id'])
+				'product_id'          => $result['product_id'],
+				'thumb'   	      => $image,
+				'name'                => (strlen(strval($result['name'])) > 14)? mb_strimwidth(strval($result['name']), 0, 14) . '...' : mb_strimwidth(strval($result['name']), 0, 14),
+				'description'         => utf8_substr(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get('config_product_description_length')) . '..',
+				'price'   	      => $price,
+				'special' 	      => $special,
+				'tax'                 => $tax,
+				'rating'              => $rating,
+				'href'                => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+				'reviews'             => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
+			        'quick_delivery_flag' => (in_array($result['product_id'], $this->quick_delivery_goods))? 1: 0,
+                                'sku'                 => (strlen(strval($result['sku'])) > 4)? mb_strimwidth(strval($result['sku']), 0, 4) . '...' : mb_strimwidth(strval($result['sku']), 0, 4),
+                                'size'                => $this->OptionForNewGoods($result['product_id'])
 			);
                         $count++;
 		}
@@ -319,5 +349,45 @@ class ControllerModuleNewgoods extends Controller {
 	    }
             return $options;
         }
+	
+	/**
+	 * Check what table in DB exist
+	 * @return boolean
+	 */
+        private function tableExist() {
+       
+               $result = $this->db->query("SHOW TABLES LIKE '" . DB_PREFIX . "product_to_quick_delivery'");
+       
+               if($result->num_rows > 0) {
+
+	         return TRUE;
+               } else {
+	    
+	         return FALSE;
+	       }
+        }
+	
+	/**
+	 * Get list of product with quick delivery option
+	 * @return array list of products
+	 */
+	private function markForQuickDelivery() {
+	
+             if ($this->tableExist()) {
+	      
+	          foreach($this->list_goods as $key => $value) {
+		      
+		      $query = $this->db->query("SELECT product_id FROM " . DB_PREFIX . "product_to_quick_delivery WHERE product_id = '" . (int)$key . "'");
+		      
+		      if ($query->num_rows) {
+			  
+			    $this->quick_delivery_goods[$key] = $query->row['product_id'];
+			  
+		      }
+		  
+		    
+		  }
+	      }
+	} 
         
 }
