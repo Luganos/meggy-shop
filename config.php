@@ -20,6 +20,7 @@ define('DIR_UPLOAD', 'C:/Apache/meggy-shop.com/www/system/storage/upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
+define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '123456789');
